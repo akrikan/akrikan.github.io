@@ -1,14 +1,5 @@
 ---
 title: "Krishnakant A"
-website:
-  sidebar:
-    style: "docked"
-    search: true
-    contents:
-      - section: "Basics"
-        
-          
-      - section: "Layout"
 ---
 
 Eventually will add some post linking to paper implementations

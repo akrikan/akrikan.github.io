@@ -1,6 +1,5 @@
 ---
-title: "paper implementation"
-editor: visual
+title: "Paper implementations"
 ---
 
 ## the following are few of papers that I implemented

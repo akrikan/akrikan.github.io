@@ -1,28 +1,48 @@
 project:
   type: website
   output-dir: docs
-
 website:
   title: "Krishnakant A"
-  favicon: escher.png
-  
-  collapse: false
+  image : Escher Small.png
+  favicon: "Escher Small.png"
+  page-navigation: true
   navbar:
+     
     search: true
-    right:
-      - file: index.qmd
-        text: Home
+    background: primary
+    collapse-below: lg
+    left:
+      - href: index.qmd
+        text: "Home"
       - text: About
-        file: about.qmd
-      - text: Project 
-        file: project.qmd
-      - text: My personal book
-        file: My personal book.qmd
+        href: docu/about.qmd
+      - text: Project
+        href: docu/project.qmd
+      - text: Sea of Everything
+        file: docu/SEA/Sea_of_everything.qmd
       - text: Paper implementations
-        file: paper implementation.qmd
+        href: docu/paper implementation.qmd
+      - text: "Help"
+        menu: 
+          - text: "report a bug"
       
+  sidebar:
+    - id: Sea of Everything
+      title: "Sea of Everything"
+      style: "docked"
+      background: light
+      collapse-level: 1
+      align: left
+      contents:
+        - docu/SEA/Programming.qmd
+        
+    
       
-
+        
+  
+          
+ 
+        
 format:
   html:
     theme: darkly

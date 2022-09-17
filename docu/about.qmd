@@ -1,6 +1,6 @@
 ---
 title : "Krishnakant Ammanamanchi" 
-image : Escher Small.png
+image : /Escher Small.png
 about:
   template: trestles
 ---
