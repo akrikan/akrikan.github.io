@@ -1,5 +1,8 @@
 ---
-title: "About Me"
+title : "Krishnakant Ammanamanchi" 
+image : Escher Small.png
+about:
+  template: trestles
 ---
 
 Hi , I am Krishnakant Ammanamanchi , welcome to my Site/Blog or whatever.

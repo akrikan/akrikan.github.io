@@ -5,6 +5,7 @@ project:
 website:
   title: "Krishnakant A"
   favicon: escher.png
+  
   collapse: false
   navbar:
     search: true

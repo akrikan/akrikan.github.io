@@ -1,21 +1,3 @@
----
-book:
-  title: "My personal book"
-  author: "Krishnakant A"
-  description:
-  editor: visual
-  page_navigation: true
----
-
-
-
-
-
-
-
-
-
-
 
 
 I have made use of Quarto
