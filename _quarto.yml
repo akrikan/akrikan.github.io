@@ -1,0 +1,33 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Krishnakant A"
+  favicon: escher.png
+  collapse: false
+  navbar:
+    search: true
+    right:
+      - file: index.qmd
+        text: Home
+      - text: About
+        file: about.qmd
+      - text: Project 
+        file: project.qmd
+      - text: My personal book
+        file: My personal book.qmd
+      - text: Paper implementations
+        file: paper implementation.qmd
+      
+      
+
+format:
+  html:
+    theme: darkly
+    css: styles.css
+    toc: true
+    self-contained-math: true
+
+editor: visual
+

@@ -1,0 +1,6 @@
+---
+title: "Another Page"
+editor: visual
+---
+
+# we would like to check whether quarto automatically creates html for you once included on main site
