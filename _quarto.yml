@@ -16,27 +16,31 @@ website:
         text: "Home"
       - text: About
         href: docu/about.qmd
-      - text: Project
+      - text: "Project"
         href: docu/project.qmd
-      - text: Sea of Everything
-        file: docu/SEA/Sea_of_everything.qmd
-      - text: Paper implementations
+      - text: "Sea of Everything"
+        file: docu/SEA/.qmd
+      - text: "Paper implementations"
         href: docu/paper implementation.qmd
       - text: "Help"
         menu: 
           - text: "report a bug"
       
   sidebar:
-    - id: Sea of Everything
+    - id: Sea_of_everything
       title: "Sea of Everything"
       style: "docked"
       background: light
       collapse-level: 1
       align: left
       contents:
-        - docu/SEA/Programming.qmd
+        - docu/SEA/index.qmd
+        - text: "---"
+        - section: "Programming"
+          contents:
+            -  docu/SEA/programming.qmd
         
-    
+      
       
         
   
