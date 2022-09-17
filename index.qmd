@@ -1,6 +1,4 @@
----
-title: "Krishnakant A"
----
+
 
 Eventually will add some post linking to paper implementations
 
