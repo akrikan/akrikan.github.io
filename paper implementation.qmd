@@ -4,9 +4,3 @@ editor: visual
 ---
 
 ## the following are few of papers that I implemented
-
-sdfsd
-
-sdfsdf
-
-sdgsdgkljdsjg
