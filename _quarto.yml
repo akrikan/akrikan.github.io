@@ -19,7 +19,7 @@ website:
       - text: "Project"
         href: docu/project.qmd
       - text: "Sea of Everything"
-        file: docu/SEA/.qmd
+        file: docu/SEA/index.qmd
       - text: "Paper implementations"
         href: docu/paper implementation.qmd
       - text: "Help"
@@ -34,12 +34,14 @@ website:
       collapse-level: 1
       align: left
       contents:
-        - docu/SEA/index.qmd
-        - text: "---"
+        - text: "Introduction"
+          href: docu/SEA/index.qmd
         - section: "Programming"
           contents:
-            -  docu/SEA/programming.qmd
+            - text: Programming
+              href: docu/SEA/programming.qmd
         
+    - id: project
       
       
         
