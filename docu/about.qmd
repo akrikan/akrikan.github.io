@@ -1,6 +1,8 @@
 ---
 title : "Krishnakant Ammanamanchi" 
-image : /Escher Small.png
+image : escher.png 
+image-alt: https://en.wikipedia.org/wiki/Hand_with_Reflecting_Sphere
+
 about:
   template: trestles
 ---
@@ -15,4 +17,4 @@ Happy exploring !!!
 
 This is a Quarto website.
 
-?To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
