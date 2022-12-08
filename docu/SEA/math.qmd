@@ -1,15 +1,14 @@
 ---
 title: "Math"
 editor: visual
-
+execute: 
+  eval: true
 format:
   html:
     toc: true
-    html-math-method: katex
-
 ---
 
-\$\alpha  + \beta \$
+$\alpha + \beta$
 
 $\Pi + \Gamma$
 
@@ -105,4 +104,3 @@ aus_retail %>%
   forecast(h = "2 years")
 
 ```
-
