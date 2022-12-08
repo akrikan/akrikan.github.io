@@ -1,6 +1,8 @@
 ---
 title: "Programing"
-editor: visual
+code-block-bg: "#FFFAFA"
 ---
 
 #### This will include programming related notes and documents
+
+`

@@ -1,23 +1,86 @@
 [
   {
+    "objectID": "sine.html",
+    "href": "sine.html",
+    "title": "Sine function",
+    "section": "",
+    "text": "The plot below allows you to control parameters used in the sine function. Experiment with the period, amplitude, and phase shift to see how they affect the graph.\n#| standalone: true\n#| viewerHeight: 420\n\nfrom shiny import App, render, ui\nimport numpy as np\nimport matplotlib.pyplot as plt\n\napp_ui = ui.page_fluid(\n    ui.layout_sidebar(\n        ui.panel_sidebar(\n            ui.input_slider(\"period\", \"Period\", 0.5, 2, 1, step=0.5),\n            ui.input_slider(\"amplitude\", \"Amplitude\", 0, 2, 1, step=0.25),\n            ui.input_slider(\"shift\", \"Phase shift\", 0, 2, 0, step=0.1),\n        ),\n        ui.panel_main(\n            ui.output_plot(\"plot\"),\n        ),\n    ),\n)\n\n\ndef server(input, output, session):\n    @output\n    @render.plot(alt=\"Sine function\")\n    def plot():\n        t = np.arange(0.0, 4.0, 0.01)\n        s = input.amplitude() * np.sin(\n            (2 * np.pi / input.period()) * (t - input.shift() / 2)\n        )\n        fig, ax = plt.subplots()\n        ax.set_ylim([-2, 2])\n        ax.plot(t, s)\n        ax.grid()\n\n\napp = App(app_ui, server)\nuse ferris_says::say; // from the previous step\nuse std::io::{stdout, BufWriter};\n\nfn main() {\n    let stdout = stdout();\n    let message = String::from(\"Hello fellow Rustaceans!\");\n    let width = message.chars().count();\n\n    let mut writer = BufWriter::new(stdout.lock());\n    say(message.as_bytes(), width, &mut writer).unwrap();\n}"
+  },
+  {
     "objectID": "docu/about.html",
     "href": "docu/about.html",
     "title": "Krishnakant Ammanamanchi",
     "section": "",
-    "text": "I am unsure what to call this anymore. The gist of the site is to capture the projects and skills that i am currently working on and document them as i keep on learning.\nFeel free to jump to any of the above sections.(Most of the sections are work in progress but eventually everything will be in order)\nHappy exploring !!!\nThis is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "Hi , I am Krishnakant Ammanamanchi , welcome to my Site/Blog or whatever.\nI am unsure what to call this anymore. The gist of the site is to capture the projects and skills that i am currently working on and document them as i keep on learning.\nFeel free to jump to any of the above sections.(Most of the sections are work in progress but eventually everything will be in order)\nHappy exploring !!!\nThis is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "docu/anotherpage.html",
+    "href": "docu/anotherpage.html",
+    "title": "Another Page",
+    "section": "",
+    "text": "we would like to check whether quarto automatically creates html for you once included on main site"
+  },
+  {
+    "objectID": "docu/SEA/Fiancial Mathematics.html",
+    "href": "docu/SEA/Fiancial Mathematics.html",
+    "title": "Financial mathematics",
+    "section": "",
+    "text": "Implementing code is actually one of the best ways to learn both the code and theory given that the focus is on both and not purely on the coding aspect"
+  },
+  {
+    "objectID": "docu/SEA/practice.html",
+    "href": "docu/SEA/practice.html",
+    "title": "Quarto HTML Basics",
+    "section": "",
+    "text": "This a Quarto document. To learn more about Quarto see https://quarto.org.\nClick the Code button in the header to see the full source code of this document.\nHere we call the R summary() function—the function’s output is included immediately below:\n\nsummary(cars)"
+  },
+  {
+    "objectID": "docu/SEA/practice.html#plot-output",
+    "href": "docu/SEA/practice.html#plot-output",
+    "title": "Quarto HTML Basics",
+    "section": "Plot Output",
+    "text": "Plot Output\nYou can also embed plots, for example:\n\nlibrary(ggplot2)\ndat <- data.frame(cond = rep(c(\"A\", \"B\"), each=10),\n                  xvar = 1:20 + rnorm(20,sd=3),\n                  yvar = 1:20 + rnorm(20,sd=3))\n\nggplot(dat, aes(x=xvar, y=yvar)) +\n    geom_point(shape=1) + \n    geom_smooth() \n\nNote that the code-fold: true parameter was added to the code chunk to hide the code by default (click “Code” above the plot to see the code).\nThe use of the label and fig-cap options make this a cross-referenceable figure (see )."
+  },
+  {
+    "objectID": "docu/SEA/practice.html#interactivity",
+    "href": "docu/SEA/practice.html#interactivity",
+    "title": "Quarto HTML Basics",
+    "section": "Interactivity",
+    "text": "Interactivity\nYou can also add interactive plots. For example:\n\nlibrary(dygraphs)\ndygraph(nhtemp) %>% \n  dyRangeSelector(dateWindow = c(\"1920-01-01\", \"1960-01-01\"))"
+  },
+  {
+    "objectID": "docu/SEA/practice.html#tables",
+    "href": "docu/SEA/practice.html#tables",
+    "title": "Quarto HTML Basics",
+    "section": "Tables",
+    "text": "Tables\nUse the knitr::kable() function to print tables as HTML:\n\nknitr::kable(head(ggplot2::diamonds))"
+  },
+  {
+    "objectID": "docu/SEA/practice.html#latex-math",
+    "href": "docu/SEA/practice.html#latex-math",
+    "title": "Quarto HTML Basics",
+    "section": "LaTeX Math",
+    "text": "LaTeX Math\nYou can also include LaTeX math:\n\nP\\left(A=2\\middle|\\frac{A^2}{B}>4\\right)"
   },
   {
     "objectID": "docu/SEA/index.html",
     "href": "docu/SEA/index.html",
     "title": "Sea of Everything",
     "section": "",
-    "text": "Inspired by the Sea of foundations By Professro Ravi Vakil , which covers pretty much everything one needs to master Algebraic geometry. I have titled this section as Sea of Everything where i would be covering all my current interests related to fields of financial mathematics,programming , machine learning , crypto , etc…"
+    "text": "Inspired by the Sea of foundations By Professro Ravi Vakil , which covers pretty much everything one needs to master Algebraic geometry. I have titled this section as Sea of Everything where i would be covering all my current interests related to fields of financial mathematics,programming , machine learning , crypto , etc…\nThis whole section under Sea of Everything would mostly function as a blog, conventional blogs are very badly designed and difficult to navigate as of now i have just decided to maintain my articles as part of this website. If it gets cumbersome to maintain I might convert the webpage into a full blown traditional blog , but I am skeptical as of now."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Krishnakant A",
+    "objectID": "docu/SEA/programming.html",
+    "href": "docu/SEA/programming.html",
+    "title": "Programing",
     "section": "",
-    "text": "Everything that you see here is work in progress"
+    "text": "This will include programming related notes and documents\n`"
+  },
+  {
+    "objectID": "docu/SEA/math.html",
+    "href": "docu/SEA/math.html",
+    "title": "Math",
+    "section": "",
+    "text": "$+ $\n\\Pi + \\Gamma\na \\bmod b\nx \\equiv a \\pmod{b}\n\\lim\\limits_{x \\to \\infty} \\exp(-x) =0\nk_{n+1} = n^2 +k_n^2 - k_{n-1}\n\\dots\n\nlibrary(Sim.DiffProc)\n\nPackage 'Sim.DiffProc', version 4.8\nbrowseVignettes('Sim.DiffProc') for more informations.\n\nmu=1;sigma=0.5;theta=2\n x0=0;y0=0;init=c(x0,y0)\nf <- expression(1/mu*(theta-x), x)  \ng <- expression(sqrt(sigma),0)\nmod2d <- snssde2d(drift=f,diffusion=g,M=500,Dt=0.015,x0=c(x=0,y=0))\n## true values of first and second moment at time 10\nEx <- function(t) theta+(x0-theta)*exp(-t/mu)\nVx <- function(t) 0.5*sigma*mu *(1-exp(-2*(t/mu)))\nEy <- function(t) y0+theta*t+(x0-theta)*mu*(1-exp(-t/mu))\nVy <- function(t) sigma*mu^3*((t/mu)-2*(1-exp(-t/mu))+0.5*(1-exp(-2*(t/mu))))\ncovxy <- function(t) 0.5*sigma*mu^2 *(1-2*exp(-t/mu)+exp(-2*(t/mu)))\ntvalue = list(m1=Ex(15),m2=Ey(15),S1=Vx(15),S2=Vy(15),C12=covxy(15))\n ## function of the statistic(s) of interest.\nsde.fun2d <- function(data, i){\n   d <- data[i,]\n   return(c(mean(d$x),mean(d$y),var(d$x),var(d$y),cov(d$x,d$y)))\n}\n ## Parallel Monte-Carlo of 'OUI' at time 10\nmcm.mod2d = MCM.sde(mod2d,statistic=sde.fun2d,time=15,R=10,exact=tvalue,parallel=\"snow\",ncpus=2)\nmcm.mod2d$MC\n\n         Exact   Estimate       Bias Std.Error      RMSE\nm1   1.9999994  2.0064911  0.0064917 0.0081635 0.0253363\nm2  28.0000006 27.9957686 -0.0042320 0.0399002 0.1197754\nS1   0.2500000  0.2484320 -0.0015680 0.0029101 0.0088701\nS2   6.7500003  6.6794044 -0.0705959 0.1455293 0.4422587\nC12  0.2499998  0.2083772 -0.0416226 0.0167518 0.0652538\n           CI( 2.5 % , 97.5 % )\nm1    ( 1.9904909 , 2.0224913 )\nm2  ( 27.9175656 , 28.0739716 )\nS1    ( 0.2427283 , 0.2541357 )\nS2    ( 6.3941722 , 6.9646366 )\nC12   ( 0.1755443 , 0.2412101 )\n\n\n\\begin{equation*}\n\\begin{cases}\n\\begin{split}\ndX_{t} &= \\left( \\alpha \\, X_{t} \\, \\left( 1 - \\frac{X_{t}}{\\beta} \\right) - \\frac{\\delta \\, X_{t}^2 \\, Y_{t}}{\\left( \\kappa + X_{t}^2 \\right)} \\right) \\:dt +  \\sqrt{\\sigma_{1}} \\, X_{t} \\, \\left( 1 - Y_{t} \\right) \\:dW_{1,t} \\\\\ndY_{t} &= \\left( \\frac{\\gamma \\, X_{t}^2 \\, Y_{t}}{\\left( \\kappa + X_{t}^2 \\right)} - \\mu \\, Y_{t}^2 \\right) \\:dt +  \\left| \\sigma_{2}\\right|  \\, Y_{t} \\, \\left( 1 - X_{t} \\right) \\:dW_{2,t}\n\\end{split}\n\\end{cases}\n\\end{equation*}\n\\begin{equation}\n\\begin{cases}\n\\begin{split}\n\\frac{d}{dt} m_{1}(t) ~&= \\frac{\\left( \\theta - m_{1}(t) \\right)}{\\mu} \\\\\n\\frac{d}{dt} m_{2}(t) ~&= m_{1}(t) \\\\\n\\frac{d}{dt} S_{1}(t) ~&= \\sigma - 2 \\, \\left( \\frac{S_{1}(t)}{\\mu} \\right) \\\\\n\\frac{d}{dt} S_{2}(t) ~&= 2 \\, C_{12}(t) \\\\\n\\frac{d}{dt} C_{12}(t) &= S_{1}(t) - \\frac{C_{12}(t)}{\\mu}\n\\end{split}\n\\end{cases}\n\\end{equation}\n\\begin{equation}\n\\left.\\begin{aligned}\n        B'&=-\\partial \\times E,\\\\\n        E'&=\\partial \\times B - 4\\pi j,\n       \\end{aligned}\n\\right\\}\n\\qquad \\text{Maxwell's equations}\n\\end{equation}\n\n# Load required packages\nlibrary(fpp3)\n\n── Attaching packages ──────────────────────────────────────────── fpp3 0.4.0 ──\n\n\n✔ tibble      3.1.8      ✔ tsibble     1.1.3 \n✔ dplyr       1.0.10     ✔ tsibbledata 0.4.1 \n✔ tidyr       1.2.1      ✔ feasts      0.3.0 \n✔ lubridate   1.9.0      ✔ fable       0.3.2 \n✔ ggplot2     3.4.0      \n\n\n── Conflicts ───────────────────────────────────────────────── fpp3_conflicts ──\n✖ lubridate::date()    masks base::date()\n✖ dplyr::filter()      masks stats::filter()\n✖ tsibble::intersect() masks base::intersect()\n✖ tsibble::interval()  masks lubridate::interval()\n✖ dplyr::lag()         masks stats::lag()\n✖ tsibble::setdiff()   masks base::setdiff()\n✖ tsibble::union()     masks base::union()\n\n# Plot one time series\naus_retail %>%\n  filter(`Series ID`==\"A3349640L\") %>%\n  autoplot(Turnover)\n\n\n\n# Produce some forecasts\naus_retail %>%\n  filter(`Series ID`==\"A3349640L\") %>%\n  model(ETS(Turnover)) %>%\n  forecast(h = \"2 years\")\n\n# A fable: 24 x 6 [1M]\n# Key:     State, Industry, .model [1]\n   State    Industry                          .model    Month     Turnover .mean\n   <chr>    <chr>                             <chr>     <mth>       <dist> <dbl>\n 1 Victoria Cafes, restaurants and catering … ETS(T… 2019 Jan  N(608, 978)  608.\n 2 Victoria Cafes, restaurants and catering … ETS(T… 2019 Feb N(551, 1129)  551.\n 3 Victoria Cafes, restaurants and catering … ETS(T… 2019 Mar N(622, 1856)  622.\n 4 Victoria Cafes, restaurants and catering … ETS(T… 2019 Apr N(609, 2190)  609.\n 5 Victoria Cafes, restaurants and catering … ETS(T… 2019 May N(602, 2539)  602.\n 6 Victoria Cafes, restaurants and catering … ETS(T… 2019 Jun N(577, 2704)  577.\n 7 Victoria Cafes, restaurants and catering … ETS(T… 2019 Jul N(607, 3413)  607.\n 8 Victoria Cafes, restaurants and catering … ETS(T… 2019 Aug N(626, 4072)  626.\n 9 Victoria Cafes, restaurants and catering … ETS(T… 2019 Sep N(614, 4358)  614.\n10 Victoria Cafes, restaurants and catering … ETS(T… 2019 Oct N(624, 4942)  624.\n# … with 14 more rows\n\n\n#| standalone: true\n#| viewerHeight: 720\n\n# Dependencies\nfrom shiny import App, render, ui\nfrom numpy import random\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\n# Functions\ndef random_steps(steps=16, type=\"float\", low=-1, high=1):\n    if type == \"int\":\n        r = random.randint(low=low, high=high, size=steps, dtype=int).tolist()\n        r = [high if i == 0 else i for i in r]\n    elif type == \"float\":\n        r = (high - low) * random.random_sample(size=steps) + low\n    else:\n        print(\"The type argument is not valid\")\n        return\n    return r\n\n\ndef cumsum(l):\n    c = []\n    t = 0\n    for i in range(0, len(l)):\n        t += l[i]\n        c.append(t)\n    return c\n\n\ndef sim_steps(sim_number=10, steps=16, type=\"float\"):\n    s = []\n    d = pd.DataFrame()\n    for i in range(0, sim_number):\n        v1 = [0]\n        v2 = random_steps(steps=steps, type=type)\n        if not isinstance(v2, list):\n            v2 = v2.tolist()\n        v = cumsum(v1 + v2)\n        d_temp = pd.DataFrame({\"sim\": i, \"step\": range(0, len(v)), \"y\": v})\n        d = pd.concat([d, d_temp])\n    return d\n\n\n# UI\napp_ui = ui.page_fluid(\n    ui.layout_sidebar(\n        ui.panel_sidebar(\n            ui.h2(\"Why normal distributions are normal\"),\n            ui.input_slider(\"sample_size\", \"Sample Size\", 1, 1000, 500),\n            ui.input_slider(\"steps\", \"Number of Steps\", 1, 20, 16),\n            ui.input_select(\"step\", \"Step Type\", {\"float\": \"Float\", \"int\": \"Integer\"}),\n            ui.input_slider(\"alpha\", \"Color Opacity\", 0, 1, 0.2),\n        ),\n        ui.panel_main(\n            ui.output_plot(\"plot\"),\n            ui.markdown(\n                \"\"\"\n        ### Why normal distributions are normal\n\n        Chapter 3 of [Statistical Rethinking's](https://xcelab.net/rm/statistical-rethinking/) by Prop. Richard McElreath focuses on normal distribution\n        and its characteristics. It illustrates how to generate a normal distribution using the soccer field experiment:\n\n        - Place a bunch of people at the center line of a soccer field\n        - Each person flips a coin and moves one step to the right or left according to the outcome (head or tail)\n        - Repeat this process multiple times\n        After a couple of iterations, you will notice the distribution of the people's distances across the field will become Gaussian or normal (e.g., bell-curved shape).\n\n        The app above simulates this experience by setting the sample size (i.e., number of people) and number of iterations. Where on each iteration, we draw a random number between -1 and 1 (can choose between float integer steps with the `Step Type` drop-down). The plot above shows the cumulative sum of each experiment across each step of the experience. You can notice how the distribution becomes more Gaussin as the number of steps increases.\n\n        Code available [here](https://github.com/RamiKrispin/shinyelive).\n\n        \"\"\"\n            ),\n        ),\n    )\n)\n\n# Server\ndef server(input, output, session):\n    @output\n    @render.plot(alt=\"A simulation plot\")\n    def plot():\n        type = input.step()\n        color = \"lightblue\"\n        alpha = input.alpha()\n        sim_number = input.sample_size()\n        steps = input.steps()\n        sim_df = sim_steps(sim_number=sim_number, steps=steps, type=type)\n        fig, ax = plt.subplots()\n        for i in sim_df.sim.unique():\n            df = sim_df[sim_df[\"sim\"] == i]\n            ax.plot(df[\"step\"], df[\"y\"], color=color, alpha=alpha)\n\n        ax.set_title(label=\"Simulation of Random Walk\")\n        ax.set_xlabel(\"Number of Steps\")\n        ax.set_ylabel(\"Position\")\n        return fig\n\n\napp = App(app_ui, server)"
   }
 ]

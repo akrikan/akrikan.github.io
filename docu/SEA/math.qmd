@@ -1,0 +1,213 @@
+---
+title: "Math"
+editor: visual
+
+format:
+  html:
+    toc: true
+    html-math-method: katex
+filters:
+  - shinylive
+---
+
+\$\alpha  + \beta \$
+
+$\Pi + \Gamma$
+
+$a \bmod b$
+
+$x \equiv a \pmod{b}$
+
+$\lim\limits_{x \to \infty} \exp(-x) =0$
+
+$k_{n+1} = n^2 +k_n^2 - k_{n-1}$
+
+$\dots$
+
+```{r}
+library(Sim.DiffProc)
+mu=1;sigma=0.5;theta=2
+ x0=0;y0=0;init=c(x0,y0)
+f <- expression(1/mu*(theta-x), x)  
+g <- expression(sqrt(sigma),0)
+mod2d <- snssde2d(drift=f,diffusion=g,M=500,Dt=0.015,x0=c(x=0,y=0))
+## true values of first and second moment at time 10
+Ex <- function(t) theta+(x0-theta)*exp(-t/mu)
+Vx <- function(t) 0.5*sigma*mu *(1-exp(-2*(t/mu)))
+Ey <- function(t) y0+theta*t+(x0-theta)*mu*(1-exp(-t/mu))
+Vy <- function(t) sigma*mu^3*((t/mu)-2*(1-exp(-t/mu))+0.5*(1-exp(-2*(t/mu))))
+covxy <- function(t) 0.5*sigma*mu^2 *(1-2*exp(-t/mu)+exp(-2*(t/mu)))
+tvalue = list(m1=Ex(15),m2=Ey(15),S1=Vx(15),S2=Vy(15),C12=covxy(15))
+ ## function of the statistic(s) of interest.
+sde.fun2d <- function(data, i){
+   d <- data[i,]
+   return(c(mean(d$x),mean(d$y),var(d$x),var(d$y),cov(d$x,d$y)))
+}
+ ## Parallel Monte-Carlo of 'OUI' at time 10
+mcm.mod2d = MCM.sde(mod2d,statistic=sde.fun2d,time=15,R=10,exact=tvalue,parallel="snow",ncpus=2)
+mcm.mod2d$MC
+```
+
+```{=tex}
+\begin{equation*}
+\begin{cases}
+\begin{split}
+dX_{t} &= \left( \alpha \, X_{t} \, \left( 1 - \frac{X_{t}}{\beta} \right) - \frac{\delta \, X_{t}^2 \, Y_{t}}{\left( \kappa + X_{t}^2 \right)} \right) \:dt +  \sqrt{\sigma_{1}} \, X_{t} \, \left( 1 - Y_{t} \right) \:dW_{1,t} \\
+dY_{t} &= \left( \frac{\gamma \, X_{t}^2 \, Y_{t}}{\left( \kappa + X_{t}^2 \right)} - \mu \, Y_{t}^2 \right) \:dt +  \left| \sigma_{2}\right|  \, Y_{t} \, \left( 1 - X_{t} \right) \:dW_{2,t}
+\end{split}
+\end{cases}
+\end{equation*}
+```
+```{=tex}
+\begin{equation}
+\begin{cases}
+\begin{split}
+\frac{d}{dt} m_{1}(t) ~&= \frac{\left( \theta - m_{1}(t) \right)}{\mu} \\
+\frac{d}{dt} m_{2}(t) ~&= m_{1}(t) \\
+\frac{d}{dt} S_{1}(t) ~&= \sigma - 2 \, \left( \frac{S_{1}(t)}{\mu} \right) \\
+\frac{d}{dt} S_{2}(t) ~&= 2 \, C_{12}(t) \\
+\frac{d}{dt} C_{12}(t) &= S_{1}(t) - \frac{C_{12}(t)}{\mu}
+\end{split}
+\end{cases}
+\end{equation}
+```
+```{=tex}
+\begin{equation}
+ \left.\begin{aligned}
+        B'&=-\partial \times E,\\
+        E'&=\partial \times B - 4\pi j,
+       \end{aligned}
+ \right\}
+ \qquad \text{Maxwell's equations}
+\end{equation}
+```
+```{=tex}
+\numberwithin{equation}{subsection}
+\section{First Section}
+\subsection{A subsection}
+\begin{equation}
+  L' = {L}{\sqrt{1-\frac{v^2}{c^2}}}
+\end{equation}
+```
+```{r}
+
+# Load required packages
+library(fpp3)
+
+# Plot one time series
+aus_retail %>%
+  filter(`Series ID`=="A3349640L") %>%
+  autoplot(Turnover)
+
+# Produce some forecasts
+aus_retail %>%
+  filter(`Series ID`=="A3349640L") %>%
+  model(ETS(Turnover)) %>%
+  forecast(h = "2 years")
+
+```
+
+``` {shinylive-python}
+#| standalone: true
+#| viewerHeight: 720
+
+# Dependencies
+from shiny import App, render, ui
+from numpy import random
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Functions
+def random_steps(steps=16, type="float", low=-1, high=1):
+    if type == "int":
+        r = random.randint(low=low, high=high, size=steps, dtype=int).tolist()
+        r = [high if i == 0 else i for i in r]
+    elif type == "float":
+        r = (high - low) * random.random_sample(size=steps) + low
+    else:
+        print("The type argument is not valid")
+        return
+    return r
+
+
+def cumsum(l):
+    c = []
+    t = 0
+    for i in range(0, len(l)):
+        t += l[i]
+        c.append(t)
+    return c
+
+
+def sim_steps(sim_number=10, steps=16, type="float"):
+    s = []
+    d = pd.DataFrame()
+    for i in range(0, sim_number):
+        v1 = [0]
+        v2 = random_steps(steps=steps, type=type)
+        if not isinstance(v2, list):
+            v2 = v2.tolist()
+        v = cumsum(v1 + v2)
+        d_temp = pd.DataFrame({"sim": i, "step": range(0, len(v)), "y": v})
+        d = pd.concat([d, d_temp])
+    return d
+
+
+# UI
+app_ui = ui.page_fluid(
+    ui.layout_sidebar(
+        ui.panel_sidebar(
+            ui.h2("Why normal distributions are normal"),
+            ui.input_slider("sample_size", "Sample Size", 1, 1000, 500),
+            ui.input_slider("steps", "Number of Steps", 1, 20, 16),
+            ui.input_select("step", "Step Type", {"float": "Float", "int": "Integer"}),
+            ui.input_slider("alpha", "Color Opacity", 0, 1, 0.2),
+        ),
+        ui.panel_main(
+            ui.output_plot("plot"),
+            ui.markdown(
+                """
+        ### Why normal distributions are normal
+
+        Chapter 3 of [Statistical Rethinking's](https://xcelab.net/rm/statistical-rethinking/) by Prop. Richard McElreath focuses on normal distribution
+        and its characteristics. It illustrates how to generate a normal distribution using the soccer field experiment:
+
+        - Place a bunch of people at the center line of a soccer field
+        - Each person flips a coin and moves one step to the right or left according to the outcome (head or tail)
+        - Repeat this process multiple times
+        After a couple of iterations, you will notice the distribution of the people's distances across the field will become Gaussian or normal (e.g., bell-curved shape).
+
+        The app above simulates this experience by setting the sample size (i.e., number of people) and number of iterations. Where on each iteration, we draw a random number between -1 and 1 (can choose between float integer steps with the `Step Type` drop-down). The plot above shows the cumulative sum of each experiment across each step of the experience. You can notice how the distribution becomes more Gaussin as the number of steps increases.
+
+        Code available [here](https://github.com/RamiKrispin/shinyelive).
+
+        """
+            ),
+        ),
+    )
+)
+
+# Server
+def server(input, output, session):
+    @output
+    @render.plot(alt="A simulation plot")
+    def plot():
+        type = input.step()
+        color = "lightblue"
+        alpha = input.alpha()
+        sim_number = input.sample_size()
+        steps = input.steps()
+        sim_df = sim_steps(sim_number=sim_number, steps=steps, type=type)
+        fig, ax = plt.subplots()
+        for i in sim_df.sim.unique():
+            df = sim_df[sim_df["sim"] == i]
+            ax.plot(df["step"], df["y"], color=color, alpha=alpha)
+
+        ax.set_title(label="Simulation of Random Walk")
+        ax.set_xlabel("Number of Steps")
+        ax.set_ylabel("Position")
+        return fig
+
+
+app = App(app_ui, server)
+```

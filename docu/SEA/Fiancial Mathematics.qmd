@@ -1,0 +1,6 @@
+---
+title: "Financial mathematics"
+editor: visual
+---
+
+Implementing code is actually one of the best ways to learn both the code and theory given that the focus is on both and not purely on the coding aspect

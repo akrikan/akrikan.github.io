@@ -1,0 +1,14 @@
+{
+  "hash": "239206a42a0cc87f2090d3830d552f47",
+  "result": {
+    "markdown": "---\ntitle: \"Programing\"\ncode-block-bg: \"#FFFAFA\"\n---\n\n\n#### This will include programming related notes and documents\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(ggplot2)\nggplot(airquality, aes(Temp, Ozone)) + \n  geom_point() + \n  geom_smooth(method = \"loess\")\n```\n:::\n\n::: {.cell}\n\n```{.python .cell-code}\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={\"projection\": \"polar\"})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```\n:::\n\n::: {.cell}\n\n```{.cpp .cell-code}\n#include<rcpp.h>\n#include<iostream>\n\nmain()\n{\n  printf(\"Hello World\")\n  \n};\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

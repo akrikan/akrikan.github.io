@@ -1,10 +1,11 @@
 project:
   type: website
   output-dir: docs
+  
 website:
   title: "Krishnakant A"
-  
   page-navigation: true
+  
   navbar:
      
     search: true
@@ -15,7 +16,7 @@ website:
         text: "Home"
       - text: About
         href: docu/about.qmd
-      - text: "Project"
+      - text: "Book Implementation"
         href: docu/project.qmd
       - text: "Sea of Everything"
         file: docu/SEA/index.qmd
@@ -38,22 +39,36 @@ website:
         - section: "Programming"
           contents:
             - text: Programming
-              href: docu/SEA/programming.qmd
+              href: docu/SEA/math.qmd
+            - text: Python
+              
+        - section: "Quantitative Finance"
+          contents:
+            - text: Stochastic Calculus
+              
+              
+        - section: "Crypto/Blockchain"
+          contents:
+            - text: EVM 
+                
+        
+        - section: "Mathematics"
+          contents:
+            - text: Abstract
+                
+        
+        - section: "Books "
+          contents:
+            - text: "Overview"
+                 
         
     - id: project
-      
-      
-        
-  
-          
- 
-        
+
 format:
   html:
     theme: sketchy
-    css: styles.css
     toc: true
     self-contained-math: true
-
-editor: visual
+   
+    
 
