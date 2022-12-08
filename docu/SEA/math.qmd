@@ -2,7 +2,7 @@
 title: "Math"
 editor: visual
 execute: 
-  eval: true
+  eval: false
 format:
   html:
     toc: true
