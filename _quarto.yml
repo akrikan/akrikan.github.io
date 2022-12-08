@@ -38,7 +38,7 @@ website:
           href: docu/SEA/index.qmd
         - section: "Programming"
           contents:
-            - text: Programming
+            - text: "Programming"
               href: docu/SEA/math.qmd
             - text: Python
               
