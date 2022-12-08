@@ -68,7 +68,7 @@ format:
   html:
     theme: sketchy
     toc: true
-    self-contained-math: true
+    
    
     
 
