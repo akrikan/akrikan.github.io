@@ -15,7 +15,7 @@ website:
       - href: docu/anotherpage.qmd
         text: "Home"
       - text: About
-        href: docu/about.qmd
+        href: math2.qmd
       - text: "Book Implementation"
         href: docu/project.qmd
       - text: "Sea of Everything"
