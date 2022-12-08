@@ -1,11 +1,15 @@
 ---
 title: "Math"
 editor: visual
+toc: true
 execute: 
-  eval: false
+  eval: true
 format:
   html:
-    toc: true
+    html-math-method: katex
+    
+    self-contained: true 
+
 ---
 
 $\alpha + \beta$
