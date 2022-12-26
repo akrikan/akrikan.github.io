@@ -4,4 +4,6 @@ title : "Sea of Everything"
 
 Inspired by the Sea of foundations By Professro Ravi Vakil , which covers pretty much everything one needs to master Algebraic geometry. I have titled this section as Sea of Everything where i would be covering all my current interests related to fields of financial mathematics,programming , machine learning , crypto , etc...
 
-This whole section under Sea of Everything would mostly function as a blog, conventional blogs are very badly designed and difficult to navigate as of now i have just decided to maintain my articles as part of this website. If it gets cumbersome to maintain I might convert the webpage into a full blown traditional blog , but I am skeptical as of now.
+This whole section under Sea of Everything would mostly function as a blog, conventional blogs are very badly designed and difficult to navigate as of now i have just decided to maintain my articles as part of this website. ~~If it gets cumbersome to maintain I might convert the webpage into a full blown traditional blog , but I am skeptical as of now.~~
+
+My Home page would host articles that I have written to explain myself the inner - working of an idea or a concept and which are fascinating enough to be highlighted amidst all of this.

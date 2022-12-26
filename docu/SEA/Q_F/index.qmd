@@ -1,0 +1,12 @@
+---
+title: "Quantitative Finance"
+editor: visual
+---
+This topic mainly covers stochastic calculus , I find the theory and its applications within finance quite interesting, the reason why I have decided  to not included this section inside mathematics is mostly because I stumbled across this topic when I had started reading option theory, though i had heard of it during my graduate program but never found it interesting and never gave a second thought about it.
+Oddly enough I got fascinated with the topic once I realised I won't be pursuing a PH.D in Math.
+
+There is(was) a great course on Stochastic process by Higher School of Economics(Russia) on coursera which i happened to complete.
+
+I have as of now also included Econometrics as part of Quant finance against popular opinion since everything is just a linear regression.
+
+Future topics might include Market Risk Analysis , the four volume set on Market risk analysis by Carol Alexander is a gem. I happened to come across it while i was preparing for my FRM exams.

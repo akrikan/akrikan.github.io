@@ -1,6 +1,14 @@
 ---
-title: "Another Page"
+title: "MyBlog"
 editor: visual
----
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+page-layout: full
+title-block-banner: true
 
-# we would like to check whether quarto automatically creates html for you once included on main site
+---

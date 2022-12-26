@@ -8,9 +8,7 @@ execute:
 format:
   html:
     html-math-method: katex
-    
-    
-
+    code-block-bg: "#E5E7E9"
 ---
 
 $\alpha + \beta$
@@ -91,21 +89,4 @@ dY_{t} &= \left( \frac{\gamma \, X_{t}^2 \, Y_{t}}{\left( \kappa + X_{t}^2 \righ
 \begin{equation}
   L' = {L}{\sqrt{1-\frac{v^2}{c^2}}}
 \end{equation}
-```
-```{r}
-
-# Load required packages
-library(fpp3)
-
-# Plot one time series
-aus_retail %>%
-  filter(`Series ID`=="A3349640L") %>%
-  autoplot(Turnover)
-
-# Produce some forecasts
-aus_retail %>%
-  filter(`Series ID`=="A3349640L") %>%
-  model(ETS(Turnover)) %>%
-  forecast(h = "2 years")
-
 ```

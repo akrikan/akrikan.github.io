@@ -16,16 +16,17 @@ website:
         text: "Home"
       - text: About
         href: docu/about.qmd
-      - text: "Book Implementation"
-        href: docu/project.qmd
+      # - text: "Book Implementation"
+      #   href: docu/Book_Implementations/index.qmd
       - text: "Sea of Everything"
         file: docu/SEA/index.qmd
       - text: "Paper implementations"
         href: docu/paper implementation.qmd
+      - text: "Resources"
+        href: docu/Twitter_SS.qmd
       - text: "Help"
         menu: 
           - text: "report a bug"
-      
   sidebar:
     - id: Sea_of_everything
       title: "Sea of Everything"
@@ -36,33 +37,84 @@ website:
       contents:
         - text: "Introduction"
           href: docu/SEA/index.qmd
-        - section: "Programming"
+        - section: "Computer Science"
+          collapse: true
           contents:
-            - text: "Programming"
-              href: docu/SEA/math.qmd
-            - text: Python
+            - section: "C++"
+              contents: 
+                - text: "book1"
+                - text: "book2"
+                
+            - text: "Python"
+            - text: "Complexity Theory"
               
         - section: "Quantitative Finance"
+          href: docu/SEA/Q_F/index.qmd
           contents:
             - text: Stochastic Calculus
-              
+            - text: "Econometrics"  
               
         - section: "Crypto/Blockchain"
           contents:
-            - text: EVM 
-                
+            - text: "EVM"
+            - text: "Cryptography" 
         
         - section: "Mathematics"
           contents:
-            - text: Abstract
+            - text: "P-Adic Calculus"
+            - text: "Number Theory"
+            - text: "Galois Theory"
+            - text: "Analysis"
                 
         
         - section: "Books "
           contents:
             - text: "Overview"
-                 
         
-    - id: project
+        - section: "Trading"
+          contents: 
+            - text: "Technical Analysis"
+            - text: "Algorithmic Trading"
+            - text: "Fudamental Analysis"
+            - text: "Financial Products"
+      
+    - id: project      
+   ###
+    # - id: Book_Implementation
+    #   title: "Book Implementation"
+    #   style: "docked"
+    #   background: dark
+    #   collapse-level: 1
+    #   align: left
+    #   contents:
+    #      - text: "Introduction"
+    #        href: docu/Book_Implementations/index.qmd
+    #      - section: "Hands On Machine Learning "
+    #        contents:
+    #          - text: "Programming"
+    #          - text: Python
+    #           
+    #      - section: "Quantitative Finance"
+    #        contents:
+    #          - text: Stochastic Calculus
+    #            
+    #           
+    #      - section: "Crypto/Blockchain"
+    #        contents:
+    #          - text: EVM 
+    #              
+    #     
+    #      - section: "Mathematics"
+    #        contents:
+    #          - text: Abstract
+    #             
+    #     
+    #      - section: "Books "
+    #        contents:
+    #          - text: "Overview"                 
+        
+   ###
+  
 
 format:
   html:

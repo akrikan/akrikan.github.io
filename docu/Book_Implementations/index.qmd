@@ -1,0 +1,7 @@
+---
+title : "Book Implementations" 
+---
+
+As the name suggests this section deals with various technical books that have read and most importantly their code implementation.
+
+Current plan is write code and look at the code.
