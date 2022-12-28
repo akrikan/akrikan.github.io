@@ -1,0 +1,37 @@
+---
+title: "Resources(Mostly Twitter S/S)"
+editor: visual
+---
+
+This page basically contains twitter threads screen shots , there is no easy way to save twitter threads on twitter and save them or at least i haven't bothered to search for a solution ,so anyways would be including it here
+
+As of now I haven't categorized it and maybe in future will add links and reviews to various resources which i have found useful over time.
+
+The date, time and twitter_handle is included in the screen-shot so you can go ahead and search for it , I have not purposefully included them the links since many a times the author deletes the tweets and it becomes a headache to revist dead-links and remove them , trying to keep it simple here.
+
+
+## Quantitative Finance
+
+#### Stochastic Calculus
+
+
+
+## Mathematics
+
+#### Statistics
+
+## Programming
+
+#### R
+
+#### Python
+
+#### C+++
+
+#### Rust
+
+## Data Science , Machine Learning and Deep learning
+
+## Trading
+
+## TradFi and Finance books

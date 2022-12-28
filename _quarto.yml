@@ -5,7 +5,7 @@ project:
 website:
   title: "Krishnakant A"
   page-navigation: true
-  
+  favicon: escher.tiff
   navbar:
      
     search: true
@@ -23,7 +23,7 @@ website:
       - text: "Paper implementations"
         href: docu/paper implementation.qmd
       - text: "Resources"
-        href: docu/Twitter_SS.qmd
+        href: docu/Resources/index.qmd
       - text: "Help"
         menu: 
           - text: "report a bug"
@@ -53,7 +53,10 @@ website:
           contents:
             - text: Stochastic Calculus
             - text: "Econometrics"  
-              
+            - text: "Time series analysis"
+              href: docu/SEA/time_series.qmd
+            - text: "Market Risk Analysis"
+              href: docu/SEA/MRA.qmd
         - section: "Crypto/Blockchain"
           contents:
             - text: "EVM"
@@ -67,9 +70,6 @@ website:
             - text: "Analysis"
                 
         
-        - section: "Books "
-          contents:
-            - text: "Overview"
         
         - section: "Trading"
           contents: 
@@ -77,7 +77,32 @@ website:
             - text: "Algorithmic Trading"
             - text: "Fudamental Analysis"
             - text: "Financial Products"
-      
+        
+  
+    - id: Resources
+      title: "Resources"
+      style: "docked"
+      background: dark
+      collapse-level: 1
+      align: left
+      contents:
+        - text: "List of Resources"
+          href: docu/Resources/index.qmd
+        - section: "Cheat Sheets"
+          contents: 
+            - text: "Coding"
+              href: docu/Resources/coding.qmd
+            - text: "LaTex"
+              href: docu/Resources/LaTex.qmd
+            - text: "Machine Learning"
+    
+        - section: "Course Notes"
+          href: docu/Resources/resourcelist.qmd
+          contents: 
+            - text: 
+              href:
+            - text: 
+              href: 
     - id: project      
    ###
     # - id: Book_Implementation
@@ -120,7 +145,8 @@ format:
   html:
     theme: sketchy
     toc: true
-    
+    toc-location: right
+    toc-depth: 3
    
     
 

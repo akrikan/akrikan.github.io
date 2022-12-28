@@ -1,0 +1,36 @@
+---
+title: "Time Series Analysis"
+reference-location: margin
+citation-location: margin
+format: html
+---
+
+### Resources
+
+Time series analysis by James D Hamilton - its considered to be the bible on time series analysis, pretty much covers all the theory , it doesnt have any code or pseudocode.
+
+Introduction to Time Series with R by Metcalfe & Coweperwait
+
+## Part 1
+### Difference operators
+asd
+
+### Lag operators
+
+sdf 
+
+### Stationary ARMA Process
+
+sadf
+
+### Forecasting
+
+sadf
+
+### Maximum likelihood Estimation
+
+sadf
+
+### Spectral Analysis
+
+asdf
