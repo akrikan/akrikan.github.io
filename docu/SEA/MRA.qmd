@@ -7,4 +7,5 @@ The best book i found for this topic is by Prof. Carol Alexanders , its a four v
 
 Would be adding topics of interest from those books in various sections of this site
 
-![MRA](Rough/Rough-2.jpg)
+<!-- ![MRA](Rough/Rough-2.jpg){height=800} -->
+<!-- ![MRA](Rough/Rough-3.jpg){height=800} -->
