@@ -93,6 +93,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
+<link href="../../escher.tiff" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -166,16 +167,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../docu/Book_Implementations/index.html">
- <span class="menu-text">Book Implementation</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="../../docu/SEA/index.html">
  <span class="menu-text">Sea of Everything</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../docu/paper implementation.html">
  <span class="menu-text">Paper implementations</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../docu/Resources/index.html">
+ <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-help" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -225,6 +226,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><span class="math inline">\lim\limits_{x \to \infty} \exp(-x) =0</span></p>
 <p><span class="math inline">k_{n+1} = n^2 +k_n^2 - k_{n-1}</span></p>
 <p><span class="math inline">\dots</span></p>
+<p><span class="math inline">F_{\ell} = \mathbb{P}\{X - {\ell} \leq{x} | X &gt; {\ell} \} = \frac{F(x+ {\ell}) - F(\ell)}{1 - F_{X}\{\ell\}}</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Sim.DiffProc)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>mu<span class="ot">=</span><span class="dv">1</span>;sigma<span class="ot">=</span><span class="fl">0.5</span>;theta<span class="ot">=</span><span class="dv">2</span></span>
@@ -249,17 +251,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>mcm.mod2d<span class="sc">$</span>MC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>         Exact   Estimate       Bias Std.Error      RMSE
-m1   1.9999994  1.9958979 -0.0041015 0.0059585 0.0183401
-m2  28.0000006 27.9892949 -0.0107057 0.0386535 0.1164536
-S1   0.2500000  0.2556273  0.0056273 0.0064335 0.0201041
-S2   6.7500003  6.8473910  0.0973907 0.1582089 0.4845157
-C12  0.2499998  0.2191152 -0.0308846 0.0194752 0.0660865
-           CI( 2.5 % , 97.5 % )
-m1    ( 1.9842195 , 2.0075763 )
-m2  ( 27.9135354 , 28.0650544 )
-S1    ( 0.2430179 , 0.2682367 )
-S2    ( 6.5373073 , 7.1574747 )
-C12   ( 0.1809445 , 0.2572859 )</code></pre>
+m1   1.9999994  1.9958097 -0.0041897 0.0059245 0.0182608
+m2  28.0000006 27.8802938 -0.1197068 0.0322670 0.1539486
+S1   0.2500000  0.2494425 -0.0005575 0.0049703 0.0149212
+S2   6.7500003  6.8528781  0.1028778 0.1439532 0.4439444
+C12  0.2499998  0.2486747 -0.0013251 0.0165989 0.0498142
+          CI( 2.5 % , 97.5 % )
+m1   ( 1.9841979 , 2.0074215 )
+m2  ( 27.8170516 , 27.943536 )
+S1   ( 0.2397009 , 0.2591841 )
+S2    ( 6.570735 , 7.1350212 )
+C12  ( 0.2161415 , 0.2812079 )</code></pre>
 </div>
 </div>
 <span class="math display">\begin{equation*}

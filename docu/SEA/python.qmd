@@ -1,0 +1,26 @@
+---
+  title: "Python Programming language"
+  abstract: Will cover the basics and mostly advanced functionalities of python as well as the libraries and that are commonly used and important, Wont be adding machine learning libraries and will keep it restricted to purely to the programming language 
+---
+
+## Introduction
+
+-   High Level language - Strong abstraction, easy to use and easy to understand syntax.
+-   General purpose programming language
+-   Indentation important
+-   Case Sensitive
+-   Supports multiple programming paradigms such OOP and functional
+-   Excellently documented and comprehensive standard library
+-   Dynamically but Strongly typed - Types are checked at run time and forbids operations that are not of the same type
+-   Garbage collected - Automatic memory management
+
+## Basics
+
+ * The Python Standard Library
+    * Built-in types
+        * list ,tuple, set, dict and others
+    * Built-in functions
+        * print() , len() ,range(),enumerate(),map(),zip()
+    * Built-in modules
+        * os,sys,itertools,collecations,math and others
+        

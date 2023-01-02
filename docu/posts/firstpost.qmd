@@ -1,11 +1,147 @@
 ---
-title: "Post With Code"
-description: "Post description"
+title:  "Quantitative finance resources"
+#description: "Learning i"
 author: "Krishnakant A"
-date: "26/12/2022"
+date: "01/02/2023"
 categories:
-  - code
-  - analysis
+  - Opinion
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
-##Hello World
+Quantitative finance is vast field with lot many resources available.
+Many would agree these resources would help one get a job and be at
+intermediate level in terms of expertise, while becoming a expert is
+still sort of restricted to learning on the job. But can one ever become
+an expert in any chosen topic within Quantitative finance or even for
+that matter get to an intermediate level of understanding of various
+topics within the field.
+
+<!-- Research education is far more clear in terms of becoming an expert.There is definite list of resources available for one to master which coupled with reading and and publishing high quality research papers pushes one to the top.Any choice of standard book in the field of  let's say Algebraic geometry one can easily find out the pre-requistes , the standard books to complete or courses to undertake  and list of researchers to follow , at the same time devoting enough time to research personally and one can say depending on the research or the capability to explain each topic with ease whether  one is close to becoming a expert or not.That is to say one can decide with great ease whether one is an expert or not.and this possibility of clarity was one of the  many things  that had pushed me towards pursuing research in a purely theoretical research field knowing one day i could become one myself. Though I didnt pursue it and thats another matter. -->
+
+<!-- I find that sort of clarity lacks in the field of quantitative finance. There is no consensus on what is essential and one is forced to choose very early on what kind of role one wishes to pursue  within this field. The job description for majority of quantitative roles are absolutely unclear and even if one were to master each and every topic  that could ever come up in any job description there is still no guarantee  that in the end at the job that  you would ever to make use most of  the things that were in the  job description, similar to DSA being asked in interviews for software engineering roles while at the job the hired engineer majority of the time writing packages , re-factoring code and testing where he hardly gets to implement the things that he was interviewed on. -->
+
+<!-- Lets say we convince ourselves that the field is new and its impact and role within finance yet to be decisively determined hence recruiters try to find a candidate who knows almost everything at least at the basic level  closely related with the field which is reflected in the job description and  with a certain background . So that he can make use of knowledge he has in a  way to tackle and solve a problem at hand. -->
+
+<!-- ### -->
+
+One of the most difficult decisions that I had to make while venturing
+into this field was choose a book to read or videos to watch and stick
+to it without regretting later that it wasn't enough or worse I chose
+the wrong resource. Educating oneself for the purpose of research in
+purely theoretical field is far more simple, you know for sure the list
+of prerequistes for the topic , the books that you need to master the
+topic, current and past important research papers you need to read and
+research work by list of researchers you need to follow voilà you are
+close to becoming an expert in the field given of course you have had
+comprehensive understanding of the topic which you are able explain with
+relative ease. A researcher lets say in the field of pure mathematics
+doesnt care whether his research is going to be relevant in next 10
+years or 20 years,for him the joy lies in solving the problem and coming
+up with innovative solution , it hardly matters whether his research
+topic will be relevant for he has gained a level of expertise to such an
+extent that such a thing were ever to bother him he would just shift his
+focus in a closely related field(assuming there is always a closely
+related field) of relevance with minimal difficulty and at time same
+time continue doing research on the topic and hoping there would be
+someone who might pursue it further later on.
+
+This approach of the researcher I think is the best way to move forward
+in learning any topic. Make yourself an expert in the basics of the
+field and you are free to move around without the overhead of being
+relevant or for that matter employable. To worry about whether the
+resource you have chosen to master a topic is enough or not gets you no
+where.
+<!-- Surely one can make a case where one builds up expertise one single topic and follow a similar path to that of research education. But the primary motivation is fundamentally different. In the former becoming an expert may give the same joy and satisfaction that a rese -->
+
+There are lot many topics within the field of quantitative finance for
+one to come closer to becoming an expert.
+
+On the internet you will find lot many articles listing resources based
+on each topic. In the end they even go on to say the list is not
+exhaustive making even more difficult to choose. I think its nearly
+impossible to cover that many books( they could just be resources for
+reference but that's hardly ever the tone of those articles) in any
+reasonable amount of time.
+
+You can refer to the resources section up top for list of all books , articles , youtube video that I have come across over the period of time. Here I have just listed down couple of books on each topic
+and contents of each topics that one needs to master(based on job
+description for almost any type of quantitative role) and that can be
+completed in a reasonable amount of time(give yourself a year or six months if you are really comfortable with the math ). I have included books that are
+at times quite math heavy since I prefer them more and I have a
+background(Masters) in pure(non-applicable) mathematics. I would suggest
+to get comfortable with math for it becomes easier in manipulating
+models and creating new ones from the existing models without much
+effort. This is particularly true in this field as one proceeds with the
+assumption that all models are wrong, math would help you in converging
+to the reality (ironically).Try to implement the mathematical topics in a programming language of your choice instead of postponing it.
+
+Here is the list of resources that I am currently reading and following:
+
+1.  Statistics and probability
+
+    A. Topics
+
+      * Probability and distributions (All the common and standard distributions) 
+      * Multivariate distributions
+      * Stastical inference
+      * Maximum likelikhood methods
+      * Sufficiency
+      * Generalised linear models
+      * Limiting Distributions
+      * Optimal tests of hypothesis
+      * Non parametric and robust statistics
+      
+
+    B. Books and videos
+      * Introudction to mathematical statistics by Hogg ,Mckean and Craig
+      * Mathematical theory of Bayesian Mathematics by Sumio Watanabe
+      * Statistics for Application by Philippe Rigollet (Youtube video - MIT OCW) 
+2.  Machine learning and deep learning
+      
+    A. Topics
+        
+      * Supervised learning algorithms 
+      * Unsupervised Learning Algorithms
+      * Advanced learning algorithims
+      
+    B Books and Videos
+      
+      * [Theory]Probabilistic Machine learning Book 1 by Kevin Murphy 
+      * [Theory]Understanding Machine learning theory algorithims 
+      * ISLR[Introduction to statistical learnign - good for R implementation] and ESL[Elements of statistical learning- Bible of Statistical Learning] by Hastie and Tibshirani
+      * [Implementation] Hands-On Machine Learning with Scikit-Learn, Kera & Tensorflow by Aurelien Geron
+      * [Bonus Implementation] Machine Learing in C++ by Kiril Kolodiazhnyi
+      * [Coursera - Deep Learning.ai - Andrew Ng] Machine Learning Specialization(This course enough for all intents and purposes unless you wish to delve deeper)
+        
+3.  Stochastic calculus[An absolute on Sell Side]
+    
+    A. Topics
+       
+       * Measure theoretic Probability 
+       * Brownian Motion
+       * Ito's Integral [the most important subtopic]
+       * Ito-Doeblin Formula
+       * Levy Process and Jump Process
+       * Change of Numeraire
+       * Term Structure Models
+       
+    B. Books and videos
+        
+      * Stochastic Calculus for finance II by Steven E Shreve [This is enough for all intents and purposes] 
+      * Mathematical Modeling and computation in finance by Cornelis W Oosterlee and Lech A Grezelak (You can find videos which follow the book by the later author on you tube making it one of the most approachable resource on the Topic) I would sugget to go through this text once before you go for Shreve's book. Shreve's book extensively makes use of Measure Theory(though not in a great detail I would like but more than sufficient for the purpose )
+      * Pricing options with Mathematical Models (Not that detailed in Math but great course on coursera neverthless )
+4.  Mathematics relevant for finance
+      
+
+5.  Financial products (Mostly Options)
+
+6.  Programming tools
+
+    A. Topics
+    
+
+7.  Scientific Computing
+
+8.  TradFi(Traditional Finance)

@@ -46,17 +46,24 @@ website:
                 - text: "book2"
                 
             - text: "Python"
+              href: docu/SEA/python.qmd
             - text: "Complexity Theory"
               
         - section: "Quantitative Finance"
           href: docu/SEA/Q_F/index.qmd
           contents:
-            - text: Stochastic Calculus
+            - text: "Stochastic Calculus"
+              href: docu/SEA/StochC.qmd
             - text: "Econometrics"  
             - text: "Time series analysis"
               href: docu/SEA/time_series.qmd
             - text: "Market Risk Analysis"
               href: docu/SEA/MRA.qmd
+            - text: "Statistics"
+            - text: "Numerical Methods"
+            - text: "Interest rate models"
+              href: docu/SEA/IRM.qmd
+              
         - section: "Crypto/Blockchain"
           contents:
             - text: "EVM"
@@ -74,11 +81,18 @@ website:
         - section: "Trading"
           contents: 
             - text: "Technical Analysis"
-            - text: "Algorithmic Trading"
             - text: "Fudamental Analysis"
             - text: "Financial Products"
-        
-  
+            - href: docu/SEA/financial_products
+            
+        - section: "Machine Learning"
+          contents: 
+            - text: "Data Analysis"
+              href: docu/SEA/data_analysis.qmd
+                
+            - text: "Machine Learning in C++"
+            - text: "Machine Learning Theory and Practice"
+              href: docu/SEA/Machine Learning.qmd
     - id: Resources
       title: "Resources"
       style: "docked"

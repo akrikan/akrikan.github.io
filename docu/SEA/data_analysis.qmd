@@ -1,0 +1,7 @@
+---
+title: "Data Analysis"
+abstract: "Implementation of the book on the same topic by Wes McKinney"
+
+---
+
+##

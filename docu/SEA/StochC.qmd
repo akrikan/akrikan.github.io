@@ -1,0 +1,53 @@
+---
+  title: "Stochastic Calculus"
+  abstract: Would be including the notes and topics from Shreve's book as well topics that would fall into this topic. Will be only including theory , the practical and implementation part woulld be on a different page and that would be bifurcated further based on the programming language. C++ is currently the frontrunner but since visulisation is easier in Python i would be writing code for that as well.<br/><br/>DISCLAIMER THERE IS AT TIMES LOT OF HAND WAVING ,THIS IS NOT AS MATHEMATICALLY RIGOROUS AS YOU WOULD EXPECT IN A PURE MATH TEXTBOOK.
+  toc: true
+  execute: 
+    eval: true
+    warning: false
+  format:
+    html:
+      html-math-method: katex
+      code-block-bg: "#E5E7E9"  
+      style: "background : #E5E7E9"
+---
+
+## General Probability theory
+
+::: {#def-sigma}
+## $\sigma$ algebra
+
+: Let $\Omega$ be a nonempty set , and let $\mathcal{F}$ be a set of collections of subsets of $\Omega$. We say that $\mathcal{F}$ is a $\sigma$ algebra provided that
+
+i)  The empty set $\emptyset$ belongs to $\mathcal{F}$
+ii) $A$ and $A^{c}$ belong to $\mathcal{F}$ whenever A $\in$ $\mathcal{F}$
+iii) whenever $$A_1 ,A_2 ,A_3 ..... \in \mathcal{F}$$ then $\bigcup_{i=1}^\infty A_{i} \in \mathcal{F}$
+:::
+
+<br/> <br/>
+
+::: {#def-ProbMeasure}
+## Probability measure
+
+: Let $\Omega$ be a nonempty set , and let $\mathbb{F}$ be $\sigma$ algebra of subsets of $\Omega$. A probability measure $\mathbb{P}$ is a function that, to every set $A \in \mathcal{F}$ , assigns a number in $[0,1]$ called the probability of $A$ written as $\mathbb{P}(A)$ .We require
+
+i)  $\mathbb{P}(\Omega) = 1$ and
+
+ii) (Countable Additivity) Whenever $A_1,A_2,A_3....$ is a sequence of disjoint sets in $\mathcal{F}$ , then $$\mathbb{P}(\bigcup_{n=1}^\infty A_n) = \sum_{n=1}^{\infty} \mathbb{P}(A_n) $$
+
+<br/> The Triple $(\Omega, \mathcal{F},\mathbb{}P)$ is called probability measure
+:::
+
+<br/> From the above it follows that for finitely many disjoint sets $A_1, A_2,A_3....A_n$ $$\mathbb{P}(\bigcup_{n=1}^N) = \sum_{n=1}^N \mathbb{P}(A_n)$$
+
+and $\mathbb{P}(A^c) = 1 - \mathbb{P}(A)$
+
+::: {#exm-1.1 style="background: #E5E7E9"}
+## Uniform(Lebesgue) measure on $[0,1]$
+
+<br/> $\Omega = [0,1]$<br/> $\mathbb{P}[a,b] = b-a ,0 \leq a \leq b \leq1$ <br/> single points have zero probability and <br/> $(a,b)$ can be written as $$ \bigcup_{n=1}^\infty[a+\frac{1}{n} , b -\frac{1}{n}]$$
+:::
+
+<br/> <br/> The $\sigma$-algebra beginning with closed intervals and adding everything else necessary in order to have a $\sigma$- algebra is called a Borel $\sigma$-algebra and denoted by $\mathcal{B}[0,1]$
+
+<br/><br/>

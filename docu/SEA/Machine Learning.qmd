@@ -1,0 +1,22 @@
+---
+title: "Machine Learning"
+abstract: Covers theory , algorithims and code.
+---
+
+## Introduction
+
+## Resources
+* Books:
+  * Hands on Machine Learning with Sckit-Learn, Keras & TensorFlow by Aurelien Geron\
+  
+  * Introduction to Statistical Learning (ISLR) Hastie and Tibshirani
+  * Elements of Statistical Learning By Hastie and Tibshirani
+
+## Supervised Learning 
+<br/>   
+
+### Linear Regression
+
+
+
+### Logistic Regression
