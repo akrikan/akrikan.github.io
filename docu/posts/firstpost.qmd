@@ -130,8 +130,8 @@ Here is the list of resources that I am currently reading and following:
     B. Books and videos
         
       * Stochastic Calculus for finance II by Steven E Shreve [This is enough for all intents and purposes] 
-      * Mathematical Modeling and computation in finance by Cornelis W Oosterlee and Lech A Grezelak (You can find videos which follow the book by the later author on you tube making it one of the most approachable resource on the Topic) I would sugget to go through this text once before you go for Shreve's book. Shreve's book extensively makes use of Measure Theory(though not in a great detail I would like but more than sufficient for the purpose )
-      * Pricing options with Mathematical Models (Not that detailed in Math but great course on coursera neverthless )
+      * Mathematical Modeling and computation in finance by Cornelis W Oosterlee and Lech A Grezelak (You can find videos which follow the book by the later author on you tube making it one of the most approachable resource on the topic) I would sugget to go through this text once, before you go for Shreve's book. Shreve's book extensively makes use of Measure Theory(though not in a great detail I would like but more than sufficient for the purpose )
+      * Pricing options with Mathematical Models (great course on coursera )
 4.  Mathematics relevant for finance
       
 

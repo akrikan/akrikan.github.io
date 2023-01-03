@@ -65,6 +65,7 @@ website:
               href: docu/SEA/IRM.qmd
               
         - section: "Crypto/Blockchain"
+          href: docu/Crypto/index.qmd
           contents:
             - text: "EVM"
             - text: "Cryptography" 
