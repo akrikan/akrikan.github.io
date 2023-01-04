@@ -151,7 +151,7 @@
     "href": "docu/SEA/StochC.html",
     "title": "Stochastic Calculus",
     "section": "",
-    "text": "Definition 1 (\\sigma algebra) : Let \\Omega be a nonempty set , and let \\mathcal{F} be a set of collections of subsets of \\Omega. We say that \\mathcal{F} is a \\sigma algebra provided that\n\nThe empty set \\emptyset belongs to \\mathcal{F}\nA and A^{c} belong to \\mathcal{F} whenever A \\in \\mathcal{F}\nwhenever A_1 ,A_2 ,A_3 ..... \\in \\mathcal{F} then \\bigcup_{i=1}^\\infty A_{i} \\in \\mathcal{F}\n\n\n \n\nDefinition 2 (Probability measure) : Let \\Omega be a nonempty set , and let \\mathbb{F} be \\sigma algebra of subsets of \\Omega. A probability measure \\mathbb{P} is a function that, to every set A \\in \\mathcal{F} , assigns a number in [0,1] called the probability of A written as \\mathbb{P}(A) .We require\n\n\\mathbb{P}(\\Omega) = 1 and\n(Countable Additivity) Whenever A_1,A_2,A_3.... is a sequence of disjoint sets in \\mathcal{F} , then \\mathbb{P}(\\bigcup_{n=1}^\\infty A_n) = \\sum_{n=1}^{\\infty} \\mathbb{P}(A_n) \n\n The Triple (\\Omega, \\mathcal{F},\\mathbb{}P) is called probability measure\n\n From the above it follows that for finitely many disjoint sets A_1, A_2,A_3....A_n \\mathbb{P}(\\bigcup_{n=1}^N) = \\sum_{n=1}^N \\mathbb{P}(A_n)\nand \\mathbb{P}(A^c) = 1 - \\mathbb{P}(A)\n\nExample 1 (Uniform(Lebesgue) measure on [0,1])  \\Omega = [0,1] \\mathbb{P}[a,b] = b-a ,0 \\leq a \\leq b \\leq1  single points have zero probability and  (a,b) can be written as  \\bigcup_{n=1}^\\infty[a+\\frac{1}{n} , b -\\frac{1}{n}]\n\n  The \\sigma-algebra beginning with closed intervals and adding everything else necessary in order to have a \\sigma- algebra is called a Borel \\sigma-algebra and denoted by \\mathcal{B}[0,1]"
+    "text": "This are list of books , videos and courses that I am currently referencing for content on this page , for more detailed list please check out the resource section above."
   },
   {
     "objectID": "docu/SEA/StochC.html#algebra",
@@ -236,5 +236,33 @@
     "title": "Quarto HTML Basics",
     "section": "LaTeX Math",
     "text": "LaTeX Math\nYou can also include LaTeX math:\n\nP\\left(A=2\\middle|\\frac{A^2}{B}>4\\right)"
+  },
+  {
+    "objectID": "docu/SEA/StochC.html#general-probability-theory",
+    "href": "docu/SEA/StochC.html#general-probability-theory",
+    "title": "Stochastic Calculus",
+    "section": "General Probability theory",
+    "text": "General Probability theory\n\nDefinition 1 (\\sigma algebra) : Let \\Omega be a nonempty set , and let \\mathcal{F} be a set of collections of subsets of \\Omega. We say that \\mathcal{F} is a \\sigma algebra provided that\n\nThe empty set \\emptyset belongs to \\mathcal{F}\nA and A^{c} belong to \\mathcal{F} whenever A \\in \\mathcal{F}\nwhenever A_1 ,A_2 ,A_3 ..... \\in \\mathcal{F} then \\bigcup_{i=1}^\\infty A_{i} \\in \\mathcal{F}\n\n\n \n\nDefinition 2 (Probability measure) : Let \\Omega be a nonempty set , and let \\mathbb{F} be \\sigma algebra of subsets of \\Omega. A probability measure \\mathbb{P} is a function that, to every set A \\in \\mathcal{F} , assigns a number in [0,1] called the probability of A written as \\mathbb{P}(A) .We require\n\n\\mathbb{P}(\\Omega) = 1 and\n(Countable Additivity) Whenever A_1,A_2,A_3.... is a sequence of disjoint sets in \\mathcal{F} , then \\mathbb{P}(\\bigcup_{n=1}^\\infty A_n) = \\sum_{n=1}^{\\infty} \\mathbb{P}(A_n) \n\n The Triple (\\Omega, \\mathcal{F},\\mathbb{}P) is called probability measure\n\n From the above it follows that for finitely many disjoint sets A_1, A_2,A_3....A_n \\mathbb{P}(\\bigcup_{n=1}^N) = \\sum_{n=1}^N \\mathbb{P}(A_n)\nand \\mathbb{P}(A^c) = 1 - \\mathbb{P}(A)\n\nExample 1 (Uniform(Lebesgue) measure on [0,1])  \\Omega = [0,1] \\mathbb{P}[a,b] = b-a ,0 \\leq a \\leq b \\leq1  single points have zero probability and  (a,b) can be written as  \\bigcup_{n=1}^\\infty[a+\\frac{1}{n} , b -\\frac{1}{n}]\n\n  The \\sigma-algebra beginning with closed intervals and adding everything else necessary in order to have a \\sigma- algebra is called a Borel \\sigma-algebra and denoted by \\mathcal{B}[0,1]"
+  },
+  {
+    "objectID": "docu/SEA/index.html#learning-approach",
+    "href": "docu/SEA/index.html#learning-approach",
+    "title": "Sea of Everything",
+    "section": "Learning approach",
+    "text": "Learning approach\nI would be going with top - down approach rather than a bottoms-up approach, a quicker way surely would be sacrificing some important theorems along the way if there are not used in any models , but for all practical purposes bottoms-up approach with a full time job is time consuming and I would have to wait almost a year to even see models and implementation going by that route."
+  },
+  {
+    "objectID": "docu/SEA/StochC.html#brownian-motion",
+    "href": "docu/SEA/StochC.html#brownian-motion",
+    "title": "Stochastic Calculus",
+    "section": "Brownian Motion",
+    "text": "Brownian Motion\n ## Black-Scholes model"
+  },
+  {
+    "objectID": "docu/SEA/StochC.html#learning-approach",
+    "href": "docu/SEA/StochC.html#learning-approach",
+    "title": "Stochastic Calculus",
+    "section": "Learning approach",
+    "text": "Learning approach\nI would be going with top - down approach rather than a bottoms-up approach, a quicker way surely would be sacrificing some important theorems along the way if there are not used in any models , but for all practical purposes bottoms-up approach with a full time job is time consuming and I would have to wait almost a year to even see models and implementation going by that route."
   }
 ]

@@ -1,6 +1,6 @@
 ---
   title: "Stochastic Calculus"
-  abstract: Would be including the notes and topics from Shreve's book as well topics that would fall into this topic. Will be only including theory , the practical and implementation part woulld be on a different page and that would be bifurcated further based on the programming language. C++ is currently the frontrunner but since visulisation is easier in Python i would be writing code for that as well.<br/><br/>DISCLAIMER THERE IS AT TIMES LOT OF HAND WAVING ,THIS IS NOT AS MATHEMATICALLY RIGOROUS AS YOU WOULD EXPECT IN A PURE MATH TEXTBOOK.
+  abstract: Would be including the notes and topics from Shreve's book as well topics that would fall into this topic. Will be only including theory , the practical and implementation part woulld be on a different page and that would be bifurcated further based on the programming language. C++ is currently the frontrunner but since visulisation is easier in Python i would be writing code for that as well.<br/><br/>DISCLAIMER THERE IS AT TIMES LOT OF HAND WAVING ,THIS IS NOT AS MATHEMATICALLY RIGOROUS AS YOU WOULD EXPECT LIKE IN A PURE MATH TEXTBOOK.
   toc: true
   execute: 
     eval: true
@@ -11,6 +11,14 @@
       code-block-bg: "#E5E7E9"  
       style: "background : #E5E7E9"
 ---
+
+## Resources
+
+This are list of books , videos and courses that I am currently referencing for content on this page , for more detailed list please check out the resource section above.
+
+## Learning approach
+
+I would be going with top - down approach rather than a bottoms-up approach, a quicker way surely would be sacrificing some important theorems along the way if there are not used in any models , but for all practical purposes bottoms-up approach with a full time job is time consuming and I would have to wait almost a year to even see models and implementation going by that route.
 
 ## General Probability theory
 
@@ -51,3 +59,7 @@ and $\mathbb{P}(A^c) = 1 - \mathbb{P}(A)$
 <br/> <br/> The $\sigma$-algebra beginning with closed intervals and adding everything else necessary in order to have a $\sigma$- algebra is called a Borel $\sigma$-algebra and denoted by $\mathcal{B}[0,1]$
 
 <br/><br/>
+
+## Brownian Motion
+
+<br/><br/> \## Black-Scholes model

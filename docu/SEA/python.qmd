@@ -20,7 +20,7 @@
     * Built-in types
         * list ,tuple, set, dict and others
     * Built-in functions
-        * print() , len() ,range(),enumerate(),map(),zip()
+        * print() , len() ,range(),enumerate(),map(),zip() and others
     * Built-in modules
         * os,sys,itertools,collecations,math and others
         
