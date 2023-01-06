@@ -1,0 +1,15 @@
+---
+title: Financial Products
+---
+
+## Options 
+
+### Resources
+
+* Option Volatility and Pricing by Sheldon Natenberg
+
+* Options, Futures and Other Derivatives by John C. Hull 
+
+<br/><br/>
+
+## Content
