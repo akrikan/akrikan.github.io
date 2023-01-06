@@ -101,7 +101,6 @@ Let $$\phi(x)  = \frac {a}{\sqrt{2\pi}}e^{\frac{-x^2}{2}}$$ be the standard norm
 Any random variable that has this distribution regardless of the probability space is called standard normal distribution.<br/>
 Thing to note the use of uniformly distributed random variable for generating a standard random variable is called probability integral transform and this is commonly used in Monte Carlo simulation
 
-For further understanding of measure theory 
 :::
 <br/><br/>
 
