@@ -1,36 +1,116 @@
 ---
 title: "Time Series Analysis"
-reference-location: margin
+highlight-style: pygments
 citation-location: margin
-format: html
+execute: 
+  eval: true
+  warning: false
+format:
+  html:
+    html-math-method: katex
+    code-block-bg: "#E5E7E9"
+    df-print: paged
+    code-overflow : wrap
+    code-copy : true
 ---
+
+## Introduction
 
 ### Resources
 
-Time series analysis by James D Hamilton - its considered to be the bible on time series analysis, pretty much covers all the theory , it doesnt have any code or pseudocode.
+-   Time series analysis by James D Hamilton - its considered to be the bible on time series analysis, pretty much covers all the theory , it doesnt have any code or pseudocode
 
-Introduction to Time Series with R by Metcalfe & Coweperwait
+-   Introduction to Time Series with R by Metcalfe & Coweperwait
 
-## Part 1
-### Difference operators
-asd
+-   Analysis of Financial Time Series by Tsay
 
-### Lag operators
+### Aim and Motivation
 
-sdf 
+-   Would be exploring time series analysis in the context of finance
+-   Implementing code from the books above later 2 books mentioned above, would be using the book by Hamilton as reference
+-   Aim to understand different time series models in R.
+-   (Will keep on adding the aims as is go on)
 
-### Stationary ARMA Process
+## Financial Time Series and Linear Time series
 
-sadf
+### Asset Returns
 
-### Forecasting
+::: {#def-Simple_gross_return}
+## Simple gross return
 
-sadf
+<br/> <u>Arithmetic Returns</u>
 
-### Maximum likelihood Estimation
+$$P_t = P_{t-1}(1+R_t) \implies R_t = \frac{P_t - P_{t-1}}{P_t}$$ where $P_t$ and $R_t$ are the price and return at time $t$ respectively <br/> <u>Continuously compounded return or log return</u>
 
-sadf
+$$r_t = \ln(1+R_t)$$ <br/> <u>Dividend Payment</u>
 
-### Spectral Analysis
+$$r_t = \ln(P_t + D_t) -\ln(P_{t-1})$$ Where $D_t$ is dividend payment between time t-1 and time t .
+:::
 
-asdf
+<br/>
+
+::: {#def-Multiperiod_simple_return}
+## Multiperiod gross return
+
+<br/> Similiary we can define <u>multiperiod simple return</u> by $$ R_t[k] = exp{[\frac{1}{k}\sum_{j=0}^{k-1}(1+R_{t-j})]} -1$$ where exp is the exponentential function and k is total number periods the asset was held for.
+
+
+<u>Log return</u> would be $$ r_t[k] = r_t +r_{t-1}+.....+r_{t-k+1}$$
+:::
+
+::: {#def-Portfolio_return}
+## Portfolio Return
+
+$$R_{p,t}= \sum_{i=1}^{N}w_i R_{it}$$
+
+Where $p$ is the portfolio , $i$ the ith asset and $w_i$ the weight of the ith asset in the portofolio
+:::
+
+[* Load data and header  =T give the 1st row of the data file , that is the names of the cloumns of the data set ]{.aside}
+```{r  }
+#| code-block-border-right: false
+# da contains the return for 5 five stocks and indexes namely IBM ,value-weighted , equal-weighted and S&P composite index from 1970 to 2008
+library(fBasics)
+da = read.table("TST/d-ibm3dx7008.txt",header = T) 
+dim(da) # dimensions for the data
+da[1:5,]
+tail(da)#first row
+ibm = da[,2] # IBM simple returns
+
+sibm = ibm*100 #Percentage simple returns 
+
+basicStats(sibm)
+
+s1 = skewness(sibm)
+t = s1/sqrt(6/9845) #defintion for test statistic here 9845 is N 
+t
+pv  = 2*(1-pnorm(t)) # Calculate p-value
+pv
+
+```
+```{r}
+#| layout-ncol: 2
+library(ggplot2)
+ibm = as.data.frame(da[,1:2])
+ibm["log_return"] = log(1+ibm["rtn"])
+colnames(ibm)[2] <- "simple_return"
+ggplot(ibm,aes(x = simple_return,colour = "Emperical"))+ggtitle("Simple return distribution") + xlim (-0.15,0.15)+geom_density()+stat_function(mapping = aes(colour = "Normal"),
+fun = dnorm,args = with(ibm,c(mean =mean(simple_return),sd = sd(simple_return))))
+
+
+ggplot(ibm,aes(x = log_return,colour = "Emperical"))+ggtitle("Log return distribution") + xlim (-0.15,0.15)+geom_density()+
+stat_function(mapping = aes(colour = "Normal"),
+fun = dnorm,args = with(ibm,c(mean = mean(log_return),sd = sd(log_return))))+
+scale_x_continuous("log return distribution",limits = c(-0.15,0.15))
+
+#stat_function(
+#fun = dnorm,args = with(ibm,c(mean =mean(simple_return),sd = sd(simple_return))))+
+```
+The Time serie
+```{r}
+ibm1 = ibm[, 2]
+plot(ibm1,type = 'l')
+ibm2 = ts(ibm1,frequency = 1 ,start = c(1970,1))
+plot.ts(ibm2)
+
+```

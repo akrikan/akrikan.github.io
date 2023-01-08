@@ -1,0 +1,14 @@
+---
+title: DEFI and its related content
+---
+
+## Constant Function Market Making(CFMM)
+<br/>
+
+### An analysis of Uniswap market (Paper by [Guillermo Angeris](https://angeris.github.io/papers/uniswap_analysis.pdf))
+
+* [Motivation]Order book mechaisms are dominant medium of exchange of electronic assets in traditional finance but are quite challenging to use in smart contract environmen since the size of the state needed by an order book to represent the set of outstanding orders is large and extremely costly in the smart contract environment as users must pay for space and compute power utilized.
+
+* A constant product market maker is a market for trading coins of type $\alpha$ for coins of type $\beta$. This market has reserves $R_\alpha > 0$ $R_\beta > 0 $, contstant product $k = R_\alpha R_\beta$, and percentage fee $(1-\gamma)$. A transaction in this market , trading $\Delta_\beta > 0 $ coins $\beta$ for $\Delta_\alpha > 0 $ for coins $\alpha$ , must satisfy 
+$$ (R_\alpha - \Delta_\alpha)(R_\beta + \gamma\Delta_\beta) = k$$
+Its clear to see that the constant terms comes from the product of the two reserves at any given time is always equal to $k$

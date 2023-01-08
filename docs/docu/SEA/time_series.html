@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -62,10 +125,29 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+<link href="../../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="../../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-sidebar docked nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -200,11 +282,16 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   Numerical Methods
   </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docu/SEA/IRM.qmd" class="sidebar-item-text sidebar-link">Interest rate models</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">Crypto/Blockchain</a>
+            <a href="../../docu/Crypto/index.html" class="sidebar-item-text sidebar-link">Crypto/Blockchain</a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -252,9 +339,6 @@ ul.task-list li input[type="checkbox"] {
   Technical Analysis
   </li>
           <li class="sidebar-item">
-  Algorithmic Trading
-  </li>
-          <li class="sidebar-item">
   Fudamental Analysis
   </li>
           <li class="sidebar-item">
@@ -294,21 +378,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#resources" id="toc-resources" class="nav-link active" data-scroll-target="#resources">Resources</a></li>
-  <li><a href="#part-1" id="toc-part-1" class="nav-link" data-scroll-target="#part-1">Part 1</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
   <ul class="collapse">
-  <li><a href="#difference-operators" id="toc-difference-operators" class="nav-link" data-scroll-target="#difference-operators">Difference operators</a></li>
-  <li><a href="#lag-operators" id="toc-lag-operators" class="nav-link" data-scroll-target="#lag-operators">Lag operators</a></li>
-  <li><a href="#stationary-arma-process" id="toc-stationary-arma-process" class="nav-link" data-scroll-target="#stationary-arma-process">Stationary ARMA Process</a></li>
-  <li><a href="#forecasting" id="toc-forecasting" class="nav-link" data-scroll-target="#forecasting">Forecasting</a></li>
-  <li><a href="#maximum-likelihood-estimation" id="toc-maximum-likelihood-estimation" class="nav-link" data-scroll-target="#maximum-likelihood-estimation">Maximum likelihood Estimation</a></li>
-  <li><a href="#spectral-analysis" id="toc-spectral-analysis" class="nav-link" data-scroll-target="#spectral-analysis">Spectral Analysis</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#aim-and-motivation" id="toc-aim-and-motivation" class="nav-link" data-scroll-target="#aim-and-motivation">Aim and Motivation</a></li>
+  </ul></li>
+  <li><a href="#financial-time-series-and-linear-time-series" id="toc-financial-time-series-and-linear-time-series" class="nav-link" data-scroll-target="#financial-time-series-and-linear-time-series">Financial Time Series and Linear Time series</a>
+  <ul class="collapse">
+  <li><a href="#asset-returns" id="toc-asset-returns" class="nav-link" data-scroll-target="#asset-returns">Asset Returns</a></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -327,36 +410,138 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <section id="resources" class="level3">
 <h3 class="anchored" data-anchor-id="resources">Resources</h3>
-<p>Time series analysis by James D Hamilton - its considered to be the bible on time series analysis, pretty much covers all the theory , it doesnt have any code or pseudocode.</p>
-<p>Introduction to Time Series with R by Metcalfe &amp; Coweperwait</p>
+<ul>
+<li><p>Time series analysis by James D Hamilton - its considered to be the bible on time series analysis, pretty much covers all the theory , it doesnt have any code or pseudocode</p></li>
+<li><p>Introduction to Time Series with R by Metcalfe &amp; Coweperwait</p></li>
+<li><p>Analysis of Financial Time Series by Tsay</p></li>
+</ul>
 </section>
-<section id="part-1" class="level2">
-<h2 class="anchored" data-anchor-id="part-1">Part 1</h2>
-<section id="difference-operators" class="level3">
-<h3 class="anchored" data-anchor-id="difference-operators">Difference operators</h3>
-<p>asd</p>
+<section id="aim-and-motivation" class="level3">
+<h3 class="anchored" data-anchor-id="aim-and-motivation">Aim and Motivation</h3>
+<ul>
+<li>Would be exploring time series analysis in the context of finance</li>
+<li>Implementing code from the books above later 2 books mentioned above, would be using the book by Hamilton as reference</li>
+<li>Aim to understand different time series models in R.</li>
+<li>(Will keep on adding the aims as is go on)</li>
+</ul>
 </section>
-<section id="lag-operators" class="level3">
-<h3 class="anchored" data-anchor-id="lag-operators">Lag operators</h3>
-<p>sdf</p>
 </section>
-<section id="stationary-arma-process" class="level3">
-<h3 class="anchored" data-anchor-id="stationary-arma-process">Stationary ARMA Process</h3>
-<p>sadf</p>
-</section>
-<section id="forecasting" class="level3">
-<h3 class="anchored" data-anchor-id="forecasting">Forecasting</h3>
-<p>sadf</p>
-</section>
-<section id="maximum-likelihood-estimation" class="level3">
-<h3 class="anchored" data-anchor-id="maximum-likelihood-estimation">Maximum likelihood Estimation</h3>
-<p>sadf</p>
-</section>
-<section id="spectral-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="spectral-analysis">Spectral Analysis</h3>
-<p>asdf</p>
+<section id="financial-time-series-and-linear-time-series" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="financial-time-series-and-linear-time-series">Financial Time Series and Linear Time series</h2>
+<section id="asset-returns" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="asset-returns">Asset Returns</h3>
+<div id="def-Simple_gross_return" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1 (Simple gross return) </strong></span><br> <u>Arithmetic Returns</u></p>
+<p><span class="math display">P_t = P_{t-1}(1+R_t) \implies R_t = \frac{P_t - P_{t-1}}{P_t}</span> where <span class="math inline">P_t</span> and <span class="math inline">R_t</span> are the price and return at time <span class="math inline">t</span> respectively <br> <u>Continuously compounded return or log return</u></p>
+<p><span class="math display">r_t = \ln(1+R_t)</span> <br> <u>Dividend Payment</u></p>
+<p><span class="math display">r_t = \ln(P_t + D_t) -\ln(P_{t-1})</span> Where <span class="math inline">D_t</span> is dividend payment between time t-1 and time t .</p>
+</div>
+<p><br></p>
+<div id="def-Multiperiod_simple_return" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2 (Multiperiod gross return) </strong></span><br> Similiary we can define <u>multiperiod simple return</u> by <span class="math display"> R_t[k] = exp{[\frac{1}{k}\sum_{j=0}^{k-1}(1+R_{t-j})]} -1</span> where exp is the exponentential function and k is total number periods the asset was held for.</p>
+<p><u>Log return</u> would be <span class="math display"> r_t[k] = r_t +r_{t-1}+.....+r_{t-k+1}</span></p>
+</div>
+<div id="def-Portfolio_return" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 3 (Portfolio Return) </strong></span><span class="math display">R_{p,t}= \sum_{i=1}^{N}w_i R_{it}</span></p>
+<p>Where <span class="math inline">p</span> is the portfolio , <span class="math inline">i</span> the ith asset and <span class="math inline">w_i</span> the weight of the ith asset in the portofolio</p>
+</div>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">* Load data and header =T give the 1st row of the data file , that is the names of the cloumns of the data set</span></div></div>
+<div class="cell" data-code-block-border-right="false">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># da contains the return for 5 five stocks and indexes namely IBM ,value-weighted , equal-weighted and S&amp;P composite index from 1970 to 2008</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fBasics)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>da <span class="ot">=</span> <span class="fu">read.table</span>(<span class="st">"TST/d-ibm3dx7008.txt"</span>,<span class="at">header =</span> T) </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(da) <span class="co"># dimensions for the data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 9845    5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>da[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Date"],"name":[1],"type":["int"],"align":["right"]},{"label":["rtn"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["vwretd"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["ewretd"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["sprtrn"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"19700102","2":"0.000686","3":"0.012137","4":"0.033450","5":"0.010211","_rn_":"1"},{"1":"19700105","2":"0.009596","3":"0.006375","4":"0.018947","5":"0.004946","_rn_":"2"},{"1":"19700106","2":"0.000679","3":"-0.007233","4":"-0.005776","5":"-0.006848","_rn_":"3"},{"1":"19700107","2":"0.000678","3":"-0.001272","4":"0.003559","5":"-0.002047","_rn_":"4"},{"1":"19700108","2":"0.002034","3":"0.000564","4":"0.002890","5":"0.000540","_rn_":"5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(da)<span class="co">#first row</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Date"],"name":[1],"type":["int"],"align":["right"]},{"label":["rtn"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["vwretd"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["ewretd"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["sprtrn"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"20081223","2":"-0.016953","3":"-0.007618","4":"-0.008332","5":"-0.009717","_rn_":"9840"},{"1":"20081224","2":"-0.000993","3":"0.004463","4":"0.005254","5":"0.005781","_rn_":"9841"},{"1":"20081226","2":"0.010060","3":"0.007170","4":"0.011629","5":"0.005356","_rn_":"9842"},{"1":"20081229","2":"-0.000984","3":"-0.004481","4":"-0.016514","5":"-0.003873","_rn_":"9843"},{"1":"20081230","2":"0.028308","3":"0.024951","4":"0.021692","5":"0.024407","_rn_":"9844"},{"1":"20081231","2":"0.007301","3":"0.017513","4":"0.036731","5":"0.014158","_rn_":"9845"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ibm <span class="ot">=</span> da[,<span class="dv">2</span>] <span class="co"># IBM simple returns</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>sibm <span class="ot">=</span> ibm<span class="sc">*</span><span class="dv">100</span> <span class="co">#Percentage simple returns </span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">basicStats</span>(sibm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["sibm"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"9845.000000","_rn_":"nobs"},{"1":"0.000000","_rn_":"NAs"},{"1":"-22.963000","_rn_":"Minimum"},{"1":"13.163600","_rn_":"Maximum"},{"1":"-0.857100","_rn_":"1. Quartile"},{"1":"0.883300","_rn_":"3. Quartile"},{"1":"0.040161","_rn_":"Mean"},{"1":"0.000000","_rn_":"Median"},{"1":"395.387600","_rn_":"Sum"},{"1":"0.017058","_rn_":"SE Mean"},{"1":"0.006724","_rn_":"LCL Mean"},{"1":"0.073599","_rn_":"UCL Mean"},{"1":"2.864705","_rn_":"Variance"},{"1":"1.692544","_rn_":"Stdev"},{"1":"0.061399","_rn_":"Skewness"},{"1":"9.916359","_rn_":"Kurtosis"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>s1 <span class="ot">=</span> <span class="fu">skewness</span>(sibm)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>t <span class="ot">=</span> s1<span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">6</span><span class="sc">/</span><span class="dv">9845</span>) <span class="co">#defintion for test statistic here 9845 is N </span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>t</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.487093
+attr(,"method")
+[1] "moment"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pv  <span class="ot">=</span> <span class="dv">2</span><span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">pnorm</span>(t)) <span class="co"># Calculate p-value</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>pv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.01287919
+attr(,"method")
+[1] "moment"</code></pre>
+</div>
+</div>
+<div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>ibm <span class="ot">=</span> <span class="fu">as.data.frame</span>(da[,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>ibm[<span class="st">"log_return"</span>] <span class="ot">=</span> <span class="fu">log</span>(<span class="dv">1</span><span class="sc">+</span>ibm[<span class="st">"rtn"</span>])</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(ibm)[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">"simple_return"</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ibm,<span class="fu">aes</span>(<span class="at">x =</span> simple_return,<span class="at">colour =</span> <span class="st">"Emperical"</span>))<span class="sc">+</span><span class="fu">ggtitle</span>(<span class="st">"Simple return distribution"</span>) <span class="sc">+</span> <span class="fu">xlim</span> (<span class="sc">-</span><span class="fl">0.15</span>,<span class="fl">0.15</span>)<span class="sc">+</span><span class="fu">geom_density</span>()<span class="sc">+</span><span class="fu">stat_function</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">colour =</span> <span class="st">"Normal"</span>),</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="at">fun =</span> dnorm,<span class="at">args =</span> <span class="fu">with</span>(ibm,<span class="fu">c</span>(<span class="at">mean =</span><span class="fu">mean</span>(simple_return),<span class="at">sd =</span> <span class="fu">sd</span>(simple_return))))</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ibm,<span class="fu">aes</span>(<span class="at">x =</span> log_return,<span class="at">colour =</span> <span class="st">"Emperical"</span>))<span class="sc">+</span><span class="fu">ggtitle</span>(<span class="st">"Log return distribution"</span>) <span class="sc">+</span> <span class="fu">xlim</span> (<span class="sc">-</span><span class="fl">0.15</span>,<span class="fl">0.15</span>)<span class="sc">+</span><span class="fu">geom_density</span>()<span class="sc">+</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="fu">stat_function</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">colour =</span> <span class="st">"Normal"</span>),</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="at">fun =</span> dnorm,<span class="at">args =</span> <span class="fu">with</span>(ibm,<span class="fu">c</span>(<span class="at">mean =</span> <span class="fu">mean</span>(log_return),<span class="at">sd =</span> <span class="fu">sd</span>(log_return))))<span class="sc">+</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_x_continuous</span>(<span class="st">"log return distribution"</span>,<span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.15</span>,<span class="fl">0.15</span>))</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co">#stat_function(</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co">#fun = dnorm,args = with(ibm,c(mean =mean(simple_return),sd = sd(simple_return))))+</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="time_series_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="time_series_files/figure-html/unnamed-chunk-2-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+</div>
+<p>The Time serie</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>ibm1 <span class="ot">=</span> ibm[, <span class="dv">2</span>]</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(ibm1,<span class="at">type =</span> <span class="st">'l'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="time_series_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>ibm2 <span class="ot">=</span> <span class="fu">ts</span>(ibm1,<span class="at">frequency =</span> <span class="dv">1</span> ,<span class="at">start =</span> <span class="fu">c</span>(<span class="dv">1970</span>,<span class="dv">1</span>))</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot.ts</span>(ibm2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="time_series_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 
 
 </section>

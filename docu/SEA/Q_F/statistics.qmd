@@ -1,0 +1,48 @@
+---
+title: Statistics
+---
+
+## Introduction
+## Standard Definitions
+<u>Expected Value</u> $\mathbb{E}[X]$ is given by
+
+$$\mathbb{E}[X] = \int_{-\infty}^{\infty}x f(x) dx$$
+<u>Variance</u>$Var(X)$ is given by
+
+
+$$Var(X) = \mathbb{E}(X^2) - \mathbb{{E(X)}^2}$$
+<u>Higher Moments</u> $\mathbb{E}(X^n)$ is given by
+
+$$\mathbb{E}(X^n) = \int_{-\infty}^{\infty}x^n f(x) dx$$
+
+## Distributions
+
+### Normal Distribution
+
+A random variable $X$ is said to be normally distrbuted if it has a probability density function as follows
+
+$$f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-{\frac{1}{2}}(\frac{x-\mu}{\sigma})^2}$$
+
+It is a continous probability distribution
+
+$\mu$ and $\sigma$ are the mean and variance of the distribution respectively
+
+The case where $\mu =0$ and $\sigma = 1$ is called standard normal distribution and its PDF is given by $$  f(x) =\frac{1}{\sqrt{2\pi}}e^{\frac{-x^2}{2}}$$
+
+
+### Log Normal Distibution 
+
+A random Variable $X$ is said to have log normal distibution if $Y = \ln{X}$ and $Y$ is normally distributed.
+
+The PDF of log normal distribution is given by 
+
+$$f(x) = \frac{1}{x\sigma\sqrt{2\pi}}e^{(-\frac{(\ln{x} -\mu)^2}{2{\sigma}^2})}$$ where $\mu$ and  $\sigma$ are the mean and variance of $Y(\ln X)$ respectively.
+
+Hence the mean $\mu^*$ and variance $\sigma^*$ of X are as follows
+
+
+$$\mu^* = e^{\mu + \frac{1}{2}\sigma^2}$$
+$$\sigma^* = e^{2\mu + 2\sigma^2} - e^{2\mu +\sigma^2}$$
+Important thing to note here is that  $x$ can take values in $(0,\infty)$ only.
+
+
