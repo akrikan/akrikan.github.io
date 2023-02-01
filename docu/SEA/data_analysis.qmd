@@ -1,7 +1,86 @@
 ---
-title: "Data Analysis"
-abstract: "Implementation of the book on the same topic by Wes McKinney"
-
+title: Data Analysis for Python
+abstract: Implementation of the book on the same topic by Wes McKinney
+keep-ipynb: true
+toc: true
+execute:
+  freeze: true
+  evaluate: false
+jupyter: python3
 ---
 
-##
+## Introduction
+
+List of important libraries and tools that are mainly used for data analysis in python
+* Numpy: Numerical Python has great array processing capabilities. Mostly used to pass data to algorithims from datasets/libraries. It gives the ability to perform linear algebra operations ,Fourier transforms with ease. 
+
+* Pandas: Mostly used to manipulate and create new data structures. 
+
+* Matplotlib: Used for plots and other two dimensional data visualizations 
+
+* Jupyter: Commonly used for testing , running iterations, debugging before sending off the code to production. Jupyter notebook supports R , python and julia programming languages as well as markdown for documenting the files
+
+* SciPy: Scientific computing library. Provides functionality to integrate , optimise , signal processing,etc... 
+
+* Scikit-learn: The library has machine learning models which can be used out of the box. Has all the standard machine learning models.
+
+All of the above tools and libraries are very well documented and navigating through them is relatively easy.
+
+```{python}
+#Importing Libraries
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import statsmodels as sm
+```
+
+## Python
+
+### Ipython Shortcuts
+
+* %a: Commonly known as magic functions. Specific to Ipython kernel
+
+* %run a.py: runs the python file a.py located in the same working directory
+
+* %quickref: gives quick reference
+
+* help - help function for Ipython
+
+* a?: gives general information about the object a
+
+* %load a.py: Import a.py script into the code cell
+
+* %paste: Will paste contents in the keyboard and execute the as a single block
+
+* %timeit b:Gives the execution time of python statement b.Can be run muliple times giving the average time over all iterations as output.
+
+* %debug: Various positional arguments available to debug a python statement.
+
+* %pwd: Gives current path as output
+
+* %xdel variable : Deletes teh varaible and attempt to clear all references to the object in python
+
+### Python
+
+```{python}
+#checks the current versiom of kernel being used
+import sys
+print(sys.executable)
+print(sys.version)
+print(sys.version_info)
+```
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```
+

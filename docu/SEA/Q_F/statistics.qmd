@@ -3,46 +3,104 @@ title: Statistics
 ---
 
 ## Introduction
+
 ## Standard Definitions
-<u>Expected Value</u> $\mathbb{E}[X]$ is given by
 
-$$\mathbb{E}[X] = \int_{-\infty}^{\infty}x f(x) dx$$
-<u>Variance</u>$Var(X)$ is given by
+<u>Expected Value</u>  $\mathbb{E}[X]$ is given by
 
+$$\mathbb{E}[X] = \int_{-\infty}^{\infty}x f(x) dx$$ <u>Variance</u>$Var(X)$ is given by
 
-$$Var(X) = \mathbb{E}(X^2) - \mathbb{{E(X)}^2}$$
+$$Var(X) = \mathbb{E}(X^2) - \mathbb{E}{{(X)}^2}$$
+$$Var(X) = \int_{-\infty}^{\infty}(x-\mathbb{E}[X])^2 f_X(x) dx$$
 <u>Higher Moments</u> $\mathbb{E}(X^n)$ is given by
 
-$$\mathbb{E}(X^n) = \int_{-\infty}^{\infty}x^n f(x) dx$$
+$$\mathbb{E}(X^n) = \int_{-\infty}^{\infty}x^n f_X(x) dx $$
+<u>Characteristic function(CHF)</u> $\phi_X(u)$ for $u \in \mathbb{R}$ is given by
 
-## Distributions
+$$\phi_X(u) = \mathbb{E}[e^{iuX}] = \int_{-\infty}^{\infty}e^{iuX}f(x)dx $$
+
+<u>Moment generating function</u>$\mathcal{M}_X(u)$ is given by 
+$$\mathcal{M}_X(u) = \phi_X(-iu)= \mathbb{E}[e^{uX}] = \int_{-\infty}^{\infty}e^{ux}f(x)dx $$
+<u>Cumulant characteristic function</u> $\zeta_X(u)$ is given by
+$$\zeta_X(u) = log\mathbb{E}[e^{iux}] = log\phi_X(u)$$
+
+## Univaiate Distributions
 
 ### Normal Distribution
 
 A random variable $X$ is said to be normally distrbuted if it has a probability density function as follows
 
-$$f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-{\frac{1}{2}}(\frac{x-\mu}{\sigma})^2}$$
+$$f_X(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-{\frac{1}{2}}(\frac{x-\mu}{\sigma})^2}$$
 
 It is a continous probability distribution
 
 $\mu$ and $\sigma$ are the mean and variance of the distribution respectively
 
-The case where $\mu =0$ and $\sigma = 1$ is called standard normal distribution and its PDF is given by $$  f(x) =\frac{1}{\sqrt{2\pi}}e^{\frac{-x^2}{2}}$$
+The case where $\mu =0$ and $\sigma = 1$ is called standard normal distribution and its PDF is given by $$  f_X(x) =\frac{1}{\sqrt{2\pi}}e^{\frac{-x^2}{2}}$$
+
+```{python}
+import numpy as np
+import math 
+import matplotlib.pyplot as plt
+import scipy.stats as st
+from mpl_toolkits import mplot3d
 
 
-### Log Normal Distibution 
+def plotNormalPDF_CDF_CHF(mu ,sigma):
+    i = complex(0,1)
+    chf = lambda u : np.exp(i*mu*u -(sigma**2)*u*u/2)
+    pdf = lambda x : st.norm.pdf(x,mu,sigma)
+    cdf = lambda x : st.norm.cdf(x,mu,sigma)
+    
+    x = np.linspace(5,15,100)
+    u = np.linspace(0,5,250)
+    print(type(pdf))
+    # figure 1 ,PDF
+    plt.figure(1)
+    plt.plot(x,pdf(x))
+    plt.grid()
+    plt.xlabel('x')
+    plt.ylabel('PDF')
+  
+    # figure 2 ,CDF
+    plt.figure(2)
+    plt.plot(x,cdf(x))
+    plt.grid()
+    plt.xlabel('x')
+    plt.ylabel('CDF')
+  
+    #  figure 3 ,CHF
+  
+    plt.figure(3)
+    ax = plt.axes(projection = '3d')
+    chfV = chf(u)
+  
+    x = np.real(chfV)
+    y = np.imag(chfV)
+    ax.plot3D(u,x,y,'red')
+    ax.view_init(30 ,-120)
+    
+plotNormalPDF_CDF_CHF(10,1)
+  
+```
+
+### Log Normal Distibution
 
 A random Variable $X$ is said to have log normal distibution if $Y = \ln{X}$ and $Y$ is normally distributed.
 
-The PDF of log normal distribution is given by 
+The PDF of log normal distribution is given by
 
-$$f(x) = \frac{1}{x\sigma\sqrt{2\pi}}e^{(-\frac{(\ln{x} -\mu)^2}{2{\sigma}^2})}$$ where $\mu$ and  $\sigma$ are the mean and variance of $Y(\ln X)$ respectively.
+$$f_X(x) = \frac{1}{x\sigma\sqrt{2\pi}}e^{(-\frac{(\ln{x} -\mu)^2}{2{\sigma}^2})}$$ where $\mu$ and $\sigma$ are the mean and variance of $Y(\ln X)$ respectively.
 
 Hence the mean $\mu^*$ and variance $\sigma^*$ of X are as follows
 
+$$\mu^* = e^{\mu + \frac{1}{2}\sigma^2}$$ $$\sigma^* = e^{2\mu + 2\sigma^2} - e^{2\mu +\sigma^2}$$ Important thing to note here is that $x$ can take values in $(0,\infty)$ only.
 
-$$\mu^* = e^{\mu + \frac{1}{2}\sigma^2}$$
-$$\sigma^* = e^{2\mu + 2\sigma^2} - e^{2\mu +\sigma^2}$$
-Important thing to note here is that  $x$ can take values in $(0,\infty)$ only.
+## Multivariate Distributions
 
+### Correlation
 
+The correlation coefficient between two random variables $X$ and $Y$ is defined as $$ \rho_{x,y} = \frac{Cov(X,Y)}{\sqrt{Var(X)Var(Y)}} = \frac{E[(X-\mu_x)(Y-\mu_y)]}{\sqrt{E(X-\mu_x)^2E(Y-\mu_y)^2}}$$
+ 
+The sample correlation is given by 
+$$ \hat\rho_{x,y} = \frac{\sum_{t=1}^{T}(x_t - \bar{x})(y_t - \bar{y})}{\sqrt{\sum_{t=1}^T(x_t - \bar{x})\sum_{t=1}^T(y_t - \bar{y})}}$$

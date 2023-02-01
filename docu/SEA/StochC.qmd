@@ -14,13 +14,16 @@
 
 ## Resources
 
-This are list of books , videos and courses that I am currently referencing for content on this page , for more detailed list please check out the resource section above.
+These are list of books , videos and courses that I am currently referencing for content on this page , for more detailed list please check out the resource section above.
 
-## Learning approach
+* Mathematical modelling and computation in finance by
+  Cornerlis Ooseterlee and Lech Grzelak (Main Text)
+  
+*   Stochastic CalcuIus for Finance II Continuous-Time Models by Steven Shreve (Main Reference text)
 
-I would be going with top - down approach rather than a bottoms-up approach, a quicker way surely would be sacrificing some important theorems along the way if they are not used in any models , but for all practical purposes bottoms-up approach with a full time job is time consuming and I would have to wait almost a year to even see models and implementation going by that route.
+* Stochastic Differential Equations By Bernt Oksendal
 
-## General Probability theory
+## Preliminaries
 
 ::: {#def-sigma}
 ## $\sigma$ algebra

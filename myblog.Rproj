@@ -13,5 +13,7 @@ RnwWeave: Sweave
 LaTeX: XeLaTeX
 
 PythonType: system
-PythonVersion: 3.9.13
-PythonPath: /opt/homebrew/bin/python3.9
+PythonVersion: 3.10.9
+PythonPath: /opt/homebrew/bin/python3.10
+
+SpellingDictionary: en_GB

@@ -54,12 +54,12 @@ website:
           contents:
             - text: "Stochastic Calculus"
               href: docu/SEA/StochC.qmd
-            - text: "Econometrics"  
-            - text: "Time series analysis"
+            - text: "Time series and Econometric analysis"
               href: docu/SEA/time_series.qmd
             - text: "Market Risk Analysis"
               href: docu/SEA/MRA.qmd
             - text: "Statistics"
+              href: "docu/SEA/Q_F/statistics.qmd"
             - text: "Numerical Methods"
             - text: "Interest rate models"
               href: docu/SEA/IRM.qmd
@@ -67,7 +67,8 @@ website:
         - section: "Crypto/Blockchain"
           href: docu/Crypto/index.qmd
           contents:
-            - text: "EVM"
+            - text: "EVM and Defi stuff"
+              href: docu/Crypto/evmdefi.qmd
             - text: "Cryptography" 
         
         - section: "Mathematics"
@@ -111,13 +112,9 @@ website:
               href: docu/Resources/LaTex.qmd
             - text: "Machine Learning"
     
-        - section: "Course Notes"
-          href: docu/Resources/resourcelist.qmd
-          contents: 
-            - text: 
-              href:
-            - text: 
-              href: 
+        - text: "Research Papers"
+          href: docu/Resources/Research_papers.qmd
+      
     - id: project      
    ###
     # - id: Book_Implementation

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Krishnakant A - Time Series Analysis</title>
+<title>Krishnakant A - Time Series and Econometric Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -198,7 +198,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Time Series Analysis</h1>
+      <h1 class="quarto-secondary-nav-title">Time Series and Econometric Analysis</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -264,11 +264,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </div>
 </li>
           <li class="sidebar-item">
-  Econometrics
-  </li>
-          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docu/SEA/time_series.html" class="sidebar-item-text sidebar-link active">Time series analysis</a>
+  <a href="../../docu/SEA/time_series.html" class="sidebar-item-text sidebar-link active">Time series and Econometric analysis</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -298,8 +295,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
-  EVM
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../../docu/Crypto/evmdefi.qmd" class="sidebar-item-text sidebar-link">EVM and Defi stuff</a>
+  </div>
+</li>
           <li class="sidebar-item">
   Cryptography
   </li>
@@ -386,6 +385,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#financial-time-series-and-linear-time-series" id="toc-financial-time-series-and-linear-time-series" class="nav-link" data-scroll-target="#financial-time-series-and-linear-time-series">Financial Time Series and Linear Time series</a>
   <ul class="collapse">
   <li><a href="#asset-returns" id="toc-asset-returns" class="nav-link" data-scroll-target="#asset-returns">Asset Returns</a></li>
+  <li><a href="#linear-time-series" id="toc-linear-time-series" class="nav-link" data-scroll-target="#linear-time-series">Linear Time Series</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -395,7 +395,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Time Series Analysis</h1>
+<h1 class="title d-none d-lg-block">Time Series and Econometric Analysis</h1>
 </div>
 
 
@@ -450,7 +450,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Where <span class="math inline">p</span> is the portfolio , <span class="math inline">i</span> the ith asset and <span class="math inline">w_i</span> the weight of the ith asset in the portofolio</p>
 </div>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">* Load data and header =T give the 1st row of the data file , that is the names of the cloumns of the data set</span></div></div>
-<div class="cell" data-code-block-border-right="false">
+<div class="cell" data-code-block-border-right="false" data-hash="time_series_cache/html/unnamed-chunk-1_5f454dd171078270159db11d2cc6f3dc">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># da contains the return for 5 five stocks and indexes namely IBM ,value-weighted , equal-weighted and S&amp;P composite index from 1970 to 2008</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fBasics)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>da <span class="ot">=</span> <span class="fu">read.table</span>(<span class="st">"TST/d-ibm3dx7008.txt"</span>,<span class="at">header =</span> T) </span>
@@ -518,7 +518,7 @@ attr(,"method")
 <span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_x_continuous</span>(<span class="st">"log return distribution"</span>,<span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.15</span>,<span class="fl">0.15</span>))</span>
 <span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co">#stat_function(</span></span>
 <span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co">#fun = dnorm,args = with(ibm,c(mean =mean(simple_return),sd = sd(simple_return))))+</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell quarto-layout-panel">
+<div class="cell quarto-layout-panel" data-hash="time_series_cache/html/unnamed-chunk-2_1c8afad8c2c36a24f95519a541f00a55">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img src="time_series_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
@@ -529,18 +529,37 @@ attr(,"method")
 </div>
 </div>
 </div>
-<p>The Time serie</p>
-<div class="cell">
+<div class="cell" data-hash="time_series_cache/html/unnamed-chunk-3_2c3a2fd595ce60c46e34ba2ffa27619e">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>ibm1 <span class="ot">=</span> ibm[, <span class="dv">2</span>]</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(ibm1,<span class="at">type =</span> <span class="st">'l'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="time_series_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>ibm2 <span class="ot">=</span> <span class="fu">ts</span>(ibm1,<span class="at">frequency =</span> <span class="dv">1</span> ,<span class="at">start =</span> <span class="fu">c</span>(<span class="dv">1970</span>,<span class="dv">1</span>))</span>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>ibm2 <span class="ot">=</span> <span class="fu">ts</span>(ibm1,<span class="at">frequency =</span> <span class="dv">250</span> ,<span class="at">start =</span> <span class="fu">c</span>(<span class="dv">1970</span>,<span class="dv">1</span>))</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot.ts</span>(ibm2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="time_series_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid" width="672"></p>
 </div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">acf</span>(ibm1,<span class="at">lag =</span><span class="dv">250</span>,<span class="at">ylim=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.05</span>,<span class="fl">0.05</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="time_series_files/figure-html/unnamed-chunk-3-3.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">acf</span>(ibm2,<span class="at">lag=</span><span class="dv">250</span>,<span class="at">ylim=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.05</span>,<span class="fl">0.05</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="time_series_files/figure-html/unnamed-chunk-3-4.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="linear-time-series" class="level3">
+<h3 class="anchored" data-anchor-id="linear-time-series">Linear Time Series</h3>
+<div id="def-Stationarity" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 4 (Stationarity) </strong></span>Foundation of time series analysis is Stationarity. A time series <span class="math inline">\{r_t\}</span> is said to be <u>strictly stationary</u> if the joint distribution of <span class="math inline">(r_{t_{1}},r_{t_{2}},r_{t_{3}},....,r_{t_{k}})</span> is identical to that of <span class="math inline">(r_{t_{1+t}},r_{t_{2+t}},r_{t_{3+t}},....,r_{t_{k+t}})</span> for all <span class="math inline">t</span> , where <span class="math inline">k</span> is an arbitrary positive integer and <span class="math inline">(t_1,t_2,t_3,....,t_k)</span> is collection of <span class="math inline">k</span> positive integers. Strict stationarity is very hard to verify emperically <br> A time series is said to be <u>weakly stationary</u> if the mean of <span class="math inline">r_t</span> and the covariance between <span class="math inline">r_t</span> and <span class="math inline">r_{t-l}</span> are time invariant where <span class="math inline">l</span> is an arbitrary integer. Weak stationarity enables us to make inference cooncerning future observations</p>
+<p>Weak stationarity is commonly studied and more practical.</p>
+<p>The covariance <span class="math inline">\gamma_l = Cov(r_t,r_{t-l})</span> is called the <u>lag-<span class="math inline">l</span> autocovariance of <span class="math inline">r_t</span></u>. From the above defintion it follows that</p>
+<ul>
+<li><span class="math inline">\gamma_0=Var(r_t)</span></li>
+<li><span class="math inline">\gamma_{-l} = \gamma_l</span></li>
+</ul>
 </div>
 
 
