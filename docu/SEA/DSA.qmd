@@ -1,0 +1,5 @@
+---
+title: Data Structure and algorithims
+abstract: Implementation all data structure and algorithims that I have come across in C++/Python. Some of them are through solving problems and some of  them the direct implemetation of pseudo code.
+---
+

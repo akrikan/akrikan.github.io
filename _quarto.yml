@@ -40,15 +40,11 @@ website:
         - section: "Computer Science"
           collapse: true
           contents:
-            - section: "C++"
-              contents: 
-                - text: "book1"
-                - text: "book2"
-                
-            - text: "Python"
+            - text: "Programming languages"
               href: docu/SEA/python.qmd
             - text: "Complexity Theory"
-              
+            - text: "DSA"
+              href : docu/SEA/DSA.qmd
         - section: "Quantitative Finance"
           href: docu/SEA/Q_F/index.qmd
           contents:

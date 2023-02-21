@@ -142,9 +142,9 @@
   {
     "objectID": "docu/SEA/python.html",
     "href": "docu/SEA/python.html",
-    "title": "Python Programming language",
+    "title": "Programming language",
     "section": "",
-    "text": "High Level language - Strong abstraction, easy to use and easy to understand syntax.\nGeneral purpose programming language\nIndentation important\nCase Sensitive\nSupports multiple programming paradigms such OOP and functional\nExcellently documented and comprehensive standard library\nDynamically but Strongly typed - Types are checked at run time and forbids operations that are not of the same type\nGarbage collected - Automatic memory management"
+    "text": "High Level language - Strong abstraction, easy to use and easy to understand syntax.\nGeneral purpose programming language\nIndentation important\nCase Sensitive\nSupports multiple programming paradigms such OOP and functional\nExcellently documented and comprehensive standard library\nDynamically but Strongly typed - Types are checked at run time and forbids operations that are not of the same type\nGarbage collected - Automatic memory management\n\n\n\n\n\nThe Python Standard Library\n\nBuilt-in types\n\nlist ,tuple, set, dict and others\n\nBuilt-in functions\n\nprint() , len() ,range(),enumerate(),map(),zip() and others\n\nBuilt-in modules\n\nos,sys,itertools,collecations,math and others"
   },
   {
     "objectID": "docu/SEA/StochC.html",
@@ -361,7 +361,7 @@
     "href": "docu/SEA/data_analysis.html#python",
     "title": "Data Analysis for Python",
     "section": "Python",
-    "text": "Python\n\nIpython Shortcuts\n\n%a: Commonly known as magic functions. Specific to Ipython kernel\n%run a.py: runs the python file a.py located in the same working directory\n%quickref: gives quick reference\nhelp - help function for Ipython\na?: gives general information about the object a\n%load a.py: Import a.py script into the code cell\n%paste: Will paste contents in the keyboard and execute the as a single block\n%timeit b:Gives the execution time of python statement b.Can be run muliple times giving the average time over all iterations as output.\n%debug: Various positional arguments available to debug a python statement.\n%pwd: Gives current path as output\n%xdel variable : Deletes teh varaible and attempt to clear all references to the object in python\n\n\n\nPython\n\n#checks the current versiom of kernel being used\nimport sys\nprint(sys.executable)\nprint(sys.version)\nprint(sys.version_info)\n\n/opt/homebrew/opt/python@3.10/bin/python3.10\n3.10.8 (main, Oct 13 2022, 09:48:40) [Clang 14.0.0 (clang-1400.0.29.102)]\nsys.version_info(major=3, minor=10, micro=8, releaselevel='final', serial=0)\n\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()"
+    "text": "Python\n\nIpython Shortcuts\n\n%a: Commonly known as magic functions. Specific to Ipython kernel\n%run a.py: runs the python file a.py located in the same working directory\n%quickref: gives quick reference\nhelp - help function for Ipython\na?: gives general information about the object a\n%load a.py: Import a.py script into the code cell\n%paste: Will paste contents in the keyboard and execute the as a single block\n%timeit b:Gives the execution time of python statement b.Can be run muliple times giving the average time over all iterations as output.\n%debug: Various positional arguments available to debug a python statement.\n%pwd: Gives current path as output\n%xdel variable : Deletes teh varaible and attempt to clear all references to the object in python\n\n\n\nPython\n\n#checks the current versiom of kernel being used\nimport sys\nprint(sys.executable)\nprint(sys.version)\nprint(sys.version_info)\n\n/opt/homebrew/opt/python@3.10/bin/python3.10\n3.10.9 (main, Dec 15 2022, 17:11:09) [Clang 14.0.0 (clang-1400.0.29.202)]\nsys.version_info(major=3, minor=10, micro=9, releaselevel='final', serial=0)\n\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()"
   },
   {
     "objectID": "docu/Resources/Research_papers.html#compuational-finance",
@@ -397,5 +397,26 @@
     "title": "Stochastic Calculus",
     "section": "Preliminaries",
     "text": "Preliminaries\n\nDefinition 1 (\\sigma algebra) : Let \\Omega be a nonempty set , and let \\mathcal{F} be a set of collections of subsets of \\Omega. We say that \\mathcal{F} is a \\sigma algebra provided that\n\nThe empty set \\emptyset belongs to \\mathcal{F}\nA and A^{c} belong to \\mathcal{F} whenever A \\in \\mathcal{F}\nwhenever A_1 ,A_2 ,A_3 ..... \\in \\mathcal{F} then \\bigcup_{i=1}^\\infty A_{i} \\in \\mathcal{F}\n\n\n \n\nDefinition 2 (Probability measure) : Let \\Omega be a nonempty set , and let \\mathbb{F} be \\sigma algebra of subsets of \\Omega. A probability measure \\mathbb{P} is a function that, to every set A \\in \\mathcal{F} , assigns a number in [0,1] called the probability of A written as \\mathbb{P}(A) .We require\n\n\\mathbb{P}(\\Omega) = 1 and\n(Countable Additivity) Whenever A_1,A_2,A_3.... is a sequence of disjoint sets in \\mathcal{F} , then \\mathbb{P}(\\bigcup_{n=1}^\\infty A_n) = \\sum_{n=1}^{\\infty} \\mathbb{P}(A_n) \n\n The Triple (\\Omega, \\mathcal{F},\\mathbb{}P) is called probability measure\n\n From the above it follows that for finitely many disjoint sets A_1, A_2,A_3....A_n \\mathbb{P}(\\bigcup_{n=1}^N) = \\sum_{n=1}^N \\mathbb{P}(A_n)\nand \\mathbb{P}(A^c) = 1 - \\mathbb{P}(A)\n\nExample 1 (Uniform(Lebesgue) measure on [0,1])  \\Omega = [0,1] \\mathbb{P}[a,b] = b-a ,0 \\leq a \\leq b \\leq1  single points have zero probability and  (a,b) can be written as  \\bigcup_{n=1}^\\infty[a+\\frac{1}{n} , b -\\frac{1}{n}]\n\n  The \\sigma-algebra beginning with closed intervals and adding everything else necessary in order to have a \\sigma- algebra is called a Borel \\sigma-algebra and denoted by \\mathcal{B}[0,1]. Borel \\sigma-algebras are \\sigma-algebra generated by open sets and equivalently closed sets over any topological space.\n\nDefinition 3 let (\\Omega,\\mathcal{F},\\mathbb{P}) be a probability space. If a set A \\in \\mathcal{F} satisfies \\mathbb{P}(A) = 1, we say the event A occurs almost surely\n\n\nExample 2 Let \\mathbb{P} be the uniform measure as defined in example 1. Define X(\\omega) = \\omega and Y(\\omega) = 1 - \\omega for all \\omega \\in [0,1] , then the distribution measure of X is uniform \\mu_{X}[a,b] = \\mathbb{P}\\{\\omega;a\\leq X(w)\\leq b\\} = \\mathbb{P}[a,b] = b-a, 0\\leq a \\leq b \\leq 1 by definition of \\mathbb{P}.  Its easy to see to see that X and Y have the same distribution. But under the probability measure\\mathbb{\\widetilde{P}} on [0,1] defined by \\mathbb{\\widetilde{P}[a,b]} = \\int_a^b 2\\omega \\, d\\omega = b^2-a^2  , 0 \\leq a\\leq b \\leq1  X and Y have different distributions.\n\n\nDefinition 4 (cumulative distribution function and density function)  F(x) = \\mathbb{P}\\{X \\leq x\\} , x \\in \\mathbb{R} \\mu_X[a,b] = \\mathbb{P}\\{a \\leq X \\leq b \\} = \\int_a^b f(x) \\, dx , -\\infty < a \\leq b < \\infty f(x) is called the density funtion and F(x) is called the cummulative distribution function.\n\n\nExample 3 (Standard normal random variable) Let \\phi(x)  = \\frac {a}{\\sqrt{2\\pi}}e^{\\frac{-x^2}{2}} be the standard normal density and definiing the cummulative normal distribution function as N(x) = \\int_{-\\infty}^x \\phi(\\xi)\\,d\\xi The function N(x) is strictly increasing function which is surjective onto (0,1) from \\mathbb{R}, so it has a strictly increasing inverse function N^{-1}(y),y \\in (0,1). Let Y be a uniformly distributed random variable defined on some probability space (\\Omega,\\mathcal{F},\\mathbb{P}) and set X = N^{-1}(Y) then\n\\begin{align*}\n\n\\mu_X[a,b] &= \\mathbb{P}\\{\\omega \\in \\Omega ; a \\leq X(\\omega) \\leq b\\} \\\\\n\n          &= \\mathbb{P}\\{\\omega \\in \\Omega ; a \\leq N^{-1}(Y(\\omega)) \\leq b\\}\\\\\n            \n          &= \\mathbb{P}\\{\\omega \\in \\Omega ; N(a) \\leq Y(\\omega) \\leq N(b) \\} \\\\\n        \n          &= N(b) - N(a) \\\\\n          &= \\int_a^b \\phi(x) \\, dx\n\n\\end{align*}\nAny random variable that has this distribution regardless of the probability space is called standard normal distribution. Thing to note the use of uniformly distributed random variable for generating a standard random variable is called probability integral transform and this is commonly used in Monte Carlo simulation"
+  },
+  {
+    "objectID": "docu/SEA/python.html#c",
+    "href": "docu/SEA/python.html#c",
+    "title": "Programming language",
+    "section": "C++",
+    "text": "C++"
+  },
+  {
+    "objectID": "docu/SEA/python.html#rust",
+    "href": "docu/SEA/python.html#rust",
+    "title": "Programming language",
+    "section": "Rust",
+    "text": "Rust"
+  },
+  {
+    "objectID": "docu/SEA/python.html#r",
+    "href": "docu/SEA/python.html#r",
+    "title": "Programming language",
+    "section": "R",
+    "text": "R"
   }
 ]

@@ -1,9 +1,9 @@
 ---
-  title: "Python Programming language"
-  abstract: Will cover the basics and mostly advanced functionalities of python as well as the libraries and that are commonly used and important, Wont be adding machine learning libraries and will keep it restricted to purely to the programming language 
+  title: "Programming language"
+  abstract: Mostly for Self- reference
 ---
-
-## Introduction
+## Python
+### Introduction
 
 -   High Level language - Strong abstraction, easy to use and easy to understand syntax.
 -   General purpose programming language
@@ -14,7 +14,7 @@
 -   Dynamically but Strongly typed - Types are checked at run time and forbids operations that are not of the same type
 -   Garbage collected - Automatic memory management
 
-## Basics
+### Basics
 
  * The Python Standard Library
     * Built-in types
@@ -24,3 +24,9 @@
     * Built-in modules
         * os,sys,itertools,collecations,math and others
         
+        
+## C++
+
+## Rust
+
+## R
