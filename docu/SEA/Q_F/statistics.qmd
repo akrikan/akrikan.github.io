@@ -6,23 +6,17 @@ title: Statistics
 
 ## Standard Definitions
 
-<u>Expected Value</u>  $\mathbb{E}[X]$ is given by
+<u>Expected Value</u> $\mathbb{E}[X]$ is given by
 
 $$\mathbb{E}[X] = \int_{-\infty}^{\infty}x f(x) dx$$ <u>Variance</u>$Var(X)$ is given by
 
-$$Var(X) = \mathbb{E}(X^2) - \mathbb{E}{{(X)}^2}$$
-$$Var(X) = \int_{-\infty}^{\infty}(x-\mathbb{E}[X])^2 f_X(x) dx$$
-<u>Higher Moments</u> $\mathbb{E}(X^n)$ is given by
+$$Var(X) = \mathbb{E}(X^2) - \mathbb{E}{{(X)}^2}$$ $$Var(X) = \int_{-\infty}^{\infty}(x-\mathbb{E}[X])^2 f_X(x) dx$$ <u>Higher Moments</u> $\mathbb{E}(X^n)$ is given by
 
-$$\mathbb{E}(X^n) = \int_{-\infty}^{\infty}x^n f_X(x) dx $$
-<u>Characteristic function(CHF)</u> $\phi_X(u)$ for $u \in \mathbb{R}$ is given by
+$$\mathbb{E}(X^n) = \int_{-\infty}^{\infty}x^n f_X(x) dx $$ <u>Characteristic function(CHF)</u> $\phi_X(u)$ for $u \in \mathbb{R}$ is given by
 
 $$\phi_X(u) = \mathbb{E}[e^{iuX}] = \int_{-\infty}^{\infty}e^{iuX}f(x)dx $$
 
-<u>Moment generating function</u>$\mathcal{M}_X(u)$ is given by 
-$$\mathcal{M}_X(u) = \phi_X(-iu)= \mathbb{E}[e^{uX}] = \int_{-\infty}^{\infty}e^{ux}f(x)dx $$
-<u>Cumulant characteristic function</u> $\zeta_X(u)$ is given by
-$$\zeta_X(u) = log\mathbb{E}[e^{iux}] = log\phi_X(u)$$
+<u>Moment generating function</u>$\mathcal{M}_X(u)$ is given by $$\mathcal{M}_X(u) = \phi_X(-iu)= \mathbb{E}[e^{uX}] = \int_{-\infty}^{\infty}e^{ux}f(x)dx $$ <u>Cumulant characteristic function</u> $\zeta_X(u)$ is given by $$\zeta_X(u) = log\mathbb{E}[e^{iux}] = log\phi_X(u)$$
 
 ## Univaiate Distributions
 
@@ -101,6 +95,85 @@ $$\mu^* = e^{\mu + \frac{1}{2}\sigma^2}$$ $$\sigma^* = e^{2\mu + 2\sigma^2} - e^
 ### Correlation
 
 The correlation coefficient between two random variables $X$ and $Y$ is defined as $$ \rho_{x,y} = \frac{Cov(X,Y)}{\sqrt{Var(X)Var(Y)}} = \frac{E[(X-\mu_x)(Y-\mu_y)]}{\sqrt{E(X-\mu_x)^2E(Y-\mu_y)^2}}$$
- 
-The sample correlation is given by 
-$$ \hat\rho_{x,y} = \frac{\sum_{t=1}^{T}(x_t - \bar{x})(y_t - \bar{y})}{\sqrt{\sum_{t=1}^T(x_t - \bar{x})\sum_{t=1}^T(y_t - \bar{y})}}$$
+
+The sample correlation is given by $$ \hat\rho_{x,y} = \frac{\sum_{t=1}^{T}(x_t - \bar{x})(y_t - \bar{y})}{\sqrt{\sum_{t=1}^T(x_t - \bar{x})\sum_{t=1}^T(y_t - \bar{y})}}$$
+
+
+<u>Two-dimensional densities</u>.\newline
+
+
+The joint CDF of two random variables ,$X$ and $Y$ ,is the function $F_{X,Y}(.,.):\mathbb{R}^2 \rightarrow [0,1]$,which is defined by:
+
+$$ F_{X,Y}(x,y) = \mathbb{P}[X\leq{x},Y\leq{y}]$$
+If $X$ and $Y$ are continous variables, then the joint PDF of X and Y is a function of 
+$$f_{X,Y}(x,y) = \frac{\partial^2{F_{X,Y}(x,y)}}{\partial{x}\partial{y}} $$
+<u>Bivariate Normal density functions</u>
+
+$X = [X,Y]^T$ and $$X \sim \mathcal{N}(\begin{bmatrix}0\\0\end{bmatrix},\begin{bmatrix}1 , \rho \\ \rho ,1\end{bmatrix}) $$
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+#from matplotlib.mlab import bivariate_normal bivariate_normal seems to be deprecated
+
+def bivariate_normal(X, Y, sigmax=1.0, sigmay=1.0,
+                     mux=0.0, muy=0.0, sigmaxy=0.0):
+    """
+    Bivariate Gaussian distribution for equal shape *X*, *Y*.
+    See `bivariate normal
+    <http://mathworld.wolfram.com/BivariateNormalDistribution.html>`_
+    at mathworld.
+    """
+    Xmu = X-mux
+    Ymu = Y-muy
+
+    rho = sigmaxy/(sigmax*sigmay)
+    z = Xmu**2/sigmax**2 + Ymu**2/sigmay**2 - 2*rho*Xmu*Ymu/(sigmax*sigmay)
+    denom = 2*np.pi*sigmax*sigmay*np.sqrt(1-rho**2)
+    return np.exp(-z/(2*(1-rho**2))) / denom
+
+def BivariateNormalPDFPlot():
+  # Number of points in each direction
+      n = 40;
+      
+      # parameters
+      mu_1 = 0;
+      mu_2 = 0;
+      sigma_1=1;
+      sigma_2=0.5;
+      rho1=0.0
+      rho2=-0.8
+      rho3=0.8
+      
+      x = np.linspace(-3.0,3.0,n)
+      y = np.linspace(-3.0,3.0,n)
+      X,Y =np.meshgrid(x,y)
+      Z = lambda rho:bivariate_normal(X,Y,sigma_1,sigma_2,mu_1,mu_2,rho*sigma_1*sigma_2)
+      
+      fig =plt.figure(1)
+      ax = fig.add_subplot(projection= '3d')
+      ax.plot_surface(X, Y, Z(rho1),cmap='viridis',linewidth=0)
+      ax.set_xlabel('X axis')
+      ax.set_ylabel('Y axis')
+      ax.set_zlabel('Z axis')
+      plt.show()
+      
+      fig =plt.figure(2)
+      ax = fig.add_subplot(projection= '3d')
+      ax.plot_surface(X, Y, Z(rho2),cmap='viridis',linewidth=0)
+      ax.set_xlabel('X axis')
+      ax.set_ylabel('Y axis')
+      ax.set_zlabel('Z axis')
+      plt.show()
+      
+      fig =plt.figure(3)
+      ax = fig.add_subplot(projection= '3d')
+      ax.plot_surface(X, Y, Z(rho3),cmap='viridis',linewidth=0)
+      ax.set_xlabel('X axis')
+      ax.set_ylabel('Y axis')
+      ax.set_zlabel('Z axis')
+      plt.show()
+  
+BivariateNormalPDFPlot()
+```
+
