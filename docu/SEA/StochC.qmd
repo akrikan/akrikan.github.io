@@ -107,7 +107,8 @@ Thing to note the use of uniformly distributed random variable for generating a 
 :::
 <br/><br/>
 
-## Brownian Motion
+## Stochastic Processes
+
 
 <br/><br/> 
 

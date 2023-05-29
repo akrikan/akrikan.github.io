@@ -1,0 +1,36 @@
+---
+title: Interesting Implementations
+
+abstract: These are code snippets of various mathematical problems and numerical methods in Python and R that I found interesting while browsing through the internet and going through various books which don't exactly fall into a specific category per se.
+
+execute: 
+  warning: false
+  freeze: true
+
+format:
+  html:
+    html-math-method: katex
+    code-block-bg: "#E5E7E9"
+    df-print: paged
+    code-overflow : wrap
+    code-copy : true
+---
+
+### Mersenne Twister
+
+```{python3}
+import numpy as np
+
+a = np.random.randn(3,3)
+b = np.random.randn(3,1)
+c = a*b
+
+
+
+
+
+print (a)
+print(b)
+print(c)
+
+```

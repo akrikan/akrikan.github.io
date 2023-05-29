@@ -6,8 +6,20 @@ abstract: Includes research papers that i have read or found interesting and wor
 ## Machine Learning and Deep Learning
 
 
-## Compuational finance
+## Computational finance
 
 ## Decentralised finance and Cryptography papers
-
+  1. [Towards a Theory of Maximal Extractable Value I: Constant Function Market Makers by Kshitij Kulkarni ,et.al](https://arxiv.org/abs/2207.11835)
+  2. [An analysis of Uniswap markets](https://arxiv.org/abs/1911.03380)
+  3. [Replicating market makers](https://arxiv.org/abs/2103.14769)
+  4. [Optimal fees for geometric mean market makers](https://arxiv.org/pdf/2104.00446.pdf)
+  5. [Improved price oracles: Constant function market makers](https://arxiv.org/pdf/2003.10001)
+  6. [Constant function market makers: Multi-asset trades via convex optimization](https://arxiv.org/pdf/2107.12484)
+  7. [Bitcoin, Currencies, and Fragility by Taleb](https://www.fooledbyrandomness.com/BTC-QF.pdf)
+  8. [Beige Paper](https://github.com/chronaeon/beigepaper/blob/master/beigepaper.pdf)
+  9. [ETHEREUM: A SECURE DECENTRALISED GENERALISED TRANSACTION LEDGER](https://ethereum.github.io/yellowpaper/paper.pdf)
+  10. [A primer on perpetuals](A primer on perpetuals)
+  
+  
+  
 ## Abstract Mathematics

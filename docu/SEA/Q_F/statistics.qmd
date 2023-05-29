@@ -4,6 +4,7 @@ title: Statistics
 
 ## Introduction
 
+This is majorl
 ## Standard Definitions
 
 <u>Expected Value</u> $\mathbb{E}[X]$ is given by
@@ -18,7 +19,24 @@ $$\phi_X(u) = \mathbb{E}[e^{iuX}] = \int_{-\infty}^{\infty}e^{iuX}f(x)dx $$
 
 <u>Moment generating function</u>$\mathcal{M}_X(u)$ is given by $$\mathcal{M}_X(u) = \phi_X(-iu)= \mathbb{E}[e^{uX}] = \int_{-\infty}^{\infty}e^{ux}f(x)dx $$ <u>Cumulant characteristic function</u> $\zeta_X(u)$ is given by $$\zeta_X(u) = log\mathbb{E}[e^{iux}] = log\phi_X(u)$$
 
+<u>Central moments</u>$ \mathcal{m}_l$ is given by $\mathbb{E}[(X-\mu)^l]$
+
+Skewness $S(x)$ and Kurtosis $K(x)$ are the normalised $3^{rd}$ and $4^{th}$ central moments of a distribution respectively. The normalization factors are $\sigma^3$ and $\sigma^4$ respectively where $\sigma$ is the standard deviation of X.
+
+The quantity $K(x) - 3$ is called the excess kurtosis since $K(x) = 3$ is the kurtosis for a normal distribution.
+
+Let $\{x_1,x_2,x_3 ....x_T\}$ be a random sample of X with T observations <br>
+ 
+<u>Sample Mean</u>$\hat\mu_x$ is given by $$\frac{\sum_{t=1}^Tx_t}{T}$$
+<u>Sample Variance</u>$\hat\sigma_x$ is given by $$\frac{\sum_{t=1}^T(x_t - \hat\mu_x)^2}{T-1}$$
+<u>Sample Skewness</u>$\hat S_x$ is given by $$\frac{\sum_{t=1}^T(x_t - \hat\mu_x)^3}{(T-1)\hat\sigma_x^3}$$
+<u>Sample Kurtosis</u>$\hat K_x$ is given by $$\frac{\sum_{t=1}^T(x_t - \hat\mu_x)^4}{(T-1)\hat\sigma_x^4}$$
+
+
+
+
 ## Univaiate Distributions
+
 
 ### Normal Distribution
 
@@ -177,3 +195,12 @@ def BivariateNormalPDFPlot():
 BivariateNormalPDFPlot()
 ```
 
+
+
+## Hypothesis Testing
+
+<u> t-statistic </u> is the ratio of departure of the estimated value of a paramater from its hypothesized value to it's standard error.
+
+It is used when the sample size is small or the population standard deviation is unknown. 
+
+Let $\hat\beta$ be an estimator of parameter $\beta$ in some statistical model. Then the t-statistic is given by $$ t_{\hat\beta}  = \frac{\hat\beta - \beta_0}{s.e(\hat\beta)}$$ where $s.e(\hat\beta)$ is the standard error of the estimator $\hat\beta$ for  $\beta$ and $\beta_0$ is a non-random , know constant , which may or maynot match actual unknow parameter value $\beta$

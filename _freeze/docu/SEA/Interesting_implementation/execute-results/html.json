@@ -1,0 +1,11 @@
+{
+  "hash": "3058e5d9f221f13ee0796452a0c3e0c0",
+  "result": {
+    "markdown": "---\ntitle: Interesting Implementations\n\nabstract: These are code snippets of various mathematical problems and numerical methods in Python and R that I found interesting while browsing through the internet and going through various books which don't exactly fall into a specific category per se.\n\nexecute: \n  warning: false\n  freeze: true\n\nformat:\n  html:\n    html-math-method: katex\n    code-block-bg: \"#E5E7E9\"\n    df-print: paged\n    code-overflow : wrap\n    code-copy : true\n---\n\n### Mersenne Twister\n\n::: {.cell execution_count=1}\n``` {.python .cell-code}\nimport numpy as np\n\na = np.random.randn(3,4)\nb = np.random.randn(1,4)\nc = a+b\nprint (c)\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[[ 0.32295651 -0.85615547  1.05162089  0.39146209]\n [-2.97129035 -1.50722391 -0.04004183  0.13532617]\n [ 1.57507404 -3.54460121 -0.21055781  0.47160234]]\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "Interesting_implementation_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

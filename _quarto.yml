@@ -1,13 +1,13 @@
 project:
   type: website
   output-dir: docs
-  
+
 website:
-  title: "Krishnakant A"
+  title: 'Krishnakant A'
   page-navigation: true
   favicon: escher.tiff
-  navbar:
-     
+  navbar: 
+  
     search: true
     background: primary
     collapse-below: lg
@@ -20,8 +20,8 @@ website:
       #   href: docu/Book_Implementations/index.qmd
       - text: "Sea of Everything"
         file: docu/SEA/index.qmd
-      - text: "Paper implementations"
-        href: docu/paper implementation.qmd
+      - text: "Implementations"
+        href: docu/Book_Implementations/index.qmd
       - text: "Resources"
         href: docu/Resources/index.qmd
       - text: "Help"
@@ -76,21 +76,22 @@ website:
                 
         
         
-        - section: "Trading"
+        - section: "Traditional Finance"
           contents: 
             - text: "Technical Analysis"
             - text: "Fudamental Analysis"
             - text: "Financial Products"
-            - href: docu/SEA/financial_products
+              href: docu/SEA/financial_products.qmd
             
         - section: "Machine Learning"
           contents: 
             - text: "Data Analysis"
               href: docu/SEA/data_analysis.qmd
-                
             - text: "Machine Learning in C++"
             - text: "Machine Learning Theory and Practice"
               href: docu/SEA/Machine Learning.qmd
+        - text: "Interesting Implementations"
+          href: docu/SEA/Interesting_implementation.qmd
     - id: Resources
       title: "Resources"
       style: "docked"
@@ -100,17 +101,24 @@ website:
       contents:
         - text: "List of Resources"
           href: docu/Resources/index.qmd
-        - section: "Cheat Sheets"
-          contents: 
-            - text: "Coding"
-              href: docu/Resources/coding.qmd
-            - text: "LaTex"
-              href: docu/Resources/LaTex.qmd
-            - text: "Machine Learning"
+        - text: "Cheat Sheets"
+          href: docu/Resources/coding.qmd
     
         - text: "Research Papers"
           href: docu/Resources/Research_papers.qmd
-      
+    
+    - id: Implementations
+      title: "Implementations"
+      style: "docked"
+      background: dark
+      collapse-level: 1
+      align: left
+      contents:
+        - text: "Implementations"
+          href: docu/Book_Implementations/index.qmd
+        - text: "First Course stochastic calculus" 
+          href: docu/Book_Implementations/FCSC.qmd
+          
     - id: project      
    ###
     # - id: Book_Implementation

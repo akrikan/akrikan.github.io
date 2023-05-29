@@ -1,0 +1,11 @@
+{
+  "hash": "d251eb651e76889d47f5d136864734e6",
+  "result": {
+    "markdown": "---\ntitle: \"Tools and frameworks\"\nexecute: \n  warning: false\n  freeze: true\n\nformat:\n  html:\n    html-math-method: katex\n    code-block-bg: \"#E5E7E9\"\n    df-print: paged\n    code-overflow : wrap\n    code-copy : true\n---\n\n## Tensorflow\n```{python3}\nimport tensorflow as tf\n\n```\n\n",
+    "supporting": [
+      "tools and frameworks _files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

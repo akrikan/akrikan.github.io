@@ -1,0 +1,34 @@
+---
+title: "Tools and frameworks"
+execute: 
+  warning: false
+  freeze: true
+
+format:
+  html:
+    html-math-method: katex
+    code-block-bg: "#E5E7E9"
+    df-print: paged
+    code-overflow : wrap
+    code-copy : true
+---
+
+## Tensorflow
+
+``` python
+
+import tensorflow as tf
+import h5py
+import numpy as np
+import tensorflow as tf
+import matplotlib.pyplot as plt
+from tensorflow.python.framework.ops import EagerTensor
+from tensorflow.python.ops.resource_variable_ops import ResourceVariable
+import time
+
+```
+
+``` python3
+```
+
+## PyTorch

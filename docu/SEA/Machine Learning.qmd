@@ -7,11 +7,10 @@ abstract: Covers theory , algorithims and code.
 
 ## Resources
 * Books:
-  * Hands on Machine Learning with Sckit-Learn, Keras & TensorFlow by Aurelien Geron\
+  * Introduction to Statistical Learning (ISLR) Hastie and Tibshirani(R implementation and relatively less dense than ESL )
+    
+  * Elements of Statistical Learning By Hastie and Tibshirani (The Mathematical theory)
   
-  * Introduction to Statistical Learning (ISLR) Hastie and Tibshirani
-  * Elements of Statistical Learning By Hastie and Tibshirani
-
 ## Supervised Learning 
 <br/>   
 

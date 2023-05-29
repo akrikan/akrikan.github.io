@@ -35,7 +35,7 @@ import seaborn as sns
 import statsmodels as sm
 ```
 
-## Python
+## Main Content
 
 ### Ipython Shortcuts
 
@@ -84,3 +84,8 @@ ax.grid(True)
 plt.show()
 ```
 
+
+### Pandas
+### Numpy
+### Matplotlib
+### Seaborn

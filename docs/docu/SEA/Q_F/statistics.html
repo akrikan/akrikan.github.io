@@ -158,8 +158,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  <span class="menu-text">Sea of Everything</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../docu/paper implementation.html">
- <span class="menu-text">Paper implementations</span></a>
+    <a class="nav-link" href="../../../docu/Book_Implementations/index.html">
+ <span class="menu-text">Implementations</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../../docu/Resources/index.html">
@@ -301,7 +301,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">Trading</a>
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">Traditional Finance</a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -314,8 +314,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   Fudamental Analysis
   </li>
           <li class="sidebar-item">
-  Financial Products
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../../../docu/SEA/financial_products.html" class="sidebar-item-text sidebar-link">Financial Products</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -341,6 +343,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docu/SEA/Interesting_implementation.html" class="sidebar-item-text sidebar-link">Interesting Implementations</a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -351,7 +358,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#standard-definitions" id="toc-standard-definitions" class="nav-link" data-scroll-target="#standard-definitions">Standard Definitions</a></li>
   <li><a href="#univaiate-distributions" id="toc-univaiate-distributions" class="nav-link" data-scroll-target="#univaiate-distributions">Univaiate Distributions</a>
   <ul class="collapse">
   <li><a href="#normal-distribution" id="toc-normal-distribution" class="nav-link" data-scroll-target="#normal-distribution">Normal Distribution</a></li>
@@ -361,6 +367,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul class="collapse">
   <li><a href="#correlation" id="toc-correlation" class="nav-link" data-scroll-target="#correlation">Correlation</a></li>
   </ul></li>
+  <li><a href="#hypothesis-testing" id="toc-hypothesis-testing" class="nav-link" data-scroll-target="#hypothesis-testing">Hypothesis Testing</a></li>
   </ul>
 </nav>
     </div>
@@ -386,15 +393,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-</section>
-<section id="standard-definitions" class="level2">
-<h2 class="anchored" data-anchor-id="standard-definitions">Standard Definitions</h2>
+<p>This is majorl ## Standard Definitions</p>
 <p><u>Expected Value</u> <span class="math inline">\(\mathbb{E}[X]\)</span> is given by</p>
 <p><span class="math display">\[\mathbb{E}[X] = \int_{-\infty}^{\infty}x f(x) dx\]</span> <u>Variance</u><span class="math inline">\(Var(X)\)</span> is given by</p>
 <p><span class="math display">\[Var(X) = \mathbb{E}(X^2) - \mathbb{E}{{(X)}^2}\]</span> <span class="math display">\[Var(X) = \int_{-\infty}^{\infty}(x-\mathbb{E}[X])^2 f_X(x) dx\]</span> <u>Higher Moments</u> <span class="math inline">\(\mathbb{E}(X^n)\)</span> is given by</p>
 <p><span class="math display">\[\mathbb{E}(X^n) = \int_{-\infty}^{\infty}x^n f_X(x) dx \]</span> <u>Characteristic function(CHF)</u> <span class="math inline">\(\phi_X(u)\)</span> for <span class="math inline">\(u \in \mathbb{R}\)</span> is given by</p>
 <p><span class="math display">\[\phi_X(u) = \mathbb{E}[e^{iuX}] = \int_{-\infty}^{\infty}e^{iuX}f(x)dx \]</span></p>
 <p><u>Moment generating function</u><span class="math inline">\(\mathcal{M}_X(u)\)</span> is given by <span class="math display">\[\mathcal{M}_X(u) = \phi_X(-iu)= \mathbb{E}[e^{uX}] = \int_{-\infty}^{\infty}e^{ux}f(x)dx \]</span> <u>Cumulant characteristic function</u> <span class="math inline">\(\zeta_X(u)\)</span> is given by <span class="math display">\[\zeta_X(u) = log\mathbb{E}[e^{iux}] = log\phi_X(u)\]</span></p>
+<p><u>Central moments</u>$ _l$ is given by <span class="math inline">\(\mathbb{E}[(X-\mu)^l]\)</span></p>
+<p>Skewness <span class="math inline">\(S(x)\)</span> and Kurtosis <span class="math inline">\(K(x)\)</span> are the normalised <span class="math inline">\(3^{rd}\)</span> and <span class="math inline">\(4^{th}\)</span> central moments of a distribution respectively. The normalization factors are <span class="math inline">\(\sigma^3\)</span> and <span class="math inline">\(\sigma^4\)</span> respectively where <span class="math inline">\(\sigma\)</span> is the standard deviation of X.</p>
+<p>The quantity <span class="math inline">\(K(x) - 3\)</span> is called the excess kurtosis since <span class="math inline">\(K(x) = 3\)</span> is the kurtosis for a normal distribution.</p>
+<p>Let <span class="math inline">\(\{x_1,x_2,x_3 ....x_T\}\)</span> be a random sample of X with T observations <br></p>
+<p><u>Sample Mean</u><span class="math inline">\(\hat\mu_x\)</span> is given by <span class="math display">\[\frac{\sum_{t=1}^Tx_t}{T}\]</span> <u>Sample Variance</u><span class="math inline">\(\hat\sigma_x\)</span> is given by <span class="math display">\[\frac{\sum_{t=1}^T(x_t - \hat\mu_x)^2}{T-1}\]</span> <u>Sample Skewness</u><span class="math inline">\(\hat S_x\)</span> is given by <span class="math display">\[\frac{\sum_{t=1}^T(x_t - \hat\mu_x)^3}{(T-1)\hat\sigma_x^3}\]</span> <u>Sample Kurtosis</u><span class="math inline">\(\hat K_x\)</span> is given by <span class="math display">\[\frac{\sum_{t=1}^T(x_t - \hat\mu_x)^4}{(T-1)\hat\sigma_x^4}\]</span></p>
 </section>
 <section id="univaiate-distributions" class="level2">
 <h2 class="anchored" data-anchor-id="univaiate-distributions">Univaiate Distributions</h2>
@@ -555,9 +565,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="statistics_files/figure-html/cell-3-output-3.png" width="407" height="396"></p>
 </div>
 </div>
-
-
 </section>
+</section>
+<section id="hypothesis-testing" class="level2">
+<h2 class="anchored" data-anchor-id="hypothesis-testing">Hypothesis Testing</h2>
+<p><u> t-statistic </u> is the ratio of departure of the estimated value of a paramater from its hypothesized value to it’s standard error.</p>
+<p>It is used when the sample size is small or the population standard deviation is unknown.</p>
+<p>Let <span class="math inline">\(\hat\beta\)</span> be an estimator of parameter <span class="math inline">\(\beta\)</span> in some statistical model. Then the t-statistic is given by <span class="math display">\[ t_{\hat\beta}  = \frac{\hat\beta - \beta_0}{s.e(\hat\beta)}\]</span> where <span class="math inline">\(s.e(\hat\beta)\)</span> is the standard error of the estimator <span class="math inline">\(\hat\beta\)</span> for <span class="math inline">\(\beta\)</span> and <span class="math inline">\(\beta_0\)</span> is a non-random , know constant , which may or maynot match actual unknow parameter value <span class="math inline">\(\beta\)</span></p>
+
+
 </section>
 
 </main> <!-- /main -->

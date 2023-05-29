@@ -8,7 +8,7 @@ about:
 
 Hi , I am Krishnakant Ammanamanchi , welcome to my Site/Blog or whatever.
 
-I am unsure what to call this anymore. The gist of the site is to capture the projects and skills that i am currently working on and document them as i keep on learning as well as to write up on topics that i find fascinating.
+I am unsure what to call this anymore. The gist of the site is to capture the projects and skills that i am currently working on and document them as I keep on learning as well as to write up on topics that i find fascinating.
 
 There are lot sections that i have added to the site to keep myself accountable and motivated to keep posting on this site, the current goal is to  populate all the sections decently enough by 2023 mid.
 
@@ -21,3 +21,4 @@ Happy exploring !!!
 This is a Quarto website.
 
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+

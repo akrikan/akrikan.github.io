@@ -1,4 +1,5 @@
 ---
-title: "Course Notes" 
+title: "Books , Video lectures" 
 ---
 
+### Computational Financ

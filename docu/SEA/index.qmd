@@ -2,10 +2,16 @@
 title : "Sea of Everything" 
 ---
 
-Inspired by the Sea of foundations By Professro Ravi Vakil , which covers pretty much everything one needs to master Algebraic geometry. I have titled this section as Sea of Everything where i would be covering all my current interests related to fields of financial mathematics,programming , machine learning , crypto , etc...
-
-This whole section under Sea of Everything would mostly function as a blog, conventional blogs are very badly designed and difficult to navigate as of now i have just decided to maintain my articles as part of this website. ~~If it gets cumbersome to maintain I might convert the webpage into a full blown traditional blog , but I am skeptical as of now.~~
+Inspired by the Sea of foundations By Professor Ravi Vakil , which covers pretty much everything one needs to master Algebraic geometry. I have titled this section as Sea of Everything where I would be covering all my current interests related to fields of financial mathematics,programming , machine learning , crypto , etc...
 
 My Home page would host articles that I have written to explain myself the inner - working of an idea or a concept and which are fascinating enough to be highlighted amidst all of this.
 
 The current direction of this ***section*** mostly looks like combination of notes and insights.
+
+I have included my hand written notes for few sections. I would be adding hand written notes and expand them as I keep on coming across various subtopics within the subject.
+
+Initially I had the plan to type the content but given my current over demanding job, I have decided to keep a mix of both written and typed sections.
+
+Apologies for my handwriting it's terrible I know.
+
+P.S - Looks like my aim was quite ambitious, looking at the timeframe I set for myself. My initial plan was to add the content on this website in a very organised manner starting with preliminaries and then going for the meat of the subject but lately I have realised that it has been time consuming. Hence I have decided rather to include mostly definitions and important information regarding those topics in SEA. Mostly would merge Implementations section and SEA sometime in the future but as of now they are seperate. The current outline of this website represents my vision for the site, but as I add content I would keep on shifting the structure slightly as I see fit.
