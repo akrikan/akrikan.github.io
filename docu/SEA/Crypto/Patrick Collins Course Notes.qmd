@@ -1,0 +1,6 @@
+---
+title: Blockhain development Solidity and Smart Contracts
+asbtract: These are sort of notes that I took while completing Patrick collins 2023 course available in youtube.
+---
+
+#

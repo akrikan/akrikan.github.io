@@ -2,7 +2,7 @@
 title : "Sea of Everything" 
 ---
 
-Inspired by the Sea of foundations By Professor Ravi Vakil , which covers pretty much everything one needs to master Algebraic geometry. I have titled this section as Sea of Everything where I would be covering all my current interests related to fields of financial mathematics,programming , machine learning , crypto , etc...
+Inspired by the Rising Sea : Foundations of algebriac geomtery By Professor Ravi Vakil , which covers pretty much everything one needs to master Algebraic geometry. I have titled this section as Sea of Everything where I would be covering all my current interests related to fields of financial mathematics,programming , machine learning , crypto , etc...
 
 My Home page would host articles that I have written to explain myself the inner - working of an idea or a concept and which are fascinating enough to be highlighted amidst all of this.
 

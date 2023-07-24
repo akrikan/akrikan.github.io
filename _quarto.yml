@@ -50,13 +50,13 @@ website:
           contents:
             - text: "Stochastic Calculus"
               href: docu/SEA/StochC.qmd
-            - text: "Time series and Econometric analysis"
+            - text: "Time series analysis"
               href: docu/SEA/time_series.qmd
-            - text: "Market Risk Analysis"
-              href: docu/SEA/MRA.qmd
+            #- text: "Market Risk Analysis"
+             # href: docu/SEA/MRA.qmd
             - text: "Statistics"
               href: "docu/SEA/Q_F/statistics.qmd"
-            - text: "Numerical Methods"
+            #- text: "Numerical Methods"
             - text: "Interest rate models"
               href: docu/SEA/IRM.qmd
               
@@ -76,12 +76,12 @@ website:
                 
         
         
-        - section: "Traditional Finance"
-          contents: 
-            - text: "Technical Analysis"
-            - text: "Fudamental Analysis"
-            - text: "Financial Products"
-              href: docu/SEA/financial_products.qmd
+       # - section: "Traditional Finance"
+        #  contents: 
+         #   - text: "Technical Analysis"
+           # - text: "Fudamental Analysis"
+          #  - text: "Financial Products"
+          #    href: docu/SEA/financial_products.qmd
             
         - section: "Machine Learning"
           contents: 
@@ -90,6 +90,9 @@ website:
             - text: "Machine Learning in C++"
             - text: "Machine Learning Theory and Practice"
               href: docu/SEA/Machine Learning.qmd
+            - text: "Machine Learning for finance"
+              href: docu/SEA/Machine learning/Machine Learning for finance.qmd
+              
         - text: "Interesting Implementations"
           href: docu/SEA/Interesting_implementation.qmd
     - id: Resources

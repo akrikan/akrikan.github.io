@@ -171,8 +171,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  <span class="menu-text">Sea of Everything</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../docu/paper implementation.html">
- <span class="menu-text">Paper implementations</span></a>
+    <a class="nav-link" href="../../docu/Book_Implementations/index.html">
+ <span class="menu-text">Implementations</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../docu/Resources/index.html">
@@ -227,43 +227,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><span class="math inline">k_{n+1} = n^2 +k_n^2 - k_{n-1}</span></p>
 <p><span class="math inline">\dots</span></p>
 <p><span class="math inline">F_{\ell} = \mathbb{P}\{X - {\ell} \leq{x} | X &gt; {\ell} \} = \frac{F(x+ {\ell}) - F(\ell)}{1 - F_{X}\{\ell\}}</span></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Sim.DiffProc)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>mu<span class="ot">=</span><span class="dv">1</span>;sigma<span class="ot">=</span><span class="fl">0.5</span>;theta<span class="ot">=</span><span class="dv">2</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a> x0<span class="ot">=</span><span class="dv">0</span>;y0<span class="ot">=</span><span class="dv">0</span>;init<span class="ot">=</span><span class="fu">c</span>(x0,y0)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">expression</span>(<span class="dv">1</span><span class="sc">/</span>mu<span class="sc">*</span>(theta<span class="sc">-</span>x), x)  </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">expression</span>(<span class="fu">sqrt</span>(sigma),<span class="dv">0</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>mod2d <span class="ot">&lt;-</span> <span class="fu">snssde2d</span>(<span class="at">drift=</span>f,<span class="at">diffusion=</span>g,<span class="at">M=</span><span class="dv">500</span>,<span class="at">Dt=</span><span class="fl">0.015</span>,<span class="at">x0=</span><span class="fu">c</span>(<span class="at">x=</span><span class="dv">0</span>,<span class="at">y=</span><span class="dv">0</span>))</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="do">## true values of first and second moment at time 10</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>Ex <span class="ot">&lt;-</span> <span class="cf">function</span>(t) theta<span class="sc">+</span>(x0<span class="sc">-</span>theta)<span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>t<span class="sc">/</span>mu)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>Vx <span class="ot">&lt;-</span> <span class="cf">function</span>(t) <span class="fl">0.5</span><span class="sc">*</span>sigma<span class="sc">*</span>mu <span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">exp</span>(<span class="sc">-</span><span class="dv">2</span><span class="sc">*</span>(t<span class="sc">/</span>mu)))</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Ey <span class="ot">&lt;-</span> <span class="cf">function</span>(t) y0<span class="sc">+</span>theta<span class="sc">*</span>t<span class="sc">+</span>(x0<span class="sc">-</span>theta)<span class="sc">*</span>mu<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">exp</span>(<span class="sc">-</span>t<span class="sc">/</span>mu))</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Vy <span class="ot">&lt;-</span> <span class="cf">function</span>(t) sigma<span class="sc">*</span>mu<span class="sc">^</span><span class="dv">3</span><span class="sc">*</span>((t<span class="sc">/</span>mu)<span class="sc">-</span><span class="dv">2</span><span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">exp</span>(<span class="sc">-</span>t<span class="sc">/</span>mu))<span class="sc">+</span><span class="fl">0.5</span><span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">exp</span>(<span class="sc">-</span><span class="dv">2</span><span class="sc">*</span>(t<span class="sc">/</span>mu))))</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>covxy <span class="ot">&lt;-</span> <span class="cf">function</span>(t) <span class="fl">0.5</span><span class="sc">*</span>sigma<span class="sc">*</span>mu<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span>(<span class="dv">1-2</span><span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>t<span class="sc">/</span>mu)<span class="sc">+</span><span class="fu">exp</span>(<span class="sc">-</span><span class="dv">2</span><span class="sc">*</span>(t<span class="sc">/</span>mu)))</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>tvalue <span class="ot">=</span> <span class="fu">list</span>(<span class="at">m1=</span><span class="fu">Ex</span>(<span class="dv">15</span>),<span class="at">m2=</span><span class="fu">Ey</span>(<span class="dv">15</span>),<span class="at">S1=</span><span class="fu">Vx</span>(<span class="dv">15</span>),<span class="at">S2=</span><span class="fu">Vy</span>(<span class="dv">15</span>),<span class="at">C12=</span><span class="fu">covxy</span>(<span class="dv">15</span>))</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a> <span class="do">## function of the statistic(s) of interest.</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>sde.fun2d <span class="ot">&lt;-</span> <span class="cf">function</span>(data, i){</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>   d <span class="ot">&lt;-</span> data[i,]</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>   <span class="fu">return</span>(<span class="fu">c</span>(<span class="fu">mean</span>(d<span class="sc">$</span>x),<span class="fu">mean</span>(d<span class="sc">$</span>y),<span class="fu">var</span>(d<span class="sc">$</span>x),<span class="fu">var</span>(d<span class="sc">$</span>y),<span class="fu">cov</span>(d<span class="sc">$</span>x,d<span class="sc">$</span>y)))</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a> <span class="do">## Parallel Monte-Carlo of 'OUI' at time 10</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>mcm.mod2d <span class="ot">=</span> <span class="fu">MCM.sde</span>(mod2d,<span class="at">statistic=</span>sde.fun2d,<span class="at">time=</span><span class="dv">15</span>,<span class="at">R=</span><span class="dv">10</span>,<span class="at">exact=</span>tvalue,<span class="at">parallel=</span><span class="st">"snow"</span>,<span class="at">ncpus=</span><span class="dv">2</span>)</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>mcm.mod2d<span class="sc">$</span>MC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>         Exact   Estimate       Bias Std.Error      RMSE
-m1   1.9999994  2.0140861  0.0140867 0.0055712 0.0218581
-m2  28.0000006 27.9721715 -0.0278291 0.0312552 0.0978083
-S1   0.2500000  0.2445866 -0.0054134 0.0038780 0.0128319
-S2   6.7500003  6.5992153 -0.1507850 0.0799199 0.2832329
-C12  0.2499998  0.2157827 -0.0342171 0.0160072 0.0589651
-           CI( 2.5 % , 97.5 % )
-m1    ( 2.0031667 , 2.0250055 )
-m2  ( 27.9109124 , 28.0334306 )
-S1    ( 0.2369859 , 0.2521873 )
-S2    ( 6.4425752 , 6.7558554 )
-C12   ( 0.1844092 , 0.2471562 )</code></pre>
-</div>
-</div>
 <span class="math display">\begin{equation*}
 \begin{cases}
 \begin{split}
@@ -291,6 +254,25 @@ dY_{t} &amp;= \left( \frac{\gamma \, X_{t}^2 \, Y_{t}}{\left( \kappa + X_{t}^2 \
 \right\}
 \qquad \text{Maxwell's equations}
 \end{equation}</span>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.random.uniform(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">100000</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>b  <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">100000</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> np.sqrt(<span class="dv">1</span> <span class="op">-</span> b<span class="op">**</span><span class="dv">2</span> )</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> np.count_nonzero(a<span class="op">&lt;</span>c)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> z<span class="op">*</span><span class="dv">4</span> <span class="op">/</span><span class="dv">100000000</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.clf()</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.scatter(b,a)</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.plot(b,c,color = 'red')</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.show()</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>error <span class="op">=</span> math.pi <span class="op">-</span> d </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>error</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>3.138449293589793</code></pre>
+</div>
+</div>
 
 
 

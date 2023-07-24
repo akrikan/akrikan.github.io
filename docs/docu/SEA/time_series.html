@@ -93,7 +93,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../docu/SEA/MRA.html" rel="next">
+<link href="../../docu/SEA/Q_F/statistics.html" rel="next">
 <link href="../../docu/SEA/StochC.html" rel="prev">
 <link href="../../escher.tiff" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
@@ -254,12 +254,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docu/SEA/time_series.html" class="sidebar-item-text sidebar-link active">Time series and Econometric analysis</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../docu/SEA/MRA.html" class="sidebar-item-text sidebar-link">Market Risk Analysis</a>
+  <a href="../../docu/SEA/time_series.html" class="sidebar-item-text sidebar-link active">Time series analysis</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -267,9 +262,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <a href="../../docu/SEA/Q_F/statistics.html" class="sidebar-item-text sidebar-link">Statistics</a>
   </div>
 </li>
-          <li class="sidebar-item">
-  Numerical Methods
-  </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../docu/SEA/IRM.qmd" class="sidebar-item-text sidebar-link">Interest rate models</a>
@@ -319,33 +311,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">Traditional Finance</a>
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">Machine Learning</a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  Technical Analysis
-  </li>
-          <li class="sidebar-item">
-  Fudamental Analysis
-  </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../docu/SEA/financial_products.html" class="sidebar-item-text sidebar-link">Financial Products</a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">Machine Learning</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../docu/SEA/data_analysis.html" class="sidebar-item-text sidebar-link">Data Analysis</a>
@@ -357,6 +328,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../docu/SEA/Machine Learning.html" class="sidebar-item-text sidebar-link">Machine Learning Theory and Practice</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docu/SEA/Machine learning/Machine Learning for finance.html" class="sidebar-item-text sidebar-link">Machine Learning for finance</a>
   </div>
 </li>
       </ul>
@@ -583,6 +559,26 @@ attr(,"method")
 <p>Then <span class="math inline">\hat\rho_1</span> is asymptotically normal with mean zero and variance 1/T</p>
 <p><u>Testing</u></p>
 <p>Let <span class="math inline">H_0 : \rho_1 = 0</span> be the null hypothesis versus <span class="math inline">H_a : \rho_1 \neq 0</span> the alternative hypothesis. The test statistic is the usual t ratio (check the statistics section for further description) , which is <span class="math inline">\sqrt{T}\hat\rho_1</span> and follows asymptotically the standard normal distribution. The null hypothesis <span class="math inline">H_0</span> is rejected if the t ratio is large in magnitude or equivalently , the p value of the t ratio is small , lets say less than 0.05</p>
+<div class="cell" data-hash="time_series_cache/html/unnamed-chunk-4_2f1cef0f2f99049360415610df27ac5e">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">666</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>phi <span class="ot">=</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">0</span>,<span class="dv">11</span>),.<span class="dv">9</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>sAR <span class="ot">=</span> <span class="fu">arima.sim</span>(<span class="fu">list</span>(<span class="at">order=</span><span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">0</span>,<span class="dv">0</span>), <span class="at">ar=</span>phi), <span class="at">n=</span><span class="dv">37</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>sAR <span class="ot">=</span> <span class="fu">ts</span>(sAR, <span class="at">freq=</span><span class="dv">12</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>, <span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>), <span class="at">nc=</span><span class="dv">2</span>))</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>), <span class="at">mgp=</span><span class="fu">c</span>(<span class="fl">1.6</span>,.<span class="dv">6</span>,<span class="dv">0</span>))</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(sAR, <span class="at">axes=</span><span class="cn">FALSE</span>, <span class="at">main=</span><span class="st">'seasonal AR(1)'</span>, <span class="at">xlab=</span><span class="st">"year"</span>, <span class="at">type=</span><span class="st">'c'</span>)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>Months <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"J"</span>,<span class="st">"F"</span>,<span class="st">"M"</span>,<span class="st">"A"</span>,<span class="st">"M"</span>,<span class="st">"J"</span>,<span class="st">"J"</span>,<span class="st">"A"</span>,<span class="st">"S"</span>,<span class="st">"O"</span>,<span class="st">"N"</span>,<span class="st">"D"</span>) </span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(sAR, <span class="at">pch=</span>Months, <span class="at">cex=</span><span class="fl">1.25</span>, <span class="at">font=</span><span class="dv">4</span>, <span class="at">col=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>)</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>); <span class="fu">abline</span>(<span class="at">v=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">lty=</span><span class="dv">2</span>, <span class="at">col=</span><span class="fu">gray</span>(.<span class="dv">7</span>))</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">2</span>); <span class="fu">box</span>()</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>ACF <span class="ot">=</span> <span class="fu">ARMAacf</span>(<span class="at">ar=</span>phi, <span class="at">ma=</span><span class="dv">0</span>, <span class="dv">100</span>)</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>PACF <span class="ot">=</span> <span class="fu">ARMAacf</span>(<span class="at">ar=</span>phi, <span class="at">ma=</span><span class="dv">0</span>, <span class="dv">100</span>, <span class="at">pacf=</span><span class="cn">TRUE</span>)</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(ACF,<span class="at">type=</span><span class="st">"h"</span>, <span class="at">xlab=</span><span class="st">"LAG"</span>, <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span>.<span class="dv">1</span>,<span class="dv">1</span>)); <span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>) </span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(PACF, <span class="at">type=</span><span class="st">"h"</span>, <span class="at">xlab=</span><span class="st">"LAG"</span>, <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span>.<span class="dv">1</span>,<span class="dv">1</span>)); <span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="time_series_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 
 
 </section>
@@ -729,8 +725,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../docu/SEA/MRA.html" class="pagination-link">
-        <span class="nav-page-text">Market Risk Analysis</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../docu/SEA/Q_F/statistics.html" class="pagination-link">
+        <span class="nav-page-text">Statistics</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

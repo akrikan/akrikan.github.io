@@ -12,9 +12,7 @@ format:
     df-print: paged
     code-overflow : wrap
     code-copy : true
- 
 ---
-
 
 
 ## Introduction
@@ -33,7 +31,6 @@ format:
 -   Implementing code from the book by Tsay , would be using the book by Hamilton and Metcalfe as reference
 -   Aim to understand different time series models in R.
 -   (Will keep on adding the aims as is go on)
-
 
 ## Financial Time Series and Linear Time series
 
@@ -103,19 +100,19 @@ ibm["log_return"] = log(1+ibm["rtn"])
 
 colnames(ibm)[2] <- "simple_return"
 
-ggplot(ibm,aes(x = simple_return,colour ="Emperical"))+
-ggtitle("Simple return distribution") + 
-xlim (-0.15,0.15)+
-geom_density()+
-stat_function(mapping = aes(colour = "Normal"),
-              fun = dnorm,args = with(ibm,c(mean =mean(simple_return),
-             sd = sd(simple_return))))
+ggplot(ibm,aes(x = simple_return,colour="Emperical"))+
+      ggtitle("Simple return distribution") + 
+      xlim (-0.15,0.15)+
+      geom_density()+
+      stat_function(mapping = aes(colour ="Normal"),
+                   fun = dnorm,args = with(ibm,c(mean =mean(simple_return),
+                   sd = sd(simple_return))))
 
 
 ggplot(ibm,aes(x = log_return,colour = "Emperical"))+
-ggtitle("Log return distribution") + 
-xlim (-0.15,0.15)+geom_density()+
-stat_function(mapping = aes(colour = "Normal"),
+      ggtitle("Log return distribution")+ 
+      xlim (-0.15,0.15)+geom_density()+
+      stat_function(mapping = aes(colour = "Normal"),
              fun = dnorm,args = with(ibm,c(mean = mean(log_return),
              sd = sd(log_return))))+ 
 scale_x_continuous("log return distribution",limits = c(-0.15,0.15))
@@ -142,8 +139,8 @@ acf(IBM,lag=250,ylim= c(-0.05,0.05))#ACF is covered in detail down below , the x
 
 Foundation of time series analysis is Stationarity. A time series $\{r_t\}$ is said to be strictly stationary if the joint distribution of $(r_{t_{1}},r_{t_{2}},r_{t_{3}},....,r_{t_{k}})$ is identical to that of $(r_{t_{1+t}},r_{t_{2+t}},r_{t_{3+t}},....,r_{t_{k+t}})$ for all $t$ , where $k$ is an arbitrary positive integer and $(t_1,t_2,t_3,....,t_k)$ is collection of $k$ positive integers. Strict stationarity is very hard to verify emperically <br/> A time series is said to be weakly stationary if the mean of $r_t$ and the covariance between $r_t$ and $r_{t-l}$ are time invariant where $l$ is an arbitrary integer. Weak stationarity enables us to make inference concerning future observations
 
-- $\mathbb{E}(t_t) = \mu$
-- $Cov(r_t,t_{t-l}) = \gamma_l$
+-   $\mathbb{E}(t_t) = \mu$
+-   $Cov(r_t,t_{t-l}) = \gamma_l$
 
 Weak stationarity is commonly studied and more practical.
 
@@ -152,36 +149,28 @@ The covariance $\gamma_l = Cov(r_t,r_{t-l})$ is called the <u>lag-$l$ autocovari
 -   $\gamma_0=Var(r_t)$
 -   $\gamma_{-l} = \gamma_l$
 
+<u> Autocorrelation Function</u>
 
-<u> Autocorrelation Function</u> 
+Consider a weakly stationary return series $r_t$. When the linear dependence between $r_t$ and its past values $r_{t-l}$ is of interest , the concept of correlation is generalised to autocorrelation. The correlation coefficient between $r_t$ and $r_{t-l}$ is called the lag-l autocorrelation of $r_t$ and is commonly denoted by $\rho_l$ , which under the weak stationarity assumption is a function of l only. Its defined by $$ \rho_l = \frac{Cov(r_t,r_{t-l})}{\sqrt{Var(r_t)Var(r_{t-l})}} = \frac{Cov(r_t,r_{t-l})}{Var(r_t)} = \frac{\gamma_l}{\gamma_0}$$
 
-Consider a weakly stationary return series $r_t$. When the linear dependence between $r_t$ and its past values $r_{t-l}$ is of interest , the concept of correlation is generalised to autocorrelation. 
-The correlation coefficient between $r_t$ and $r_{t-l}$ is called the lag-l autocorrelation of $r_t$ and is commonly denoted by $\rho_l$ , which under the weak stationarity assumption is a function of l only.
-Its defined by $$ \rho_l = \frac{Cov(r_t,r_{t-l})}{\sqrt{Var(r_t)Var(r_{t-l})}} = \frac{Cov(r_t,r_{t-l})}{Var(r_t)} = \frac{\gamma_l}{\gamma_0}$$
+Its easy to see that
 
-Its easy to see that 
+-   $\rho_0 = 1$
+-   $\rho_l = \rho_{-l}$
+-   $-1\leq \rho_l \leq 1$
 
-- $\rho_0 = 1$
-- $\rho_l = \rho_{-l}$
-- $-1\leq \rho_l \leq 1$
-
-For a  given sample of returns $\{r_t\}_{t=1}^T$ , let $\bar r$ be the sample mean. Then the lag-1 autocorrelation of $r_t$ is $$\hat\rho_1 = \frac{\sum_{t=2}^T(r_t - \bar r)(r_{t-1} - \bar r)}{\sum_{t=2}^T(r_t - \bar r )^2}$$
+For a given sample of returns $\{r_t\}_{t=1}^T$ , let $\bar r$ be the sample mean. Then the lag-1 autocorrelation of $r_t$ is $$\hat\rho_1 = \frac{\sum_{t=2}^T(r_t - \bar r)(r_{t-1} - \bar r)}{\sum_{t=2}^T(r_t - \bar r )^2}$$
 
 The conditions under which $\hat\rho$ is a consistent estimator of $\rho_1$ are as follows :
 
-* The returns $\{r_t\}$ is an independent and identically distributed sequence 
-* $\mathbb{E}(r_t^2) < \infty$ 
+-   The returns $\{r_t\}$ is an independent and identically distributed sequence
+-   $\mathbb{E}(r_t^2) < \infty$
 
 Then $\hat\rho_1$ is asymptotically normal with mean zero and variance 1/T
 
-
-
-
 <u>Testing</u>
 
-Let $H_0 : \rho_1 = 0$ be the null hypothesis versus $H_a : \rho_1 \neq 0$ the alternative hypothesis. The test statistic is the usual t ratio (check the statistics section for further description) , which is $\sqrt{T}\hat\rho_1$ and follows asymptotically the standard normal distribution. The null hypothesis $H_0$ is rejected if the t ratio is large in magnitude or equivalently , the p value of the t ratio is small , lets say less than 0.05 
-
-
+Let $H_0 : \rho_1 = 0$ be the null hypothesis versus $H_a : \rho_1 \neq 0$ the alternative hypothesis. The test statistic is the usual t ratio (check the statistics section for further description) , which is $\sqrt{T}\hat\rho_1$ and follows asymptotically the standard normal distribution. The null hypothesis $H_0$ is rejected if the t ratio is large in magnitude or equivalently , the p value of the t ratio is small , lets say less than 0.05
 
 
 ```{r}

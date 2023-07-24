@@ -27,29 +27,7 @@ $\dots$
 
 $F_{\ell} = \mathbb{P}\{X - {\ell} \leq{x} | X > {\ell} \} = \frac{F(x+ {\ell}) - F(\ell)}{1 - F_{X}\{\ell\}}$
 
-```{r}
-library(Sim.DiffProc)
-mu=1;sigma=0.5;theta=2
- x0=0;y0=0;init=c(x0,y0)
-f <- expression(1/mu*(theta-x), x)  
-g <- expression(sqrt(sigma),0)
-mod2d <- snssde2d(drift=f,diffusion=g,M=500,Dt=0.015,x0=c(x=0,y=0))
-## true values of first and second moment at time 10
-Ex <- function(t) theta+(x0-theta)*exp(-t/mu)
-Vx <- function(t) 0.5*sigma*mu *(1-exp(-2*(t/mu)))
-Ey <- function(t) y0+theta*t+(x0-theta)*mu*(1-exp(-t/mu))
-Vy <- function(t) sigma*mu^3*((t/mu)-2*(1-exp(-t/mu))+0.5*(1-exp(-2*(t/mu))))
-covxy <- function(t) 0.5*sigma*mu^2 *(1-2*exp(-t/mu)+exp(-2*(t/mu)))
-tvalue = list(m1=Ex(15),m2=Ey(15),S1=Vx(15),S2=Vy(15),C12=covxy(15))
- ## function of the statistic(s) of interest.
-sde.fun2d <- function(data, i){
-   d <- data[i,]
-   return(c(mean(d$x),mean(d$y),var(d$x),var(d$y),cov(d$x,d$y)))
-}
- ## Parallel Monte-Carlo of 'OUI' at time 10
-mcm.mod2d = MCM.sde(mod2d,statistic=sde.fun2d,time=15,R=10,exact=tvalue,parallel="snow",ncpus=2)
-mcm.mod2d$MC
-```
+
 
 ```{=tex}
 \begin{equation*}
@@ -91,4 +69,20 @@ dY_{t} &= \left( \frac{\gamma \, X_{t}^2 \, Y_{t}}{\left( \kappa + X_{t}^2 \righ
 \begin{equation}
   L' = {L}{\sqrt{1-\frac{v^2}{c^2}}}
 \end{equation}
+```
+```{python}
+import numpy as np 
+import matplotlib.pyplot as plt
+import math
+a = np.random.uniform(0,1,100000)
+b  = np.linspace(0,1,100000)
+c = np.sqrt(1 - b**2 )
+z = np.count_nonzero(a<c)
+d = z*4 /100000000
+#plt.clf()
+#plt.scatter(b,a)
+#plt.plot(b,c,color = 'red')
+#plt.show()
+error = math.pi - d 
+error
 ```

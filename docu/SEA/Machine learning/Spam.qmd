@@ -1,0 +1,21 @@
+---
+title: "Email Spam"
+abstract: All the implementation of email spam from the ESL Book
+
+format: html
+---
+
+```{r}
+if(!require("kernlab")){
+  install.packages("kernlab")
+}
+library(kernlab)
+data(spam)
+
+```
+
+```{r}
+spam[1:5,]
+
+```
+

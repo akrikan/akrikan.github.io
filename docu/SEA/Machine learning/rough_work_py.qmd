@@ -1,0 +1,51 @@
+---
+title: python rought work
+
+format: html
+---
+
+```{python}
+#| cache: false
+import math
+import numpy as np
+import matplotlib.pyplot as plt
+
+def normal_distribution(x,m,sigma):
+  pdf  = (1/math.sqrt(2*math.pi*sigma))*np.exp((x-m)**2/(-2*sigma**2))
+  return pdf
+
+
+def half_normal(x,sigma):
+  pdf = (math.sqrt(2)/sigma*math.sqrt(math.pi))*np.exp(-x**2/(2*sigma**2))
+  return pdf
+
+def student_t(x,mu,scale,vu):
+  pdf = (1+((1/vu)*((x-mu)/scale)**2))**(-(vu+1)/2)
+  return pdf
+
+x1 = np.arange(-10,10,0.01)
+x2 = np.arange(0,10,0.01)
+z = normal_distribution(x1,0,2)
+y = half_normal(x2,1)
+student_tvec = np.vectorize(student_t)
+
+w1 = student_tvec(x1,0,1,1)
+w2 = student_tvec(x1,0,2,2)
+w3 = student_tvec(x1,0,2,1)
+w4 = student_tvec(x1,0,5,5)
+print(w1)
+plt.clf()
+#fig, [ax, ax1,ax3] = plt.subplots(3, 1)
+plt.plot(x1,z,label="normal")
+#ax1.plot(x2,y)
+plt.plot(x1,w1,label = "w1")
+plt.plot(x1,w2,label = "w2")
+plt.plot(x1,w3,label = "w3")
+plt.plot(x1,w4,label = "w4")
+plt.legend()
+plt.show()
+
+math
+
+
+```

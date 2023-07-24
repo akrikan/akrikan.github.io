@@ -25,7 +25,6 @@ import matplotlib.pyplot as plt
 from tensorflow.python.framework.ops import EagerTensor
 from tensorflow.python.ops.resource_variable_ops import ResourceVariable
 import time
-
 ```
 
 ``` python3

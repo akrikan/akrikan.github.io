@@ -98,19 +98,19 @@ ibm["log_return"] = log(1+ibm["rtn"])
 
 colnames(ibm)[2] <- "simple_return"
 
-ggplot(ibm,aes(x = simple_return,colour ="Emperical"))+
-ggtitle("Simple return distribution") + 
-xlim (-0.15,0.15)+
-geom_density()+
-stat_function(mapping = aes(colour = "Normal"),
-              fun = dnorm,args = with(ibm,c(mean =mean(simple_return),
-             sd = sd(simple_return))))
+ggplot(ibm,aes(x = simple_return,colour="Emperical"))+
+      ggtitle("Simple return distribution") + 
+      xlim (-0.15,0.15)+
+      geom_density()+
+      stat_function(mapping = aes(colour ="Normal"),
+                   fun = dnorm,args = with(ibm,c(mean =mean(simple_return),
+                   sd = sd(simple_return))))
 
 
 ggplot(ibm,aes(x = log_return,colour = "Emperical"))+
-ggtitle("Log return distribution") + 
-xlim (-0.15,0.15)+geom_density()+
-stat_function(mapping = aes(colour = "Normal"),
+      ggtitle("Log return distribution")+ 
+      xlim (-0.15,0.15)+geom_density()+
+      stat_function(mapping = aes(colour = "Normal"),
              fun = dnorm,args = with(ibm,c(mean = mean(log_return),
              sd = sd(log_return))))+ 
 scale_x_continuous("log return distribution",limits = c(-0.15,0.15))
