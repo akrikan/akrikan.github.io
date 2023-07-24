@@ -4,7 +4,7 @@ project:
 
 website:
   title: 'Krishnakant A'
-  page-navigation: true
+  page-navigation: False
   favicon: escher.tiff
   navbar: 
   
@@ -14,8 +14,9 @@ website:
     left:
       - href: docu/anotherpage.qmd
         text: "Home"
-      - text: About
-        href: docu/about.qmd
+      #- text: About
+       
+        #href: docu/about.qmd
       # - text: "Book Implementation"
       #   href: docu/Book_Implementations/index.qmd
       - text: "Sea of Everything"
