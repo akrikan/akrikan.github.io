@@ -88,7 +88,6 @@ website:
           contents: 
             - text: "Data Analysis"
               href: docu/SEA/data_analysis.qmd
-           # - text: "Machine Learning in C++"
             - text: "Machine Learning Theory and Practice"
               href: docu/SEA/Machine Learning.qmd
             - text: "Machine Learning for finance"

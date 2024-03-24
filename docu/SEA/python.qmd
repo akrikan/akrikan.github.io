@@ -47,7 +47,9 @@
      - Selectors  - ability to read member data and provide calculations based upon the data e.g. getter method
      - Modifiers - able to read member data as well as change that data e.g. setter method
      - Inheritance - Used to model a type of relationship between object known as <i> is-a </i> </br>
-     For example American call option is a call option hence American call option should inherit all properties a call option possess such as strike price ..etc
+     For example American call option is a call option hence American call option should inherit all properties a call option possess such as strike price and underlying price.
+     
+     
      
 ## Rust
 
