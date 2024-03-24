@@ -271,6 +271,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#c" id="toc-c" class="nav-link" data-scroll-target="#c">C++</a></li>
   <li><a href="#rust" id="toc-rust" class="nav-link" data-scroll-target="#rust">Rust</a></li>
   <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
+  <li><a href="#sql" id="toc-sql" class="nav-link" data-scroll-target="#sql">SQL</a></li>
   </ul>
 </nav>
     </div>
@@ -338,12 +339,57 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="c" class="level2">
 <h2 class="anchored" data-anchor-id="c">C++</h2>
+<ul>
+<li>The standard Template Library
+<ul>
+<li>Sequence Containers - Vectors ,Lists, Stacks</li>
+<li>Associative containers - Sets , Maps</li>
+<li>Algorithms - Sort, Copy,Reverse , Min,Max</li>
+<li>Iterators - Abstracted objects that allow iteration across a container</li>
+<li>Input/Output - iostream ,fstream,string</li>
+</ul></li>
+<li>The Boost Libraries - Third-party libraries
+<ul>
+<li>File System interface abstraction</li>
+<li>regular expressions</li>
+<li>threading</li>
+<li>smart pointers</li>
+<li>networking</li>
+</ul></li>
+<li>Object Oriented Programming
+<ul>
+<li>Constructors - default , parameter , copy ,assignment operator(not a constructor technically)</li>
+<li>Destructor - deallocate any memory allocated upon object creation</li>
+<li>Selectors - ability to read member data and provide calculations based upon the data e.g.&nbsp;getter method</li>
+<li>Modifiers - able to read member data as well as change that data e.g.&nbsp;setter method</li>
+<li>Inheritance - Used to model a type of relationship between object known as <i> is-a </i> <br> For example American call option is a call option hence American call option should inherit all properties a call option possess such as strike price ..etc</li>
+</ul></li>
+</ul>
 </section>
 <section id="rust" class="level2">
 <h2 class="anchored" data-anchor-id="rust">Rust</h2>
 </section>
 <section id="r" class="level2">
 <h2 class="anchored" data-anchor-id="r">R</h2>
+</section>
+<section id="sql" class="level2">
+<h2 class="anchored" data-anchor-id="sql">SQL</h2>
+<p>Normalization</p>
+<ul>
+<li>Purpose
+<ul>
+<li>To characterize the level of redundancy in a relational schema</li>
+<li>Provide mechanisms for transforming schemas in order to remove redundancy</li>
+</ul></li>
+<li>Types
+<ul>
+<li>First normal form : atomic values and not a tuple in any column</li>
+<li>Second normal form : no partial dependencies</li>
+<li>Thrid normal form : no transitive dependencies</li>
+<li>Boyce -Codd normal form : For any dependecny A -&gt; B , A should be a super key</li>
+<li>Each normal form must satisfy the previous normal form</li>
+</ul></li>
+</ul>
 
 
 </section>

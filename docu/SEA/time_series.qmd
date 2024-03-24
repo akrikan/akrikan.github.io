@@ -79,13 +79,13 @@ ibm = da[,2] # IBM simple returns
 
 sibm = ibm*100 #Percentage simple returns 
 
-basicStats(sibm)
+b = basicStats(sibm)
 
 s1 = skewness(sibm)
 t = s1/sqrt(6/9845) #defintion for test statistic here 9845 is N 
-t
 pv  = 2*(1-pnorm(t)) # Calculate p-value
-pv
+
+cat("skewness =", s1,"\nTest Satistic = ",t,"\np-value = ", pv)
 
 ```
 
