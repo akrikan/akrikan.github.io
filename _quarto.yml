@@ -82,7 +82,6 @@ website:
          #   - text: "Technical Analysis"
            # - text: "Fudamental Analysis"
           #  - text: "Financial Products"
-          #    href: docu/SEA/financial_products.qmd
             
         - section: "Machine Learning"
           contents: 

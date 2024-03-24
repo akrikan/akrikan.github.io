@@ -1,10 +1,6 @@
 ---
-jupyter: python3
----
-
----
-title: "Hands-On Machine Learning with Scikit-Learn ,Keras and Tensorflow"
-execute: 
+title: 'Hands-On Machine Learning with Scikit-Learn ,Keras and Tensorflow'
+execute:
   warning: false
   freeze: true
   keep-ipynb: true
@@ -12,10 +8,11 @@ toc: true
 format:
   html:
     html-math-method: katex
-    code-block-bg: "#E5E7E9"
+    code-block-bg: '#E5E7E9'
     df-print: paged
-    code-overflow : wrap
-    code-copy : true
+    code-overflow: wrap
+    code-copy: true
+jupyter: python3
 ---
 
 ![Image of the book](IMG_9683.jpg)
