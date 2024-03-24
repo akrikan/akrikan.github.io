@@ -89,7 +89,7 @@ website:
             - text: "Data Analysis"
               href: docu/SEA/data_analysis.qmd
             - text: "Machine Learning Theory and Practice"
-              href: docu/SEA/Machine Learning.qmd
+              href: docu/SEA/Machine Learning/handsonml.qmd
             - text: "Machine Learning for finance"
               href: docu/SEA/Machine learning/Machine Learning for finance.qmd
               
@@ -165,7 +165,7 @@ format:
     theme: sketchy
     toc: true
     toc-location: right
-    toc-depth: 3
-   
+    toc-depth: 5
+jupyter: python3
     
 

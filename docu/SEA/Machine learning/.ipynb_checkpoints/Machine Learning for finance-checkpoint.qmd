@@ -1,0 +1,24 @@
+---
+title: "Machine Learning for Finance"
+abstract: The title is misleading in the sense in doesn't give complete picture of whats being coverd
+
+execute: 
+  warning: false
+  freeze: true
+  cache: true
+format:
+  html:
+    html-math-method: katex
+    code-block-bg: "#E5E7E9"
+    df-print: paged
+    code-overflow : wrap
+    code-copy : true
+---
+
+## Introduction
+
+### References
+
+-   Machine Learning for Algorithimic Trading by Stephan Jansen
+
+-   Python for Finance Cookbook by Eryk Lewinson

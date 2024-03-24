@@ -27,30 +27,26 @@
         -   os,sys,itertools,collecations,math and others
 
 ## C++
-- The standard Template Library
-   - Sequence Containers - Vectors ,Lists, Stacks
-   - Associative containers - Sets , Maps
-   - Algorithms - Sort, Copy,Reverse , Min,Max
-   - Iterators - Abstracted objects that allow iteration across a container
-   - Input/Output - iostream ,fstream,string
 
-- The Boost Libraries - Third-party libraries
-    - File System interface abstraction
-    - regular expressions
-    - threading
-    - smart pointers
-    - networking
+-   The standard Template Library
+    -   Sequence Containers - Vectors ,Lists, Stacks
+    -   Associative containers - Sets , Maps
+    -   Algorithms - Sort, Copy,Reverse , Min,Max
+    -   Iterators - Abstracted objects that allow iteration across a container
+    -   Input/Output - iostream ,fstream,string
+-   The Boost Libraries - Third-party libraries
+    -   File System interface abstraction
+    -   regular expressions
+    -   threading
+    -   smart pointers
+    -   networking
+-   Object Oriented Programming
+    -   Constructors - default , parameter , copy ,assignment operator(not a constructor technically)
+    -   Destructor - deallocate any memory allocated upon object creation
+    -   Selectors - ability to read member data and provide calculations based upon the data e.g. getter method
+    -   Modifiers - able to read member data as well as change that data e.g. setter method
+    -   Inheritance - Used to model a type of relationship between object known as <i> is-a </i> </br> For example American call option is a call option hence American call option should inherit all properties a call option possess such as strike price and underlying price.
 
-- Object Oriented Programming
-    - Constructors - default , parameter , copy ,assignment operator(not a constructor technically)
-     - Destructor - deallocate any memory allocated upon object creation
-     - Selectors  - ability to read member data and provide calculations based upon the data e.g. getter method
-     - Modifiers - able to read member data as well as change that data e.g. setter method
-     - Inheritance - Used to model a type of relationship between object known as <i> is-a </i> </br>
-     For example American call option is a call option hence American call option should inherit all properties a call option possess such as strike price and underlying price.
-     
-     
-     
 ## Rust
 
 ## R

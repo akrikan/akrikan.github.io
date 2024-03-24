@@ -1,0 +1,9 @@
+---
+title: KDB
+format: html
+---
+
+```{.q}
+til each 20+til 10
+
+```

@@ -166,10 +166,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../docu/about.html">
- <span class="menu-text">About</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="../../../docu/SEA/index.html">
  <span class="menu-text">Sea of Everything</span></a>
   </li>  
@@ -208,8 +204,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul class="collapse">
   <li><a href="#end-to-end-machine-learning" id="toc-end-to-end-machine-learning" class="nav-link" data-scroll-target="#end-to-end-machine-learning">End to End machine Learning</a></li>
   <li><a href="#performance-measure" id="toc-performance-measure" class="nav-link" data-scroll-target="#performance-measure">Performance Measure</a></li>
-  <li><a href="#download-the-data" id="toc-download-the-data" class="nav-link" data-scroll-target="#download-the-data">Download the DATA</a></li>
-  <li><a href="#creating-a-test-set-and-train-set" id="toc-creating-a-test-set-and-train-set" class="nav-link" data-scroll-target="#creating-a-test-set-and-train-set">Creating a test set and train set</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -234,6 +228,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="IMG_9683.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Image of the book</figcaption><p></p>
+</figure>
+</div>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>A pure code based implementation with necessary mathematical formulations included.</p>
@@ -242,13 +242,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="performance-measure" class="level3">
 <h3 class="anchored" data-anchor-id="performance-measure">Performance Measure</h3>
-<p><b> <u>Root Mean Square Error</u></b> <span class="math display"> RMSE(\textbf{X},h)= \sqrt{\frac{\sum_{i = 1}^{m}{(h{(x^{(i)})- y ^{(i)}}})^2}{m}}</span> $ m - $ is the number of instances in the datasets you are measuring the RMSE on <br> $x^{(i)} - $ is the vector of all teh feature values of the <span class="math inline">i^{th}</span> instance in the dataset<br> $y^{(i)} - $ is its label<br> $ - $ is the matrix containing all the feature value of all the instances in the dataset. <span class="math inline">x^{(i)}</span> transpose is the <span class="math inline">i^{th}</span> row in <span class="math inline">\textbf{X}</span> <br> h - is the system’s prediction function also called as hypothesis. It is also represented by <span class="math inline">\hat{y}</span> where <span class="math inline">\hat{y}^{(i)} = h(x^{(i)})</span><br> $ RMSE(,h) - $ is the cost function measured on the set of examples using the hypothesis h <br></p>
-<p><b> <u>Mean absolute Error</u></b> <span class="math display"> MAE(\textbf{X},h)= \frac{\sum_{i = 1}^{m}{|h{(x^{(i)})- y ^{(i)}}}|}{m}</span></p>
+<p><b> <u>Root Mean Square Error </u></b><u> </u> <span class="math display"> RMSE(\textbf{X},h)= \sqrt{\frac{\sum_{i = 1}^{m}{(h{(x^{(i)})- y ^{(i)}}})^2}{m}}</span> <span class="math inline">m</span>- is the number of instances in the datasets you are measuring the RMSE on <br> <span class="math inline">x^{(i)}</span>- is the vector of all teh feature values of the <span class="math inline">i^{th}</span> instance in the dataset<br> <span class="math inline">y^{(i)}</span>- is its label<br> <span class="math inline">\textbf{X}</span>- is the matrix containing all the feature value of all the instances in the dataset. <span class="math inline">x^{(i)}</span> transpose is the <span class="math inline">i^{th}</span>-row in <span class="math inline">\textbf{X}</span> <br> h - is the system’s prediction function also called as hypothesis. It is also represented by <span class="math inline">\hat{y}</span> where <span class="math inline">\hat{y}^{(i)} = h(x^{(i)})</span><br> <span class="math inline">RMSE(\textbf{X},h)</span>- is the cost function measured on the set of examples using the hypothesis h <br></p>
+<p><b> <u>Mean absolute Error</u></b><u> </u> <span class="math display"> MAE(\textbf{X},h)= \frac{\sum_{i = 1}^{m}{|h{(x^{(i)})- y ^{(i)}}}|}{m}</span></p>
 <p>The difference between these two performance measure is how the norm is caculated. RSME makes use of <span class="math inline">\mathcal{l}_2</span> norm while MAE makes use of <span class="math inline">\mathcal{l}_1</span> norm.</p>
-</section>
-<section id="download-the-data" class="level3">
-<h3 class="anchored" data-anchor-id="download-the-data">Download the DATA</h3>
-<div class="cell" data-execution_count="29">
+<section id="download-the-data" class="level4">
+<h4 class="anchored" data-anchor-id="download-the-data">Download the DATA</h4>
+<div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tarfile</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> urllib</span>
@@ -267,17 +266,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>fetch_housing_data() <span class="co"># call the function</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="30">
+<div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> load_housing_data(housing_path <span class="op">=</span> Housing_Path):</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    csv_path <span class="op">=</span> os.path.join(housing_path,<span class="st">"housing.csv"</span>)</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.read_csv(csv_path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="31">
+<div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>housing <span class="op">=</span> load_housing_data()</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>housing.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="31">
+<div class="cell-output cell-output-display" data-execution_count="3">
 
 <div>
 
@@ -368,7 +367,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="32">
+<div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>housing.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -390,9 +389,9 @@ dtypes: float64(9), object(1)
 memory usage: 1.6+ MB</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="33">
+<div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>housing[<span class="st">"ocean_proximity"</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="33">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>&lt;1H OCEAN     9136
 INLAND        6551
 NEAR OCEAN    2658
@@ -401,9 +400,9 @@ ISLAND           5
 Name: ocean_proximity, dtype: int64</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="34">
+<div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>housing.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="34">
+<div class="cell-output cell-output-display" data-execution_count="6">
 
 <div>
 
@@ -524,11 +523,11 @@ Name: ocean_proximity, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="35">
+<div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib inline </span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>housing.hist(bins <span class="op">=</span> <span class="dv">50</span> ,figsize <span class="op">=</span> (<span class="dv">20</span>,<span class="dv">15</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="35">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>array([[&lt;AxesSubplot: title={'center': 'longitude'}&gt;,
         &lt;AxesSubplot: title={'center': 'latitude'}&gt;,
         &lt;AxesSubplot: title={'center': 'housing_median_age'}&gt;],
@@ -541,7 +540,7 @@ Name: ocean_proximity, dtype: int64</code></pre>
       dtype=object)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="handsonml_files/figure-html/cell-8-output-2.png" class="img-fluid"></p>
+<p><img src="handsonml_files/figure-html/cell-8-output-2.png" width="1557" height="1170"></p>
 </div>
 </div>
 <p>Few point about the data</p>
@@ -552,9 +551,9 @@ Name: ocean_proximity, dtype: int64</code></pre>
 <li><p>Many of the histograms are tail-heavy. Important to normalize the data as some machine learning algorithims might fail to detect patterns effectively</p></li>
 </ul>
 </section>
-<section id="creating-a-test-set-and-train-set" class="level3">
-<h3 class="anchored" data-anchor-id="creating-a-test-set-and-train-set">Creating a test set and train set</h3>
-<div class="cell" data-execution_count="36">
+<section id="creating-a-test-set-and-train-set" class="level4">
+<h4 class="anchored" data-anchor-id="creating-a-test-set-and-train-set">Creating a test set and train set</h4>
+<div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">50</span>)<span class="co"># will always give the same test set and train set </span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> split_train_test(data,test_ratio):</span>
@@ -574,6 +573,7 @@ Name: ocean_proximity, dtype: int64</code></pre>
 </div>
 
 
+</section>
 </section>
 </section>
 

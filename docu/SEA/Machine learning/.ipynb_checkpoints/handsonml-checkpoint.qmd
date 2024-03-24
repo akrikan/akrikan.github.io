@@ -1,0 +1,124 @@
+---
+jupyter: python3
+---
+
+---
+title: "Hands-On Machine Learning with Scikit-Learn ,Keras and Tensorflow"
+execute: 
+  warning: false
+  freeze: true
+
+format:
+  html:
+    html-math-method: katex
+    code-block-bg: "#E5E7E9"
+    df-print: paged
+    code-overflow : wrap
+    code-copy : true
+    
+---
+
+## Introduction
+
+A pure code based implementation with necessary mathematical formulations included.
+
+### End to End machine Learning
+
+### Performance Measure
+
+<b> <u>Root Mean Square Error</b></u >
+$$ RMSE(\textbf{X},h)= \sqrt{\frac{\sum_{i = 1}^{m}{(h{(x^{(i)})- y ^{(i)}}})^2}{m}}$$
+$ m -  $ is the number of instances in the datasets you are measuring the RMSE on <br />
+$x^{(i)} - $ is the vector of all teh feature values  of the $i^{th}$ instance in the dataset<br/>
+$y^{(i)} - $ is its label<br/>
+$\textbf{X} - $ is the matrix containing all the feature value of all the instances in the dataset. $x^{(i)}$ transpose is the $i^{th}$ row in $\textbf{X}$ </br>
+h -  is the system's prediction function also called as hypothesis. It is also represented by $\hat{y}$ where $\hat{y}^{(i)} = h(x^{(i)})$</br>
+$ RMSE(\textbf{X},h) - $ is the cost function measured on the set of examples using the hypothesis h </br>
+
+<b> <u>Mean absolute Error</b></u >
+$$ MAE(\textbf{X},h)= \frac{\sum_{i = 1}^{m}{|h{(x^{(i)})- y ^{(i)}}}|}{m}$$
+
+The difference between these two performance measure is how the norm is caculated. RSME makes use of $\mathcal{l}_2$ norm while MAE makes use of $\mathcal{l}_1$ norm.
+
+### Download the DATA
+
+```{python}
+import os 
+import tarfile
+import urllib
+
+Download_Root = "https://raw.githubusercontent.com/ageron/handson-ml2/master/"
+Housing_Path = os.path.join("Data","housing") # for creating your local directory with DATA as main directory and housign as sub directory
+Housing_URL = Download_Root + "datasets/housing/housing.tgz"
+
+def fetch_housing_data(housing_url = Housing_URL,housing_path = Housing_Path):
+    os.makedirs(housing_path,exist_ok = True)# Will create a directory with name at housing path , exist_ok will check if it already exist , if yes leaving it unaltered
+    tgz_path = os.path.join(housing_path,"housing.tgz")
+    urllib.request.urlretrieve(housing_url,tgz_path)
+    housing_tgz = tarfile.open(tgz_path)
+    housing_tgz.extractall(path=housing_path)
+    housing_tgz.close()
+    
+fetch_housing_data() # call the function
+```
+
+```{python}
+import pandas as pd
+
+def load_housing_data(housing_path = Housing_Path):
+    csv_path = os.path.join(housing_path,"housing.csv")
+    return pd.read_csv(csv_path)
+```
+
+```{python}
+housing = load_housing_data()
+housing.head()
+```
+
+```{python}
+housing.info()
+```
+
+```{python}
+housing["ocean_proximity"].value_counts()
+```
+
+```{python}
+housing.describe()
+```
+
+```{python}
+%matplotlib inline 
+import matplotlib.pyplot as plt
+housing.hist(bins = 50 ,figsize = (20,15))
+```
+
+Few point about the data
+
+* The median income is capped at 15 for higher median incomes and at 0.5 for lower median incomes. The numbers are denominated in $10000 i.e 3 in the chart represents 30,000 USD
+
+* The housing median age and median house value were also capped. Since median house value is our target variable this is a source of a problem.The prediction might never go beyond the capped limit.
+
+* The attributes have different scales
+
+* Many of the histograms are tail-heavy. Important to normalize the data as some machine learning algorithims might fail to detect patterns effectively
+
+### Creating a test set and train set
+
+```{python}
+import numpy as np
+np.random.seed(50)# will always give the same test set and train set 
+def split_train_test(data,test_ratio):
+    shuffled_indices = np.random.permutation(len(data))
+    test_set_size = int(len(data)*test_ratio)
+    test_indices = shuffled_indices[:test_set_size]
+    train_indices = shuffled_indices[test_set_size:]
+    return data.loc[train_indices] ,data.loc[test_indices]
+
+train_set , test_set = split_train_test(housing,0.2)
+print(len(train_set))
+print(len(test_set))
+```
+
+
+
