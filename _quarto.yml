@@ -159,6 +159,7 @@ format:
     toc: true
     toc-location: right
     toc-depth: 4
+    embed-resources: true
 jupyter: python3
     
 
