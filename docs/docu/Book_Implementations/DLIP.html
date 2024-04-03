@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Krishnakant A – dlip</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../EscherSmall.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Krishnakant A</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../Index.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../docu/anotherpage.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../docu/SEA/index.html">
+ <span class="menu-text">Sea of Everything</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../docu/Book_Implementations/index.html">
+ <span class="menu-text">Implementations</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../docu/Resources/index.html">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-help" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Help</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-help">    
+        <li class="dropdown-header">report a bug</li>
+    </ul>
+  </li>
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#implementation-of-deep-learning-in-python-text-by-francois-chollet" id="toc-implementation-of-deep-learning-in-python-text-by-francois-chollet" class="nav-link active" data-scroll-target="#implementation-of-deep-learning-in-python-text-by-francois-chollet">Implementation of Deep learning in Python text by Francois Chollet</a>
+  <ul>
+  <li><a href="#the-network-architecture" id="toc-the-network-architecture" class="nav-link" data-scroll-target="#the-network-architecture">The network architecture</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="implementation-of-deep-learning-in-python-text-by-francois-chollet" class="level2">
+<h2 class="anchored" data-anchor-id="implementation-of-deep-learning-in-python-text-by-francois-chollet">Implementation of Deep learning in Python text by Francois Chollet</h2>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sys.executable)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sys.version)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sys.version_info)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>/Users/krishnakantammanamanachi/opt/anaconda3/envs/tf/bin/python
+3.10.9 | packaged by conda-forge | (main, Feb  2 2023, 20:24:27) [Clang 14.0.6 ]
+sys.version_info(major=3, minor=10, micro=9, releaselevel='final', serial=0)</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> keras.datasets <span class="im">import</span> mnist</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>[(train_images,train_labels),(test_images,test_labels)] <span class="op">=</span> mnist.load_data()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( <span class="st">"Shape of train images"</span>,train_images.shape )</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( <span class="st">"Shape of test images"</span>,test_images.shape )</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( <span class="st">"Train labels format"</span>,train_labels )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Shape of train images (60000, 28, 28)
+Shape of test images (10000, 28, 28)
+Train labels format [5 0 4 ... 5 6 8]</code></pre>
+</div>
+</div>
+<section id="the-network-architecture" class="level3">
+<h3 class="anchored" data-anchor-id="the-network-architecture">The network architecture</h3>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> keras <span class="im">import</span> models , layers</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a two layer dense(all hidden nodes are connected all input nodes - fully connected) neural network.</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># activation function for each layer is specified</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>network <span class="op">=</span> models.Sequential()</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>network.add(layers.Dense(<span class="dv">512</span>,activation <span class="op">=</span> <span class="st">'relu'</span>,input_shape <span class="op">=</span> (<span class="dv">28</span><span class="op">*</span><span class="dv">28</span>,))) <span class="co"># Creating a neural network layer with 512 hidden nodes and 'relu' as activation function</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>network.add(layers.Dense(<span class="dv">10</span>,activation <span class="op">=</span> <span class="st">'softmax'</span>)) <span class="co"># creating another layer in succession to the previous layer with 10 nodes as output </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">## The Compiler Step</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>network.<span class="bu">compile</span>(optimizer <span class="op">=</span> <span class="st">'rmsprop'</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                 loss <span class="op">=</span> <span class="st">'categorical_crossentropy'</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                  metrics <span class="op">=</span> [<span class="st">'accuracy'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Preparing the image data</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>train_images <span class="op">=</span> train_images.reshape((<span class="dv">60000</span>,<span class="dv">28</span><span class="op">*</span><span class="dv">28</span>)) <span class="co"># a neural network can only take a 1-d vector as an input </span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>train_images <span class="op">=</span> train_images.astype(<span class="st">'float32'</span>)<span class="op">/</span><span class="dv">255</span> <span class="co"># Changing the type of the input data and scaling it such that the value lies between [0,1]</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>test_images <span class="op">=</span> test_images.reshape((<span class="dv">10000</span>,<span class="dv">28</span><span class="op">*</span><span class="dv">28</span>))</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>test_images <span class="op">=</span> test_images.astype(<span class="st">'float32'</span>)<span class="op">/</span><span class="dv">255</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>train_images.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="32">
+<pre><code>(60000, 784)</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">## preparing the labels </span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># since our labels are categorical in nature while a neural netowrk can only understand vector representations we convert our prediction labels into</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># required format</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> keras.utils <span class="im">import</span> to_categorical</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>train_labels <span class="op">=</span> to_categorical(train_labels)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>test_labels  <span class="op">=</span> to_categorical(test_labels)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tensorflow.keras</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">#import sklearn as sk</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy <span class="im">as</span> sp</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tensorflow <span class="im">as</span> tf</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> platform</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Python Platform: </span><span class="sc">{</span>platform<span class="sc">.</span>platform()<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Tensor Flow Version: </span><span class="sc">{</span>tf<span class="sc">.</span>__version__<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Keras Version: </span><span class="sc">{</span>tensorflow<span class="sc">.</span>keras<span class="sc">.</span>__version__<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Python </span><span class="sc">{</span>sys<span class="sc">.</span>version<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Pandas </span><span class="sc">{</span>pd<span class="sc">.</span>__version__<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="co">#print(f"Scikit-Learn {sk.__version__}")</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"SciPy </span><span class="sc">{</span>sp<span class="sc">.</span>__version__<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>gpu <span class="op">=</span> <span class="bu">len</span>(tf.config.list_physical_devices(<span class="st">'GPU'</span>))<span class="op">&gt;</span><span class="dv">0</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"GPU is"</span>, <span class="st">"available"</span> <span class="cf">if</span> gpu <span class="cf">else</span> <span class="st">"NOT AVAILABLE"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Python Platform: macOS-13.1-x86_64-i386-64bit
+Tensor Flow Version: 2.11.0
+Keras Version: 2.11.0
+
+Python 3.10.9 | packaged by conda-forge | (main, Feb  2 2023, 20:24:27) [Clang 14.0.6 ]
+Pandas 1.5.3
+SciPy 1.10.0
+GPU is NOT AVAILABLE</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Passing our input and output data to the neural network we have designed </span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>network.fit(train_images,train_labels,epochs <span class="op">=</span> <span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Epoch 1/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 2/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 3/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 4/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3014 - accuracy: 0.1124
+Epoch 5/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 6/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 7/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 8/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 9/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 10/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 11/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 12/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 13/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3014 - accuracy: 0.1124
+Epoch 14/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3014 - accuracy: 0.1124
+Epoch 15/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 16/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3014 - accuracy: 0.1124
+Epoch 17/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 18/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 19/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 20/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 21/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 22/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 23/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 24/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3014 - accuracy: 0.1124
+Epoch 25/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3014 - accuracy: 0.1124
+Epoch 26/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3014 - accuracy: 0.1124
+Epoch 27/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 28/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 29/100
+1875/1875 [==============================] - 7s 4ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 30/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 31/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3014 - accuracy: 0.1124
+Epoch 32/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 33/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 34/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 35/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 36/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3014 - accuracy: 0.1124
+Epoch 37/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3014 - accuracy: 0.1124
+Epoch 38/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3014 - accuracy: 0.1124
+Epoch 39/100
+1875/1875 [==============================] - 5s 2ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 40/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3014 - accuracy: 0.1124
+Epoch 41/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 42/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3014 - accuracy: 0.1124
+Epoch 43/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 44/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 45/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 46/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3014 - accuracy: 0.1124
+Epoch 47/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3014 - accuracy: 0.1124
+Epoch 48/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 49/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 50/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3014 - accuracy: 0.1124
+Epoch 51/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3014 - accuracy: 0.1124
+Epoch 52/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 53/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3014 - accuracy: 0.1124
+Epoch 54/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3014 - accuracy: 0.1124
+Epoch 55/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 56/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3013 - accuracy: 0.1124
+Epoch 57/100
+1875/1875 [==============================] - 5s 3ms/step - loss: 2.3014 - accuracy: 0.1124
+Epoch 58/100
+1532/1875 [=======================&gt;......] - ETA: 0s - loss: 2.3013 - accuracy: 0.1120</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="40">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#evaluating our network against the data , since we had earlier mentioned metric as accurracy , the ouput will provide us with accuracy of our model</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>test_loss ,test_acc <span class="op">=</span> network.evaluate(test_images,test_labels)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"test accuracy:"</span>,test_acc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>313/313 [==============================] - 0s 1ms/step - loss: 2.3011 - accuracy: 0.1135
+test accuracy: 0.11349999904632568</code></pre>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
