@@ -1,0 +1,14 @@
+{
+  "hash": "302511179ea718182cb4923e58c4369f",
+  "result": {
+    "markdown": "---\ntitle: \"Quarto HTML Basics\"\nauthor: \"Norah Jones\"\ndate: \"March 22, 2021\"\n#code-block-bg: \"#31BAE9\"\nformat:\n  html:\n    html-math-method: katex\n    self-contained: true\n    code-block-background: \"#FA8072\"\n    code-block-border-left: \"#31BAE9\"\neditor_options: \n  chunk_output_type: inline\n---\n\n\n## Introduction\n\nThis a Quarto document. To learn more about Quarto see <https://quarto.org>.\n\nClick the **Code** button in the header to see the full source code of this document.\n\nHere we call the R `summary()` function---the function's output is included immediately below:\n\n\n::: {.cell}\n\n```{.r .cell-code}\nsummary(cars)\n```\n:::\n\n\n## Plot Output\n\nYou can also embed plots, for example:\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(ggplot2)\ndat <- data.frame(cond = rep(c(\"A\", \"B\"), each=10),\n                  xvar = 1:20 + rnorm(20,sd=3),\n                  yvar = 1:20 + rnorm(20,sd=3))\n\nggplot(dat, aes(x=xvar, y=yvar)) +\n    geom_point(shape=1) + \n    geom_smooth() \n```\n:::\n\n\nNote that the `code-fold: true` parameter was added to the code chunk to hide the code by default (click \"Code\" above the plot to see the code).\n\nThe use of the `label` and `fig-cap` options make this a cross-referenceable figure (see ).\n\n## Interactivity\n\nYou can also add interactive plots. For example:\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(dygraphs)\ndygraph(nhtemp) %>% \n  dyRangeSelector(dateWindow = c(\"1920-01-01\", \"1960-01-01\"))\n```\n:::\n\n\n## Tables\n\nUse the `knitr::kable()` function to print tables as HTML:\n\n\n::: {.cell}\n\n```{.r .cell-code}\nknitr::kable(head(ggplot2::diamonds))\n```\n:::\n\n\n## LaTeX Math\n\nYou can also include LaTeX math:\n\n$$\nP\\left(A=2\\middle|\\frac{A^2}{B}>4\\right)\n$$\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
