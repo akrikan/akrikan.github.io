@@ -118,8 +118,8 @@ website:
       contents:
         - text: "Implementations"
           href: docu/Book_Implementations/index.qmd
-        - text: "First Course stochastic calculus" 
-          href: docu/Book_Implementations/FCSC.qmd
+        #- text: "First Course stochastic calculus" 
+          #href: docu/Book_Implementations/FCSC.qmd
           
     - id: project      
    ###

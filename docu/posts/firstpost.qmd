@@ -2,7 +2,7 @@
 title:  "Quantitative finance resources"
 #description: "Learning i"
 author: "Krishnakant A"
-date: "01/02/2023"
+#date: "01/02/2023"
 categories:
   - Opinion
 editor: 

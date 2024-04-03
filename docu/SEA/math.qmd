@@ -27,8 +27,6 @@ $\dots$
 
 $F_{\ell} = \mathbb{P}\{X - {\ell} \leq{x} | X > {\ell} \} = \frac{F(x+ {\ell}) - F(\ell)}{1 - F_{X}\{\ell\}}$
 
-
-
 ```{=tex}
 \begin{equation*}
 \begin{cases}

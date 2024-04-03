@@ -1,0 +1,38 @@
+---
+title:  "Statistical testing"
+#description: "Learning i"
+author: "Krishnakant A"
+#date: "01/02/2023"
+categories:
+  - Technical
+editor: 
+  markdown: 
+    wrap: 0
+---
+
+## Purpose
+
+-   To include all kinds of statistical test that I have come across in reading literature.
+-   Would also be including tests used in time series analysis as well
+
+## List
+
+### T-statistic
+
+-   Used when sample size is small and/or standard deviation is unknown
+
+-   Z-table is used to find out the p-value and/or z-score at a given significance/confidence level
+
+-   Its usually given by this formula
+
+$$ t_{\hat\beta}  = \frac{\hat\beta - \beta_0}{s.e(\hat\beta)}$$ where $s.e(\hat\beta)$ is the standard error of the estimator $\hat\beta$ for $\beta$ and $\beta_0$ is a non-random , know constant , which may or may not match actual unknown parameter value $\beta$
+
+-   t-ratio statistic of the sample skewness is $$ t = \frac {\hat S(
+    r)}{\sqrt{6/T}} $$ asymptotically a standard normal random variable
+
+-   t-ratio statistic of the sample excess kurtosis is $$ t = \frac{\hat{K(r) - 3}}{\sqrt{24/T}} $$ which is asymptotically a standard normal random variable
+
+-   Jarque-Bera test(JB) combines the two prior tests $$ JB = \frac {\hat S^2(
+    r)}{{6/T}} + \frac{[\hat{K(r) - 3}]^2}{{24/T}} $$ which is asymptotically distributed as chi-squared random variable with 2 degrees of freedom
+
+-   all the above tests in this case are goodness of fit tests
