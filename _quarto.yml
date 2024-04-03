@@ -4,7 +4,6 @@ project:
 
 website:
   title: 'Krishnakant A'
-  site-url: "https://akrikan.github.io"
   page-navigation: False
   favicon: escher.tiff
   navbar: 
@@ -15,11 +14,6 @@ website:
     left:
       - href: docu/anotherpage.qmd
         text: "Home"
-      #- text: About
-       
-        #href: docu/about.qmd
-      # - text: "Book Implementation"
-      #   href: docu/Book_Implementations/index.qmd
       - text: "Sea of Everything"
         file: docu/SEA/index.qmd
       - text: "Implementations"
@@ -54,11 +48,8 @@ website:
               href: docu/SEA/StochC.qmd
             - text: "Time series analysis"
               href: docu/SEA/time_series.qmd
-            #- text: "Market Risk Analysis"
-             # href: docu/SEA/MRA.qmd
             - text: "Statistics"
               href: "docu/SEA/Q_F/statistics.qmd"
-            #- text: "Numerical Methods"
             - text: "Interest rate models"
               href: docu/SEA/IRM.qmd
               
