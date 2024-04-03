@@ -223,18 +223,18 @@ browseVignettes('Sim.DiffProc') for more informations.</code></pre>
 <span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>mcm.mod2d <span class="ot">=</span> <span class="fu">MCM.sde</span>(mod2d,<span class="at">statistic=</span>sde.fun2d,<span class="at">time=</span><span class="dv">15</span>,<span class="at">R=</span><span class="dv">10</span>,<span class="at">exact=</span>tvalue,<span class="at">parallel=</span><span class="st">"snow"</span>,<span class="at">ncpus=</span><span class="dv">2</span>)</span>
 <span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>mcm.mod2d<span class="sc">$</span>MC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>         Exact   Estimate       Bias Std.Error      RMSE
-m1   1.9999994  1.9909214 -0.0090780 0.0091124 0.0288052
-m2  28.0000006 28.0310829  0.0310823 0.0394495 0.1223620
-S1   0.2500000  0.2570137  0.0070137 0.0037655 0.0132966
-S2   6.7500003  6.6626478 -0.0873525 0.1940718 0.5887319
-C12  0.2499998  0.2268103 -0.0231895 0.0194118 0.0626828
+<pre><code>         Exact   Estimate      Bias Std.Error      RMSE
+m1   1.9999994  2.0010641 0.0010647 0.0106480 0.0319618
+m2  28.0000006 28.0125757 0.0125751 0.0450791 0.1358207
+S1   0.2500000  0.2519515 0.0019515 0.0040397 0.0122753
+S2   6.7500003  6.8988653 0.1488650 0.1371838 0.4376474
+C12  0.2499998  0.2835421 0.0335423 0.0265671 0.0864718
            CI( 2.5 % , 97.5 % )
-m1    ( 1.9730614 , 2.0087814 )
-m2  ( 27.9537633 , 28.1084025 )
-S1    ( 0.2496335 , 0.2643939 )
-S2    ( 6.2822741 , 7.0430215 )
-C12   ( 0.1887639 , 0.2648567 )</code></pre>
+m1    ( 1.9801944 , 2.0219338 )
+m2  ( 27.9242223 , 28.1009291 )
+S1    ( 0.2440338 , 0.2598692 )
+S2      ( 6.62999 , 7.1677406 )
+C12   ( 0.2314715 , 0.3356127 )</code></pre>
 </div>
 </div>
 <span class="math display">\[\begin{equation*}
