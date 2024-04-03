@@ -4,6 +4,7 @@ project:
 
 website:
   title: 'Krishnakant A'
+  site-url: "https://akrikan.github.io"
   page-navigation: False
   favicon: escher.tiff
   navbar: 
