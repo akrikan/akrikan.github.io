@@ -51,13 +51,13 @@ website:
             - text: "Statistics"
               href: "docu/SEA/Q_F/statistics.qmd"
             - text: "Interest rate models"
-              href: docu/SEA/IRM.qmd
+            #  href: docu/SEA/IRM.qmd
               
         - section: "Crypto/Blockchain"
           href: docu/Crypto/index.qmd
           contents:
             - text: "EVM and Defi stuff"
-              href: docu/Crypto/evmdefi.qmd
+             # href: docu/Crypto/evmdefi.qmd
             - text: "Cryptography" 
         
         - section: "Mathematics"
