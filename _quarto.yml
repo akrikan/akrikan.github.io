@@ -12,6 +12,7 @@ website:
     background: primary
     collapse-below: lg
     left:
+      - href: index.qmd
       - href: docu/anotherpage.qmd
         text: "Home"
       - text: "Sea of Everything"
