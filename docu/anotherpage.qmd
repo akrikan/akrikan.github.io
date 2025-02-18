@@ -1,13 +1,20 @@
 ---
-title: "MyBlog"
-editor: visual
+# Basic configuration for a blog site
+title: "MyBlog"          # Title of the blog
+#editor: visual           # Type of editor to use
+
+# Settings related to how blog posts are liste
 listing:
-  contents: posts
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
-page-layout: full
-title-block-banner: true
+  contents: posts        # Specifies what content to list, here it's posts
+  sort: "date desc"      # Sorting of the posts, descending by date
+  type: default        # Type of listing
+  categories: true 
+
+  #table-striped: true     # Whether categories are included in the listing
+  #sort-ui: false         # Whether UI elements for sorting are displayed
+  #filter-ui: false       # Whether UI elements for filtering are displayed
+
+page-layout: full        # Layout of the page
+
+title-block-banner: true # Whether a title block banner is used
 ---

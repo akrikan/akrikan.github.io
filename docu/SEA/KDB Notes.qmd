@@ -1,0 +1,13 @@
+---
+title: "KDB notes"
+abstract: "These are notes from the KX academy course that I completed"
+toc: true
+execute:
+  eval: true
+  warning: false
+format:
+  html:
+    html-math-method: "katex"
+    code-block-bg: "#E5E7E9"
+    style: "background: #E5E7E9"
+---

@@ -1,15 +1,15 @@
 ---
 title: Reseach Papers
-abstract: Includes research papers that i have read or found interesting and worth exploring based on the summary.
----
+abstract: Research papers that I have read or found interesting and worth exploring.
 
+---
 ## Machine Learning and Deep Learning
 
 
 ## Computational finance
 
 ## Decentralised finance and Cryptography papers
-  1. [Towards a Theory of Maximal Extractable Value I: Constant Function Market Makers by Kshitij Kulkarni ,et.al](https://arxiv.org/abs/2207.11835)
+  1. [Towards a Theory of Maximal Extractable Value I: Constant Function Market Makers by Kshitij Kulkarni, et.al](https://arxiv.org/abs/2207.11835)
   2. [An analysis of Uniswap markets](https://arxiv.org/abs/1911.03380)
   3. [Replicating market makers](https://arxiv.org/abs/2103.14769)
   4. [Optimal fees for geometric mean market makers](https://arxiv.org/pdf/2104.00446.pdf)

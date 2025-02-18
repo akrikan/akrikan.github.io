@@ -15,13 +15,13 @@ website:
         text: "Home"
       - text: "Sea of Everything"
         file: docu/SEA/index.qmd
-      - text: "Implementations"
-        href: docu/Book_Implementations/index.qmd
+      # - text: "Implementations"
+      # - href: docu/Book_Implementations/index.qmd
       - text: "Resources"
         href: docu/Resources/index.qmd
-      - text: "Help"
-        menu: 
-          - text: "report a bug"
+      # - text: "Help"
+      #   menu: 
+      #     - text: "report a bug"
   sidebar:
     - id: Sea_of_everything
       title: "Sea of Everything"
@@ -52,20 +52,20 @@ website:
             - text: "Interest rate models"
             #  href: docu/SEA/IRM.qmd
               
-        - section: "Crypto/Blockchain"
-          href: docu/Crypto/index.qmd
-          contents:
-            - text: "EVM and Defi stuff"
-             # href: docu/Crypto/evmdefi.qmd
-            - text: "Cryptography" 
+        # - section: "Crypto/Blockchain"
+        #   href: docu/Crypto/index.qmd
+        #   contents:
+        #     - text: "EVM and Defi stuff"
+        #      # href: docu/Crypto/evmdefi.qmd
+        #     - text: "Cryptography" 
         
-        - section: "Mathematics"
-          contents:
-            - text: "P-Adic Calculus"
-            - text: "Number Theory"
-            - text: "Galois Theory"
-            - text: "Analysis"
-                
+        # - section: "Mathematics"
+        #   contents:
+        #     - text: "P-Adic Calculus"
+        #     - text: "Number Theory"
+        #     - text: "Galois Theory"
+        #     - text: "Analysis"
+        #         
         
         
        # - section: "Traditional Finance"
@@ -100,27 +100,26 @@ website:
         - text: "Research Papers"
           href: docu/Resources/Research_papers.qmd
     
-    - id: Implementations
-      title: "Implementations"
-      style: "docked"
-      background: dark
-      collapse-level: 1
-      align: left
-      contents:
-        - text: "Implementations"
-          href: docu/Book_Implementations/index.qmd
-        #- text: "First Course stochastic calculus" 
-          #href: docu/Book_Implementations/FCSC.qmd
+    # - id: Implementations
+    #   title: "Implementations"
+    #   style: "docked"
+    #   background: dark
+    #   collapse-level: 1
+    #   align: left
+    #   contents:
+    #     - text: "Implementations"
+    #       href: docu/Book_Implementations/index.qmd
+    #     #- text: "First Course stochastic calculus" 
+    #       #href: docu/Book_Implementations/FCSC.qmd
           
     - id: project      
  
 
 format:
   html:
-    theme: sketchy
+    theme: Darkly
     toc: true
     toc-location: right
     toc-depth: 4
 jupyter: python3
     
-

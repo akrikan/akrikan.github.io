@@ -1,13 +1,10 @@
 ---
 title:  "Statistical testing"
 #description: "Learning i"
-author: "Krishnakant A"
+#author: "Krishnakant A"
 #date: "01/02/2023"
 categories:
   - Technical
-editor: 
-  markdown: 
-    wrap: 0
 ---
 
 ## Purpose

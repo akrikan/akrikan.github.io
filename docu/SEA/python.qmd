@@ -52,15 +52,40 @@
     -   Modifiers - able to read member data as well as change that data e.g. setter method
     -   Inheritance - Used to model a type of relationship between object known as <i> is-a </i> </br> For example American call option is a call option hence American call option should inherit all properties a call option possess such as strike price and underlying price.
 
-### Few important methods and libraries
+### Few important methods 
+
+- Virtual Destructors -  virtual destructor ensures that when derived subclasses go out of scope or are deleted the order of destruction of each class in a hierarchy is carried out correctly. If the destruction order of the class objects is incorrect, in can lead to what is known as a memory leak.
+
+- Template Classes 
+    - They behave in a different way. They allow us to define classes without the need to specify the types of data that the classes will utilise upfront.  
+    
 
 
-## Rust
+## Cpython
 
 ## R
 
 ## SQL
 
+## Kdb+/q
+
+- Why use KDB+/q
+   - Optimized for time-series data and real-time analytics
+	- Column-oriented storage structure
+	- In-memory first architecture for extremely fast processing (keep as much 		     data as possible in RAM rather than on disk)
+	- Built-in programming language (q) that integrates with the database
+	- Excellent performance for large-scale time-series calculations
+
+- list of all functions
+	- tables[] - gives list of all tables stored in database.
+	- count db  - returns number of rows 
+	- cols db  - retruns list of names of columns
+	- meta - gives meta data namely column type , foreign keys , [attributes](https://code.kx.com/q/basics/syntax/#attributes)
+
+
+## git
+
+## SQL
 Normalization
 
 -   Purpose
@@ -69,6 +94,14 @@ Normalization
 -   Types
     -   First normal form : atomic values and not a tuple in any column
     -   Second normal form : no partial dependencies
-    -   Thrid normal form : no transitive dependencies
-    -   Boyce -Codd normal form : For any dependecny A -\> B , A should be a super key
+    -   Third normal form : no transitive dependencies
+    -   Boyce-Codd normal form : For any dependency A -\> B , A should be a super key
     -   Each normal form must satisfy the previous normal form
+    
+    
+    
+    
+    
+    
+    
+    

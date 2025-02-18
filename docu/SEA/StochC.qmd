@@ -1,6 +1,6 @@
 ---
   title: "Stochastic Calculus"
-  abstract: Would be including the notes and topics from Shreve's book as well topics that would fall into this category. Will be only including theory , the practical and implementation part woulld be on a different page and that would be bifurcated further based on the programming language. C++ is currently the frontrunner but since visualization is easier in Python i would be writing code for that as well.<br/><br/>DISCLAIMER THERE IS AT TIMES LOT OF HAND WAVING ,THIS IS NOT AS MATHEMATICALLY RIGOROUS AS YOU WOULD EXPECT LIKE IN A PURE MATH TEXTBOOK.
+  abstract: Would be including the notes and topics from Shreve's and Grezelak's book as well topics that would fall into this category.Including code implementation in python based of the book.<br/><br/>DISCLAIMER THERE IS AT TIMES LOT OF HAND WAVING ,THIS IS NOT AS MATHEMATICALLY RIGOROUS AS YOU WOULD EXPECT LIKE IN A PURE MATH TEXTBOOK.
   toc: true
   execute: 
     eval: true
@@ -99,6 +99,20 @@ Any random variable that has this distribution regardless of the probability spa
 <br/><br/>
 
 ## Stochastic Processes
+
+::: {#def}
+### Weiner process
+
+A fundamental stochastic process, which is also commonly used in the construction of stochastic differential equations (SDEs) to describe asset price movements, is the Wiener process, also called Brownian motion. Mathematically, a Wiener process, $W(t)$, is characterized by the following properties:
+
+
+<p style="font-size:15px">
+<br>$a)\quad W(t\_{0}) = 0 (technically:\mathbb{P}[W(t_0)=0] =1)$</br>
+<br>$b)\quad W(t) is\quad almost \quad surely \quad continous$</br>
+<br>$c)\quad W(t) \quad has \quad independent \quad incerements \quad with \quad distribution\quad W(t)- W(s) \sim \mathcal{N}(0,t-s)$</br>
+</p>
+
+:::
 
 <br/><br/>
 

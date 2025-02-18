@@ -36,10 +36,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -88,21 +88,9 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Sea of Everything</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../docu/Book_Implementations/index.html">
- <span class="menu-text">Implementations</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="../../docu/Resources/index.html">
  <span class="menu-text">Resources</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-help" role="button" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Help</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-help">    
-        <li class="dropdown-header">report a bug</li>
-    </ul>
-  </li>
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
@@ -181,50 +169,12 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../docu/Crypto/index.html" class="sidebar-item-text sidebar-link">Crypto/Blockchain</a>
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">Machine Learning</a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  EVM and Defi stuff
-  </li>
-          <li class="sidebar-item">
-  Cryptography
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">Mathematics</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  P-Adic Calculus
-  </li>
-          <li class="sidebar-item">
-  Number Theory
-  </li>
-          <li class="sidebar-item">
-  Galois Theory
-  </li>
-          <li class="sidebar-item">
-  Analysis
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">Machine Learning</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../docu/SEA/data_analysis.html" class="sidebar-item-text sidebar-link">Data Analysis</a>
@@ -265,11 +215,14 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#c" id="toc-c" class="nav-link" data-scroll-target="#c">C++</a>
   <ul>
   <li><a href="#introduction-1" id="toc-introduction-1" class="nav-link" data-scroll-target="#introduction-1">Introduction</a></li>
-  <li><a href="#few-important-methods-and-libraries-1" id="toc-few-important-methods-and-libraries-1" class="nav-link" data-scroll-target="#few-important-methods-and-libraries-1">Few important methods and libraries</a></li>
+  <li><a href="#few-important-methods" id="toc-few-important-methods" class="nav-link" data-scroll-target="#few-important-methods">Few important methods</a></li>
   </ul></li>
-  <li><a href="#rust" id="toc-rust" class="nav-link" data-scroll-target="#rust">Rust</a></li>
+  <li><a href="#cpython" id="toc-cpython" class="nav-link" data-scroll-target="#cpython">Cpython</a></li>
   <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
   <li><a href="#sql" id="toc-sql" class="nav-link" data-scroll-target="#sql">SQL</a></li>
+  <li><a href="#kdbq" id="toc-kdbq" class="nav-link" data-scroll-target="#kdbq">Kdb+/q</a></li>
+  <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git">git</a></li>
+  <li><a href="#sql-1" id="toc-sql-1" class="nav-link" data-scroll-target="#sql-1">SQL</a></li>
   </ul>
 </nav>
     </div>
@@ -369,18 +322,51 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="few-important-methods-and-libraries-1" class="level3">
-<h3 class="anchored" data-anchor-id="few-important-methods-and-libraries-1">Few important methods and libraries</h3>
+<section id="few-important-methods" class="level3">
+<h3 class="anchored" data-anchor-id="few-important-methods">Few important methods</h3>
+<ul>
+<li><p>Virtual Destructors - virtual destructor ensures that when derived subclasses go out of scope or are deleted the order of destruction of each class in a hierarchy is carried out correctly. If the destruction order of the class objects is incorrect, in can lead to what is known as a memory leak.</p></li>
+<li><p>Template Classes</p>
+<ul>
+<li>They behave in a different way. They allow us to define classes without the need to specify the types of data that the classes will utilise upfront.</li>
+</ul></li>
+</ul>
 </section>
 </section>
-<section id="rust" class="level2">
-<h2 class="anchored" data-anchor-id="rust">Rust</h2>
+<section id="cpython" class="level2">
+<h2 class="anchored" data-anchor-id="cpython">Cpython</h2>
 </section>
 <section id="r" class="level2">
 <h2 class="anchored" data-anchor-id="r">R</h2>
 </section>
 <section id="sql" class="level2">
 <h2 class="anchored" data-anchor-id="sql">SQL</h2>
+</section>
+<section id="kdbq" class="level2">
+<h2 class="anchored" data-anchor-id="kdbq">Kdb+/q</h2>
+<ul>
+<li>Why use KDB+/q
+<ul>
+<li>Optimized for time-series data and real-time analytics</li>
+<li>Column-oriented storage structure</li>
+<li>In-memory first architecture for extremely fast processing (keep as much data as possible in RAM rather than on disk)</li>
+<li>Built-in programming language (q) that integrates with the database</li>
+<li>Excellent performance for large-scale time-series calculations</li>
+</ul></li>
+<li>list of all functions
+<ul>
+<li>tables[] - gives list of all tables stored in database.</li>
+<li>count db - returns number of rows</li>
+<li>cols db - retruns list of names of columns</li>
+<li>meta - gives meta data namely column type , foreign keys , <a href="https://code.kx.com/q/basics/syntax/#attributes">attributes</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="git" class="level2">
+<h2 class="anchored" data-anchor-id="git">git</h2>
+</section>
+<section id="sql-1" class="level2">
+<h2 class="anchored" data-anchor-id="sql-1">SQL</h2>
 <p>Normalization</p>
 <ul>
 <li>Purpose
@@ -392,8 +378,8 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>First normal form : atomic values and not a tuple in any column</li>
 <li>Second normal form : no partial dependencies</li>
-<li>Thrid normal form : no transitive dependencies</li>
-<li>Boyce -Codd normal form : For any dependecny A -&gt; B , A should be a super key</li>
+<li>Third normal form : no transitive dependencies</li>
+<li>Boyce-Codd normal form : For any dependency A -&gt; B , A should be a super key</li>
 <li>Each normal form must satisfy the previous normal form</li>
 </ul></li>
 </ul>

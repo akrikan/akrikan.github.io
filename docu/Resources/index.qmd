@@ -1,6 +1,7 @@
 ---
 title: "Resources"
-abstract: This page basically contains every form of resource that I have come across while learning and studying various topics in all fields that interest me , not specifically restricted to quantitative finance. Initially I had thought of maintaing this whole page on notion like majority of others given visualising and editing is easier but I have chosen against it.
+abstract: This page contains every form of resource I have come across while learning and studying various topics in all fields that interest me, not specifically restricted to quantitative finance. Initially, I thought of maintaining this page on Notion, like many others, since visualizing and editing is easier there, but I have chosen against it.
+
 editor: visual
 ---
 
@@ -11,6 +12,7 @@ editor: visual
 ## Mathematics
 
 #### Statistics
+[List of curated books by Frank Neilsen](https://franknielsen.github.io/Books/CuratedBookLists.html)
 
 ## Programming
 
