@@ -473,7 +473,7 @@
     "href": "docu/SEA/python.html#kdbq",
     "title": "Programming language",
     "section": "Kdb+/q",
-    "text": "Kdb+/q\n\nWhy use KDB+/q\n\nOptimized for time-series data and real-time analytics\nColumn-oriented storage structure\nIn-memory first architecture for extremely fast processing (keep as much data as possible in RAM rather than on disk)\nBuilt-in programming language (q) that integrates with the database\nExcellent performance for large-scale time-series calculations\n\nlist of all functions\n\ntables[] - gives list of all tables stored in database.\ncount db - returns number of rows\ncols db - retruns list of names of columns\nmeta - gives meta data namely column type , foreign keys , attributes"
+    "text": "Kdb+/q\n\nWhy use KDB+/q\n\nOptimized for time-series data and real-time analytics\nColumn-oriented storage structure\nIn-memory first architecture for extremely fast processing (keep as much data as possible in RAM rather than on disk)\nBuilt-in programming language (q) that integrates with the database\nExcellent performance for large-scale time-series calculations\n\nlist of all functions and statements\n\ntables[] - gives list of all tables stored in database.\ncount db - returns number of rows\ncols db - retruns list of names of columns\nmeta - gives meta data namely column type , foreign keys , attributes\nselect from - selects all the columns\nwhere - conditional statement"
   },
   {
     "objectID": "docu/SEA/python.html#git",

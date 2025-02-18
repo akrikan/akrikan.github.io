@@ -76,11 +76,14 @@
 	- Built-in programming language (q) that integrates with the database
 	- Excellent performance for large-scale time-series calculations
 
-- list of all functions
+- list of all functions and statements
 	- tables[] - gives list of all tables stored in database.
 	- count db  - returns number of rows 
 	- cols db  - retruns list of names of columns
 	- meta - gives meta data namely column type , foreign keys , [attributes](https://code.kx.com/q/basics/syntax/#attributes)
+	- select from  - selects all the columns 
+	- where - conditional statement
+	
 
 
 ## git
