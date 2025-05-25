@@ -1,6 +1,9 @@
 ---
   title: "Programming language"
   abstract: Mostly for Self- reference
+  execute: 
+    eval: false
+    echo: true
 ---
 
 ## Python
@@ -24,10 +27,27 @@
     -   Built-in functions
         -   print() , len() ,range(),enumerate(),map(),zip() and others
     -   Built-in modules
-        -   os,sys,itertools,collecations,math and others
+        -   os,sys,itertools,collecations,math , url;ib
 
 ### Few important methods and libraries
 
+#### OS commands
+
+```{python}
+
+os.getcwd()
+os.chdir(path)
+```
+### Commonly used python data structure and related methods
+
+```{python}
+
+# List Methods
+append()
+
+
+
+```
 
 ## C++
 
@@ -52,14 +72,13 @@
     -   Modifiers - able to read member data as well as change that data e.g. setter method
     -   Inheritance - Used to model a type of relationship between object known as <i> is-a </i> </br> For example American call option is a call option hence American call option should inherit all properties a call option possess such as strike price and underlying price.
 
-### Few important methods 
+### Few important methods
 
-- Virtual Destructors -  virtual destructor ensures that when derived subclasses go out of scope or are deleted the order of destruction of each class in a hierarchy is carried out correctly. If the destruction order of the class objects is incorrect, in can lead to what is known as a memory leak.
+-   Virtual Destructors - virtual destructor ensures that when derived subclasses go out of scope or are deleted the order of destruction of each class in a hierarchy is carried out correctly. If the destruction order of the class objects is incorrect, in can lead to what is known as a memory leak.
 
-- Template Classes 
-    - They behave in a different way. They allow us to define classes without the need to specify the types of data that the classes will utilise upfront.  
-    
+-   Template Classes
 
+    -   They behave in a different way. They allow us to define classes without the need to specify the types of data that the classes will utilise upfront.
 
 ## Cpython
 
@@ -69,26 +88,24 @@
 
 ## Kdb+/q
 
-- Why use KDB+/q
-   - Optimized for time-series data and real-time analytics
-	- Column-oriented storage structure
-	- In-memory first architecture for extremely fast processing (keep as much 		     data as possible in RAM rather than on disk)
-	- Built-in programming language (q) that integrates with the database
-	- Excellent performance for large-scale time-series calculations
-
-- list of all functions and statements
-	- tables[] - gives list of all tables stored in database.
-	- count db  - returns number of rows 
-	- cols db  - retruns list of names of columns
-	- meta - gives meta data namely column type , foreign keys , [attributes](https://code.kx.com/q/basics/syntax/#attributes)
-	- select from  - selects all the columns 
-	- where - conditional statement
-	
-
+-   Why use KDB+/q
+    -   Optimized for time-series data and real-time analytics
+    -   Column-oriented storage structure
+    -   In-memory first architecture for extremely fast processing (keep as much data as possible in RAM rather than on disk)
+    -   Built-in programming language (q) that integrates with the database
+    -   Excellent performance for large-scale time-series calculations
+-   list of all functions and statements
+    -   tables\[\] - gives list of all tables stored in database.
+    -   count db - returns number of rows
+    -   cols db - retruns list of names of columns
+    -   meta - gives meta data namely column type , foreign keys , [attributes](https://code.kx.com/q/basics/syntax/#attributes)
+    -   select from - selects all the columns
+    -   where - conditional statement
 
 ## git
 
 ## SQL
+
 Normalization
 
 -   Purpose
@@ -100,11 +117,3 @@ Normalization
     -   Third normal form : no transitive dependencies
     -   Boyce-Codd normal form : For any dependency A -\> B , A should be a super key
     -   Each normal form must satisfy the previous normal form
-    
-    
-    
-    
-    
-    
-    
-    

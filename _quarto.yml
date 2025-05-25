@@ -118,8 +118,9 @@ website:
 format:
   html:
     theme: Darkly
-    toc: true
+    toc: True
     toc-location: right
     toc-depth: 4
+    
 jupyter: python3
     
