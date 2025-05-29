@@ -59,13 +59,14 @@ website:
         #      # href: docu/Crypto/evmdefi.qmd
         #     - text: "Cryptography" 
         
-        # - section: "Mathematics"
-        #   contents:
-        #     - text: "P-Adic Calculus"
+        - section: "Mathematics"
+          contents:
+             - text: "P-Adic Calculus"
+               href: "docu/SEA/Mathematics/P_adic_analysis.qmd"
         #     - text: "Number Theory"
-        #     - text: "Galois Theory"
+             - text: "Galois Theory"
         #     - text: "Analysis"
-        #         
+        #        
         
         
        # - section: "Traditional Finance"
@@ -117,7 +118,9 @@ website:
 
 format:
   html:
-    theme: Darkly
+    theme: 
+       light: flatly
+       dark: darkly
     toc: True
     toc-location: right
     toc-depth: 4

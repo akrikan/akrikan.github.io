@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Mathematical Analysis">
+
+<title>Krishnakant A - Introduction to p-adic Analysis</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../EscherSmall.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Krishnakant A</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../docu/anotherpage.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../../../docu/SEA/index.html" aria-current="page">
+ <span class="menu-text">Sea of Everything</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../docu/Resources/index.html">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Introduction to p-adic Analysis</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docu/SEA/index.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">Computer Science</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docu/SEA/python.html" class="sidebar-item-text sidebar-link">Programming languages</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  Complexity Theory
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docu/SEA/DSA.html" class="sidebar-item-text sidebar-link">DSA</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../docu/SEA/Q_F/index.html" class="sidebar-item-text sidebar-link">Quantitative Finance</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docu/SEA/StochC.html" class="sidebar-item-text sidebar-link">Stochastic Calculus</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docu/SEA/time_series.html" class="sidebar-item-text sidebar-link">Time series analysis</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docu/SEA/Q_F/statistics.html" class="sidebar-item-text sidebar-link">Statistics</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  Interest rate models
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Mathematics</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docu/SEA/Mathematics/P_adic_analysis.html" class="sidebar-item-text sidebar-link active">P-Adic Calculus</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  Galois Theory
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">Machine Learning</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docu/SEA/data_analysis.html" class="sidebar-item-text sidebar-link">Data Analysis</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docu/SEA/Machine learning/handsonml.html" class="sidebar-item-text sidebar-link">Machine Learning Theory and Practice</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docu/SEA/Machine learning/Machine Learning for finance.html" class="sidebar-item-text sidebar-link">Machine Learning for finance</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docu/SEA/Interesting_implementation.html" class="sidebar-item-text sidebar-link">Interesting Implementations</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#algebraic-foundations" id="toc-algebraic-foundations" class="nav-link active" data-scroll-target="#algebraic-foundations"><span class="toc-section-number">1</span>  Algebraic Foundations</a>
+  <ul class="collapse">
+  <li><a href="#the-p-adic-valuation" id="toc-the-p-adic-valuation" class="nav-link" data-scroll-target="#the-p-adic-valuation"><span class="toc-section-number">1.1</span>  The p-adic Valuation</a></li>
+  <li><a href="#the-p-adic-absolute-value" id="toc-the-p-adic-absolute-value" class="nav-link" data-scroll-target="#the-p-adic-absolute-value"><span class="toc-section-number">1.2</span>  The p-adic Absolute Value</a></li>
+  <li><a href="#ostrowskis-theorem" id="toc-ostrowskis-theorem" class="nav-link" data-scroll-target="#ostrowskis-theorem"><span class="toc-section-number">1.3</span>  Ostrowski’s Theorem</a></li>
+  <li><a href="#algebraic-consequences" id="toc-algebraic-consequences" class="nav-link" data-scroll-target="#algebraic-consequences"><span class="toc-section-number">1.4</span>  Algebraic Consequences</a></li>
+  </ul></li>
+  <li><a href="#analytic-foundations" id="toc-analytic-foundations" class="nav-link" data-scroll-target="#analytic-foundations"><span class="toc-section-number">2</span>  Analytic Foundations</a>
+  <ul class="collapse">
+  <li><a href="#metric-and-topological-properties" id="toc-metric-and-topological-properties" class="nav-link" data-scroll-target="#metric-and-topological-properties"><span class="toc-section-number">2.1</span>  Metric and Topological Properties</a></li>
+  <li><a href="#sequences-and-convergence" id="toc-sequences-and-convergence" class="nav-link" data-scroll-target="#sequences-and-convergence"><span class="toc-section-number">2.2</span>  Sequences and Convergence</a></li>
+  <li><a href="#series-and-power-series" id="toc-series-and-power-series" class="nav-link" data-scroll-target="#series-and-power-series"><span class="toc-section-number">2.3</span>  Series and Power Series</a></li>
+  <li><a href="#p-adic-functions" id="toc-p-adic-functions" class="nav-link" data-scroll-target="#p-adic-functions"><span class="toc-section-number">2.4</span>  p-adic Functions</a></li>
+  </ul></li>
+  <li><a href="#completions" id="toc-completions" class="nav-link" data-scroll-target="#completions"><span class="toc-section-number">3</span>  Completions</a>
+  <ul class="collapse">
+  <li><a href="#the-field-of-p-adic-numbers" id="toc-the-field-of-p-adic-numbers" class="nav-link" data-scroll-target="#the-field-of-p-adic-numbers"><span class="toc-section-number">3.1</span>  The Field of p-adic Numbers</a></li>
+  <li><a href="#construction-via-cauchy-sequences" id="toc-construction-via-cauchy-sequences" class="nav-link" data-scroll-target="#construction-via-cauchy-sequences"><span class="toc-section-number">3.2</span>  Construction via Cauchy Sequences</a></li>
+  <li><a href="#the-ring-of-p-adic-integers" id="toc-the-ring-of-p-adic-integers" class="nav-link" data-scroll-target="#the-ring-of-p-adic-integers"><span class="toc-section-number">3.3</span>  The Ring of p-adic Integers</a></li>
+  <li><a href="#hensels-lemma" id="toc-hensels-lemma" class="nav-link" data-scroll-target="#hensels-lemma"><span class="toc-section-number">3.4</span>  Hensel’s Lemma</a></li>
+  <li><a href="#applications-and-further-directions" id="toc-applications-and-further-directions" class="nav-link" data-scroll-target="#applications-and-further-directions"><span class="toc-section-number">3.5</span>  Applications and Further Directions</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="toc-section-number">3.6</span>  References</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Introduction to p-adic Analysis</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Mathematical Analysis </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="algebraic-foundations" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Algebraic Foundations</h1>
+<section id="the-p-adic-valuation" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="the-p-adic-valuation"><span class="header-section-number">1.1</span> The p-adic Valuation</h2>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 1.1 (p-adic valuation)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(p\)</span> be a prime number. For any rational number <span class="math inline">\(x \neq 0\)</span>, we can write <span class="math inline">\(x\)</span> uniquely as <span class="math display">\[x = p^k \cdot \frac{a}{b}\]</span> where <span class="math inline">\(k \in \mathbb{Z}\)</span>, and <span class="math inline">\(a, b\)</span> are integers with <span class="math inline">\(\gcd(a,p) = \gcd(b,p) = 1\)</span>. The <strong>p-adic valuation</strong> of <span class="math inline">\(x\)</span> is defined as <span class="math inline">\(v_p(x) = k\)</span>. We set <span class="math inline">\(v_p(0) = +\infty\)</span>.</p>
+</div>
+</div>
+<p><strong>Properties of the p-adic valuation:</strong></p>
+<ol type="1">
+<li><span class="math inline">\(v_p(xy) = v_p(x) + v_p(y)\)</span></li>
+<li><span class="math inline">\(v_p(x + y) \geq \min\{v_p(x), v_p(y)\}\)</span> with equality when <span class="math inline">\(v_p(x) \neq v_p(y)\)</span></li>
+<li><span class="math inline">\(v_p(x) = +\infty\)</span> if and only if <span class="math inline">\(x = 0\)</span></li>
+</ol>
+</section>
+<section id="the-p-adic-absolute-value" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="the-p-adic-absolute-value"><span class="header-section-number">1.2</span> The p-adic Absolute Value</h2>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 1.2 (p-adic absolute value)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <strong>p-adic absolute value</strong> <span class="math inline">\(|\cdot|_p\)</span> is defined by <span class="math display">\[|x|_p = \begin{cases}
+0 &amp; \text{if } x = 0 \\
+p^{-v_p(x)} &amp; \text{if } x \neq 0
+\end{cases}\]</span></p>
+</div>
+</div>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Theorem 1.1 (Properties of p-adic absolute value)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The p-adic absolute value satisfies:</p>
+<ol type="1">
+<li><span class="math inline">\(|x|_p = 0\)</span> if and only if <span class="math inline">\(x = 0\)</span></li>
+<li><span class="math inline">\(|xy|_p = |x|_p |y|_p\)</span></li>
+<li><strong>Strong triangle inequality (Ultrametric inequality)</strong>: <span class="math inline">\(|x + y|_p \leq \max\{|x|_p, |y|_p\}\)</span></li>
+</ol>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Proof of Theorem 1.1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Properties 1 and 2 follow directly from the definition and properties of the valuation. For property 3:</p>
+<p>If <span class="math inline">\(x = 0\)</span> or <span class="math inline">\(y = 0\)</span>, the inequality is trivial. Otherwise, let <span class="math inline">\(v_p(x) = k\)</span> and <span class="math inline">\(v_p(y) = \ell\)</span>. Then:</p>
+<ul>
+<li><span class="math inline">\(|x + y|_p = p^{-v_p(x+y)}\)</span></li>
+<li>By property 2 of valuations, <span class="math inline">\(v_p(x + y) \geq \min\{k, \ell\}\)</span></li>
+<li>Therefore, <span class="math inline">\(|x + y|_p = p^{-v_p(x+y)} \leq p^{-\min\{k,\ell\}} = \max\{p^{-k}, p^{-\ell}\} = \max\{|x|_p, |y|_p\}\)</span> □</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Corollary 1.1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the p-adic metric, every triangle is isosceles. If <span class="math inline">\(|x|_p \neq |y|_p\)</span>, then <span class="math inline">\(|x + y|_p = \max\{|x|_p, |y|_p\}\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="ostrowskis-theorem" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="ostrowskis-theorem"><span class="header-section-number">1.3</span> Ostrowski’s Theorem</h2>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Theorem 1.2 (Ostrowski’s Theorem)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Every non-trivial absolute value on <span class="math inline">\(\mathbb{Q}\)</span> is equivalent to either the usual absolute value <span class="math inline">\(|\cdot|_\infty\)</span> or to some p-adic absolute value <span class="math inline">\(|\cdot|_p\)</span> for a prime <span class="math inline">\(p\)</span>.</p>
+</div>
+</div>
+<p>This theorem classifies all possible ways to measure “size” on the rational numbers, showing that the familiar absolute value and the p-adic absolute values are essentially the only possibilities.</p>
+</section>
+<section id="algebraic-consequences" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="algebraic-consequences"><span class="header-section-number">1.4</span> Algebraic Consequences</h2>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 1.3 (p-adic integers)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The ring of <strong>p-adic integers</strong> is defined as <span class="math display">\[\mathbb{Z}_p = \{x \in \mathbb{Q} : |x|_p \leq 1\} = \{x \in \mathbb{Q} : v_p(x) \geq 0\}\]</span></p>
+</div>
+</div>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Theorem 1.3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\mathbb{Z}_p\)</span> is a local ring with unique maximal ideal <span class="math inline">\(\mathfrak{m} = p\mathbb{Z}_p = \{x \in \mathbb{Z}_p : |x|_p &lt; 1\}\)</span>.</p>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Proof of Theorem 1.3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>First, we show <span class="math inline">\(\mathbb{Z}_p\)</span> is a ring. If <span class="math inline">\(x, y \in \mathbb{Z}_p\)</span>, then <span class="math inline">\(|x|_p \leq 1\)</span> and <span class="math inline">\(|y|_p \leq 1\)</span>.</p>
+<ul>
+<li><span class="math inline">\(|xy|_p = |x|_p|y|_p \leq 1\)</span>, so <span class="math inline">\(xy \in \mathbb{Z}_p\)</span></li>
+<li><span class="math inline">\(|x + y|_p \leq \max\{|x|_p, |y|_p\} \leq 1\)</span>, so <span class="math inline">\(x + y \in \mathbb{Z}_p\)</span></li>
+</ul>
+<p>The units of <span class="math inline">\(\mathbb{Z}_p\)</span> are precisely <span class="math inline">\(\{x \in \mathbb{Z}_p : |x|_p = 1\}\)</span>, since if <span class="math inline">\(|x|_p = 1\)</span>, then <span class="math inline">\(x\)</span> has inverse <span class="math inline">\(x^{-1}\)</span> with <span class="math inline">\(|x^{-1}|_p = 1\)</span>. The non-units form the ideal <span class="math inline">\(\mathfrak{m} = \{x \in \mathbb{Z}_p : |x|_p &lt; 1\}\)</span>, which is maximal since <span class="math inline">\(\mathbb{Z}_p/\mathfrak{m} \cong \mathbb{Z}/p\mathbb{Z}\)</span> is a field. □</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="analytic-foundations" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Analytic Foundations</h1>
+<section id="metric-and-topological-properties" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="metric-and-topological-properties"><span class="header-section-number">2.1</span> Metric and Topological Properties</h2>
+<p>The p-adic absolute value induces a metric <span class="math inline">\(d_p(x,y) = |x - y|_p\)</span> on <span class="math inline">\(\mathbb{Q}\)</span>. This metric has unusual properties compared to the usual Euclidean metric.</p>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Theorem 2.1 (Ultrametric space properties)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The metric space <span class="math inline">\((\mathbb{Q}, d_p)\)</span> satisfies:</p>
+<ol type="1">
+<li>Every ball is both open and closed (clopen)</li>
+<li>If two balls intersect, one is contained in the other</li>
+<li>Every point in a ball is a center of that ball</li>
+<li>The space is totally disconnected</li>
+</ol>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Proof sketch of Theorem 2.1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>These follow from the strong triangle inequality. For example, for property 3: if <span class="math inline">\(z \in B_r(x) = \{y : |y - x|_p &lt; r\}\)</span>, then for any <span class="math inline">\(w \in B_r(x)\)</span>, we have <span class="math inline">\(|w - z|_p \leq \max\{|w - x|_p, |x - z|_p\} &lt; r\)</span>, so <span class="math inline">\(B_r(x) \subseteq B_r(z)\)</span>. Similarly, <span class="math inline">\(B_r(z) \subseteq B_r(x)\)</span>. □</p>
+</div>
+</div>
+</div>
+</section>
+<section id="sequences-and-convergence" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="sequences-and-convergence"><span class="header-section-number">2.2</span> Sequences and Convergence</h2>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 2.1 (p-adic convergence)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A sequence <span class="math inline">\((x_n)\)</span> in <span class="math inline">\(\mathbb{Q}\)</span> converges p-adically to <span class="math inline">\(x\)</span> if <span class="math inline">\(|x_n - x|_p \to 0\)</span> as <span class="math inline">\(n \to \infty\)</span>.</p>
+</div>
+</div>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Theorem 2.2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A sequence <span class="math inline">\((x_n)\)</span> converges p-adically if and only if <span class="math inline">\(|x_{n+1} - x_n|_p \to 0\)</span>.</p>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Proof of Theorem 2.2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The “only if” direction is standard. For “if”: suppose <span class="math inline">\(|x_{n+1} - x_n|_p \to 0\)</span>. We show <span class="math inline">\((x_n)\)</span> is Cauchy.</p>
+<p>For any <span class="math inline">\(m &gt; n\)</span>, we have: <span class="math display">\[|x_m - x_n|_p = |x_m - x_{m-1} + x_{m-1} - x_{m-2} + \cdots + x_{n+1} - x_n|_p\]</span></p>
+<p>By the ultrametric inequality applied repeatedly: <span class="math display">\[|x_m - x_n|_p \leq \max\{|x_m - x_{m-1}|_p, |x_{m-1} - x_{m-2}|_p, \ldots, |x_{n+1} - x_n|_p\}\]</span></p>
+<p>Since <span class="math inline">\(|x_{k+1} - x_k|_p \to 0\)</span>, given <span class="math inline">\(\epsilon &gt; 0\)</span>, there exists <span class="math inline">\(N\)</span> such that for all <span class="math inline">\(k \geq N\)</span>, <span class="math inline">\(|x_{k+1} - x_k|_p &lt; \epsilon\)</span>. Therefore, for <span class="math inline">\(m &gt; n \geq N\)</span>, <span class="math inline">\(|x_m - x_n|_p &lt; \epsilon\)</span>, proving <span class="math inline">\((x_n)\)</span> is Cauchy. □</p>
+</div>
+</div>
+</div>
+</section>
+<section id="series-and-power-series" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="series-and-power-series"><span class="header-section-number">2.3</span> Series and Power Series</h2>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 2.2 (p-adic series)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A series <span class="math inline">\(\sum_{n=0}^{\infty} a_n\)</span> converges p-adically if the sequence of partial sums converges p-adically.</p>
+</div>
+</div>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Theorem 2.3 (p-adic convergence criterion)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A series <span class="math inline">\(\sum_{n=0}^{\infty} a_n\)</span> converges p-adically if and only if <span class="math inline">\(|a_n|_p \to 0\)</span> as <span class="math inline">\(n \to \infty\)</span>.</p>
+</div>
+</div>
+<p>This is much stronger than the real case, where we only get convergence if terms go to zero, but the converse is not true.</p>
+<p><strong>Example</strong>: The geometric series <span class="math inline">\(\sum_{n=0}^{\infty} p^n\)</span> diverges p-adically since <span class="math inline">\(|p^n|_p = p^{-n} \not\to 0\)</span>.</p>
+<p>However, <span class="math inline">\(\sum_{n=0}^{\infty} p^n x^n\)</span> converges for <span class="math inline">\(|x|_p &lt; 1\)</span> to <span class="math inline">\(\frac{1}{1-px}\)</span>.</p>
+</section>
+<section id="p-adic-functions" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="p-adic-functions"><span class="header-section-number">2.4</span> p-adic Functions</h2>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 2.3 (p-adic analytic function)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A function <span class="math inline">\(f: U \to \mathbb{Q}_p\)</span> where <span class="math inline">\(U \subseteq \mathbb{Q}_p\)</span> is open is called <strong>p-adic analytic</strong> if for every <span class="math inline">\(a \in U\)</span>, there exists a neighborhood <span class="math inline">\(V\)</span> of <span class="math inline">\(a\)</span> and a power series <span class="math inline">\(\sum_{n=0}^{\infty} c_n (x-a)^n\)</span> that converges to <span class="math inline">\(f(x)\)</span> for all <span class="math inline">\(x \in V\)</span>.</p>
+</div>
+</div>
+<p><strong>Key differences from real analysis:</strong></p>
+<ol type="1">
+<li><strong>Radius of convergence</strong>: For <span class="math inline">\(\sum_{n=0}^{\infty} a_n x^n\)</span>, the radius is <span class="math inline">\(R = \frac{1}{\limsup_{n \to \infty} |a_n|_p^{1/n}}\)</span></li>
+<li><strong>Behavior on boundary</strong>: p-adic power series often converge on their entire boundary</li>
+<li><strong>Maximum principle</strong>: If <span class="math inline">\(f\)</span> is analytic on a disk, then <span class="math inline">\(\max_{|x|_p \leq r} |f(x)|_p = \max_{|x|_p = r} |f(x)|_p\)</span></li>
+</ol>
+</section>
+</section>
+<section id="completions" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Completions</h1>
+<section id="the-field-of-p-adic-numbers" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="the-field-of-p-adic-numbers"><span class="header-section-number">3.1</span> The Field of p-adic Numbers</h2>
+<p>The rational numbers <span class="math inline">\(\mathbb{Q}\)</span> are not complete with respect to the p-adic metric. Just as we complete <span class="math inline">\(\mathbb{Q}\)</span> with respect to the usual absolute value to get <span class="math inline">\(\mathbb{R}\)</span>, we can complete it with respect to <span class="math inline">\(|\cdot|_p\)</span>.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 3.1 (p-adic numbers)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <strong>field of p-adic numbers</strong> <span class="math inline">\(\mathbb{Q}_p\)</span> is the completion of <span class="math inline">\(\mathbb{Q}\)</span> with respect to the p-adic absolute value <span class="math inline">\(|\cdot|_p\)</span>.</p>
+</div>
+</div>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Theorem 3.1 (Properties of <span class="math inline">\(\mathbb{Q}_p\)</span>)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><span class="math inline">\(\mathbb{Q}_p\)</span> is a complete metric space under the p-adic metric</li>
+<li><span class="math inline">\(\mathbb{Q}_p\)</span> is a field containing <span class="math inline">\(\mathbb{Q}\)</span> as a dense subfield</li>
+<li>The p-adic absolute value extends uniquely to <span class="math inline">\(\mathbb{Q}_p\)</span></li>
+<li><span class="math inline">\(\mathbb{Q}_p\)</span> is locally compact</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="construction-via-cauchy-sequences" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="construction-via-cauchy-sequences"><span class="header-section-number">3.2</span> Construction via Cauchy Sequences</h2>
+<p>Elements of <span class="math inline">\(\mathbb{Q}_p\)</span> can be represented as equivalence classes of Cauchy sequences in <span class="math inline">\(\mathbb{Q}\)</span> under the p-adic metric.</p>
+<p><strong>Alternative representation</strong>: Every non-zero element <span class="math inline">\(x \in \mathbb{Q}_p\)</span> can be written uniquely as: <span class="math display">\[x = p^k \sum_{i=0}^{\infty} a_i p^i\]</span> where <span class="math inline">\(k \in \mathbb{Z}\)</span>, <span class="math inline">\(a_i \in \{0, 1, 2, \ldots, p-1\}\)</span>, and <span class="math inline">\(a_0 \neq 0\)</span>.</p>
+</section>
+<section id="the-ring-of-p-adic-integers" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="the-ring-of-p-adic-integers"><span class="header-section-number">3.3</span> The Ring of p-adic Integers</h2>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 3.2 (Completion of p-adic integers)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <strong>ring of p-adic integers</strong> <span class="math inline">\(\mathbb{Z}_p\)</span> is the completion of <span class="math inline">\(\{x \in \mathbb{Q} : |x|_p \leq 1\}\)</span>, equivalently: <span class="math display">\[\mathbb{Z}_p = \{x \in \mathbb{Q}_p : |x|_p \leq 1\}\]</span></p>
+</div>
+</div>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Theorem 3.2 (Structure of <span class="math inline">\(\mathbb{Z}_p\)</span>)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><span class="math inline">\(\mathbb{Z}_p\)</span> is a compact, complete metric space</li>
+<li><span class="math inline">\(\mathbb{Z}_p\)</span> is a local ring with maximal ideal <span class="math inline">\(p\mathbb{Z}_p\)</span></li>
+<li>Every element of <span class="math inline">\(\mathbb{Z}_p\)</span> can be written uniquely as <span class="math inline">\(\sum_{i=0}^{\infty} a_i p^i\)</span> where <span class="math inline">\(a_i \in \{0, 1, \ldots, p-1\}\)</span></li>
+<li><span class="math inline">\(\mathbb{Z}_p/p^n\mathbb{Z}_p \cong \mathbb{Z}/p^n\mathbb{Z}\)</span></li>
+</ol>
+</div>
+</div>
+</section>
+<section id="hensels-lemma" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="hensels-lemma"><span class="header-section-number">3.4</span> Hensel’s Lemma</h2>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Theorem 3.3 (Hensel’s Lemma)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(f(x) \in \mathbb{Z}_p[x]\)</span> be a polynomial, and suppose <span class="math inline">\(a \in \mathbb{Z}_p\)</span> satisfies:</p>
+<ol type="1">
+<li><span class="math inline">\(f(a) \equiv 0 \pmod{p}\)</span></li>
+<li><span class="math inline">\(f'(a) \not\equiv 0 \pmod{p}\)</span></li>
+</ol>
+<p>Then there exists a unique <span class="math inline">\(\alpha \in \mathbb{Z}_p\)</span> such that <span class="math inline">\(f(\alpha) = 0\)</span> and <span class="math inline">\(\alpha \equiv a \pmod{p}\)</span>.</p>
+</div>
+</div>
+<p>This powerful lifting theorem allows us to solve polynomial equations in <span class="math inline">\(\mathbb{Q}_p\)</span> by first solving them modulo <span class="math inline">\(p\)</span> and then “lifting” the solutions.</p>
+<p><strong>Example</strong>: The equation <span class="math inline">\(x^2 = 2\)</span> has solutions in <span class="math inline">\(\mathbb{Q}_7\)</span> but not in <span class="math inline">\(\mathbb{Q}_3\)</span>, demonstrating that <span class="math inline">\(\mathbb{Q}_p\)</span> depends crucially on the prime <span class="math inline">\(p\)</span>.</p>
+</section>
+<section id="applications-and-further-directions" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="applications-and-further-directions"><span class="header-section-number">3.5</span> Applications and Further Directions</h2>
+<p>The theory of p-adic numbers connects to many areas of mathematics:</p>
+<ul>
+<li><strong>Number Theory</strong>: Studying Diophantine equations, local-global principles</li>
+<li><strong>Algebraic Geometry</strong>: p-adic varieties and rigid analytic spaces<br>
+</li>
+<li><strong>Representation Theory</strong>: p-adic representations of Galois groups</li>
+<li><strong>Mathematical Physics</strong>: p-adic quantum mechanics and string theory</li>
+</ul>
+<p>The completion process we’ve described here is fundamental to modern algebraic number theory and provides a powerful tool for understanding the arithmetic of rational numbers through “local” information at each prime.</p>
+<hr>
+</section>
+<section id="references" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="references"><span class="header-section-number">3.6</span> References</h2>
+<p>For further reading on p-adic analysis, consult:</p>
+<ul>
+<li>Koblitz, N. <em>p-adic Numbers, p-adic Analysis, and Zeta-Functions</em></li>
+<li>Robert, A. <em>A Course in p-adic Analysis</em><br>
+</li>
+<li>Gouvêa, F. <em>p-adic Numbers: An Introduction</em></li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -136,5 +136,17 @@
   },
   "docu/SEA/KDB Notes.qmd": {
     "KDB Notes.html": "47222368"
+  },
+  "docu/posts/Black_Scholes_from_principles.qmd": {
+    "Black_Scholes_from_principles.html": "ded04d03",
+    "Black_Scholes_from_principles.tex": "15cc12d6"
+  },
+  "docu/SEA/Mathematics/P_adic_analysis.qmd": {
+    "P_adic_analysis.html": "c9d9f97b",
+    "P_adic_analysis.tex": "f6ebde39"
+  },
+  "docu/SEA/Mathematics/Galois_theory.qmd": {
+    "Galois_theory.html": "812fd6b5",
+    "Galois_theory.tex": "1fe143ce"
   }
 }

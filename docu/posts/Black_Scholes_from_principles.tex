@@ -1,0 +1,1549 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[top=1in,left=1in,right=1in,bottom=1in]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Complete Black-Scholes Proofs: From First Principles},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Complete Black-Scholes Proofs: From First Principles}
+\author{}
+\date{5/29/25}
+
+\begin{document}
+\maketitle
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, sharp corners, interior hidden, enhanced, frame hidden, boxrule=0pt, breakable]}{\end{tcolorbox}}\fi
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+\hypertarget{part-i-mathematical-foundations-and-definitions}{%
+\section{Part I: Mathematical Foundations and
+Definitions}\label{part-i-mathematical-foundations-and-definitions}}
+
+This section establishes all the mathematical machinery needed for the
+Black-Scholes proofs. We assume knowledge of measure theory and basic
+stochastic calculus but will define all financial and probabilistic
+concepts explicitly.
+
+\hypertarget{financial-market-framework}{%
+\subsection{Financial Market
+Framework}\label{financial-market-framework}}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title={Definition 1.1 (Financial Market)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+A financial market consists of:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  A probability space \((\Omega, \mathcal{F}, \mathbb{P})\) where
+  \(\Omega\) represents all possible market scenarios
+\item
+  A filtration \(\{\mathcal{F}_t\}_{t \geq 0}\) representing information
+  available at time \(t\)
+\item
+  A finite collection of traded assets with price processes
+  \(\{S^i_t\}_{i=0,1,\ldots,n}\)
+\end{enumerate}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title={Definition 1.2 (Brownian Motion)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+A stochastic process \(\{W_t\}_{t \geq 0}\) on
+\((\Omega, \mathcal{F}, \mathbb{P})\) is a standard Brownian motion if:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(W_0 = 0\) almost surely
+\item
+  \(W\) has independent increments: for \(0 \leq s < t\), \(W_t - W_s\)
+  is independent of \(\mathcal{F}_s\)
+\item
+  \(W_t - W_s \sim N(0, t-s)\) for all \(0 \leq s < t\)
+\item
+  \(W\) has continuous sample paths almost surely
+\end{enumerate}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title={Definition 1.3 (Natural Filtration of Brownian Motion)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+The natural filtration of Brownian motion is
+\[\mathcal{F}_t^W = \sigma(W_s : 0 \leq s \leq t)\] the
+\(\sigma\)-algebra generated by the Brownian motion up to time \(t\).
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title={Definition 1.4 (Adapted Process)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+A stochastic process \(\{X_t\}_{t \geq 0}\) is adapted to the filtration
+\(\{\mathcal{F}_t\}\) if \(X_t\) is \(\mathcal{F}_t\)-measurable for all
+\(t \geq 0\).
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title={Definition 1.5 (Geometric Brownian Motion)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+A process \(\{S_t\}_{t \geq 0}\) follows geometric Brownian motion with
+parameters \(\mu \in \mathbb{R}\) and \(\sigma > 0\) if it satisfies the
+stochastic differential equation:
+\[dS_t = \mu S_t \, dt + \sigma S_t \, dW_t\] with initial condition
+\(S_0 > 0\).
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-tip-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Remark 1.1}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+The explicit solution to geometric Brownian motion is:
+\[S_t = S_0 \exp\left(\left(\mu - \frac{\sigma^2}{2}\right)t + \sigma W_t\right)\]
+This can be verified using Itô's lemma on \(f(t,x) = \ln x\).
+
+\end{tcolorbox}
+
+\hypertarget{portfolio-and-trading-strategy-concepts}{%
+\subsection{Portfolio and Trading Strategy
+Concepts}\label{portfolio-and-trading-strategy-concepts}}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title={Definition 1.6 (Trading Strategy)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+A trading strategy is a pair of adapted processes
+\((\phi^0_t, \phi^1_t)\) where:
+
+\begin{itemize}
+\tightlist
+\item
+  \(\phi^0_t\) represents the number of units of the bond held at time
+  \(t\)
+\item
+  \(\phi^1_t\) represents the number of shares of stock held at time
+  \(t\)
+\end{itemize}
+
+Both processes must be adapted to the filtration \(\{\mathcal{F}_t\}\).
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title={Definition 1.7 (Portfolio Value)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+The value of a portfolio with trading strategy \((\phi^0_t, \phi^1_t)\)
+at time \(t\) is: \[V_t = \phi^0_t B_t + \phi^1_t S_t\] where \(B_t\) is
+the bond price and \(S_t\) is the stock price.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title={Definition 1.8 (Self-Financing Strategy)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+A trading strategy \((\phi^0_t, \phi^1_t)\) is self-financing if:
+\[dV_t = \phi^0_t dB_t + \phi^1_t dS_t\] This means no money is added or
+withdrawn from the portfolio; changes in value come only from price
+movements of held assets.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title={Definition 1.9 (Arbitrage Opportunity)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+An arbitrage opportunity is a self-financing trading strategy with:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Initial value \(V_0 = 0\)
+\item
+  \(\mathbb{P}(V_T \geq 0) = 1\) for some time \(T > 0\)
+\item
+  \(\mathbb{P}(V_T > 0) > 0\)
+\end{enumerate}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title={Definition 1.10 (Arbitrage-Free Market)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+A market is arbitrage-free if no arbitrage opportunities exist.
+
+\end{tcolorbox}
+
+\hypertarget{martingale-theory-for-finance}{%
+\subsection{Martingale Theory for
+Finance}\label{martingale-theory-for-finance}}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title={Definition 1.11 (Martingale)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+An adapted process \(\{M_t\}_{t \geq 0}\) is a martingale with respect
+to filtration \(\{\mathcal{F}_t\}\) and probability measure
+\(\mathbb{P}\) if:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\mathbb{E}[|M_t|] < \infty\) for all \(t \geq 0\)
+\item
+  \(\mathbb{E}[M_t | \mathcal{F}_s] = M_s\) for all \(0 \leq s \leq t\)
+\end{enumerate}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title={Definition 1.12 (Equivalent Probability Measures)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+Two probability measures \(\mathbb{P}\) and \(\mathbb{Q}\) on
+\((\Omega, \mathcal{F})\) are equivalent (written
+\(\mathbb{P} \sim \mathbb{Q}\)) if they have the same null sets:
+\[\mathbb{P}(A) = 0 \iff \mathbb{Q}(A) = 0 \text{ for all } A \in \mathcal{F}\]
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title={Definition 1.13 (Radon-Nikodym Derivative)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+If \(\mathbb{Q} \ll \mathbb{P}\) (Q is absolutely continuous with
+respect to P), then there exists a non-negative
+\(\mathcal{F}\)-measurable random variable \(Z\) such that:
+\[\mathbb{Q}(A) = \int_A Z \, d\mathbb{P} \text{ for all } A \in \mathcal{F}\]
+We write \(Z = \frac{d\mathbb{Q}}{d\mathbb{P}}\) and call \(Z\) the
+Radon-Nikodym derivative.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-important-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-important-color!10!white, title={Theorem 1.1 (Girsanov's Theorem - Statement)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+Let \(\theta\) be an adapted process with
+\(\int_0^T \theta_s^2 \, ds < \infty\) almost surely. Define:
+\[Z_t = \exp\left(-\int_0^t \theta_s \, dW_s - \frac{1}{2}\int_0^t \theta_s^2 \, ds\right)\]
+
+If \(\mathbb{E}[Z_T] = 1\), then:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  The process \(Z_t\) is a martingale
+\item
+  The measure \(\mathbb{Q}\) defined by
+  \(\frac{d\mathbb{Q}}{d\mathbb{P}} = Z_T\) is a probability measure
+  equivalent to \(\mathbb{P}\)
+\item
+  Under \(\mathbb{Q}\), the process
+  \(\tilde{W}_t = W_t + \int_0^t \theta_s \, ds\) is a Brownian motion
+\end{enumerate}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title={Definition 1.14 (Risk-Neutral Measure)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+In a financial market with bond \(B_t = e^{rt}\) and stock following
+\[dS_t = \mu S_t \, dt + \sigma S_t \, dW_t\] a probability measure
+\(\mathbb{Q}\) equivalent to \(\mathbb{P}\) is called risk-neutral if
+the discounted stock price \(e^{-rt}S_t\) is a
+\(\mathbb{Q}\)-martingale.
+
+\end{tcolorbox}
+
+\hypertarget{options-and-derivatives}{%
+\subsection{Options and Derivatives}\label{options-and-derivatives}}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title={Definition 1.15 (European Option)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+A European option is a financial contract that gives the holder the
+right (but not obligation) to:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Call option}: Buy an asset at strike price \(K\) at maturity
+  time \(T\)
+\item
+  \textbf{Put option}: Sell an asset at strike price \(K\) at maturity
+  time \(T\)
+\end{itemize}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title={Definition 1.16 (Option Payoff)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+The payoff of a European option at maturity \(T\) is:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Call}: \(h(S_T) = (S_T - K)^+ = \max(S_T - K, 0)\)
+\item
+  \textbf{Put}: \(h(S_T) = (K - S_T)^+ = \max(K - S_T, 0)\)
+\end{itemize}
+
+where \(S_T\) is the stock price at maturity.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title={Definition 1.17 (Option Price)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+The price of an option at time \(t\) is denoted \(V(t, S_t)\) and
+depends on the current time \(t\) and current stock price \(S_t\).
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title={Definition 1.18 (Replicating Portfolio)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+A replicating portfolio for an option is a self-financing trading
+strategy \((\phi^0_t, \phi^1_t)\) such that the portfolio value at
+maturity equals the option payoff:
+\[V_T = \phi^0_T B_T + \phi^1_T S_T = h(S_T)\]
+
+\end{tcolorbox}
+
+\hypertarget{fundamental-theorems-of-asset-pricing}{%
+\subsection{Fundamental Theorems of Asset
+Pricing}\label{fundamental-theorems-of-asset-pricing}}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-important-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-important-color!10!white, title={Theorem 1.2 (First Fundamental Theorem of Asset Pricing)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+A market is arbitrage-free if and only if there exists a probability
+measure \(\mathbb{Q}\) equivalent to \(\mathbb{P}\) such that all
+discounted asset prices are \(\mathbb{Q}\)-martingales.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-important-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-important-color!10!white, title={Theorem 1.3 (Second Fundamental Theorem of Asset Pricing)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+An arbitrage-free market is complete if and only if the risk-neutral
+measure is unique.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title={Definition 1.19 (Complete Market)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+A market is complete if every contingent claim (option payoff) can be
+replicated by a self-financing trading strategy.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-important-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-important-color!10!white, title={Theorem 1.4 (Risk-Neutral Valuation Principle)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+In an arbitrage-free complete market, the price of any attainable
+contingent claim \(h(S_T)\) at time \(t\) is:
+\[V(t, S_t) = e^{-r(T-t)} \mathbb{E}_\mathbb{Q}[h(S_T) | \mathcal{F}_t]\]
+where \(\mathbb{Q}\) is the unique risk-neutral measure.
+
+\end{tcolorbox}
+
+\hypertarget{part-ii-the-black-scholes-model-setup}{%
+\section{Part II: The Black-Scholes Model
+Setup}\label{part-ii-the-black-scholes-model-setup}}
+
+\hypertarget{model-specification}{%
+\subsection{Model Specification}\label{model-specification}}
+
+We consider a financial market on a probability space
+\((\Omega, \mathcal{F}, \mathbb{P})\) with filtration
+\(\{\mathcal{F}_t\}_{t \geq 0}\) and two traded assets:
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title={Definition 2.1 (Black-Scholes Market Model)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+The Black-Scholes market consists of:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Risk-free bond}: \(dB_t = rB_t \, dt\) with \(B_0 = 1\),
+  giving \(B_t = e^{rt}\)
+\item
+  \textbf{Risky stock}: \(dS_t = \mu S_t \, dt + \sigma S_t \, dW_t\)
+  with \(S_0 > 0\)
+\end{enumerate}
+
+where:
+
+\begin{itemize}
+\tightlist
+\item
+  \(r > 0\) is the constant risk-free interest rate
+\item
+  \(\mu \in \mathbb{R}\) is the stock's expected return (drift)
+\item
+  \(\sigma > 0\) is the stock's volatility
+\item
+  \(\{W_t\}_{t \geq 0}\) is a standard Brownian motion adapted to
+  \(\{\mathcal{F}_t\}\)
+\end{itemize}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title={Definition 2.2 (European Call Option in Black-Scholes Model)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+We consider a European call option with:
+
+\begin{itemize}
+\tightlist
+\item
+  Strike price \(K > 0\)
+\item
+  Maturity time \(T > 0\)\\
+\item
+  Payoff at maturity: \(h(S_T) = (S_T - K)^+\)
+\end{itemize}
+
+Our goal is to find the option price \(V(t, S_t)\) for
+\(0 \leq t \leq T\).
+
+\end{tcolorbox}
+
+\hypertarget{key-properties-of-the-model}{%
+\subsection{Key Properties of the
+Model}\label{key-properties-of-the-model}}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-important-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-important-color!10!white, title={Lemma 2.1 (Stock Price Solution)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+The solution to the stock price SDE
+\(dS_t = \mu S_t \, dt + \sigma S_t \, dW_t\) is:
+\[S_t = S_0 \exp\left(\left(\mu - \frac{\sigma^2}{2}\right)t + \sigma W_t\right)\]
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Proof of Lemma 2.1}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+Let \(Y_t = \ln S_t\). By Itô's lemma with \(f(x) = \ln x\):
+
+\begin{align}
+dY_t &= f'(S_t) dS_t + \frac{1}{2}f''(S_t)(dS_t)^2 \\
+&= \frac{1}{S_t} dS_t + \frac{1}{2}\left(-\frac{1}{S_t^2}\right)(dS_t)^2 \\
+&= \frac{1}{S_t}(\mu S_t \, dt + \sigma S_t \, dW_t) - \frac{1}{2S_t^2}(\sigma S_t)^2 dt \\
+&= \mu \, dt + \sigma \, dW_t - \frac{\sigma^2}{2} dt \\
+&= \left(\mu - \frac{\sigma^2}{2}\right) dt + \sigma \, dW_t
+\end{align}
+
+Integrating from \(0\) to \(t\):
+\[Y_t = Y_0 + \left(\mu - \frac{\sigma^2}{2}\right)t + \sigma W_t\]
+
+Since \(Y_t = \ln S_t\) and \(Y_0 = \ln S_0\):
+\[\ln S_t = \ln S_0 + \left(\mu - \frac{\sigma^2}{2}\right)t + \sigma W_t\]
+
+Therefore:
+\[S_t = S_0 \exp\left(\left(\mu - \frac{\sigma^2}{2}\right)t + \sigma W_t\right)\]
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-important-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-important-color!10!white, title={Corollary 2.1 (Log-Normal Distribution of Stock Price)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+Under \(\mathbb{P}\), we have:
+\[\ln(S_t/S_0) \sim N\left(\left(\mu - \frac{\sigma^2}{2}\right)t, \sigma^2 t\right)\]
+
+\end{tcolorbox}
+
+\hypertarget{part-iii-proof-via-martingale-approach}{%
+\section{Part III: Proof via Martingale
+Approach}\label{part-iii-proof-via-martingale-approach}}
+
+\hypertarget{step-1-construction-of-risk-neutral-measure}{%
+\subsection{Step 1: Construction of Risk-Neutral
+Measure}\label{step-1-construction-of-risk-neutral-measure}}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-important-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-important-color!10!white, title={Theorem 3.1 (Existence of Risk-Neutral Measure in Black-Scholes)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+There exists a unique probability measure \(\mathbb{Q}\) equivalent to
+\(\mathbb{P}\) such that the discounted stock price \(e^{-rt}S_t\) is a
+\(\mathbb{Q}\)-martingale.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Proof of Theorem 3.1}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+\textbf{Step 1}: Define the market price of risk:
+\[\theta = \frac{\mu - r}{\sigma}\]
+
+This is the constant that will appear in Girsanov's theorem.
+
+\textbf{Step 2}: Define the Radon-Nikodym density process: \begin{align}
+Z_t &= \exp\left(-\theta W_t - \frac{1}{2}\theta^2 t\right) \\
+&= \exp\left(-\frac{\mu - r}{\sigma} W_t - \frac{1}{2}\left(\frac{\mu - r}{\sigma}\right)^2 t\right)
+\end{align}
+
+\textbf{Step 3}: Verify that \(Z_t\) is a martingale and
+\(\mathbb{E}[Z_T] = 1\).
+
+Since \(\theta\) is constant, we can compute:
+\[\mathbb{E}[Z_t] = \mathbb{E}\left[\exp\left(-\theta W_t - \frac{1}{2}\theta^2 t\right)\right]\]
+
+Since \(W_t \sim N(0,t)\) under \(\mathbb{P}\): \begin{align}
+\mathbb{E}[Z_t] &= \int_{-\infty}^{\infty} \exp\left(-\theta w - \frac{1}{2}\theta^2 t\right) \frac{1}{\sqrt{2\pi t}} \exp\left(-\frac{w^2}{2t}\right) dw \\
+&= \exp\left(-\frac{1}{2}\theta^2 t\right) \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi t}} \exp\left(-\frac{w^2 + 2\theta tw}{2t}\right) dw \\
+&= \exp\left(-\frac{1}{2}\theta^2 t\right) \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi t}} \exp\left(-\frac{(w + \theta t)^2 - \theta^2 t^2}{2t}\right) dw \\
+&= \exp\left(-\frac{1}{2}\theta^2 t\right) \exp\left(\frac{1}{2}\theta^2 t\right) \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi t}} \exp\left(-\frac{(w + \theta t)^2}{2t}\right) dw \\
+&= 1
+\end{align}
+
+The last integral equals 1 since it's the integral of a normal density.
+
+\textbf{Step 4}: Define \(\mathbb{Q}\) by
+\(\frac{d\mathbb{Q}}{d\mathbb{P}} = Z_T\).
+
+\textbf{Step 5}: Apply Girsanov's theorem. Under \(\mathbb{Q}\), the
+process: \[\tilde{W}_t = W_t + \int_0^t \theta \, ds = W_t + \theta t\]
+is a \(\mathbb{Q}\)-Brownian motion.
+
+\textbf{Step 6}: Transform the stock price dynamics. Under
+\(\mathbb{Q}\): \begin{align}
+dS_t &= \mu S_t \, dt + \sigma S_t \, dW_t \\
+&= \mu S_t \, dt + \sigma S_t (d\tilde{W}_t - \theta \, dt) \\
+&= \mu S_t \, dt + \sigma S_t \, d\tilde{W}_t - \sigma S_t \theta \, dt \\
+&= (\mu - \sigma\theta) S_t \, dt + \sigma S_t \, d\tilde{W}_t \\
+&= \left(\mu - \sigma \cdot \frac{\mu - r}{\sigma}\right) S_t \, dt + \sigma S_t \, d\tilde{W}_t \\
+&= r S_t \, dt + \sigma S_t \, d\tilde{W}_t
+\end{align}
+
+\textbf{Step 7}: Verify the martingale property. The discounted stock
+price is: \[e^{-rt}S_t\]
+
+Its differential is: \begin{align}
+d(e^{-rt}S_t) &= -re^{-rt}S_t \, dt + e^{-rt} dS_t \\
+&= -re^{-rt}S_t \, dt + e^{-rt}(rS_t \, dt + \sigma S_t \, d\tilde{W}_t) \\
+&= e^{-rt}\sigma S_t \, d\tilde{W}_t
+\end{align}
+
+Since this has no \(dt\) term, \(e^{-rt}S_t\) is a
+\(\mathbb{Q}\)-martingale.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Why Do We Need the Risk-Neutral Measure \(\mathbb{Q}\) at All?}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+This fundamental question gets to the heart of mathematical finance. The
+answer reveals why the risk-neutral measure is not just a mathematical
+convenience, but an essential concept for correct option pricing.
+
+\hypertarget{the-fundamental-problem-with-the-physical-measure-mathbbp}{%
+\subsubsection{\texorpdfstring{The Fundamental Problem with the Physical
+Measure
+\(\mathbb{P}\)}{The Fundamental Problem with the Physical Measure \textbackslash mathbb\{P\}}}\label{the-fundamental-problem-with-the-physical-measure-mathbbp}}
+
+Under the physical measure \(\mathbb{P}\), the stock follows:
+\[dS_t = \mu S_t dt + \sigma S_t dW_t\]
+
+If we naively tried to price the option directly under \(\mathbb{P}\):
+\[V(0, S_0) = e^{-rT} \mathbb{E}_\mathbb{P}[(S_T - K)^+]\]
+
+\textbf{This formula is fundamentally incorrect!} Here's why:
+
+\hypertarget{issue-1-the-discount-rate-problem}{%
+\paragraph{Issue 1: The Discount Rate
+Problem}\label{issue-1-the-discount-rate-problem}}
+
+The expectation under \(\mathbb{P}\) gives us the expected payoff in the
+``real world'' where the stock has expected return \(\mu\). But what
+discount rate should we use?
+
+\begin{itemize}
+\tightlist
+\item
+  If \(\mu > r\): The stock is expected to grow faster than the
+  risk-free rate
+\item
+  We might think we should discount at rate \(\mu\), not \(r\)
+\item
+  But the option's risk profile is completely different from the stock's
+  risk profile
+\item
+  The appropriate discount rate for the option depends on its specific
+  risk characteristics
+\end{itemize}
+
+\textbf{The key insight}: We don't know what discount rate to use for
+the option under \(\mathbb{P}\) because the option's risk premium is
+unclear and depends on complex risk preferences.
+
+\hypertarget{issue-2-risk-premium-confusion}{%
+\paragraph{Issue 2: Risk Premium
+Confusion}\label{issue-2-risk-premium-confusion}}
+
+Under the physical measure \(\mathbb{P}\): - The stock earns expected
+return \(\mu\) - The bond earns certain return \(r\) - The difference
+\(\mu - r\) is the equity risk premium
+
+But the option has a completely different risk profile than the stock!
+Its appropriate risk premium is not obvious and would require knowledge
+of: - Investor risk preferences - The option's correlation with market
+factors - The option's beta relative to various risk factors
+
+\hypertarget{why-the-risk-neutral-measure-mathbbq-solves-this-elegantly}{%
+\subsubsection{\texorpdfstring{Why the Risk-Neutral Measure
+\(\mathbb{Q}\) Solves This
+Elegantly}{Why the Risk-Neutral Measure \textbackslash mathbb\{Q\} Solves This Elegantly}}\label{why-the-risk-neutral-measure-mathbbq-solves-this-elegantly}}
+
+The brilliant insight is to change to a probability measure where
+\textbf{all assets have the same expected return} equal to the risk-free
+rate.
+
+\hypertarget{under-mathbbq}{%
+\paragraph{\texorpdfstring{Under
+\(\mathbb{Q}\):}{Under \textbackslash mathbb\{Q\}:}}\label{under-mathbbq}}
+
+\begin{itemize}
+\tightlist
+\item
+  Stock expected return: \(r\)
+\item
+  Bond expected return: \(r\)
+\item
+  \textbf{Any derivative's expected return: \(r\)}
+\end{itemize}
+
+This means we can discount everything at the risk-free rate \(r\)!
+
+\[V(0, S_0) = e^{-rT} \mathbb{E}_\mathbb{Q}[(S_T - K)^+]\]
+
+Now the formula is correct because: 1. The expected return of the option
+under \(\mathbb{Q}\) is exactly \(r\) 2. So we discount at rate \(r\) 3.
+The mathematics works out perfectly 4. No risk premiums need to be
+determined
+
+\hypertarget{the-economic-intuition}{%
+\subsubsection{The Economic Intuition}\label{the-economic-intuition}}
+
+Think of the two measures this way:
+
+\textbf{Physical measure \(\mathbb{P}\)}: \emph{``What will actually
+happen in the real world?''} - Stocks have risk premiums reflecting
+investor risk aversion - Different assets have different expected
+returns - Discount rates are asset-specific and difficult to determine -
+Requires knowledge of risk preferences and market prices of risk
+
+\textbf{Risk-neutral measure \(\mathbb{Q}\)}: \emph{``What would happen
+in a hypothetical world where all investors are risk-neutral?''} - All
+assets earn the risk-free rate in expectation - No risk premiums exist -
+Everything can be discounted at the same rate \(r\) - Completely
+bypasses the need to know risk preferences
+
+\hypertarget{the-arbitrage-connection}{%
+\subsubsection{The Arbitrage
+Connection}\label{the-arbitrage-connection}}
+
+The risk-neutral measure exists precisely because there are no arbitrage
+opportunities. Here's the fundamental logic:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{No arbitrage} ⟺ \textbf{Risk-neutral measure exists} (First
+  Fundamental Theorem of Asset Pricing)
+\item
+  If we can replicate the option with a portfolio of stock and bonds,
+  then the option price must equal the portfolio value (no arbitrage
+  principle)
+\item
+  The replicating portfolio approach automatically gives us the
+  risk-neutral valuation
+\item
+  The \(\mathbb{Q}\) measure is the unique measure that makes this work
+\end{enumerate}
+
+\hypertarget{a-concrete-example}{%
+\subsubsection{A Concrete Example}\label{a-concrete-example}}
+
+Consider a simple one-period binomial model:
+
+\textbf{Setup:} - Stock price: \(S_0 = 100\) - Up move: \(S_1 = 120\)
+with probability \(p = 0.6\) under \(\mathbb{P}\) - Down move:
+\(S_1 = 80\) with probability \(1-p = 0.4\) under \(\mathbb{P}\) -
+Risk-free rate: \(r = 5\%\)
+
+\textbf{Under \(\mathbb{P}\)}: Expected stock return is
+\(0.6 \times 20\% + 0.4 \times (-20\%) = 4\%\)
+
+\textbf{For a call option with \(K = 100\)}: - Payoff if stock goes up:
+\(\max(120-100, 0) = 20\) - Payoff if stock goes down:
+\(\max(80-100, 0) = 0\)
+
+\hypertarget{wrong-approach-using-mathbbp}{%
+\paragraph{\texorpdfstring{Wrong Approach (using
+\(\mathbb{P}\)):}{Wrong Approach (using \textbackslash mathbb\{P\}):}}\label{wrong-approach-using-mathbbp}}
+
+\[V_0 = \frac{0.6 \times 20 + 0.4 \times 0}{1.05} = \frac{12}{1.05} = 11.43\]
+
+This is incorrect because we're using the wrong probabilities for
+discounting at the risk-free rate.
+
+\hypertarget{correct-approach-using-mathbbq}{%
+\paragraph{\texorpdfstring{Correct Approach (using
+\(\mathbb{Q}\)):}{Correct Approach (using \textbackslash mathbb\{Q\}):}}\label{correct-approach-using-mathbbq}}
+
+First, find the risk-neutral probabilities. Under \(\mathbb{Q}\), the
+stock must have expected return equal to the risk-free rate \(r = 5\%\):
+
+\[q \times 120 + (1-q) \times 80 = 100 \times 1.05 = 105\]
+\[40q + 80 = 105\] \[q = 0.625\]
+
+Now we can price correctly:
+\[V_0 = \frac{0.625 \times 20 + 0.375 \times 0}{1.05} = \frac{12.5}{1.05} = 11.90\]
+
+The risk-neutral approach gives the unique arbitrage-free price!
+
+\hypertarget{verification-by-replication}{%
+\paragraph{Verification by
+Replication:}\label{verification-by-replication}}
+
+We can verify this is correct by constructing a replicating portfolio: -
+Buy \(\Delta\) shares of stock - Invest \(B\) in bonds
+
+Portfolio value in up state: \(120\Delta + 1.05B = 20\) Portfolio value
+in down state: \(80\Delta + 1.05B = 0\)
+
+Solving: \(\Delta = 0.5\), \(B = -38.10\)
+
+Initial portfolio cost: \(100 \times 0.5 - 38.10 = 11.90\) ✓
+
+\hypertarget{why-this-matters-for-black-scholes}{%
+\subsubsection{Why This Matters for
+Black-Scholes}\label{why-this-matters-for-black-scholes}}
+
+In the Black-Scholes framework:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Physical measure}: Stock has drift \(\mu\), but option pricing
+  would require determining the option's risk premium
+\item
+  \textbf{Risk-neutral measure}: Stock has drift \(r\), and option
+  pricing becomes a pure expectation calculation
+\item
+  \textbf{Girsanov's theorem}: Provides the mathematical machinery to
+  change from \(\mathbb{P}\) to \(\mathbb{Q}\)
+\item
+  \textbf{Hedging connection}: The \(\mathbb{Q}\) measure emerges
+  naturally from the delta-hedging argument
+\end{enumerate}
+
+\hypertarget{summary-why-we-need-mathbbq}{%
+\subsubsection{\texorpdfstring{Summary: Why We Need
+\(\mathbb{Q}\)}{Summary: Why We Need \textbackslash mathbb\{Q\}}}\label{summary-why-we-need-mathbbq}}
+
+The risk-neutral measure is essential because it:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Eliminates risk premium confusion} - all assets earn rate
+  \(r\) in expectation
+\item
+  \textbf{Provides the correct discount rate} - always the risk-free
+  rate \(r\)
+\item
+  \textbf{Gives the unique arbitrage-free approach} - guaranteed by
+  fundamental theorems
+\item
+  \textbf{Connects to replication strategies} - matches the
+  hedging-based derivation perfectly
+\item
+  \textbf{Makes pricing computationally tractable} - turns complex
+  pricing into expectation calculations
+\item
+  \textbf{Bypasses investor preferences} - no need to know risk aversion
+  parameters
+\item
+  \textbf{Ensures market completeness} - works for any derivative in a
+  complete market
+\end{enumerate}
+
+\textbf{The key insight}: The risk-neutral measure is not about what
+will actually happen in reality - it's about finding the unique
+arbitrage-free price in a mathematically elegant and practically
+implementable way. It transforms the complex problem of determining
+risk-adjusted discount rates into the simpler problem of computing
+expectations under an artificial but mathematically convenient
+probability measure.
+
+\end{tcolorbox}
+
+\hypertarget{step-2-stock-price-under-risk-neutral-measure}{%
+\subsection{Step 2: Stock Price Under Risk-Neutral
+Measure}\label{step-2-stock-price-under-risk-neutral-measure}}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-important-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-important-color!10!white, title={Lemma 3.1 (Stock Price Solution Under \(\mathbb{Q}\))}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+Under the risk-neutral measure \(\mathbb{Q}\), the stock price has the
+explicit form:
+\[S_t = S_0 \exp\left(\left(r - \frac{\sigma^2}{2}\right)t + \sigma \tilde{W}_t\right)\]
+where \(\tilde{W}_t\) is a \(\mathbb{Q}\)-Brownian motion.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Proof of Lemma 3.1}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+Under \(\mathbb{Q}\), the stock follows:
+\[dS_t = rS_t \, dt + \sigma S_t \, d\tilde{W}_t\]
+
+Using the same technique as in the original measure, let
+\(Y_t = \ln S_t\): \begin{align}
+dY_t &= \frac{1}{S_t} dS_t - \frac{1}{2S_t^2}(dS_t)^2 \\
+&= \frac{1}{S_t}(rS_t \, dt + \sigma S_t \, d\tilde{W}_t) - \frac{1}{2S_t^2}(\sigma S_t)^2 dt \\
+&= r \, dt + \sigma \, d\tilde{W}_t - \frac{\sigma^2}{2} dt \\
+&= \left(r - \frac{\sigma^2}{2}\right) dt + \sigma \, d\tilde{W}_t
+\end{align}
+
+Integrating:
+\[Y_t = Y_0 + \left(r - \frac{\sigma^2}{2}\right)t + \sigma \tilde{W}_t\]
+
+Therefore:
+\[S_t = S_0 \exp\left(\left(r - \frac{\sigma^2}{2}\right)t + \sigma \tilde{W}_t\right)\]
+
+\end{tcolorbox}
+
+\hypertarget{step-3-risk-neutral-valuation}{%
+\subsection{Step 3: Risk-Neutral
+Valuation}\label{step-3-risk-neutral-valuation}}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-important-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-important-color!10!white, title={Theorem 3.2 (Risk-Neutral Option Pricing)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+The price of the European call option at time \(t\) is:
+\[V(t, S_t) = e^{-r(T-t)} \mathbb{E}_\mathbb{Q}[(S_T - K)^+ | \mathcal{F}_t]\]
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Proof of Theorem 3.2}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+This follows directly from the risk-neutral valuation principle. In an
+arbitrage-free complete market, the option price equals the discounted
+expected payoff under the risk-neutral measure.
+
+\end{tcolorbox}
+
+\hypertarget{step-4-computing-the-expectation}{%
+\subsection{Step 4: Computing the
+Expectation}\label{step-4-computing-the-expectation}}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-important-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-important-color!10!white, title={Theorem 3.3 (Black-Scholes Formula via Martingale Method)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+The European call option price is:
+\[V(t, S_t) = S_t \Phi(d_1) - K e^{-r(T-t)} \Phi(d_2)\] where:
+\begin{align}
+d_1 &= \frac{\ln(S_t/K) + (r + \sigma^2/2)(T-t)}{\sigma\sqrt{T-t}} \\
+d_2 &= d_1 - \sigma\sqrt{T-t} = \frac{\ln(S_t/K) + (r - \sigma^2/2)(T-t)}{\sigma\sqrt{T-t}}
+\end{align} and \(\Phi\) is the cumulative distribution function of the
+standard normal distribution.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Proof of Theorem 3.3}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+\textbf{Step 1}: Express the stock price at maturity. Under
+\(\mathbb{Q}\), using the strong Markov property:
+\[S_T = S_t \exp\left(\left(r - \frac{\sigma^2}{2}\right)(T-t) + \sigma (\tilde{W}_T - \tilde{W}_t)\right)\]
+
+Since \(\tilde{W}_T - \tilde{W}_t \sim N(0, T-t)\) under \(\mathbb{Q}\),
+let \(Z \sim N(0,1)\). Then:
+\[S_T = S_t \exp\left(\left(r - \frac{\sigma^2}{2}\right)(T-t) + \sigma\sqrt{T-t} \cdot Z\right)\]
+
+\textbf{Step 2}: Set up the expectation. \begin{align}
+V(t, S_t) &= e^{-r(T-t)} \mathbb{E}_\mathbb{Q}[(S_T - K)^+ | \mathcal{F}_t] \\
+&= e^{-r(T-t)} \mathbb{E}_\mathbb{Q}\left[\left(S_t e^{(r-\sigma^2/2)(T-t) + \sigma\sqrt{T-t} Z} - K\right)^+\right]
+\end{align}
+
+\textbf{Step 3}: Find the exercise region. The option is exercised when
+\(S_T > K\), i.e., when:
+\[S_t e^{(r-\sigma^2/2)(T-t) + \sigma\sqrt{T-t} Z} > K\]
+
+Taking logarithms: \begin{align}
+&(r-\sigma^2/2)(T-t) + \sigma\sqrt{T-t} Z > \ln(K/S_t) \\
+&Z > \frac{\ln(K/S_t) - (r-\sigma^2/2)(T-t)}{\sigma\sqrt{T-t}} = -d_2
+\end{align}
+
+\textbf{Step 4}: Evaluate the integral. \begin{align}
+V(t, S_t) &= e^{-r(T-t)} \int_{-d_2}^{\infty} \left(S_t e^{(r-\sigma^2/2)(T-t) + \sigma\sqrt{T-t} z} - K\right) \\
+&\quad \times \frac{1}{\sqrt{2\pi}} e^{-z^2/2} dz \\
+&= e^{-r(T-t)} S_t e^{(r-\sigma^2/2)(T-t)} \int_{-d_2}^{\infty} e^{\sigma\sqrt{T-t} z} \frac{1}{\sqrt{2\pi}} e^{-z^2/2} dz \\
+&\quad - e^{-r(T-t)} K \int_{-d_2}^{\infty} \frac{1}{\sqrt{2\pi}} e^{-z^2/2} dz
+\end{align}
+
+\textbf{Step 5}: Evaluate the first integral. For the first integral,
+complete the square in the exponent:
+\[\sigma\sqrt{T-t} z - \frac{z^2}{2} = -\frac{1}{2}(z - \sigma\sqrt{T-t})^2 + \frac{\sigma^2(T-t)}{2}\]
+
+Therefore: \begin{align}
+&\int_{-d_2}^{\infty} e^{\sigma\sqrt{T-t} z} \frac{1}{\sqrt{2\pi}} e^{-z^2/2} dz \\
+&= e^{\sigma^2(T-t)/2} \int_{-d_2}^{\infty} \frac{1}{\sqrt{2\pi}} e^{-(z-\sigma\sqrt{T-t})^2/2} dz \\
+&= e^{\sigma^2(T-t)/2} \int_{-d_2-\sigma\sqrt{T-t}}^{\infty} \frac{1}{\sqrt{2\pi}} e^{-u^2/2} du \\
+&= e^{\sigma^2(T-t)/2} \Phi(d_2 + \sigma\sqrt{T-t}) \\
+&= e^{\sigma^2(T-t)/2} \Phi(d_1)
+\end{align}
+
+where we used the substitution \(u = z - \sigma\sqrt{T-t}\) and the fact
+that: \[d_2 + \sigma\sqrt{T-t} = d_1\]
+
+\textbf{Step 6}: Evaluate the second integral.
+\[\int_{-d_2}^{\infty} \frac{1}{\sqrt{2\pi}} e^{-z^2/2} dz = \Phi(d_2)\]
+
+\textbf{Step 7}: Combine the results. \begin{align}
+V(t, S_t) &= e^{-r(T-t)} S_t e^{(r-\sigma^2/2)(T-t)} e^{\sigma^2(T-t)/2} \Phi(d_1) - e^{-r(T-t)} K \Phi(d_2) \\
+&= S_t e^{-r(T-t)} e^{(r-\sigma^2/2)(T-t)} e^{\sigma^2(T-t)/2} \Phi(d_1) - K e^{-r(T-t)} \Phi(d_2) \\
+&= S_t e^{-r(T-t) + r(T-t) - \sigma^2(T-t)/2 + \sigma^2(T-t)/2} \Phi(d_1) - K e^{-r(T-t)} \Phi(d_2) \\
+&= S_t \Phi(d_1) - K e^{-r(T-t)} \Phi(d_2)
+\end{align}
+
+\end{tcolorbox}
+
+\hypertarget{part-iv-proof-via-pde-approach}{%
+\section{Part IV: Proof via PDE
+Approach}\label{part-iv-proof-via-pde-approach}}
+
+\hypertarget{step-1-delta-hedging-strategy}{%
+\subsection{Step 1: Delta Hedging
+Strategy}\label{step-1-delta-hedging-strategy}}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title={Definition 4.1 (Delta Hedging Portfolio)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+Consider a portfolio \(\Pi_t\) consisting of:
+
+\begin{itemize}
+\tightlist
+\item
+  Long position: 1 unit of the option with value \(V(t, S_t)\)
+\item
+  Short position: \(\Delta_t\) shares of the stock
+\item
+  Cash position: The remaining value invested in bonds
+\end{itemize}
+
+The portfolio value is: \(\Pi_t = V(t, S_t) - \Delta_t S_t\)
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title={Definition 4.2 (Delta)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+The delta \(\Delta_t\) represents the hedge ratio - the number of shares
+of stock to short for each option held. We will determine \(\Delta_t\)
+to make the portfolio risk-free.
+
+\end{tcolorbox}
+
+\hypertarget{step-2-application-of-ituxf4s-lemma-to-option-value}{%
+\subsection{Step 2: Application of Itô's Lemma to Option
+Value}\label{step-2-application-of-ituxf4s-lemma-to-option-value}}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-important-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-important-color!10!white, title={Lemma 4.1 (Stochastic Differential of Option Value)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+Assume the option price has the form \(V(t, S_t)\) where
+\(V \in C^{1,2}([0,T] \times (0,\infty))\). Then by Itô's lemma:
+\begin{align}
+dV &= \frac{\partial V}{\partial t} dt + \frac{\partial V}{\partial S} dS_t + \frac{1}{2}\frac{\partial^2 V}{\partial S^2} (dS_t)^2 \\
+&= \left[\frac{\partial V}{\partial t} + \mu S_t \frac{\partial V}{\partial S} + \frac{1}{2}\sigma^2 S_t^2 \frac{\partial^2 V}{\partial S^2}\right] dt + \sigma S_t \frac{\partial V}{\partial S} dW_t
+\end{align}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Proof of Lemma 4.1}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+Since \(dS_t = \mu S_t \, dt + \sigma S_t \, dW_t\), we have:
+\((dS_t)^2 = (\mu S_t \, dt + \sigma S_t \, dW_t)^2 = \sigma^2 S_t^2 (dW_t)^2 = \sigma^2 S_t^2 dt\)
+
+where we used the fact that \((dW_t)^2 = dt\), \(dt \cdot dW_t = 0\),
+and \((dt)^2 = 0\).
+
+Applying Itô's lemma: \begin{align}
+dV &= \frac{\partial V}{\partial t} dt + \frac{\partial V}{\partial S} dS_t + \frac{1}{2}\frac{\partial^2 V}{\partial S^2} (dS_t)^2 \\
+&= \frac{\partial V}{\partial t} dt + \frac{\partial V}{\partial S} (\mu S_t \, dt + \sigma S_t \, dW_t) + \frac{1}{2}\frac{\partial^2 V}{\partial S^2} \sigma^2 S_t^2 dt \\
+&= \left[\frac{\partial V}{\partial t} + \mu S_t \frac{\partial V}{\partial S} + \frac{1}{2}\sigma^2 S_t^2 \frac{\partial^2 V}{\partial S^2}\right] dt + \sigma S_t \frac{\partial V}{\partial S} dW_t
+\end{align}
+
+\end{tcolorbox}
+
+\hypertarget{step-3-portfolio-dynamics}{%
+\subsection{Step 3: Portfolio
+Dynamics}\label{step-3-portfolio-dynamics}}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-important-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-important-color!10!white, title={Lemma 4.2 (Portfolio Value Dynamics)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+The change in portfolio value is: \begin{align}
+d\Pi_t &= dV - \Delta_t dS_t \\
+&= \left[\frac{\partial V}{\partial t} + \mu S_t \left(\frac{\partial V}{\partial S} - \Delta_t\right) + \frac{1}{2}\sigma^2 S_t^2 \frac{\partial^2 V}{\partial S^2}\right] dt \\
+&\quad + \sigma S_t \left(\frac{\partial V}{\partial S} - \Delta_t\right) dW_t
+\end{align}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Proof of Lemma 4.2}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+We have: \begin{align}
+d\Pi_t &= dV - \Delta_t dS_t \\
+&= \left[\frac{\partial V}{\partial t} + \mu S_t \frac{\partial V}{\partial S} + \frac{1}{2}\sigma^2 S_t^2 \frac{\partial^2 V}{\partial S^2}\right] dt + \sigma S_t \frac{\partial V}{\partial S} dW_t \\
+&\quad - \Delta_t (\mu S_t dt + \sigma S_t dW_t) \\
+&= \left[\frac{\partial V}{\partial t} + \mu S_t \frac{\partial V}{\partial S} + \frac{1}{2}\sigma^2 S_t^2 \frac{\partial^2 V}{\partial S^2} - \Delta_t \mu S_t\right] dt \\
+&\quad + \sigma S_t \left(\frac{\partial V}{\partial S} - \Delta_t\right) dW_t \\
+&= \left[\frac{\partial V}{\partial t} + \mu S_t \left(\frac{\partial V}{\partial S} - \Delta_t\right) + \frac{1}{2}\sigma^2 S_t^2 \frac{\partial^2 V}{\partial S^2}\right] dt \\
+&\quad + \sigma S_t \left(\frac{\partial V}{\partial S} - \Delta_t\right) dW_t
+\end{align}
+
+\end{tcolorbox}
+
+\hypertarget{step-4-eliminating-risk}{%
+\subsection{Step 4: Eliminating Risk}\label{step-4-eliminating-risk}}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title={Definition 4.3 (Delta-Neutral Portfolio)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+To eliminate the stochastic component, we choose:
+\(\Delta_t = \frac{\partial V}{\partial S}\)
+
+This choice makes the portfolio instantaneously risk-free.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-important-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-important-color!10!white, title={Lemma 4.3 (Risk-Free Portfolio Dynamics)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+With \(\Delta_t = \frac{\partial V}{\partial S}\), the portfolio
+dynamics become:
+\(d\Pi_t = \left[\frac{\partial V}{\partial t} + \frac{1}{2}\sigma^2 S_t^2 \frac{\partial^2 V}{\partial S^2}\right] dt\)
+
+\end{tcolorbox}
+
+\hypertarget{step-5-no-arbitrage-condition}{%
+\subsection{Step 5: No-Arbitrage
+Condition}\label{step-5-no-arbitrage-condition}}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-important-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-important-color!10!white, title={Theorem 4.1 (Risk-Free Rate Condition)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+Since the portfolio is risk-free, it must earn the risk-free rate to
+prevent arbitrage: \(d\Pi_t = r\Pi_t dt\)
+
+Substituting
+\(\Pi_t = V - \Delta_t S_t = V - \frac{\partial V}{\partial S} S_t\):
+\(d\Pi_t = r\left(V - \frac{\partial V}{\partial S} S_t\right) dt\)
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Proof of Theorem 4.1}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+If a risk-free portfolio earned more than the risk-free rate, we could
+borrow at rate \(r\), invest in the portfolio, and earn a risk-free
+profit (arbitrage). If it earned less, we could short the portfolio,
+lend at rate \(r\), and again earn risk-free profit.
+
+\end{tcolorbox}
+
+\hypertarget{step-6-deriving-the-black-scholes-pde}{%
+\subsection{Step 6: Deriving the Black-Scholes
+PDE}\label{step-6-deriving-the-black-scholes-pde}}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-important-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-important-color!10!white, title={Theorem 4.2 (Black-Scholes Partial Differential Equation)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+The option price \(V(t,S)\) satisfies the Black-Scholes PDE:
+\(\frac{\partial V}{\partial t} + rS \frac{\partial V}{\partial S} + \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} - rV = 0\)
+
+with terminal condition: \(V(T,S) = (S-K)^+\)
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Proof of Theorem 4.2}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+Equating the two expressions for \(d\Pi_t\):
+\(\frac{\partial V}{\partial t} + \frac{1}{2}\sigma^2 S_t^2 \frac{\partial^2 V}{\partial S^2} = r\left(V - \frac{\partial V}{\partial S} S_t\right)\)
+
+Rearranging:
+\(\frac{\partial V}{\partial t} + \frac{1}{2}\sigma^2 S_t^2 \frac{\partial^2 V}{\partial S^2} = rV - rS_t \frac{\partial V}{\partial S}\)
+
+Therefore:
+\(\frac{\partial V}{\partial t} + rS_t \frac{\partial V}{\partial S} + \frac{1}{2}\sigma^2 S_t^2 \frac{\partial^2 V}{\partial S^2} - rV = 0\)
+
+The terminal condition comes from the option payoff at maturity.
+
+\end{tcolorbox}
+
+\hypertarget{step-7-solving-the-pde}{%
+\subsection{Step 7: Solving the PDE}\label{step-7-solving-the-pde}}
+
+To solve this PDE, we use a change of variables to transform it into the
+heat equation.
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title={Definition 4.4 (Variable Transformation)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+Let: \begin{align}
+\tau &= T - t \quad \text{(time to maturity)} \\
+x &= \ln(S/K) \quad \text{(log-moneyness)} \\
+u(\tau, x) &= e^{r\tau} \frac{V(T-\tau, Ke^x)}{K}
+\end{align}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-important-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-important-color!10!white, title={Lemma 4.4 (Transformed PDE)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+The function \(u(\tau, x)\) satisfies the diffusion equation:
+\(\frac{\partial u}{\partial \tau} = \frac{1}{2}\sigma^2 \frac{\partial^2 u}{\partial x^2} + \left(r - \frac{\sigma^2}{2}\right) \frac{\partial u}{\partial x}\)
+
+with initial condition: \(u(0, x) = (e^x - 1)^+\)
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Proof of Lemma 4.4}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+We need to compute the partial derivatives of \(V\) in terms of \(u\).
+We have: \(V(t,S) = K e^{-r(T-t)} u(T-t, \ln(S/K))\)
+
+Let \(\tau = T-t\) and \(x = \ln(S/K)\). Then:
+
+\begin{align}
+\frac{\partial V}{\partial t} &= K e^{-r\tau} \left[r u - \frac{\partial u}{\partial \tau}\right] \\
+\frac{\partial V}{\partial S} &= K e^{-r\tau} \frac{1}{S} \frac{\partial u}{\partial x} \\
+\frac{\partial^2 V}{\partial S^2} &= K e^{-r\tau} \frac{1}{S^2} \left[\frac{\partial^2 u}{\partial x^2} - \frac{\partial u}{\partial x}\right]
+\end{align}
+
+Substituting into the Black-Scholes PDE and simplifying (after dividing
+by \(K e^{-r\tau}\)):
+\(-\frac{\partial u}{\partial \tau} + \left(r - \frac{\sigma^2}{2}\right) \frac{\partial u}{\partial x} + \frac{1}{2}\sigma^2 \frac{\partial^2 u}{\partial x^2} = 0\)
+
+Therefore:
+\(\frac{\partial u}{\partial \tau} = \frac{1}{2}\sigma^2 \frac{\partial^2 u}{\partial x^2} + \left(r - \frac{\sigma^2}{2}\right) \frac{\partial u}{\partial x}\)
+
+The initial condition at \(\tau = 0\) (i.e., \(t = T\)) is:
+\(u(0, x) = \frac{(Ke^x - K)^+}{K} = (e^x - 1)^+\)
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-important-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-important-color!10!white, title={Theorem 4.3 (Solution via Fundamental Solution)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+The solution to the transformed PDE is:
+\(u(\tau, x) = \int_{-\infty}^{\infty} (e^y - 1)^+ G(\tau; x, y) dy\)
+
+where \(G(\tau; x, y)\) is the fundamental solution:
+\(G(\tau; x, y) = \frac{1}{\sqrt{2\pi\sigma^2\tau}} \exp\left(-\frac{(y - x - (r-\sigma^2/2)\tau)^2}{2\sigma^2\tau}\right)\)
+
+\end{tcolorbox}
+
+\hypertarget{step-8-computing-the-solution}{%
+\subsection{Step 8: Computing the
+Solution}\label{step-8-computing-the-solution}}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-important-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-important-color!10!white, title={Theorem 4.4 (Explicit Solution of the PDE)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+After computing the integral (which follows the same steps as in the
+martingale approach), we obtain:
+\(u(\tau, x) = e^x \Phi(d_1) - \Phi(d_2)\)
+
+where: \begin{align}
+d_1 &= \frac{x + (r + \sigma^2/2)\tau}{\sigma\sqrt{\tau}} \\
+d_2 &= \frac{x + (r - \sigma^2/2)\tau}{\sigma\sqrt{\tau}} = d_1 - \sigma\sqrt{\tau}
+\end{align}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-important-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-important-color!10!white, title={Theorem 4.5 (Black-Scholes Formula via PDE Method)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+Transforming back to the original variables, the European call option
+price is: \(V(t,S) = S \Phi(d_1) - K e^{-r(T-t)} \Phi(d_2)\)
+
+where: \begin{align}
+d_1 &= \frac{\ln(S/K) + (r + \sigma^2/2)(T-t)}{\sigma\sqrt{T-t}} \\
+d_2 &= d_1 - \sigma\sqrt{T-t}
+\end{align}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Proof of Theorem 4.5}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+We have: \(V(t,S) = K e^{-r(T-t)} u(T-t, \ln(S/K))\)
+
+The transformation from the \(u\) solution to the \(V\) solution follows
+the same integration techniques as in the martingale approach. The key
+insight is that both methods yield identical results, demonstrating the
+equivalence of risk-neutral valuation and PDE approaches.
+
+\end{tcolorbox}
+
+\hypertarget{verification-and-conclusion}{%
+\section{Verification and
+Conclusion}\label{verification-and-conclusion}}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-important-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-important-color!10!white, title={Theorem 5.1 (Equivalence of Both Methods)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+Both the martingale approach and the PDE approach yield the identical
+Black-Scholes formula:
+\(V(t,S) = S \Phi(d_1) - K e^{-r(T-t)} \Phi(d_2)\)
+
+This demonstrates the deep connection between:
+
+\begin{itemize}
+\tightlist
+\item
+  Risk-neutral valuation (martingale theory)
+\item
+  Dynamic hedging and partial differential equations\\
+\item
+  Stochastic calculus and deterministic analysis
+\end{itemize}
+
+\end{tcolorbox}
+
+\hypertarget{economic-interpretation}{%
+\subsection{Economic Interpretation}\label{economic-interpretation}}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-tip-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, title={Remark 5.1 (Economic Interpretation)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+The Black-Scholes formula has a clear economic interpretation:
+
+\begin{itemize}
+\tightlist
+\item
+  \(S \Phi(d_1)\): Expected value of the stock if exercised, weighted by
+  probability of exercise
+\item
+  \(K e^{-r(T-t)} \Phi(d_2)\): Present value of strike price, weighted
+  by probability of exercise\\
+\item
+  \(\Phi(d_2)\): Risk-neutral probability that option finishes
+  in-the-money
+\item
+  \(\Delta = \frac{\partial V}{\partial S} = \Phi(d_1)\): Hedge ratio
+  (number of shares to hold per option)
+\end{itemize}
+
+\end{tcolorbox}
+
+\hypertarget{key-insights}{%
+\subsection{Key Insights}\label{key-insights}}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-tip-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, title={Remark 5.2 (Key Insights)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+The derivation reveals several fundamental insights:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  The option price depends only on the risk-free rate \(r\), not the
+  actual expected return \(\mu\) of the stock
+\item
+  Perfect hedging is possible in continuous time with continuous trading
+\item
+  The same formula emerges from completely different mathematical
+  approaches
+\item
+  The risk-neutral measure transforms the pricing problem into an
+  expectation calculation
+\end{enumerate}
+
+\end{tcolorbox}
+
+\hypertarget{greeks-and-risk-management}{%
+\subsection{Greeks and Risk
+Management}\label{greeks-and-risk-management}}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title={Definition 5.1 (The Greeks)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+The \textbf{Greeks} measure sensitivities of the option price to various
+parameters:
+
+\textbf{Delta}: \(\Delta = \frac{\partial V}{\partial S} = \Phi(d_1)\) -
+Measures sensitivity to stock price changes - Represents the hedge ratio
+
+\textbf{Gamma}:
+\(\Gamma = \frac{\partial^2 V}{\partial S^2} = \frac{\phi(d_1)}{S\sigma\sqrt{T-t}}\)
+- Measures rate of change of delta - Important for portfolio convexity
+
+\textbf{Theta}:
+\(\Theta = \frac{\partial V}{\partial t} = -\frac{S\phi(d_1)\sigma}{2\sqrt{T-t}} - rKe^{-r(T-t)}\Phi(d_2)\)
+- Measures time decay - Always negative for long call options
+
+\textbf{Vega}:
+\(\nu = \frac{\partial V}{\partial \sigma} = S\phi(d_1)\sqrt{T-t}\) -
+Measures sensitivity to volatility changes - Always positive for long
+options
+
+\textbf{Rho}:
+\(\rho = \frac{\partial V}{\partial r} = K(T-t)e^{-r(T-t)}\Phi(d_2)\) -
+Measures sensitivity to interest rate changes
+
+where \(\phi(x) = \frac{1}{\sqrt{2\pi}}e^{-x^2/2}\) is the standard
+normal density.
+
+\end{tcolorbox}
+
+\hypertarget{extensions-and-limitations}{%
+\subsection{Extensions and
+Limitations}\label{extensions-and-limitations}}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-warning-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-warning-color!10!white, title={Remark 5.3 (Model Assumptions and Limitations)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+The Black-Scholes model relies on several strong assumptions:
+
+\textbf{Assumptions:} - Constant risk-free rate and volatility - No
+dividends - European exercise only - No transaction costs - Continuous
+trading possible - Log-normal stock price distribution
+
+\textbf{Limitations:} - Volatility smile/skew not captured - Jump risk
+ignored - Early exercise features not handled - Transaction costs can be
+significant - Liquidity constraints in practice
+
+\textbf{Extensions:} - American options (early exercise) - Stochastic
+volatility models (Heston, etc.) - Jump-diffusion models (Merton) -
+Dividend-paying stocks - Time-dependent parameters
+
+\end{tcolorbox}
+
+\hypertarget{computational-implementation}{%
+\subsection{Computational
+Implementation}\label{computational-implementation}}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title={Example 5.1 (Python Implementation)}, toprule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, opacityback=0]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
+\ImportTok{from}\NormalTok{ scipy.stats }\ImportTok{import}\NormalTok{ norm}
+
+\KeywordTok{def}\NormalTok{ black\_scholes\_call(S, K, T, r, sigma):}
+    \CommentTok{"""}
+\CommentTok{    Calculate Black{-}Scholes call option price}
+\CommentTok{    }
+\CommentTok{    Parameters:}
+\CommentTok{    S: Current stock price}
+\CommentTok{    K: Strike price  }
+\CommentTok{    T: Time to expiration}
+\CommentTok{    r: Risk{-}free rate}
+\CommentTok{    sigma: Volatility}
+\CommentTok{    """}
+\NormalTok{    d1 }\OperatorTok{=}\NormalTok{ (np.log(S}\OperatorTok{/}\NormalTok{K) }\OperatorTok{+}\NormalTok{ (r }\OperatorTok{+} \FloatTok{0.5}\OperatorTok{*}\NormalTok{sigma}\OperatorTok{**}\DecValTok{2}\NormalTok{)}\OperatorTok{*}\NormalTok{T) }\OperatorTok{/}\NormalTok{ (sigma}\OperatorTok{*}\NormalTok{np.sqrt(T))}
+\NormalTok{    d2 }\OperatorTok{=}\NormalTok{ d1 }\OperatorTok{{-}}\NormalTok{ sigma}\OperatorTok{*}\NormalTok{np.sqrt(T)}
+    
+\NormalTok{    call\_price }\OperatorTok{=}\NormalTok{ S}\OperatorTok{*}\NormalTok{norm.cdf(d1) }\OperatorTok{{-}}\NormalTok{ K}\OperatorTok{*}\NormalTok{np.exp(}\OperatorTok{{-}}\NormalTok{r}\OperatorTok{*}\NormalTok{T)}\OperatorTok{*}\NormalTok{norm.cdf(d2)}
+    
+    \ControlFlowTok{return}\NormalTok{ call\_price}
+
+\KeywordTok{def}\NormalTok{ calculate\_greeks(S, K, T, r, sigma):}
+    \CommentTok{"""Calculate the Greeks"""}
+\NormalTok{    d1 }\OperatorTok{=}\NormalTok{ (np.log(S}\OperatorTok{/}\NormalTok{K) }\OperatorTok{+}\NormalTok{ (r }\OperatorTok{+} \FloatTok{0.5}\OperatorTok{*}\NormalTok{sigma}\OperatorTok{**}\DecValTok{2}\NormalTok{)}\OperatorTok{*}\NormalTok{T) }\OperatorTok{/}\NormalTok{ (sigma}\OperatorTok{*}\NormalTok{np.sqrt(T))}
+\NormalTok{    d2 }\OperatorTok{=}\NormalTok{ d1 }\OperatorTok{{-}}\NormalTok{ sigma}\OperatorTok{*}\NormalTok{np.sqrt(T)}
+    
+\NormalTok{    delta }\OperatorTok{=}\NormalTok{ norm.cdf(d1)}
+\NormalTok{    gamma }\OperatorTok{=}\NormalTok{ norm.pdf(d1) }\OperatorTok{/}\NormalTok{ (S}\OperatorTok{*}\NormalTok{sigma}\OperatorTok{*}\NormalTok{np.sqrt(T))}
+\NormalTok{    theta }\OperatorTok{=}\NormalTok{ (}\OperatorTok{{-}}\NormalTok{S}\OperatorTok{*}\NormalTok{norm.pdf(d1)}\OperatorTok{*}\NormalTok{sigma}\OperatorTok{/}\NormalTok{(}\DecValTok{2}\OperatorTok{*}\NormalTok{np.sqrt(T)) }
+             \OperatorTok{{-}}\NormalTok{ r}\OperatorTok{*}\NormalTok{K}\OperatorTok{*}\NormalTok{np.exp(}\OperatorTok{{-}}\NormalTok{r}\OperatorTok{*}\NormalTok{T)}\OperatorTok{*}\NormalTok{norm.cdf(d2))}
+\NormalTok{    vega }\OperatorTok{=}\NormalTok{ S}\OperatorTok{*}\NormalTok{norm.pdf(d1)}\OperatorTok{*}\NormalTok{np.sqrt(T)}
+\NormalTok{    rho }\OperatorTok{=}\NormalTok{ K}\OperatorTok{*}\NormalTok{T}\OperatorTok{*}\NormalTok{np.exp(}\OperatorTok{{-}}\NormalTok{r}\OperatorTok{*}\NormalTok{T)}\OperatorTok{*}\NormalTok{norm.cdf(d2)}
+    
+    \ControlFlowTok{return}\NormalTok{ \{}\StringTok{\textquotesingle{}delta\textquotesingle{}}\NormalTok{: delta, }\StringTok{\textquotesingle{}gamma\textquotesingle{}}\NormalTok{: gamma, }\StringTok{\textquotesingle{}theta\textquotesingle{}}\NormalTok{: theta, }\StringTok{\textquotesingle{}vega\textquotesingle{}}\NormalTok{: vega, }\StringTok{\textquotesingle{}rho\textquotesingle{}}\NormalTok{: rho\}}
+
+\CommentTok{\# Example usage}
+\NormalTok{S0 }\OperatorTok{=} \DecValTok{100}    \CommentTok{\# Current stock price}
+\NormalTok{K }\OperatorTok{=} \DecValTok{105}     \CommentTok{\# Strike price}
+\NormalTok{T }\OperatorTok{=} \FloatTok{0.25}    \CommentTok{\# 3 months to expiration}
+\NormalTok{r }\OperatorTok{=} \FloatTok{0.05}    \CommentTok{\# 5\% risk{-}free rate  }
+\NormalTok{sigma }\OperatorTok{=} \FloatTok{0.2} \CommentTok{\# 20\% volatility}
+
+\NormalTok{price }\OperatorTok{=}\NormalTok{ black\_scholes\_call(S0, K, T, r, sigma)}
+\NormalTok{greeks }\OperatorTok{=}\NormalTok{ calculate\_greeks(S0, K, T, r, sigma)}
+
+\BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"Call option price: $}\SpecialCharTok{\{}\NormalTok{price}\SpecialCharTok{:.2f\}}\SpecialStringTok{"}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"Delta: }\SpecialCharTok{\{}\NormalTok{greeks[}\StringTok{\textquotesingle{}delta\textquotesingle{}}\NormalTok{]}\SpecialCharTok{:.4f\}}\SpecialStringTok{"}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"Gamma: }\SpecialCharTok{\{}\NormalTok{greeks[}\StringTok{\textquotesingle{}gamma\textquotesingle{}}\NormalTok{]}\SpecialCharTok{:.4f\}}\SpecialStringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\end{tcolorbox}
+
+This complete treatment of the Black-Scholes model provides both
+theoretical rigor and practical applicability, showing how mathematical
+finance bridges pure mathematics and real-world financial applications.
+
+
+
+\end{document}

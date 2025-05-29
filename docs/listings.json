@@ -3,7 +3,8 @@
     "listing": "/docu/anotherpage.html",
     "items": [
       "/docu/posts/Statistical tests.html",
-      "/docu/posts/firstpost.html"
+      "/docu/posts/firstpost.html",
+      "/docu/posts/Black_Scholes_from_principles.html"
     ]
   }
 ]

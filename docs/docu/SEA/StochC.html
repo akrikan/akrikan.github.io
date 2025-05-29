@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -226,6 +289,45 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#preliminaries" id="toc-preliminaries" class="nav-link" data-scroll-target="#preliminaries">Preliminaries</a></li>
   <li><a href="#stochastic-processes" id="toc-stochastic-processes" class="nav-link" data-scroll-target="#stochastic-processes">Stochastic Processes</a></li>
   <li><a href="#black-scholes-model" id="toc-black-scholes-model" class="nav-link" data-scroll-target="#black-scholes-model">Black-Scholes model</a></li>
+  <li><a href="#part-i-mathematical-foundations-and-definitions" id="toc-part-i-mathematical-foundations-and-definitions" class="nav-link" data-scroll-target="#part-i-mathematical-foundations-and-definitions">Part I: Mathematical Foundations and Definitions</a>
+  <ul>
+  <li><a href="#financial-market-framework" id="toc-financial-market-framework" class="nav-link" data-scroll-target="#financial-market-framework">Financial Market Framework</a></li>
+  <li><a href="#portfolio-and-trading-strategy-concepts" id="toc-portfolio-and-trading-strategy-concepts" class="nav-link" data-scroll-target="#portfolio-and-trading-strategy-concepts">Portfolio and Trading Strategy Concepts</a></li>
+  <li><a href="#martingale-theory-for-finance" id="toc-martingale-theory-for-finance" class="nav-link" data-scroll-target="#martingale-theory-for-finance">Martingale Theory for Finance</a></li>
+  <li><a href="#options-and-derivatives" id="toc-options-and-derivatives" class="nav-link" data-scroll-target="#options-and-derivatives">Options and Derivatives</a></li>
+  <li><a href="#fundamental-theorems-of-asset-pricing" id="toc-fundamental-theorems-of-asset-pricing" class="nav-link" data-scroll-target="#fundamental-theorems-of-asset-pricing">Fundamental Theorems of Asset Pricing</a></li>
+  </ul></li>
+  <li><a href="#part-ii-the-black-scholes-model-setup" id="toc-part-ii-the-black-scholes-model-setup" class="nav-link" data-scroll-target="#part-ii-the-black-scholes-model-setup">Part II: The Black-Scholes Model Setup</a>
+  <ul>
+  <li><a href="#model-specification" id="toc-model-specification" class="nav-link" data-scroll-target="#model-specification">Model Specification</a></li>
+  <li><a href="#key-properties-of-the-model" id="toc-key-properties-of-the-model" class="nav-link" data-scroll-target="#key-properties-of-the-model">Key Properties of the Model</a></li>
+  </ul></li>
+  <li><a href="#part-iii-proof-via-martingale-approach" id="toc-part-iii-proof-via-martingale-approach" class="nav-link" data-scroll-target="#part-iii-proof-via-martingale-approach">Part III: Proof via Martingale Approach</a>
+  <ul>
+  <li><a href="#step-1-construction-of-risk-neutral-measure" id="toc-step-1-construction-of-risk-neutral-measure" class="nav-link" data-scroll-target="#step-1-construction-of-risk-neutral-measure">Step 1: Construction of Risk-Neutral Measure</a></li>
+  <li><a href="#step-2-stock-price-under-risk-neutral-measure" id="toc-step-2-stock-price-under-risk-neutral-measure" class="nav-link" data-scroll-target="#step-2-stock-price-under-risk-neutral-measure">Step 2: Stock Price Under Risk-Neutral Measure</a></li>
+  <li><a href="#step-3-risk-neutral-valuation" id="toc-step-3-risk-neutral-valuation" class="nav-link" data-scroll-target="#step-3-risk-neutral-valuation">Step 3: Risk-Neutral Valuation</a></li>
+  <li><a href="#step-4-computing-the-expectation" id="toc-step-4-computing-the-expectation" class="nav-link" data-scroll-target="#step-4-computing-the-expectation">Step 4: Computing the Expectation</a></li>
+  </ul></li>
+  <li><a href="#part-iv-proof-via-pde-approach" id="toc-part-iv-proof-via-pde-approach" class="nav-link" data-scroll-target="#part-iv-proof-via-pde-approach">Part IV: Proof via PDE Approach</a>
+  <ul>
+  <li><a href="#step-1-delta-hedging-strategy" id="toc-step-1-delta-hedging-strategy" class="nav-link" data-scroll-target="#step-1-delta-hedging-strategy">Step 1: Delta Hedging Strategy</a></li>
+  <li><a href="#step-2-application-of-itôs-lemma-to-option-value" id="toc-step-2-application-of-itôs-lemma-to-option-value" class="nav-link" data-scroll-target="#step-2-application-of-itôs-lemma-to-option-value">Step 2: Application of Itô’s Lemma to Option Value</a></li>
+  <li><a href="#step-3-portfolio-dynamics" id="toc-step-3-portfolio-dynamics" class="nav-link" data-scroll-target="#step-3-portfolio-dynamics">Step 3: Portfolio Dynamics</a></li>
+  <li><a href="#step-4-eliminating-risk" id="toc-step-4-eliminating-risk" class="nav-link" data-scroll-target="#step-4-eliminating-risk">Step 4: Eliminating Risk</a></li>
+  <li><a href="#step-5-no-arbitrage-condition" id="toc-step-5-no-arbitrage-condition" class="nav-link" data-scroll-target="#step-5-no-arbitrage-condition">Step 5: No-Arbitrage Condition</a></li>
+  <li><a href="#step-6-deriving-the-black-scholes-pde" id="toc-step-6-deriving-the-black-scholes-pde" class="nav-link" data-scroll-target="#step-6-deriving-the-black-scholes-pde">Step 6: Deriving the Black-Scholes PDE</a></li>
+  <li><a href="#step-7-solving-the-pde" id="toc-step-7-solving-the-pde" class="nav-link" data-scroll-target="#step-7-solving-the-pde">Step 7: Solving the PDE</a></li>
+  <li><a href="#step-8-computing-the-solution" id="toc-step-8-computing-the-solution" class="nav-link" data-scroll-target="#step-8-computing-the-solution">Step 8: Computing the Solution</a></li>
+  </ul></li>
+  <li><a href="#verification-and-conclusion" id="toc-verification-and-conclusion" class="nav-link" data-scroll-target="#verification-and-conclusion">Verification and Conclusion</a>
+  <ul>
+  <li><a href="#economic-interpretation" id="toc-economic-interpretation" class="nav-link" data-scroll-target="#economic-interpretation">Economic Interpretation</a></li>
+  <li><a href="#key-insights" id="toc-key-insights" class="nav-link" data-scroll-target="#key-insights">Key Insights</a></li>
+  <li><a href="#greeks-and-risk-management" id="toc-greeks-and-risk-management" class="nav-link" data-scroll-target="#greeks-and-risk-management">Greeks and Risk Management</a></li>
+  <li><a href="#extensions-and-limitations" id="toc-extensions-and-limitations" class="nav-link" data-scroll-target="#extensions-and-limitations">Extensions and Limitations</a></li>
+  <li><a href="#computational-implementation" id="toc-computational-implementation" class="nav-link" data-scroll-target="#computational-implementation">Computational Implementation</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -323,16 +425,1241 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="weiner-process">Weiner process</h3>
 <p>A fundamental stochastic process, which is also commonly used in the construction of stochastic differential equations (SDEs) to describe asset price movements, is the Wiener process, also called Brownian motion. Mathematically, a Wiener process, <span class="math inline">W(t)</span>, is characterized by the following properties:</p>
 <p style="font-size:15px">
-<br><span class="math inline">a)\quad W(t\_{0}) = 0 (technically:\mathbb{P}[W(t_0)=0] =1)</span><br> <br><span class="math inline">b)\quad W(t) is\quad almost \quad surely \quad continous</span><br> <br><span class="math inline">c)\quad W(t) \quad has \quad independent \quad incerements \quad with \quad distribution\quad W(t)- W(s) \sim \mathcal{N}(0,t-s)</span><br>
-</p>
+</p><p><br><span class="math inline">a)\quad W(t\_{0}) = 0 (technically:\mathbb{P}[W(t_0)=0] =1)</span><br> <br><span class="math inline">b)\quad W(t) is\quad almost \quad surely \quad continous</span><br> <br><span class="math inline">c)\quad W(t) \quad has \quad independent \quad incerements \quad with \quad distribution\quad W(t)- W(s) \sim \mathcal{N}(0,t-s)</span><br></p>
+<p></p>
 </section>
 </div>
 <p><br><br></p>
 </section>
 <section id="black-scholes-model" class="level2">
 <h2 class="anchored" data-anchor-id="black-scholes-model">Black-Scholes model</h2>
+<!-- --- -->
+<!-- title: "Complete Black-Scholes Proofs: From First Principles" -->
+<!-- author: "" -->
+<!-- date: today -->
+<!-- format: -->
+<!--   html: -->
+<!--     toc: true -->
+<!--     toc-depth: 3 -->
+<!--     number-sections: true -->
+<!--     html-math-method: mathjax -->
+<!--   pdf: -->
+<!--     toc: true -->
+<!--     number-sections: true -->
+<!--     geometry: -->
+<!--       - top=1in -->
+<!--       - left=1in -->
+<!--       - right=1in -->
+<!--       - bottom=1in -->
+<!-- --- -->
+</section>
+<section id="part-i-mathematical-foundations-and-definitions" class="level1">
+<h1>Part I: Mathematical Foundations and Definitions</h1>
+<p>This section establishes all the mathematical machinery needed for the Black-Scholes proofs. We assume knowledge of measure theory and basic stochastic calculus but will define all financial and probabilistic concepts explicitly.</p>
+<section id="financial-market-framework" class="level2">
+<h2 class="anchored" data-anchor-id="financial-market-framework">Financial Market Framework</h2>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 1.1 (Financial Market)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A financial market consists of:</p>
+<ol type="1">
+<li>A probability space <span class="math inline">(\Omega, \mathcal{F}, \mathbb{P})</span> where <span class="math inline">\Omega</span> represents all possible market scenarios</li>
+<li>A filtration <span class="math inline">\{\mathcal{F}_t\}_{t \geq 0}</span> representing information available at time <span class="math inline">t</span></li>
+<li>A finite collection of traded assets with price processes <span class="math inline">\{S^i_t\}_{i=0,1,\ldots,n}</span></li>
+</ol>
+</div>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 1.2 (Brownian Motion)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A stochastic process <span class="math inline">\{W_t\}_{t \geq 0}</span> on <span class="math inline">(\Omega, \mathcal{F}, \mathbb{P})</span> is a standard Brownian motion if:</p>
+<ol type="1">
+<li><span class="math inline">W_0 = 0</span> almost surely</li>
+<li><span class="math inline">W</span> has independent increments: for <span class="math inline">0 \leq s &lt; t</span>, <span class="math inline">W_t - W_s</span> is independent of <span class="math inline">\mathcal{F}_s</span></li>
+<li><span class="math inline">W_t - W_s \sim N(0, t-s)</span> for all <span class="math inline">0 \leq s &lt; t</span></li>
+<li><span class="math inline">W</span> has continuous sample paths almost surely</li>
+</ol>
+</div>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 1.3 (Natural Filtration of Brownian Motion)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The natural filtration of Brownian motion is <span class="math display">\mathcal{F}_t^W = \sigma(W_s : 0 \leq s \leq t)</span> the <span class="math inline">\sigma</span>-algebra generated by the Brownian motion up to time <span class="math inline">t</span>.</p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 1.4 (Adapted Process)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A stochastic process <span class="math inline">\{X_t\}_{t \geq 0}</span> is adapted to the filtration <span class="math inline">\{\mathcal{F}_t\}</span> if <span class="math inline">X_t</span> is <span class="math inline">\mathcal{F}_t</span>-measurable for all <span class="math inline">t \geq 0</span>.</p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 1.5 (Geometric Brownian Motion)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A process <span class="math inline">\{S_t\}_{t \geq 0}</span> follows geometric Brownian motion with parameters <span class="math inline">\mu \in \mathbb{R}</span> and <span class="math inline">\sigma &gt; 0</span> if it satisfies the stochastic differential equation: <span class="math display">dS_t = \mu S_t \, dt + \sigma S_t \, dW_t</span> with initial condition <span class="math inline">S_0 &gt; 0</span>.</p>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Remark 1.1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The explicit solution to geometric Brownian motion is: <span class="math display">S_t = S_0 \exp\left(\left(\mu - \frac{\sigma^2}{2}\right)t + \sigma W_t\right)</span> This can be verified using Itô’s lemma on <span class="math inline">f(t,x) = \ln x</span>.</p>
+</div>
+</div>
+</section>
+<section id="portfolio-and-trading-strategy-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="portfolio-and-trading-strategy-concepts">Portfolio and Trading Strategy Concepts</h2>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 1.6 (Trading Strategy)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A trading strategy is a pair of adapted processes <span class="math inline">(\phi^0_t, \phi^1_t)</span> where:</p>
+<ul>
+<li><span class="math inline">\phi^0_t</span> represents the number of units of the bond held at time <span class="math inline">t</span></li>
+<li><span class="math inline">\phi^1_t</span> represents the number of shares of stock held at time <span class="math inline">t</span></li>
+</ul>
+<p>Both processes must be adapted to the filtration <span class="math inline">\{\mathcal{F}_t\}</span>.</p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 1.7 (Portfolio Value)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The value of a portfolio with trading strategy <span class="math inline">(\phi^0_t, \phi^1_t)</span> at time <span class="math inline">t</span> is: <span class="math display">V_t = \phi^0_t B_t + \phi^1_t S_t</span> where <span class="math inline">B_t</span> is the bond price and <span class="math inline">S_t</span> is the stock price.</p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 1.8 (Self-Financing Strategy)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A trading strategy <span class="math inline">(\phi^0_t, \phi^1_t)</span> is self-financing if: <span class="math display">dV_t = \phi^0_t dB_t + \phi^1_t dS_t</span> This means no money is added or withdrawn from the portfolio; changes in value come only from price movements of held assets.</p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 1.9 (Arbitrage Opportunity)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An arbitrage opportunity is a self-financing trading strategy with:</p>
+<ol type="1">
+<li>Initial value <span class="math inline">V_0 = 0</span></li>
+<li><span class="math inline">\mathbb{P}(V_T \geq 0) = 1</span> for some time <span class="math inline">T &gt; 0</span></li>
+<li><span class="math inline">\mathbb{P}(V_T &gt; 0) &gt; 0</span></li>
+</ol>
+</div>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 1.10 (Arbitrage-Free Market)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A market is arbitrage-free if no arbitrage opportunities exist.</p>
+</div>
+</div>
+</section>
+<section id="martingale-theory-for-finance" class="level2">
+<h2 class="anchored" data-anchor-id="martingale-theory-for-finance">Martingale Theory for Finance</h2>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 1.11 (Martingale)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An adapted process <span class="math inline">\{M_t\}_{t \geq 0}</span> is a martingale with respect to filtration <span class="math inline">\{\mathcal{F}_t\}</span> and probability measure <span class="math inline">\mathbb{P}</span> if:</p>
+<ol type="1">
+<li><span class="math inline">\mathbb{E}[|M_t|] &lt; \infty</span> for all <span class="math inline">t \geq 0</span></li>
+<li><span class="math inline">\mathbb{E}[M_t | \mathcal{F}_s] = M_s</span> for all <span class="math inline">0 \leq s \leq t</span></li>
+</ol>
+</div>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 1.12 (Equivalent Probability Measures)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Two probability measures <span class="math inline">\mathbb{P}</span> and <span class="math inline">\mathbb{Q}</span> on <span class="math inline">(\Omega, \mathcal{F})</span> are equivalent (written <span class="math inline">\mathbb{P} \sim \mathbb{Q}</span>) if they have the same null sets: <span class="math display">\mathbb{P}(A) = 0 \iff \mathbb{Q}(A) = 0 \text{ for all } A \in \mathcal{F}</span></p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 1.13 (Radon-Nikodym Derivative)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\mathbb{Q} \ll \mathbb{P}</span> (Q is absolutely continuous with respect to P), then there exists a non-negative <span class="math inline">\mathcal{F}</span>-measurable random variable <span class="math inline">Z</span> such that: <span class="math display">\mathbb{Q}(A) = \int_A Z \, d\mathbb{P} \text{ for all } A \in \mathcal{F}</span> We write <span class="math inline">Z = \frac{d\mathbb{Q}}{d\mathbb{P}}</span> and call <span class="math inline">Z</span> the Radon-Nikodym derivative.</p>
+</div>
+</div>
+<div class="callout-important callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Theorem 1.1 (Girsanov’s Theorem - Statement)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\theta</span> be an adapted process with <span class="math inline">\int_0^T \theta_s^2 \, ds &lt; \infty</span> almost surely. Define: <span class="math display">Z_t = \exp\left(-\int_0^t \theta_s \, dW_s - \frac{1}{2}\int_0^t \theta_s^2 \, ds\right)</span></p>
+<p>If <span class="math inline">\mathbb{E}[Z_T] = 1</span>, then:</p>
+<ol type="1">
+<li>The process <span class="math inline">Z_t</span> is a martingale</li>
+<li>The measure <span class="math inline">\mathbb{Q}</span> defined by <span class="math inline">\frac{d\mathbb{Q}}{d\mathbb{P}} = Z_T</span> is a probability measure equivalent to <span class="math inline">\mathbb{P}</span></li>
+<li>Under <span class="math inline">\mathbb{Q}</span>, the process <span class="math inline">\tilde{W}_t = W_t + \int_0^t \theta_s \, ds</span> is a Brownian motion</li>
+</ol>
+</div>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 1.14 (Risk-Neutral Measure)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In a financial market with bond <span class="math inline">B_t = e^{rt}</span> and stock following <span class="math display">dS_t = \mu S_t \, dt + \sigma S_t \, dW_t</span> a probability measure <span class="math inline">\mathbb{Q}</span> equivalent to <span class="math inline">\mathbb{P}</span> is called risk-neutral if the discounted stock price <span class="math inline">e^{-rt}S_t</span> is a <span class="math inline">\mathbb{Q}</span>-martingale.</p>
+</div>
+</div>
+</section>
+<section id="options-and-derivatives" class="level2">
+<h2 class="anchored" data-anchor-id="options-and-derivatives">Options and Derivatives</h2>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 1.15 (European Option)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A European option is a financial contract that gives the holder the right (but not obligation) to:</p>
+<ul>
+<li><strong>Call option</strong>: Buy an asset at strike price <span class="math inline">K</span> at maturity time <span class="math inline">T</span></li>
+<li><strong>Put option</strong>: Sell an asset at strike price <span class="math inline">K</span> at maturity time <span class="math inline">T</span></li>
+</ul>
+</div>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 1.16 (Option Payoff)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The payoff of a European option at maturity <span class="math inline">T</span> is:</p>
+<ul>
+<li><strong>Call</strong>: <span class="math inline">h(S_T) = (S_T - K)^+ = \max(S_T - K, 0)</span></li>
+<li><strong>Put</strong>: <span class="math inline">h(S_T) = (K - S_T)^+ = \max(K - S_T, 0)</span></li>
+</ul>
+<p>where <span class="math inline">S_T</span> is the stock price at maturity.</p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 1.17 (Option Price)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The price of an option at time <span class="math inline">t</span> is denoted <span class="math inline">V(t, S_t)</span> and depends on the current time <span class="math inline">t</span> and current stock price <span class="math inline">S_t</span>.</p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 1.18 (Replicating Portfolio)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A replicating portfolio for an option is a self-financing trading strategy <span class="math inline">(\phi^0_t, \phi^1_t)</span> such that the portfolio value at maturity equals the option payoff: <span class="math display">V_T = \phi^0_T B_T + \phi^1_T S_T = h(S_T)</span></p>
+</div>
+</div>
+</section>
+<section id="fundamental-theorems-of-asset-pricing" class="level2">
+<h2 class="anchored" data-anchor-id="fundamental-theorems-of-asset-pricing">Fundamental Theorems of Asset Pricing</h2>
+<div class="callout-important callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Theorem 1.2 (First Fundamental Theorem of Asset Pricing)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A market is arbitrage-free if and only if there exists a probability measure <span class="math inline">\mathbb{Q}</span> equivalent to <span class="math inline">\mathbb{P}</span> such that all discounted asset prices are <span class="math inline">\mathbb{Q}</span>-martingales.</p>
+</div>
+</div>
+<div class="callout-important callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Theorem 1.3 (Second Fundamental Theorem of Asset Pricing)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An arbitrage-free market is complete if and only if the risk-neutral measure is unique.</p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 1.19 (Complete Market)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A market is complete if every contingent claim (option payoff) can be replicated by a self-financing trading strategy.</p>
+</div>
+</div>
+<div class="callout-important callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Theorem 1.4 (Risk-Neutral Valuation Principle)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In an arbitrage-free complete market, the price of any attainable contingent claim <span class="math inline">h(S_T)</span> at time <span class="math inline">t</span> is: <span class="math display">V(t, S_t) = e^{-r(T-t)} \mathbb{E}_\mathbb{Q}[h(S_T) | \mathcal{F}_t]</span> where <span class="math inline">\mathbb{Q}</span> is the unique risk-neutral measure.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="part-ii-the-black-scholes-model-setup" class="level1">
+<h1>Part II: The Black-Scholes Model Setup</h1>
+<section id="model-specification" class="level2">
+<h2 class="anchored" data-anchor-id="model-specification">Model Specification</h2>
+<p>We consider a financial market on a probability space <span class="math inline">(\Omega, \mathcal{F}, \mathbb{P})</span> with filtration <span class="math inline">\{\mathcal{F}_t\}_{t \geq 0}</span> and two traded assets:</p>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 2.1 (Black-Scholes Market Model)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Black-Scholes market consists of:</p>
+<ol type="1">
+<li><strong>Risk-free bond</strong>: <span class="math inline">dB_t = rB_t \, dt</span> with <span class="math inline">B_0 = 1</span>, giving <span class="math inline">B_t = e^{rt}</span></li>
+<li><strong>Risky stock</strong>: <span class="math inline">dS_t = \mu S_t \, dt + \sigma S_t \, dW_t</span> with <span class="math inline">S_0 &gt; 0</span></li>
+</ol>
+<p>where:</p>
+<ul>
+<li><span class="math inline">r &gt; 0</span> is the constant risk-free interest rate</li>
+<li><span class="math inline">\mu \in \mathbb{R}</span> is the stock’s expected return (drift)</li>
+<li><span class="math inline">\sigma &gt; 0</span> is the stock’s volatility</li>
+<li><span class="math inline">\{W_t\}_{t \geq 0}</span> is a standard Brownian motion adapted to <span class="math inline">\{\mathcal{F}_t\}</span></li>
+</ul>
+</div>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 2.2 (European Call Option in Black-Scholes Model)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We consider a European call option with:</p>
+<ul>
+<li>Strike price <span class="math inline">K &gt; 0</span></li>
+<li>Maturity time <span class="math inline">T &gt; 0</span><br>
+</li>
+<li>Payoff at maturity: <span class="math inline">h(S_T) = (S_T - K)^+</span></li>
+</ul>
+<p>Our goal is to find the option price <span class="math inline">V(t, S_t)</span> for <span class="math inline">0 \leq t \leq T</span>.</p>
+</div>
+</div>
+</section>
+<section id="key-properties-of-the-model" class="level2">
+<h2 class="anchored" data-anchor-id="key-properties-of-the-model">Key Properties of the Model</h2>
+<div class="callout-important callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Lemma 2.1 (Stock Price Solution)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The solution to the stock price SDE <span class="math inline">dS_t = \mu S_t \, dt + \sigma S_t \, dW_t</span> is: <span class="math display">S_t = S_0 \exp\left(\left(\mu - \frac{\sigma^2}{2}\right)t + \sigma W_t\right)</span></p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Proof of Lemma 2.1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">Y_t = \ln S_t</span>. By Itô’s lemma with <span class="math inline">f(x) = \ln x</span>:</p>
+<p><span class="math display">\begin{align}
+dY_t &amp;= f'(S_t) dS_t + \frac{1}{2}f''(S_t)(dS_t)^2 \\
+&amp;= \frac{1}{S_t} dS_t + \frac{1}{2}\left(-\frac{1}{S_t^2}\right)(dS_t)^2 \\
+&amp;= \frac{1}{S_t}(\mu S_t \, dt + \sigma S_t \, dW_t) - \frac{1}{2S_t^2}(\sigma S_t)^2 dt \\
+&amp;= \mu \, dt + \sigma \, dW_t - \frac{\sigma^2}{2} dt \\
+&amp;= \left(\mu - \frac{\sigma^2}{2}\right) dt + \sigma \, dW_t
+\end{align}</span></p>
+<p>Integrating from <span class="math inline">0</span> to <span class="math inline">t</span>: <span class="math display">Y_t = Y_0 + \left(\mu - \frac{\sigma^2}{2}\right)t + \sigma W_t</span></p>
+<p>Since <span class="math inline">Y_t = \ln S_t</span> and <span class="math inline">Y_0 = \ln S_0</span>: <span class="math display">\ln S_t = \ln S_0 + \left(\mu - \frac{\sigma^2}{2}\right)t + \sigma W_t</span></p>
+<p>Therefore: <span class="math display">S_t = S_0 \exp\left(\left(\mu - \frac{\sigma^2}{2}\right)t + \sigma W_t\right)</span></p>
+</div>
+</div>
+</div>
+<div class="callout-important callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Corollary 2.1 (Log-Normal Distribution of Stock Price)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Under <span class="math inline">\mathbb{P}</span>, we have: <span class="math display">\ln(S_t/S_0) \sim N\left(\left(\mu - \frac{\sigma^2}{2}\right)t, \sigma^2 t\right)</span></p>
+</div>
+</div>
+</section>
+</section>
+<section id="part-iii-proof-via-martingale-approach" class="level1">
+<h1>Part III: Proof via Martingale Approach</h1>
+<section id="step-1-construction-of-risk-neutral-measure" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-construction-of-risk-neutral-measure">Step 1: Construction of Risk-Neutral Measure</h2>
+<div class="callout-important callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Theorem 3.1 (Existence of Risk-Neutral Measure in Black-Scholes)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There exists a unique probability measure <span class="math inline">\mathbb{Q}</span> equivalent to <span class="math inline">\mathbb{P}</span> such that the discounted stock price <span class="math inline">e^{-rt}S_t</span> is a <span class="math inline">\mathbb{Q}</span>-martingale.</p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Proof of Theorem 3.1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Step 1</strong>: Define the market price of risk: <span class="math display">\theta = \frac{\mu - r}{\sigma}</span></p>
+<p>This is the constant that will appear in Girsanov’s theorem.</p>
+<p><strong>Step 2</strong>: Define the Radon-Nikodym density process: <span class="math display">\begin{align}
+Z_t &amp;= \exp\left(-\theta W_t - \frac{1}{2}\theta^2 t\right) \\
+&amp;= \exp\left(-\frac{\mu - r}{\sigma} W_t - \frac{1}{2}\left(\frac{\mu - r}{\sigma}\right)^2 t\right)
+\end{align}</span></p>
+<p><strong>Step 3</strong>: Verify that <span class="math inline">Z_t</span> is a martingale and <span class="math inline">\mathbb{E}[Z_T] = 1</span>.</p>
+<p>Since <span class="math inline">\theta</span> is constant, we can compute: <span class="math display">\mathbb{E}[Z_t] = \mathbb{E}\left[\exp\left(-\theta W_t - \frac{1}{2}\theta^2 t\right)\right]</span></p>
+<p>Since <span class="math inline">W_t \sim N(0,t)</span> under <span class="math inline">\mathbb{P}</span>: <span class="math display">\begin{align}
+\mathbb{E}[Z_t] &amp;= \int_{-\infty}^{\infty} \exp\left(-\theta w - \frac{1}{2}\theta^2 t\right) \frac{1}{\sqrt{2\pi t}} \exp\left(-\frac{w^2}{2t}\right) dw \\
+&amp;= \exp\left(-\frac{1}{2}\theta^2 t\right) \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi t}} \exp\left(-\frac{w^2 + 2\theta tw}{2t}\right) dw \\
+&amp;= \exp\left(-\frac{1}{2}\theta^2 t\right) \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi t}} \exp\left(-\frac{(w + \theta t)^2 - \theta^2 t^2}{2t}\right) dw \\
+&amp;= \exp\left(-\frac{1}{2}\theta^2 t\right) \exp\left(\frac{1}{2}\theta^2 t\right) \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi t}} \exp\left(-\frac{(w + \theta t)^2}{2t}\right) dw \\
+&amp;= 1
+\end{align}</span></p>
+<p>The last integral equals 1 since it’s the integral of a normal density.</p>
+<p><strong>Step 4</strong>: Define <span class="math inline">\mathbb{Q}</span> by <span class="math inline">\frac{d\mathbb{Q}}{d\mathbb{P}} = Z_T</span>.</p>
+<p><strong>Step 5</strong>: Apply Girsanov’s theorem. Under <span class="math inline">\mathbb{Q}</span>, the process: <span class="math display">\tilde{W}_t = W_t + \int_0^t \theta \, ds = W_t + \theta t</span> is a <span class="math inline">\mathbb{Q}</span>-Brownian motion.</p>
+<p><strong>Step 6</strong>: Transform the stock price dynamics. Under <span class="math inline">\mathbb{Q}</span>: <span class="math display">\begin{align}
+dS_t &amp;= \mu S_t \, dt + \sigma S_t \, dW_t \\
+&amp;= \mu S_t \, dt + \sigma S_t (d\tilde{W}_t - \theta \, dt) \\
+&amp;= \mu S_t \, dt + \sigma S_t \, d\tilde{W}_t - \sigma S_t \theta \, dt \\
+&amp;= (\mu - \sigma\theta) S_t \, dt + \sigma S_t \, d\tilde{W}_t \\
+&amp;= \left(\mu - \sigma \cdot \frac{\mu - r}{\sigma}\right) S_t \, dt + \sigma S_t \, d\tilde{W}_t \\
+&amp;= r S_t \, dt + \sigma S_t \, d\tilde{W}_t
+\end{align}</span></p>
+<p><strong>Step 7</strong>: Verify the martingale property. The discounted stock price is: <span class="math display">e^{-rt}S_t</span></p>
+<p>Its differential is: <span class="math display">\begin{align}
+d(e^{-rt}S_t) &amp;= -re^{-rt}S_t \, dt + e^{-rt} dS_t \\
+&amp;= -re^{-rt}S_t \, dt + e^{-rt}(rS_t \, dt + \sigma S_t \, d\tilde{W}_t) \\
+&amp;= e^{-rt}\sigma S_t \, d\tilde{W}_t
+\end{align}</span></p>
+<p>Since this has no <span class="math inline">dt</span> term, <span class="math inline">e^{-rt}S_t</span> is a <span class="math inline">\mathbb{Q}</span>-martingale.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="step-2-stock-price-under-risk-neutral-measure" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-stock-price-under-risk-neutral-measure">Step 2: Stock Price Under Risk-Neutral Measure</h2>
+<div class="callout-important callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Lemma 3.1 (Stock Price Solution Under <span class="math inline">\mathbb{Q}</span>)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Under the risk-neutral measure <span class="math inline">\mathbb{Q}</span>, the stock price has the explicit form: <span class="math display">S_t = S_0 \exp\left(\left(r - \frac{\sigma^2}{2}\right)t + \sigma \tilde{W}_t\right)</span> where <span class="math inline">\tilde{W}_t</span> is a <span class="math inline">\mathbb{Q}</span>-Brownian motion.</p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Proof of Lemma 3.1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-33" class="callout-33-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Under <span class="math inline">\mathbb{Q}</span>, the stock follows: <span class="math display">dS_t = rS_t \, dt + \sigma S_t \, d\tilde{W}_t</span></p>
+<p>Using the same technique as in the original measure, let <span class="math inline">Y_t = \ln S_t</span>: <span class="math display">\begin{align}
+dY_t &amp;= \frac{1}{S_t} dS_t - \frac{1}{2S_t^2}(dS_t)^2 \\
+&amp;= \frac{1}{S_t}(rS_t \, dt + \sigma S_t \, d\tilde{W}_t) - \frac{1}{2S_t^2}(\sigma S_t)^2 dt \\
+&amp;= r \, dt + \sigma \, d\tilde{W}_t - \frac{\sigma^2}{2} dt \\
+&amp;= \left(r - \frac{\sigma^2}{2}\right) dt + \sigma \, d\tilde{W}_t
+\end{align}</span></p>
+<p>Integrating: <span class="math display">Y_t = Y_0 + \left(r - \frac{\sigma^2}{2}\right)t + \sigma \tilde{W}_t</span></p>
+<p>Therefore: <span class="math display">S_t = S_0 \exp\left(\left(r - \frac{\sigma^2}{2}\right)t + \sigma \tilde{W}_t\right)</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="step-3-risk-neutral-valuation" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-risk-neutral-valuation">Step 3: Risk-Neutral Valuation</h2>
+<div class="callout-important callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Theorem 3.2 (Risk-Neutral Option Pricing)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The price of the European call option at time <span class="math inline">t</span> is: <span class="math display">V(t, S_t) = e^{-r(T-t)} \mathbb{E}_\mathbb{Q}[(S_T - K)^+ | \mathcal{F}_t]</span></p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Proof of Theorem 3.2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-35" class="callout-35-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>This follows directly from the risk-neutral valuation principle. In an arbitrage-free complete market, the option price equals the discounted expected payoff under the risk-neutral measure.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="step-4-computing-the-expectation" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-computing-the-expectation">Step 4: Computing the Expectation</h2>
+<div class="callout-important callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Theorem 3.3 (Black-Scholes Formula via Martingale Method)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The European call option price is: <span class="math display">V(t, S_t) = S_t \Phi(d_1) - K e^{-r(T-t)} \Phi(d_2)</span> where: <span class="math display">\begin{align}
+d_1 &amp;= \frac{\ln(S_t/K) + (r + \sigma^2/2)(T-t)}{\sigma\sqrt{T-t}} \\
+d_2 &amp;= d_1 - \sigma\sqrt{T-t} = \frac{\ln(S_t/K) + (r - \sigma^2/2)(T-t)}{\sigma\sqrt{T-t}}
+\end{align}</span> and <span class="math inline">\Phi</span> is the cumulative distribution function of the standard normal distribution.</p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Proof of Theorem 3.3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-37" class="callout-37-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Step 1</strong>: Express the stock price at maturity. Under <span class="math inline">\mathbb{Q}</span>, using the strong Markov property: <span class="math display">S_T = S_t \exp\left(\left(r - \frac{\sigma^2}{2}\right)(T-t) + \sigma (\tilde{W}_T - \tilde{W}_t)\right)</span></p>
+<p>Since <span class="math inline">\tilde{W}_T - \tilde{W}_t \sim N(0, T-t)</span> under <span class="math inline">\mathbb{Q}</span>, let <span class="math inline">Z \sim N(0,1)</span>. Then: <span class="math display">S_T = S_t \exp\left(\left(r - \frac{\sigma^2}{2}\right)(T-t) + \sigma\sqrt{T-t} \cdot Z\right)</span></p>
+<p><strong>Step 2</strong>: Set up the expectation. <span class="math display">\begin{align}
+V(t, S_t) &amp;= e^{-r(T-t)} \mathbb{E}_\mathbb{Q}[(S_T - K)^+ | \mathcal{F}_t] \\
+&amp;= e^{-r(T-t)} \mathbb{E}_\mathbb{Q}\left[\left(S_t e^{(r-\sigma^2/2)(T-t) + \sigma\sqrt{T-t} Z} - K\right)^+\right]
+\end{align}</span></p>
+<p><strong>Step 3</strong>: Find the exercise region. The option is exercised when <span class="math inline">S_T &gt; K</span>, i.e., when: <span class="math display">S_t e^{(r-\sigma^2/2)(T-t) + \sigma\sqrt{T-t} Z} &gt; K</span></p>
+<p>Taking logarithms: <span class="math display">\begin{align}
+&amp;(r-\sigma^2/2)(T-t) + \sigma\sqrt{T-t} Z &gt; \ln(K/S_t) \\
+&amp;Z &gt; \frac{\ln(K/S_t) - (r-\sigma^2/2)(T-t)}{\sigma\sqrt{T-t}} = -d_2
+\end{align}</span></p>
+<p><strong>Step 4</strong>: Evaluate the integral. <span class="math display">\begin{align}
+V(t, S_t) &amp;= e^{-r(T-t)} \int_{-d_2}^{\infty} \left(S_t e^{(r-\sigma^2/2)(T-t) + \sigma\sqrt{T-t} z} - K\right) \\
+&amp;\quad \times \frac{1}{\sqrt{2\pi}} e^{-z^2/2} dz \\
+&amp;= e^{-r(T-t)} S_t e^{(r-\sigma^2/2)(T-t)} \int_{-d_2}^{\infty} e^{\sigma\sqrt{T-t} z} \frac{1}{\sqrt{2\pi}} e^{-z^2/2} dz \\
+&amp;\quad - e^{-r(T-t)} K \int_{-d_2}^{\infty} \frac{1}{\sqrt{2\pi}} e^{-z^2/2} dz
+\end{align}</span></p>
+<p><strong>Step 5</strong>: Evaluate the first integral. For the first integral, complete the square in the exponent: <span class="math display">\sigma\sqrt{T-t} z - \frac{z^2}{2} = -\frac{1}{2}(z - \sigma\sqrt{T-t})^2 + \frac{\sigma^2(T-t)}{2}</span></p>
+<p>Therefore: <span class="math display">\begin{align}
+&amp;\int_{-d_2}^{\infty} e^{\sigma\sqrt{T-t} z} \frac{1}{\sqrt{2\pi}} e^{-z^2/2} dz \\
+&amp;= e^{\sigma^2(T-t)/2} \int_{-d_2}^{\infty} \frac{1}{\sqrt{2\pi}} e^{-(z-\sigma\sqrt{T-t})^2/2} dz \\
+&amp;= e^{\sigma^2(T-t)/2} \int_{-d_2-\sigma\sqrt{T-t}}^{\infty} \frac{1}{\sqrt{2\pi}} e^{-u^2/2} du \\
+&amp;= e^{\sigma^2(T-t)/2} \Phi(d_2 + \sigma\sqrt{T-t}) \\
+&amp;= e^{\sigma^2(T-t)/2} \Phi(d_1)
+\end{align}</span></p>
+<p>where we used the substitution <span class="math inline">u = z - \sigma\sqrt{T-t}</span> and the fact that: <span class="math display">d_2 + \sigma\sqrt{T-t} = d_1</span></p>
+<p><strong>Step 6</strong>: Evaluate the second integral. <span class="math display">\int_{-d_2}^{\infty} \frac{1}{\sqrt{2\pi}} e^{-z^2/2} dz = \Phi(d_2)</span></p>
+<p><strong>Step 7</strong>: Combine the results. <span class="math display">\begin{align}
+V(t, S_t) &amp;= e^{-r(T-t)} S_t e^{(r-\sigma^2/2)(T-t)} e^{\sigma^2(T-t)/2} \Phi(d_1) - e^{-r(T-t)} K \Phi(d_2) \\
+&amp;= S_t e^{-r(T-t)} e^{(r-\sigma^2/2)(T-t)} e^{\sigma^2(T-t)/2} \Phi(d_1) - K e^{-r(T-t)} \Phi(d_2) \\
+&amp;= S_t e^{-r(T-t) + r(T-t) - \sigma^2(T-t)/2 + \sigma^2(T-t)/2} \Phi(d_1) - K e^{-r(T-t)} \Phi(d_2) \\
+&amp;= S_t \Phi(d_1) - K e^{-r(T-t)} \Phi(d_2)
+\end{align}</span></p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="part-iv-proof-via-pde-approach" class="level1">
+<h1>Part IV: Proof via PDE Approach</h1>
+<section id="step-1-delta-hedging-strategy" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-delta-hedging-strategy">Step 1: Delta Hedging Strategy</h2>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 4.1 (Delta Hedging Portfolio)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider a portfolio <span class="math inline">\Pi_t</span> consisting of:</p>
+<ul>
+<li>Long position: 1 unit of the option with value <span class="math inline">V(t, S_t)</span></li>
+<li>Short position: <span class="math inline">\Delta_t</span> shares of the stock</li>
+<li>Cash position: The remaining value invested in bonds</li>
+</ul>
+<p>The portfolio value is: <span class="math inline">\Pi_t = V(t, S_t) - \Delta_t S_t</span></p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 4.2 (Delta)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The delta <span class="math inline">\Delta_t</span> represents the hedge ratio - the number of shares of stock to short for each option held. We will determine <span class="math inline">\Delta_t</span> to make the portfolio risk-free.</p>
+</div>
+</div>
+</section>
+<section id="step-2-application-of-itôs-lemma-to-option-value" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-application-of-itôs-lemma-to-option-value">Step 2: Application of Itô’s Lemma to Option Value</h2>
+<div class="callout-important callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Lemma 4.1 (Stochastic Differential of Option Value)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Assume the option price has the form <span class="math inline">V(t, S_t)</span> where <span class="math inline">V \in C^{1,2}([0,T] \times (0,\infty))</span>. Then by Itô’s lemma: <span class="math display">\begin{align}
+dV &amp;= \frac{\partial V}{\partial t} dt + \frac{\partial V}{\partial S} dS_t + \frac{1}{2}\frac{\partial^2 V}{\partial S^2} (dS_t)^2 \\
+&amp;= \left[\frac{\partial V}{\partial t} + \mu S_t \frac{\partial V}{\partial S} + \frac{1}{2}\sigma^2 S_t^2 \frac{\partial^2 V}{\partial S^2}\right] dt + \sigma S_t \frac{\partial V}{\partial S} dW_t
+\end{align}</span></p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Proof of Lemma 4.1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-41" class="callout-41-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Since <span class="math inline">dS_t = \mu S_t \, dt + \sigma S_t \, dW_t</span>, we have: <span class="math inline">(dS_t)^2 = (\mu S_t \, dt + \sigma S_t \, dW_t)^2 = \sigma^2 S_t^2 (dW_t)^2 = \sigma^2 S_t^2 dt</span></p>
+<p>where we used the fact that <span class="math inline">(dW_t)^2 = dt</span>, <span class="math inline">dt \cdot dW_t = 0</span>, and <span class="math inline">(dt)^2 = 0</span>.</p>
+<p>Applying Itô’s lemma: <span class="math display">\begin{align}
+dV &amp;= \frac{\partial V}{\partial t} dt + \frac{\partial V}{\partial S} dS_t + \frac{1}{2}\frac{\partial^2 V}{\partial S^2} (dS_t)^2 \\
+&amp;= \frac{\partial V}{\partial t} dt + \frac{\partial V}{\partial S} (\mu S_t \, dt + \sigma S_t \, dW_t) + \frac{1}{2}\frac{\partial^2 V}{\partial S^2} \sigma^2 S_t^2 dt \\
+&amp;= \left[\frac{\partial V}{\partial t} + \mu S_t \frac{\partial V}{\partial S} + \frac{1}{2}\sigma^2 S_t^2 \frac{\partial^2 V}{\partial S^2}\right] dt + \sigma S_t \frac{\partial V}{\partial S} dW_t
+\end{align}</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="step-3-portfolio-dynamics" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-portfolio-dynamics">Step 3: Portfolio Dynamics</h2>
+<div class="callout-important callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Lemma 4.2 (Portfolio Value Dynamics)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The change in portfolio value is: <span class="math display">\begin{align}
+d\Pi_t &amp;= dV - \Delta_t dS_t \\
+&amp;= \left[\frac{\partial V}{\partial t} + \mu S_t \left(\frac{\partial V}{\partial S} - \Delta_t\right) + \frac{1}{2}\sigma^2 S_t^2 \frac{\partial^2 V}{\partial S^2}\right] dt \\
+&amp;\quad + \sigma S_t \left(\frac{\partial V}{\partial S} - \Delta_t\right) dW_t
+\end{align}</span></p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Proof of Lemma 4.2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-43" class="callout-43-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We have: <span class="math display">\begin{align}
+d\Pi_t &amp;= dV - \Delta_t dS_t \\
+&amp;= \left[\frac{\partial V}{\partial t} + \mu S_t \frac{\partial V}{\partial S} + \frac{1}{2}\sigma^2 S_t^2 \frac{\partial^2 V}{\partial S^2}\right] dt + \sigma S_t \frac{\partial V}{\partial S} dW_t \\
+&amp;\quad - \Delta_t (\mu S_t dt + \sigma S_t dW_t) \\
+&amp;= \left[\frac{\partial V}{\partial t} + \mu S_t \frac{\partial V}{\partial S} + \frac{1}{2}\sigma^2 S_t^2 \frac{\partial^2 V}{\partial S^2} - \Delta_t \mu S_t\right] dt \\
+&amp;\quad + \sigma S_t \left(\frac{\partial V}{\partial S} - \Delta_t\right) dW_t \\
+&amp;= \left[\frac{\partial V}{\partial t} + \mu S_t \left(\frac{\partial V}{\partial S} - \Delta_t\right) + \frac{1}{2}\sigma^2 S_t^2 \frac{\partial^2 V}{\partial S^2}\right] dt \\
+&amp;\quad + \sigma S_t \left(\frac{\partial V}{\partial S} - \Delta_t\right) dW_t
+\end{align}</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="step-4-eliminating-risk" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-eliminating-risk">Step 4: Eliminating Risk</h2>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 4.3 (Delta-Neutral Portfolio)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To eliminate the stochastic component, we choose: <span class="math inline">\Delta_t = \frac{\partial V}{\partial S}</span></p>
+<p>This choice makes the portfolio instantaneously risk-free.</p>
+</div>
+</div>
+<div class="callout-important callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Lemma 4.3 (Risk-Free Portfolio Dynamics)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>With <span class="math inline">\Delta_t = \frac{\partial V}{\partial S}</span>, the portfolio dynamics become: <span class="math inline">d\Pi_t = \left[\frac{\partial V}{\partial t} + \frac{1}{2}\sigma^2 S_t^2 \frac{\partial^2 V}{\partial S^2}\right] dt</span></p>
+</div>
+</div>
+</section>
+<section id="step-5-no-arbitrage-condition" class="level2">
+<h2 class="anchored" data-anchor-id="step-5-no-arbitrage-condition">Step 5: No-Arbitrage Condition</h2>
+<div class="callout-important callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Theorem 4.1 (Risk-Free Rate Condition)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Since the portfolio is risk-free, it must earn the risk-free rate to prevent arbitrage: <span class="math inline">d\Pi_t = r\Pi_t dt</span></p>
+<p>Substituting <span class="math inline">\Pi_t = V - \Delta_t S_t = V - \frac{\partial V}{\partial S} S_t</span>: <span class="math inline">d\Pi_t = r\left(V - \frac{\partial V}{\partial S} S_t\right) dt</span></p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-47-contents" aria-controls="callout-47" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Proof of Theorem 4.1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-47" class="callout-47-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If a risk-free portfolio earned more than the risk-free rate, we could borrow at rate <span class="math inline">r</span>, invest in the portfolio, and earn a risk-free profit (arbitrage). If it earned less, we could short the portfolio, lend at rate <span class="math inline">r</span>, and again earn risk-free profit.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="step-6-deriving-the-black-scholes-pde" class="level2">
+<h2 class="anchored" data-anchor-id="step-6-deriving-the-black-scholes-pde">Step 6: Deriving the Black-Scholes PDE</h2>
+<div class="callout-important callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Theorem 4.2 (Black-Scholes Partial Differential Equation)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The option price <span class="math inline">V(t,S)</span> satisfies the Black-Scholes PDE: <span class="math inline">\frac{\partial V}{\partial t} + rS \frac{\partial V}{\partial S} + \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} - rV = 0</span></p>
+<p>with terminal condition: <span class="math inline">V(T,S) = (S-K)^+</span></p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-49-contents" aria-controls="callout-49" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Proof of Theorem 4.2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-49" class="callout-49-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Equating the two expressions for <span class="math inline">d\Pi_t</span>: <span class="math inline">\frac{\partial V}{\partial t} + \frac{1}{2}\sigma^2 S_t^2 \frac{\partial^2 V}{\partial S^2} = r\left(V - \frac{\partial V}{\partial S} S_t\right)</span></p>
+<p>Rearranging: <span class="math inline">\frac{\partial V}{\partial t} + \frac{1}{2}\sigma^2 S_t^2 \frac{\partial^2 V}{\partial S^2} = rV - rS_t \frac{\partial V}{\partial S}</span></p>
+<p>Therefore: <span class="math inline">\frac{\partial V}{\partial t} + rS_t \frac{\partial V}{\partial S} + \frac{1}{2}\sigma^2 S_t^2 \frac{\partial^2 V}{\partial S^2} - rV = 0</span></p>
+<p>The terminal condition comes from the option payoff at maturity.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="step-7-solving-the-pde" class="level2">
+<h2 class="anchored" data-anchor-id="step-7-solving-the-pde">Step 7: Solving the PDE</h2>
+<p>To solve this PDE, we use a change of variables to transform it into the heat equation.</p>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 4.4 (Variable Transformation)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let: <span class="math display">\begin{align}
+\tau &amp;= T - t \quad \text{(time to maturity)} \\
+x &amp;= \ln(S/K) \quad \text{(log-moneyness)} \\
+u(\tau, x) &amp;= e^{r\tau} \frac{V(T-\tau, Ke^x)}{K}
+\end{align}</span></p>
+</div>
+</div>
+<div class="callout-important callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Lemma 4.4 (Transformed PDE)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The function <span class="math inline">u(\tau, x)</span> satisfies the diffusion equation: <span class="math inline">\frac{\partial u}{\partial \tau} = \frac{1}{2}\sigma^2 \frac{\partial^2 u}{\partial x^2} + \left(r - \frac{\sigma^2}{2}\right) \frac{\partial u}{\partial x}</span></p>
+<p>with initial condition: <span class="math inline">u(0, x) = (e^x - 1)^+</span></p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-52-contents" aria-controls="callout-52" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Proof of Lemma 4.4
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-52" class="callout-52-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We need to compute the partial derivatives of <span class="math inline">V</span> in terms of <span class="math inline">u</span>. We have: <span class="math inline">V(t,S) = K e^{-r(T-t)} u(T-t, \ln(S/K))</span></p>
+<p>Let <span class="math inline">\tau = T-t</span> and <span class="math inline">x = \ln(S/K)</span>. Then:</p>
+<p><span class="math display">\begin{align}
+\frac{\partial V}{\partial t} &amp;= K e^{-r\tau} \left[r u - \frac{\partial u}{\partial \tau}\right] \\
+\frac{\partial V}{\partial S} &amp;= K e^{-r\tau} \frac{1}{S} \frac{\partial u}{\partial x} \\
+\frac{\partial^2 V}{\partial S^2} &amp;= K e^{-r\tau} \frac{1}{S^2} \left[\frac{\partial^2 u}{\partial x^2} - \frac{\partial u}{\partial x}\right]
+\end{align}</span></p>
+<p>Substituting into the Black-Scholes PDE and simplifying (after dividing by <span class="math inline">K e^{-r\tau}</span>): <span class="math inline">-\frac{\partial u}{\partial \tau} + \left(r - \frac{\sigma^2}{2}\right) \frac{\partial u}{\partial x} + \frac{1}{2}\sigma^2 \frac{\partial^2 u}{\partial x^2} = 0</span></p>
+<p>Therefore: <span class="math inline">\frac{\partial u}{\partial \tau} = \frac{1}{2}\sigma^2 \frac{\partial^2 u}{\partial x^2} + \left(r - \frac{\sigma^2}{2}\right) \frac{\partial u}{\partial x}</span></p>
+<p>The initial condition at <span class="math inline">\tau = 0</span> (i.e., <span class="math inline">t = T</span>) is: <span class="math inline">u(0, x) = \frac{(Ke^x - K)^+}{K} = (e^x - 1)^+</span></p>
+</div>
+</div>
+</div>
+<div class="callout-important callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Theorem 4.3 (Solution via Fundamental Solution)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The solution to the transformed PDE is: <span class="math inline">u(\tau, x) = \int_{-\infty}^{\infty} (e^y - 1)^+ G(\tau; x, y) dy</span></p>
+<p>where <span class="math inline">G(\tau; x, y)</span> is the fundamental solution: <span class="math inline">G(\tau; x, y) = \frac{1}{\sqrt{2\pi\sigma^2\tau}} \exp\left(-\frac{(y - x - (r-\sigma^2/2)\tau)^2}{2\sigma^2\tau}\right)</span></p>
+</div>
+</div>
+</section>
+<section id="step-8-computing-the-solution" class="level2">
+<h2 class="anchored" data-anchor-id="step-8-computing-the-solution">Step 8: Computing the Solution</h2>
+<div class="callout-important callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Theorem 4.4 (Explicit Solution of the PDE)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>After computing the integral (which follows the same steps as in the martingale approach), we obtain: <span class="math inline">u(\tau, x) = e^x \Phi(d_1) - \Phi(d_2)</span></p>
+<p>where: <span class="math display">\begin{align}
+d_1 &amp;= \frac{x + (r + \sigma^2/2)\tau}{\sigma\sqrt{\tau}} \\
+d_2 &amp;= \frac{x + (r - \sigma^2/2)\tau}{\sigma\sqrt{\tau}} = d_1 - \sigma\sqrt{\tau}
+\end{align}</span></p>
+</div>
+</div>
+<div class="callout-important callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Theorem 4.5 (Black-Scholes Formula via PDE Method)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Transforming back to the original variables, the European call option price is: <span class="math inline">V(t,S) = S \Phi(d_1) - K e^{-r(T-t)} \Phi(d_2)</span></p>
+<p>where: <span class="math display">\begin{align}
+d_1 &amp;= \frac{\ln(S/K) + (r + \sigma^2/2)(T-t)}{\sigma\sqrt{T-t}} \\
+d_2 &amp;= d_1 - \sigma\sqrt{T-t}
+\end{align}</span></p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-56-contents" aria-controls="callout-56" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Proof of Theorem 4.5
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-56" class="callout-56-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We have: <span class="math inline">V(t,S) = K e^{-r(T-t)} u(T-t, \ln(S/K))</span></p>
+<p>The transformation from the <span class="math inline">u</span> solution to the <span class="math inline">V</span> solution follows the same integration techniques as in the martingale approach. The key insight is that both methods yield identical results, demonstrating the equivalence of risk-neutral valuation and PDE approaches.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="verification-and-conclusion" class="level1">
+<h1>Verification and Conclusion</h1>
+<div class="callout-important callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Theorem 5.1 (Equivalence of Both Methods)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Both the martingale approach and the PDE approach yield the identical Black-Scholes formula: <span class="math inline">V(t,S) = S \Phi(d_1) - K e^{-r(T-t)} \Phi(d_2)</span></p>
+<p>This demonstrates the deep connection between:</p>
+<ul>
+<li>Risk-neutral valuation (martingale theory)</li>
+<li>Dynamic hedging and partial differential equations<br>
+</li>
+<li>Stochastic calculus and deterministic analysis</li>
+</ul>
+</div>
+</div>
+<section id="economic-interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="economic-interpretation">Economic Interpretation</h2>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Remark 5.1 (Economic Interpretation)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Black-Scholes formula has a clear economic interpretation:</p>
+<ul>
+<li><span class="math inline">S \Phi(d_1)</span>: Expected value of the stock if exercised, weighted by probability of exercise</li>
+<li><span class="math inline">K e^{-r(T-t)} \Phi(d_2)</span>: Present value of strike price, weighted by probability of exercise<br>
+</li>
+<li><span class="math inline">\Phi(d_2)</span>: Risk-neutral probability that option finishes in-the-money</li>
+<li><span class="math inline">\Delta = \frac{\partial V}{\partial S} = \Phi(d_1)</span>: Hedge ratio (number of shares to hold per option)</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="key-insights" class="level2">
+<h2 class="anchored" data-anchor-id="key-insights">Key Insights</h2>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Remark 5.2 (Key Insights)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The derivation reveals several fundamental insights:</p>
+<ol type="1">
+<li>The option price depends only on the risk-free rate <span class="math inline">r</span>, not the actual expected return <span class="math inline">\mu</span> of the stock</li>
+<li>Perfect hedging is possible in continuous time with continuous trading</li>
+<li>The same formula emerges from completely different mathematical approaches</li>
+<li>The risk-neutral measure transforms the pricing problem into an expectation calculation</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="greeks-and-risk-management" class="level2">
+<h2 class="anchored" data-anchor-id="greeks-and-risk-management">Greeks and Risk Management</h2>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition 5.1 (The Greeks)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <strong>Greeks</strong> measure sensitivities of the option price to various parameters:</p>
+<p><strong>Delta</strong>: <span class="math inline">\Delta = \frac{\partial V}{\partial S} = \Phi(d_1)</span> - Measures sensitivity to stock price changes - Represents the hedge ratio</p>
+<p><strong>Gamma</strong>: <span class="math inline">\Gamma = \frac{\partial^2 V}{\partial S^2} = \frac{\phi(d_1)}{S\sigma\sqrt{T-t}}</span> - Measures rate of change of delta - Important for portfolio convexity</p>
+<p><strong>Theta</strong>: <span class="math inline">\Theta = \frac{\partial V}{\partial t} = -\frac{S\phi(d_1)\sigma}{2\sqrt{T-t}} - rKe^{-r(T-t)}\Phi(d_2)</span> - Measures time decay - Always negative for long call options</p>
+<p><strong>Vega</strong>: <span class="math inline">\nu = \frac{\partial V}{\partial \sigma} = S\phi(d_1)\sqrt{T-t}</span> - Measures sensitivity to volatility changes - Always positive for long options</p>
+<p><strong>Rho</strong>: <span class="math inline">\rho = \frac{\partial V}{\partial r} = K(T-t)e^{-r(T-t)}\Phi(d_2)</span> - Measures sensitivity to interest rate changes</p>
+<p>where <span class="math inline">\phi(x) = \frac{1}{\sqrt{2\pi}}e^{-x^2/2}</span> is the standard normal density.</p>
+</div>
+</div>
+</section>
+<section id="extensions-and-limitations" class="level2">
+<h2 class="anchored" data-anchor-id="extensions-and-limitations">Extensions and Limitations</h2>
+<div class="callout-warning callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Remark 5.3 (Model Assumptions and Limitations)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Black-Scholes model relies on several strong assumptions:</p>
+<p><strong>Assumptions:</strong> - Constant risk-free rate and volatility - No dividends - European exercise only - No transaction costs - Continuous trading possible - Log-normal stock price distribution</p>
+<p><strong>Limitations:</strong> - Volatility smile/skew not captured - Jump risk ignored - Early exercise features not handled - Transaction costs can be significant - Liquidity constraints in practice</p>
+<p><strong>Extensions:</strong> - American options (early exercise) - Stochastic volatility models (Heston, etc.) - Jump-diffusion models (Merton) - Dividend-paying stocks - Time-dependent parameters</p>
+</div>
+</div>
+</section>
+<section id="computational-implementation" class="level2">
+<h2 class="anchored" data-anchor-id="computational-implementation">Computational Implementation</h2>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Example 5.1 (Python Implementation)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> black_scholes_call(S, K, T, r, sigma):</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    Calculate Black-Scholes call option price</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters:</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">    S: Current stock price</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">    K: Strike price  </span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">    T: Time to expiration</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">    r: Risk-free rate</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">    sigma: Volatility</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    d1 <span class="op">=</span> (np.log(S<span class="op">/</span>K) <span class="op">+</span> (r <span class="op">+</span> <span class="fl">0.5</span><span class="op">*</span>sigma<span class="op">**</span><span class="dv">2</span>)<span class="op">*</span>T) <span class="op">/</span> (sigma<span class="op">*</span>np.sqrt(T))</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    d2 <span class="op">=</span> d1 <span class="op">-</span> sigma<span class="op">*</span>np.sqrt(T)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    call_price <span class="op">=</span> S<span class="op">*</span>norm.cdf(d1) <span class="op">-</span> K<span class="op">*</span>np.exp(<span class="op">-</span>r<span class="op">*</span>T)<span class="op">*</span>norm.cdf(d2)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> call_price</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_greeks(S, K, T, r, sigma):</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Calculate the Greeks"""</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    d1 <span class="op">=</span> (np.log(S<span class="op">/</span>K) <span class="op">+</span> (r <span class="op">+</span> <span class="fl">0.5</span><span class="op">*</span>sigma<span class="op">**</span><span class="dv">2</span>)<span class="op">*</span>T) <span class="op">/</span> (sigma<span class="op">*</span>np.sqrt(T))</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    d2 <span class="op">=</span> d1 <span class="op">-</span> sigma<span class="op">*</span>np.sqrt(T)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    delta <span class="op">=</span> norm.cdf(d1)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    gamma <span class="op">=</span> norm.pdf(d1) <span class="op">/</span> (S<span class="op">*</span>sigma<span class="op">*</span>np.sqrt(T))</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    theta <span class="op">=</span> (<span class="op">-</span>S<span class="op">*</span>norm.pdf(d1)<span class="op">*</span>sigma<span class="op">/</span>(<span class="dv">2</span><span class="op">*</span>np.sqrt(T)) </span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>             <span class="op">-</span> r<span class="op">*</span>K<span class="op">*</span>np.exp(<span class="op">-</span>r<span class="op">*</span>T)<span class="op">*</span>norm.cdf(d2))</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    vega <span class="op">=</span> S<span class="op">*</span>norm.pdf(d1)<span class="op">*</span>np.sqrt(T)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    rho <span class="op">=</span> K<span class="op">*</span>T<span class="op">*</span>np.exp(<span class="op">-</span>r<span class="op">*</span>T)<span class="op">*</span>norm.cdf(d2)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {<span class="st">'delta'</span>: delta, <span class="st">'gamma'</span>: gamma, <span class="st">'theta'</span>: theta, <span class="st">'vega'</span>: vega, <span class="st">'rho'</span>: rho}</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Example usage</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>S0 <span class="op">=</span> <span class="dv">100</span>    <span class="co"># Current stock price</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>K <span class="op">=</span> <span class="dv">105</span>     <span class="co"># Strike price</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> <span class="fl">0.25</span>    <span class="co"># 3 months to expiration</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> <span class="fl">0.05</span>    <span class="co"># 5% risk-free rate  </span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>sigma <span class="op">=</span> <span class="fl">0.2</span> <span class="co"># 20% volatility</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>price <span class="op">=</span> black_scholes_call(S0, K, T, r, sigma)</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>greeks <span class="op">=</span> calculate_greeks(S0, K, T, r, sigma)</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Call option price: $</span><span class="sc">{</span>price<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Delta: </span><span class="sc">{</span>greeks[<span class="st">'delta'</span>]<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Gamma: </span><span class="sc">{</span>greeks[<span class="st">'gamma'</span>]<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>This complete treatment of the Black-Scholes model provides both theoretical rigor and practical applicability, showing how mathematical finance bridges pure mathematics and real-world financial applications.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
