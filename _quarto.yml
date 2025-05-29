@@ -65,6 +65,7 @@ website:
                href: "docu/SEA/Mathematics/P_adic_analysis.qmd"
         #     - text: "Number Theory"
              - text: "Galois Theory"
+               href: "docu/SEA/Mathematics/Galois_theory.qmd"
         #     - text: "Analysis"
         #        
         
