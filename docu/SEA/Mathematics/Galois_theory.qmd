@@ -27,7 +27,8 @@ This document contains lecture notes on Introduction to Galois theory provided b
 
 
 The notes were actually taken by a fellow student who had published them in LaTeX ,I have converted them to quarto here. My orginal notes were handwritten but realised this conversion is far easier and a good revision.
-so far I have just added upto chapter 4 as time permits will keep on adding the other chapeter
+so far I have just added upto chapter 4 as time permits will keep on adding the other chapters.
+Honestly I have't used GAP personally might remove it or just learn it in future.
 
 You can find the PDF on this website [here](https://github.com/ivanmurashko/courseragalois/blob/master/galois.pdf)
 
