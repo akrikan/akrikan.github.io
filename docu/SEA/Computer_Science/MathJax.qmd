@@ -1,0 +1,755 @@
+---
+title: "Complete MathJax LaTeX Reference for Quarto"
+format: 
+  html:
+    toc: true
+    toc-depth: 4
+    code-fold: false
+    theme: cosmo
+    number-sections: true
+  pdf:
+    toc: true
+    number-sections: true
+    geometry:
+      - top=20mm
+      - left=20mm
+      - right=20mm
+      - bottom=20mm
+execute:
+  echo: true
+  eval: true
+---
+
+# Introduction
+
+This comprehensive reference covers all MathJax LaTeX commands and syntax available in Quarto documents. MathJax supports most standard LaTeX mathematical notation with some limitations.
+
+# Basic Math Modes
+
+## Inline Math
+Use single dollar signs for inline math: `$x = y + z$` renders as $x = y + z$
+
+## Display Math
+Use double dollar signs for display math:
+```
+$$E = mc^2$$
+```
+$$E = mc^2$$
+
+## Equation Environment
+```
+$$
+\begin{equation}
+f(x) = ax^2 + bx + c
+\end{equation}
+$$
+```
+$$
+\begin{equation}
+f(x) = ax^2 + bx + c
+\end{equation}
+$$
+
+# Basic Operations and Symbols
+
+## Arithmetic Operations
+
+| Operation | LaTeX | Rendered |
+|-----------|-------|----------|
+| Addition | `$a + b$` | $a + b$ |
+| Subtraction | `$a - b$` | $a - b$ |
+| Multiplication | `$a \cdot b$` | $a \cdot b$ |
+| Multiplication | `$a \times b$` | $a \times b$ |
+| Division | `$a \div b$` | $a \div b$ |
+| Division | `$\frac{a}{b}$` | $\frac{a}{b}$ |
+| Plus or minus | `$a \pm b$` | $a \pm b$ |
+| Minus or plus | `$a \mp b$` | $a \mp b$ |
+
+## Comparison Operators
+
+| Operator | LaTeX | Rendered |
+|----------|-------|----------|
+| Equals | `$a = b$` | $a = b$ |
+| Not equals | `$a \neq b$` | $a \neq b$ |
+| Less than | `$a < b$` | $a < b$ |
+| Greater than | `$a > b$` | $a > b$ |
+| Less than or equal | `$a \leq b$` | $a \leq b$ |
+| Greater than or equal | `$a \geq b$` | $a \geq b$ |
+| Much less than | `$a \ll b$` | $a \ll b$ |
+| Much greater than | `$a \gg b$` | $a \gg b$ |
+| Approximately | `$a \approx b$` | $a \approx b$ |
+| Equivalent | `$a \equiv b$` | $a \equiv b$ |
+| Proportional | `$a \propto b$` | $a \propto b$ |
+
+# Superscripts and Subscripts
+
+## Basic Syntax
+
+| Type | LaTeX | Rendered |
+|------|-------|----------|
+| Superscript | `$x^2$` | $x^2$ |
+| Subscript | `$x_1$` | $x_1$ |
+| Both | `$x_1^2$` | $x_1^2$ |
+| Multiple chars | `$x^{10}$` | $x^{10}$ |
+| Complex | `$x_{i,j}^{(n)}$` | $x_{i,j}^{(n)}$ |
+
+## Examples
+```latex
+$$x^2 + y^2 = z^2$$
+$$a_1, a_2, \ldots, a_n$$
+$$\sum_{i=1}^{n} x_i$$
+$$x^{y^z}$$
+$${}^{14}C$$
+```
+
+$$x^2 + y^2 = z^2$$
+$$a_1, a_2, \ldots, a_n$$
+$$\sum_{i=1}^{n} x_i$$
+$$x^{y^z}$$
+$${}^{14}C$$
+
+# Fractions and Roots
+
+## Fractions
+
+| Type | LaTeX | Rendered |
+|------|-------|----------|
+| Basic fraction | `$\frac{a}{b}$` | $\frac{a}{b}$ |
+| Display fraction | `$\dfrac{a}{b}$` | $\dfrac{a}{b}$ |
+| Text fraction | `$\tfrac{a}{b}$` | $\tfrac{a}{b}$ |
+| Continued fraction | `$\cfrac{a}{b}$` | $\cfrac{a}{b}$ |
+| Binomial | `$\binom{n}{k}$` | $\binom{n}{k}$ |
+
+## Roots
+
+| Type | LaTeX | Rendered |
+|------|-------|----------|
+| Square root | `$\sqrt{x}$` | $\sqrt{x}$ |
+| nth root | `$\sqrt[n]{x}$` | $\sqrt[n]{x}$ |
+| Cube root | `$\sqrt[3]{x}$` | $\sqrt[3]{x}$ |
+
+## Examples
+```latex
+$$\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+$$\sqrt{\frac{a}{b}} = \frac{\sqrt{a}}{\sqrt{b}}$$
+$$\cfrac{1}{1+\cfrac{1}{1+\cfrac{1}{1+\cdots}}}$$
+```
+
+$$\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+$$\sqrt{\frac{a}{b}} = \frac{\sqrt{a}}{\sqrt{b}}$$
+$$\cfrac{1}{1+\cfrac{1}{1+\cfrac{1}{1+\cdots}}}$$
+
+# Sums, Products, and Limits
+
+## Sum and Product Notation
+
+| Type | LaTeX | Rendered |
+|------|-------|----------|
+| Sum | `$\sum_{i=1}^{n} x_i$` | $\sum_{i=1}^{n} x_i$ |
+| Product | `$\prod_{i=1}^{n} x_i$` | $\prod_{i=1}^{n} x_i$ |
+| Coproduct | `$\coprod_{i=1}^{n} x_i$` | $\coprod_{i=1}^{n} x_i$ |
+| Big union | `$\bigcup_{i=1}^{n} A_i$` | $\bigcup_{i=1}^{n} A_i$ |
+| Big intersection | `$\bigcap_{i=1}^{n} A_i$` | $\bigcap_{i=1}^{n} A_i$ |
+
+## Limits
+
+| Type | LaTeX | Rendered |
+|------|-------|----------|
+| Limit | `$\lim_{x \to 0} f(x)$` | $\lim_{x \to 0} f(x)$ |
+| Limit infinity | `$\lim_{x \to \infty} f(x)$` | $\lim_{x \to \infty} f(x)$ |
+| Limit from left | `$\lim_{x \to 0^-} f(x)$` | $\lim_{x \to 0^-} f(x)$ |
+| Limit from right | `$\lim_{x \to 0^+} f(x)$` | $\lim_{x \to 0^+} f(x)$ |
+| Supremum | `$\sup_{x \in A} f(x)$` | $\sup_{x \in A} f(x)$ |
+| Infimum | `$\inf_{x \in A} f(x)$` | $\inf_{x \in A} f(x)$ |
+
+## Examples
+```latex
+$$\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}$$
+$$\prod_{p \text{ prime}} \frac{1}{1-p^{-s}}$$
+$$\lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^n = e$$
+```
+
+$$\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}$$
+$$\prod_{p \text{ prime}} \frac{1}{1-p^{-s}}$$
+$$\lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^n = e$$
+
+# Integrals and Derivatives
+
+## Integrals
+
+| Type | LaTeX | Rendered |
+|------|-------|----------|
+| Indefinite integral | `$\int f(x) \, dx$` | $\int f(x) \, dx$ |
+| Definite integral | `$\int_a^b f(x) \, dx$` | $\int_a^b f(x) \, dx$ |
+| Double integral | `$\iint f(x,y) \, dx \, dy$` | $\iint f(x,y) \, dx \, dy$ |
+| Triple integral | `$\iiint f(x,y,z) \, dx \, dy \, dz$` | $\iiint f(x,y,z) \, dx \, dy \, dz$ |
+| Contour integral | `$\oint f(z) \, dz$` | $\oint f(z) \, dz$ |
+
+## Derivatives
+
+| Type | LaTeX | Rendered |
+|------|-------|----------|
+| Derivative | `$\frac{df}{dx}$` | $\frac{df}{dx}$ |
+| Partial derivative | `$\frac{\partial f}{\partial x}$` | $\frac{\partial f}{\partial x}$ |
+| Second derivative | `$\frac{d^2f}{dx^2}$` | $\frac{d^2f}{dx^2}$ |
+| Mixed partial | `$\frac{\partial^2 f}{\partial x \partial y}$` | $\frac{\partial^2 f}{\partial x \partial y}$ |
+| Gradient | `$\nabla f$` | $\nabla f$ |
+| Laplacian | `$\nabla^2 f$` | $\nabla^2 f$ |
+
+## Examples
+```latex
+$$\int_0^{\infty} e^{-x^2} \, dx = \frac{\sqrt{\pi}}{2}$$
+$$\frac{d}{dx}\left[x^n\right] = nx^{n-1}$$
+$$\nabla \cdot \mathbf{F} = \frac{\partial F_x}{\partial x} + \frac{\partial F_y}{\partial y} + \frac{\partial F_z}{\partial z}$$
+```
+
+$$\int_0^{\infty} e^{-x^2} \, dx = \frac{\sqrt{\pi}}{2}$$
+$$\frac{d}{dx}\left[x^n\right] = nx^{n-1}$$
+$$\nabla \cdot \mathbf{F} = \frac{\partial F_x}{\partial x} + \frac{\partial F_y}{\partial y} + \frac{\partial F_z}{\partial z}$$
+
+# Greek Letters
+
+## Lowercase
+
+| Letter | LaTeX | Rendered | Letter | LaTeX | Rendered |
+|--------|-------|----------|--------|-------|----------|
+| Alpha | `$\alpha$` | $\alpha$ | Nu | `$\nu$` | $\nu$ |
+| Beta | `$\beta$` | $\beta$ | Xi | `$\xi$` | $\xi$ |
+| Gamma | `$\gamma$` | $\gamma$ | Omicron | `$o$` | $o$ |
+| Delta | `$\delta$` | $\delta$ | Pi | `$\pi$` | $\pi$ |
+| Epsilon | `$\epsilon$` | $\epsilon$ | Rho | `$\rho$` | $\rho$ |
+| Zeta | `$\zeta$` | $\zeta$ | Sigma | `$\sigma$` | $\sigma$ |
+| Eta | `$\eta$` | $\eta$ | Tau | `$\tau$` | $\tau$ |
+| Theta | `$\theta$` | $\theta$ | Upsilon | `$\upsilon$` | $\upsilon$ |
+| Iota | `$\iota$` | $\iota$ | Phi | `$\phi$` | $\phi$ |
+| Kappa | `$\kappa$` | $\kappa$ | Chi | `$\chi$` | $\chi$ |
+| Lambda | `$\lambda$` | $\lambda$ | Psi | `$\psi$` | $\psi$ |
+| Mu | `$\mu$` | $\mu$ | Omega | `$\omega$` | $\omega$ |
+
+## Uppercase
+
+| Letter | LaTeX | Rendered | Letter | LaTeX | Rendered |
+|--------|-------|----------|--------|-------|----------|
+| Alpha | `$A$` | $A$ | Nu | `$N$` | $N$ |
+| Beta | `$B$` | $B$ | Xi | `$\Xi$` | $\Xi$ |
+| Gamma | `$\Gamma$` | $\Gamma$ | Omicron | `$O$` | $O$ |
+| Delta | `$\Delta$` | $\Delta$ | Pi | `$\Pi$` | $\Pi$ |
+| Epsilon | `$E$` | $E$ | Rho | `$P$` | $P$ |
+| Zeta | `$Z$` | $Z$ | Sigma | `$\Sigma$` | $\Sigma$ |
+| Eta | `$H$` | $H$ | Tau | `$T$` | $T$ |
+| Theta | `$\Theta$` | $\Theta$ | Upsilon | `$\Upsilon$` | $\Upsilon$ |
+| Iota | `$I$` | $I$ | Phi | `$\Phi$` | $\Phi$ |
+| Kappa | `$K$` | $K$ | Chi | `$X$` | $X$ |
+| Lambda | `$\Lambda$` | $\Lambda$ | Psi | `$\Psi$` | $\Psi$ |
+| Mu | `$M$` | $M$ | Omega | `$\Omega$` | $\Omega$ |
+
+## Variant Forms
+
+| Letter | LaTeX | Rendered |
+|--------|-------|----------|
+| Variant epsilon | `$\varepsilon$` | $\varepsilon$ |
+| Variant theta | `$\vartheta$` | $\vartheta$ |
+| Variant pi | `$\varpi$` | $\varpi$ |
+| Variant rho | `$\varrho$` | $\varrho$ |
+| Variant sigma | `$\varsigma$` | $\varsigma$ |
+| Variant phi | `$\varphi$` | $\varphi$ |
+
+# Special Characters and Symbols
+
+## Mathematical Symbols
+
+| Symbol | LaTeX | Rendered | Symbol | LaTeX | Rendered |
+|--------|-------|----------|--------|-------|----------|
+| Infinity | `$\infty$` | $\infty$ | Partial | `$\partial$` | $\partial$ |
+| Nabla | `$\nabla$` | $\nabla$ | Therefore | `$\therefore$` | $\therefore$ |
+| Because | `$\because$` | $\because$ | Forall | `$\forall$` | $\forall$ |
+| Exists | `$\exists$` | $\exists$ | Nexists | `$\nexists$` | $\nexists$ |
+| Empty set | `$\emptyset$` | $\emptyset$ | Real numbers | `$\mathbb{R}$` | $\mathbb{R}$ |
+| Natural numbers | `$\mathbb{N}$` | $\mathbb{N}$ | Integers | `$\mathbb{Z}$` | $\mathbb{Z}$ |
+| Rationals | `$\mathbb{Q}$` | $\mathbb{Q}$ | Complex | `$\mathbb{C}$` | $\mathbb{C}$ |
+
+## Set Theory
+
+| Symbol | LaTeX | Rendered | Symbol | LaTeX | Rendered |
+|--------|-------|----------|--------|-------|----------|
+| Union | `$\cup$` | $\cup$ | Intersection | `$\cap$` | $\cap$ |
+| Subset | `$\subset$` | $\subset$ | Superset | `$\supset$` | $\supset$ |
+| Subset equal | `$\subseteq$` | $\subseteq$ | Superset equal | `$\supseteq$` | $\supseteq$ |
+| Element of | `$\in$` | $\in$ | Not element of | `$\notin$` | $\notin$ |
+| Set minus | `$\setminus$` | $\setminus$ | Symmetric diff | `$\triangle$` | $\triangle$ |
+
+## Logic
+
+| Symbol | LaTeX | Rendered | Symbol | LaTeX | Rendered |
+|--------|-------|----------|--------|-------|----------|
+| And | `$\land$` | $\land$ | Or | `$\lor$` | $\lor$ |
+| Not | `$\lnot$` | $\lnot$ | Implies | `$\implies$` | $\implies$ |
+| If and only if | `$\iff$` | $\iff$ | Models | `$\models$` | $\models$ |
+| Proves | `$\vdash$` | $\vdash$ | Top | `$\top$` | $\top$ |
+| Bottom | `$\bot$` | $\bot$ |
+
+# Arrows
+
+## Basic Arrows
+
+| Arrow | LaTeX | Rendered | Arrow | LaTeX | Rendered |
+|-------|-------|----------|-------|-------|----------|
+| Right | `$\rightarrow$` | $\rightarrow$ | Left | `$\leftarrow$` | $\leftarrow$ |
+| Up | `$\uparrow$` | $\uparrow$ | Down | `$\downarrow$` | $\downarrow$ |
+| Left-right | `$\leftrightarrow$` | $\leftrightarrow$ | Up-down | `$\updownarrow$` | $\updownarrow$ |
+| Long right | `$\longrightarrow$` | $\longrightarrow$ | Long left | `$\longleftarrow$` | $\longleftarrow$ |
+
+## Double Arrows
+
+| Arrow | LaTeX | Rendered |
+|-------|-------|----------|
+| Double right | `$\Rightarrow$` | $\Rightarrow$ |
+| Double left | `$\Leftarrow$` | $\Leftarrow$ |
+| Double left-right | `$\Leftrightarrow$` | $\Leftrightarrow$ |
+| Double up | `$\Uparrow$` | $\Uparrow$ |
+| Double down | `$\Downarrow$` | $\Downarrow$ |
+
+## Specialized Arrows
+
+| Arrow | LaTeX | Rendered |
+|-------|-------|----------|
+| Maps to | `$\mapsto$` | $\mapsto$ |
+| Hookleft | `$\hookleftarrow$` | $\hookleftarrow$ |
+| Hookright | `$\hookrightarrow$` | $\hookrightarrow$ |
+| Right harpoon up | `$\rightharpoonup$` | $\rightharpoonup$ |
+| Right harpoon down | `$\rightharpoondown$` | $\rightharpoondown$ |
+
+# Brackets and Delimiters
+
+## Basic Brackets
+
+| Type | LaTeX | Rendered |
+|------|-------|----------|
+| Parentheses | `$(a)$` | $(a)$ |
+| Square brackets | `$[a]$` | $[a]$ |
+| Curly braces | `$\{a\}$` | $\{a\}$ |
+| Angle brackets | `$\langle a \rangle$` | $\langle a \rangle$ |
+| Vertical bars | `$|a|$` | $|a|$ |
+| Double vertical | `$\|a\|$` | $\|a\|$ |
+
+## Scalable Delimiters
+
+Use `\left` and `\right` for automatic sizing:
+
+```latex
+$$\left( \frac{a}{b} \right)$$
+$$\left[ \sum_{i=1}^{n} x_i \right]$$
+$$\left\{ x \in \mathbb{R} : x^2 < 1 \right\}$$
+$$\left\langle \frac{a}{b}, \frac{c}{d} \right\rangle$$
+$$\left| \frac{a}{b} \right|$$
+$$\left\| \mathbf{v} \right\|$$
+```
+
+$$\left( \frac{a}{b} \right)$$
+$$\left[ \sum_{i=1}^{n} x_i \right]$$
+$$\left\{ x \in \mathbb{R} : x^2 < 1 \right\}$$
+$$\left\langle \frac{a}{b}, \frac{c}{d} \right\rangle$$
+$$\left| \frac{a}{b} \right|$$
+$$\left\| \mathbf{v} \right\|$$
+
+## Manual Sizing
+
+| Size | Command | Example |
+|------|---------|---------|
+| Big | `\big` | `$\big( \frac{a}{b} \big)$` |
+| Bigg | `\bigg` | `$\bigg( \frac{a}{b} \bigg)$` |
+| Big | `\Big` | `$\Big[ \frac{a}{b} \Big]$` |
+| Bigg | `\Bigg` | `$\Bigg[ \frac{a}{b} \Bigg]$` |
+
+Examples:
+$\big( \frac{a}{b} \big)$ vs $\bigg( \frac{a}{b} \bigg)$
+
+# Matrices and Arrays
+
+## Basic Matrix
+
+```latex
+$$\begin{matrix}
+a & b \\
+c & d
+\end{matrix}$$
+```
+
+$$\begin{matrix}
+a & b \\
+c & d
+\end{matrix}$$
+
+## Matrix with Parentheses
+
+```latex
+$$\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}$$
+```
+
+$$\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}$$
+
+## Matrix with Square Brackets
+
+```latex
+$$\begin{bmatrix}
+a & b \\
+c & d
+\end{bmatrix}$$
+```
+
+$$\begin{bmatrix}
+a & b \\
+c & d
+\end{bmatrix}$$
+
+## Matrix with Curly Braces
+
+```latex
+$$\begin{Bmatrix}
+a & b \\
+c & d
+\end{Bmatrix}$$
+```
+
+$$\begin{Bmatrix}
+a & b \\
+c & d
+\end{Bmatrix}$$
+
+## Matrix with Vertical Lines
+
+```latex
+$$\begin{vmatrix}
+a & b \\
+c & d
+\end{vmatrix}$$
+```
+
+$$\begin{vmatrix}
+a & b \\
+c & d
+\end{vmatrix}$$
+
+## Matrix with Double Vertical Lines
+
+```latex
+$$\begin{Vmatrix}
+a & b \\
+c & d
+\end{Vmatrix}$$
+```
+
+$$\begin{Vmatrix}
+a & b \\
+c & d
+\end{Vmatrix}$$
+
+## Larger Matrices
+
+```latex
+$$\begin{pmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{pmatrix}$$
+```
+
+$$\begin{pmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{pmatrix}$$
+
+# Equations and Alignment
+
+## Aligned Equations
+
+```latex
+$$\begin{align}
+f(x) &= ax^2 + bx + c \\
+&= a(x^2 + \frac{b}{a}x) + c \\
+&= a(x + \frac{b}{2a})^2 - \frac{b^2}{4a} + c
+\end{align}$$
+```
+
+$$\begin{align}
+f(x) &= ax^2 + bx + c \\
+&= a(x^2 + \frac{b}{a}x) + c \\
+&= a(x + \frac{b}{2a})^2 - \frac{b^2}{4a} + c
+\end{align}$$
+
+## Cases
+
+```latex
+$$f(x) = \begin{cases}
+x^2 & \text{if } x \geq 0 \\
+-x^2 & \text{if } x < 0
+\end{cases}$$
+```
+
+$$f(x) = \begin{cases}
+x^2 & \text{if } x \geq 0 \\
+-x^2 & \text{if } x < 0
+\end{cases}$$
+
+## System of Equations
+
+```latex
+$$\begin{align}
+x + y + z &= 6 \\
+2x - y + z &= 2 \\
+x + 2y - z &= 0
+\end{align}$$
+```
+
+$$\begin{align}
+x + y + z &= 6 \\
+2x - y + z &= 2 \\
+x + 2y - z &= 0
+\end{align}$$
+
+# Functions and Special Expressions
+
+## Trigonometric Functions
+
+| Function | LaTeX | Rendered | Function | LaTeX | Rendered |
+|----------|-------|----------|----------|-------|----------|
+| Sine | `$\sin x$` | $\sin x$ | Cosine | `$\cos x$` | $\cos x$ |
+| Tangent | `$\tan x$` | $\tan x$ | Cotangent | `$\cot x$` | $\cot x$ |
+| Secant | `$\sec x$` | $\sec x$ | Cosecant | `$\csc x$` | $\csc x$ |
+| Arcsine | `$\arcsin x$` | $\arcsin x$ | Arccosine | `$\arccos x$` | $\arccos x$ |
+| Arctangent | `$\arctan x$` | $\arctan x$ |
+
+## Hyperbolic Functions
+
+| Function | LaTeX | Rendered | Function | LaTeX | Rendered |
+|----------|-------|----------|----------|-------|----------|
+| Sinh | `$\sinh x$` | $\sinh x$ | Cosh | `$\cosh x$` | $\cosh x$ |
+| Tanh | `$\tanh x$` | $\tanh x$ | Coth | `$\coth x$` | $\coth x$ |
+
+## Logarithmic Functions
+
+| Function | LaTeX | Rendered |
+|----------|-------|----------|
+| Natural log | `$\ln x$` | $\ln x$ |
+| Common log | `$\log x$` | $\log x$ |
+| Log base a | `$\log_a x$` | $\log_a x$ |
+| Exponential | `$\exp x$` | $\exp x$ |
+
+## Other Functions
+
+| Function | LaTeX | Rendered |
+|----------|-------|----------|
+| Maximum | `$\max(a,b)$` | $\max(a,b)$ |
+| Minimum | `$\min(a,b)$` | $\min(a,b)$ |
+| Greatest common divisor | `$\gcd(a,b)$` | $\gcd(a,b)$ |
+| Least common multiple | `$\text{lcm}(a,b)$` | $\text{lcm}(a,b)$ |
+
+# Accents and Decorations
+
+## Over Symbols
+
+| Accent | LaTeX | Rendered | Accent | LaTeX | Rendered |
+|--------|-------|----------|--------|-------|----------|
+| Hat | `$\hat{x}$` | $\hat{x}$ | Wide hat | `$\widehat{xyz}$` | $\widehat{xyz}$ |
+| Tilde | `$\tilde{x}$` | $\tilde{x}$ | Wide tilde | `$\widetilde{xyz}$` | $\widetilde{xyz}$ |
+| Bar | `$\bar{x}$` | $\bar{x}$ | Overline | `$\overline{xyz}$` | $\overline{xyz}$ |
+| Vec | `$\vec{x}$` | $\vec{x}$ | Overrightarrow | `$\overrightarrow{AB}$` | $\overrightarrow{AB}$ |
+| Dot | `$\dot{x}$` | $\dot{x}$ | Double dot | `$\ddot{x}$` | $\ddot{x}$ |
+
+## Under Symbols
+
+| Accent | LaTeX | Rendered |
+|--------|-------|----------|
+| Underline | `$\underline{x}$` | $\underline{x}$ |
+| Underbrace | `$\underbrace{x+y+z}_{3 \text{ terms}}$` | $\underbrace{x+y+z}_{3 \text{ terms}}$ |
+| Overbrace | `$\overbrace{x+y+z}^{3 \text{ terms}}$` | $\overbrace{x+y+z}^{3 \text{ terms}}$ |
+
+# Spacing and Alignment
+
+## Horizontal Spacing
+
+| Space | LaTeX | Size | Example |
+|-------|-------|------|---------|
+| Thin space | `$a\,b$` | 3/18 em | $a\,b$ |
+| Medium space | `$a\:b$` | 4/18 em | $a\:b$ |
+| Thick space | `$a\;b$` | 5/18 em | $a\;b$ |
+| Quad space | `$a\quad b$` | 1 em | $a\quad b$ |
+| Double quad | `$a\qquad b$` | 2 em | $a\qquad b$ |
+| Negative space | `$a\!b$` | -3/18 em | $a\!b$ |
+
+## Examples
+```latex
+$$\int f(x) \, dx$$
+$$\int f(x) \: dx$$
+$$\int f(x) \; dx$$
+$$\int f(x) \quad dx$$
+```
+
+$$\int f(x) \, dx$$
+$$\int f(x) \: dx$$
+$$\int f(x) \; dx$$
+$$\int f(x) \quad dx$$
+
+# Colors
+
+## Basic Colors
+
+```latex
+$$\color{red}{x^2} + \color{blue}{y^2} = \color{green}{z^2}$$
+$$\textcolor{purple}{f(x)} = \textcolor{orange}{ax^2} + \textcolor{brown}{bx} + \textcolor{pink}{c}$$
+```
+
+$$\color{red}{x^2} + \color{blue}{y^2} = \color{green}{z^2}$$
+$$\textcolor{purple}{f(x)} = \textcolor{orange}{ax^2} + \textcolor{brown}{bx} + \textcolor{pink}{c}$$
+
+## Available Colors
+- red, blue, green, yellow, orange, purple, brown, pink
+- black, white, gray, darkgray, lightgray
+- cyan, magenta, lime, olive, navy, teal, aqua
+
+# Text in Math Mode
+
+## Text Commands
+
+| Command | LaTeX | Rendered |
+|---------|-------|----------|
+| Roman text | `$\text{some text}$` | $\text{some text}$ |
+| Math roman | `$\mathrm{d}x$` | $\mathrm{d}x$ |
+| Math italic | `$\mathit{var}$` | $\mathit{var}$ |
+| Math bold | `$\mathbf{v}$` | $\mathbf{v}$ |
+| Math sans serif | `$\mathsf{text}$` | $\mathsf{text}$ |
+| Math typewriter | `$\mathtt{code}$` | $\mathtt{code}$ |
+| Math calligraphy | `$\mathcal{L}$` | $\mathcal{L}$ |
+| Math blackboard | `$\mathbb{R}$` | $\mathbb{R}$ |
+| Math fraktur | `$\mathfrak{g}$` | $\mathfrak{g}$ |
+
+## Examples
+```latex
+$$\int_0^1 f(x) \, \mathrm{d}x$$
+$$\mathbf{F} = m\mathbf{a}$$
+$$\mathcal{L}\{f(t)\} = F(s)$$
+$$x \in \mathbb{R}$$
+```
+
+$$\int_0^1 f(x) \, \mathrm{d}x$$
+$$\mathbf{F} = m\mathbf{a}$$
+$$\mathcal{L}\{f(t)\} = F(s)$$
+$$x \in \mathbb{R}$$
+
+# Complex Expressions
+
+## Continued Fractions
+
+```latex
+$$x = a_0 + \cfrac{1}{a_1 + \cfrac{1}{a_2 + \cfrac{1}{a_3 + \cfrac{1}{\ddots}}}}$$
+```
+
+$$x = a_0 + \cfrac{1}{a_1 + \cfrac{1}{a_2 + \cfrac{1}{a_3 + \cfrac{1}{\ddots}}}}$$
+
+## Commutative Diagrams
+
+```latex
+$$\begin{array}{ccc}
+A & \xrightarrow{f} & B \\
+\downarrow & & \downarrow \\
+C & \xrightarrow{g} & D
+\end{array}$$
+```
+
+$$\begin{array}{ccc}
+A & \xrightarrow{f} & B \\
+\downarrow & & \downarrow \\
+C & \xrightarrow{g} & D
+\end{array}$$
+
+## Chemical Equations
+
+```latex
+$$\ce{2H2 + O2 -> 2H2O}$$
+$$\ce{CaCO3 + 2HCl -> CaCl2 + H2O + CO2 ^}$$
+```
+
+Note: Chemical equations require the `mhchem` extension which may not be available in all MathJax configurations.
+
+# Common Mathematical Expressions
+
+## Quadratic Formula
+
+```latex
+$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+```
+
+$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+
+## Binomial Theorem
+
+```latex
+$$(x + y)^n = \sum_{k=0}^{n} \binom{n}{k} x^{n-k} y^k$$
+```
+
+$$(x + y)^n = \sum_{k=0}^{n} \binom{n}{k} x^{n-k} y^k$$
+
+## Fourier Transform
+
+```latex
+$$\mathcal{F}\{f(t)\} = F(\omega) = \int_{-\infty}^{\infty} f(t) e^{-i\omega t} \, dt$$
+```
+
+$$\mathcal{F}\{f(t)\} = F(\omega) = \int_{-\infty}^{\infty} f(t) e^{-i\omega t} \, dt$$
+
+## Taylor Series
+
+```latex
+$$f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^n$$
+```
+
+$$f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^n$$
+
+## Maxwell's Equations
+
+```latex
+$$\begin{align}
+\nabla \cdot \mathbf{E} &= \frac{\rho}{\epsilon_0} \\
+\nabla \cdot \mathbf{B} &= 0 \\
+\nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t} \\
+\nabla \times \mathbf{B} &= \mu_0 \mathbf{J} + \mu_0 \epsilon_0 \frac{\partial \mathbf{E}}{\partial t}
+\end{align}$$
+```
+
+$$\begin{align}
+\nabla \cdot \mathbf{E} &= \frac{\rho}{\epsilon_0} \\
+\nabla \cdot \mathbf{B} &= 0 \\
+\nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t} \\
+\nabla \times \mathbf{B} &= \mu_0 \mathbf{J} + \mu_0 \epsilon_0 \frac{\partial \mathbf{E}}{\partial t}
+\end{align}$$
+
+# Tips and Best Practices
+
+## Performance Tips
+- Use `$$` for display math instead of `\[` and `\]`
+- Avoid unnecessary `\left` and `\right` when fixed-size delimiters work
+- Use `\text{}` for text within math expressions
+- Break long expressions into multiple lines using `align`
+
+## Common Mistakes
+- Forgetting to escape special characters: `\{`, `\}`, `\&`, `\%`
+- Using `*` for multiplication instead of `\cdot` or `\times`
+- Not using proper spacing in integrals: `\int f(x) \, dx`
+- Mixing text and math modes incorrectly
+
+## Accessibility
+- Use `\text{}` for descriptive text
+- Provide alternative text descriptions for complex expressions
+- Use semantic markup when possible
+- Consider screen reader compatibility
+
+This reference covers the most commonly used MathJax LaTeX commands in Quarto. For the most up-to-date information, consult the official MathJax documentation.

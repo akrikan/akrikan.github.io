@@ -1,0 +1,1562 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[top=20mm,left=20mm,right=20mm,bottom=20mm]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Complete MathJax LaTeX Reference for Quarto},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Complete MathJax LaTeX Reference for Quarto}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, sharp corners, interior hidden, boxrule=0pt, breakable, enhanced, frame hidden]}{\end{tcolorbox}}\fi
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+This comprehensive reference covers all MathJax LaTeX commands and
+syntax available in Quarto documents. MathJax supports most standard
+LaTeX mathematical notation with some limitations.
+
+\hypertarget{basic-math-modes}{%
+\section{Basic Math Modes}\label{basic-math-modes}}
+
+\hypertarget{inline-math}{%
+\subsection{Inline Math}\label{inline-math}}
+
+Use single dollar signs for inline math: \texttt{\$x\ =\ y\ +\ z\$}
+renders as \(x = y + z\)
+
+\hypertarget{display-math}{%
+\subsection{Display Math}\label{display-math}}
+
+Use double dollar signs for display math:
+
+\begin{verbatim}
+$$E = mc^2$$
+\end{verbatim}
+
+\[E = mc^2\]
+
+\hypertarget{equation-environment}{%
+\subsection{Equation Environment}\label{equation-environment}}
+
+\begin{verbatim}
+$$
+\begin{equation}
+f(x) = ax^2 + bx + c
+\end{equation}
+$$
+\end{verbatim}
+
+\[
+\begin{equation}
+f(x) = ax^2 + bx + c
+\end{equation}
+\]
+
+\hypertarget{basic-operations-and-symbols}{%
+\section{Basic Operations and
+Symbols}\label{basic-operations-and-symbols}}
+
+\hypertarget{arithmetic-operations}{%
+\subsection{Arithmetic Operations}\label{arithmetic-operations}}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule()
+Operation & LaTeX & Rendered \\
+\midrule()
+\endhead
+Addition & \texttt{\$a\ +\ b\$} & \(a + b\) \\
+Subtraction & \texttt{\$a\ -\ b\$} & \(a - b\) \\
+Multiplication & \texttt{\$a\ \textbackslash{}cdot\ b\$} &
+\(a \cdot b\) \\
+Multiplication & \texttt{\$a\ \textbackslash{}times\ b\$} &
+\(a \times b\) \\
+Division & \texttt{\$a\ \textbackslash{}div\ b\$} & \(a \div b\) \\
+Division & \texttt{\$\textbackslash{}frac\{a\}\{b\}\$} &
+\(\frac{a}{b}\) \\
+Plus or minus & \texttt{\$a\ \textbackslash{}pm\ b\$} & \(a \pm b\) \\
+Minus or plus & \texttt{\$a\ \textbackslash{}mp\ b\$} & \(a \mp b\) \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{comparison-operators}{%
+\subsection{Comparison Operators}\label{comparison-operators}}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule()
+Operator & LaTeX & Rendered \\
+\midrule()
+\endhead
+Equals & \texttt{\$a\ =\ b\$} & \(a = b\) \\
+Not equals & \texttt{\$a\ \textbackslash{}neq\ b\$} & \(a \neq b\) \\
+Less than & \texttt{\$a\ \textless{}\ b\$} & \(a < b\) \\
+Greater than & \texttt{\$a\ \textgreater{}\ b\$} & \(a > b\) \\
+Less than or equal & \texttt{\$a\ \textbackslash{}leq\ b\$} &
+\(a \leq b\) \\
+Greater than or equal & \texttt{\$a\ \textbackslash{}geq\ b\$} &
+\(a \geq b\) \\
+Much less than & \texttt{\$a\ \textbackslash{}ll\ b\$} & \(a \ll b\) \\
+Much greater than & \texttt{\$a\ \textbackslash{}gg\ b\$} &
+\(a \gg b\) \\
+Approximately & \texttt{\$a\ \textbackslash{}approx\ b\$} &
+\(a \approx b\) \\
+Equivalent & \texttt{\$a\ \textbackslash{}equiv\ b\$} &
+\(a \equiv b\) \\
+Proportional & \texttt{\$a\ \textbackslash{}propto\ b\$} &
+\(a \propto b\) \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{superscripts-and-subscripts}{%
+\section{Superscripts and
+Subscripts}\label{superscripts-and-subscripts}}
+
+\hypertarget{basic-syntax}{%
+\subsection{Basic Syntax}\label{basic-syntax}}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule()
+Type & LaTeX & Rendered \\
+\midrule()
+\endhead
+Superscript & \texttt{\$x\^{}2\$} & \(x^2\) \\
+Subscript & \texttt{\$x\_1\$} & \(x_1\) \\
+Both & \texttt{\$x\_1\^{}2\$} & \(x_1^2\) \\
+Multiple chars & \texttt{\$x\^{}\{10\}\$} & \(x^{10}\) \\
+Complex & \texttt{\$x\_\{i,j\}\^{}\{(n)\}\$} & \(x_{i,j}^{(n)}\) \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{examples}{%
+\subsection{Examples}\label{examples}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialStringTok{$$x\^{}2 + y\^{}2 = z\^{}2$$}
+\SpecialStringTok{$$a\_1, a\_2, }\SpecialCharTok{\textbackslash{}ldots}\SpecialStringTok{, a\_n$$}
+\SpecialStringTok{$$}\SpecialCharTok{\textbackslash{}sum}\SpecialStringTok{\_\{i=1\}\^{}\{n\} x\_i$$}
+\SpecialStringTok{$$x\^{}\{y\^{}z\}$$}
+\SpecialStringTok{$$\{\}\^{}\{14\}C$$}
+\end{Highlighting}
+\end{Shaded}
+
+\[x^2 + y^2 = z^2\] \[a_1, a_2, \ldots, a_n\] \[\sum_{i=1}^{n} x_i\]
+\[x^{y^z}\] \[{}^{14}C\]
+
+\hypertarget{fractions-and-roots}{%
+\section{Fractions and Roots}\label{fractions-and-roots}}
+
+\hypertarget{fractions}{%
+\subsection{Fractions}\label{fractions}}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule()
+Type & LaTeX & Rendered \\
+\midrule()
+\endhead
+Basic fraction & \texttt{\$\textbackslash{}frac\{a\}\{b\}\$} &
+\(\frac{a}{b}\) \\
+Display fraction & \texttt{\$\textbackslash{}dfrac\{a\}\{b\}\$} &
+\(\dfrac{a}{b}\) \\
+Text fraction & \texttt{\$\textbackslash{}tfrac\{a\}\{b\}\$} &
+\(\tfrac{a}{b}\) \\
+Continued fraction & \texttt{\$\textbackslash{}cfrac\{a\}\{b\}\$} &
+\(\cfrac{a}{b}\) \\
+Binomial & \texttt{\$\textbackslash{}binom\{n\}\{k\}\$} &
+\(\binom{n}{k}\) \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{roots}{%
+\subsection{Roots}\label{roots}}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule()
+Type & LaTeX & Rendered \\
+\midrule()
+\endhead
+Square root & \texttt{\$\textbackslash{}sqrt\{x\}\$} & \(\sqrt{x}\) \\
+nth root & \texttt{\$\textbackslash{}sqrt{[}n{]}\{x\}\$} &
+\(\sqrt[n]{x}\) \\
+Cube root & \texttt{\$\textbackslash{}sqrt{[}3{]}\{x\}\$} &
+\(\sqrt[3]{x}\) \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{examples-1}{%
+\subsection{Examples}\label{examples-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialStringTok{$$}\SpecialCharTok{\textbackslash{}frac}\SpecialStringTok{\{{-}b }\SpecialCharTok{\textbackslash{}pm}\SpecialStringTok{ }\SpecialCharTok{\textbackslash{}sqrt}\SpecialStringTok{\{b\^{}2 {-} 4ac\}\}\{2a\}$$}
+\SpecialStringTok{$$}\SpecialCharTok{\textbackslash{}sqrt}\SpecialStringTok{\{}\SpecialCharTok{\textbackslash{}frac}\SpecialStringTok{\{a\}\{b\}\} = }\SpecialCharTok{\textbackslash{}frac}\SpecialStringTok{\{}\SpecialCharTok{\textbackslash{}sqrt}\SpecialStringTok{\{a\}\}\{}\SpecialCharTok{\textbackslash{}sqrt}\SpecialStringTok{\{b\}\}$$}
+\SpecialStringTok{$$}\SpecialCharTok{\textbackslash{}cfrac}\SpecialStringTok{\{1\}\{1+}\SpecialCharTok{\textbackslash{}cfrac}\SpecialStringTok{\{1\}\{1+}\SpecialCharTok{\textbackslash{}cfrac}\SpecialStringTok{\{1\}\{1+}\SpecialCharTok{\textbackslash{}cdots}\SpecialStringTok{\}\}\}$$}
+\end{Highlighting}
+\end{Shaded}
+
+\[\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]
+\[\sqrt{\frac{a}{b}} = \frac{\sqrt{a}}{\sqrt{b}}\]
+\[\cfrac{1}{1+\cfrac{1}{1+\cfrac{1}{1+\cdots}}}\]
+
+\hypertarget{sums-products-and-limits}{%
+\section{Sums, Products, and Limits}\label{sums-products-and-limits}}
+
+\hypertarget{sum-and-product-notation}{%
+\subsection{Sum and Product Notation}\label{sum-and-product-notation}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2609}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3043}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4348}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Type
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+LaTeX
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Rendered
+\end{minipage} \\
+\midrule()
+\endhead
+Sum & \texttt{\$\textbackslash{}sum\_\{i=1\}\^{}\{n\}\ x\_i\$} &
+\(\sum_{i=1}^{n} x_i\) \\
+Product & \texttt{\$\textbackslash{}prod\_\{i=1\}\^{}\{n\}\ x\_i\$} &
+\(\prod_{i=1}^{n} x_i\) \\
+Coproduct & \texttt{\$\textbackslash{}coprod\_\{i=1\}\^{}\{n\}\ x\_i\$}
+& \(\coprod_{i=1}^{n} x_i\) \\
+Big union & \texttt{\$\textbackslash{}bigcup\_\{i=1\}\^{}\{n\}\ A\_i\$}
+& \(\bigcup_{i=1}^{n} A_i\) \\
+Big intersection &
+\texttt{\$\textbackslash{}bigcap\_\{i=1\}\^{}\{n\}\ A\_i\$} &
+\(\bigcap_{i=1}^{n} A_i\) \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{limits}{%
+\subsection{Limits}\label{limits}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2609}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3043}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4348}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Type
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+LaTeX
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Rendered
+\end{minipage} \\
+\midrule()
+\endhead
+Limit &
+\texttt{\$\textbackslash{}lim\_\{x\ \textbackslash{}to\ 0\}\ f(x)\$} &
+\(\lim_{x \to 0} f(x)\) \\
+Limit infinity &
+\texttt{\$\textbackslash{}lim\_\{x\ \textbackslash{}to\ \textbackslash{}infty\}\ f(x)\$}
+& \(\lim_{x \to \infty} f(x)\) \\
+Limit from left &
+\texttt{\$\textbackslash{}lim\_\{x\ \textbackslash{}to\ 0\^{}-\}\ f(x)\$}
+& \(\lim_{x \to 0^-} f(x)\) \\
+Limit from right &
+\texttt{\$\textbackslash{}lim\_\{x\ \textbackslash{}to\ 0\^{}+\}\ f(x)\$}
+& \(\lim_{x \to 0^+} f(x)\) \\
+Supremum &
+\texttt{\$\textbackslash{}sup\_\{x\ \textbackslash{}in\ A\}\ f(x)\$} &
+\(\sup_{x \in A} f(x)\) \\
+Infimum &
+\texttt{\$\textbackslash{}inf\_\{x\ \textbackslash{}in\ A\}\ f(x)\$} &
+\(\inf_{x \in A} f(x)\) \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{examples-2}{%
+\subsection{Examples}\label{examples-2}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialStringTok{$$}\SpecialCharTok{\textbackslash{}sum}\SpecialStringTok{\_\{n=1\}\^{}\{}\SpecialCharTok{\textbackslash{}infty}\SpecialStringTok{\} }\SpecialCharTok{\textbackslash{}frac}\SpecialStringTok{\{1\}\{n\^{}2\} = }\SpecialCharTok{\textbackslash{}frac}\SpecialStringTok{\{}\SpecialCharTok{\textbackslash{}pi}\SpecialStringTok{\^{}2\}\{6\}$$}
+\SpecialStringTok{$$}\SpecialCharTok{\textbackslash{}prod}\SpecialStringTok{\_\{p }\SpecialCharTok{\textbackslash{}text}\NormalTok{\{ prime\}}\SpecialStringTok{\} }\SpecialCharTok{\textbackslash{}frac}\SpecialStringTok{\{1\}\{1{-}p\^{}\{{-}s\}\}$$}
+\SpecialStringTok{$$}\SpecialCharTok{\textbackslash{}lim}\SpecialStringTok{\_\{n }\SpecialCharTok{\textbackslash{}to}\SpecialStringTok{ }\SpecialCharTok{\textbackslash{}infty}\SpecialStringTok{\} }\SpecialCharTok{\textbackslash{}left}\SpecialStringTok{(1 + }\SpecialCharTok{\textbackslash{}frac}\SpecialStringTok{\{1\}\{n\}}\SpecialCharTok{\textbackslash{}right}\SpecialStringTok{)\^{}n = e$$}
+\end{Highlighting}
+\end{Shaded}
+
+\[\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}\]
+\[\prod_{p \text{ prime}} \frac{1}{1-p^{-s}}\]
+\[\lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^n = e\]
+
+\hypertarget{integrals-and-derivatives}{%
+\section{Integrals and Derivatives}\label{integrals-and-derivatives}}
+
+\hypertarget{integrals}{%
+\subsection{Integrals}\label{integrals}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2609}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3043}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4348}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Type
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+LaTeX
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Rendered
+\end{minipage} \\
+\midrule()
+\endhead
+Indefinite integral &
+\texttt{\$\textbackslash{}int\ f(x)\ \textbackslash{},\ dx\$} &
+\(\int f(x) \, dx\) \\
+Definite integral &
+\texttt{\$\textbackslash{}int\_a\^{}b\ f(x)\ \textbackslash{},\ dx\$} &
+\(\int_a^b f(x) \, dx\) \\
+Double integral &
+\texttt{\$\textbackslash{}iint\ f(x,y)\ \textbackslash{},\ dx\ \textbackslash{},\ dy\$}
+& \(\iint f(x,y) \, dx \, dy\) \\
+Triple integral &
+\texttt{\$\textbackslash{}iiint\ f(x,y,z)\ \textbackslash{},\ dx\ \textbackslash{},\ dy\ \textbackslash{},\ dz\$}
+& \(\iiint f(x,y,z) \, dx \, dy \, dz\) \\
+Contour integral &
+\texttt{\$\textbackslash{}oint\ f(z)\ \textbackslash{},\ dz\$} &
+\(\oint f(z) \, dz\) \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{derivatives}{%
+\subsection{Derivatives}\label{derivatives}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2609}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3043}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4348}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Type
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+LaTeX
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Rendered
+\end{minipage} \\
+\midrule()
+\endhead
+Derivative & \texttt{\$\textbackslash{}frac\{df\}\{dx\}\$} &
+\(\frac{df}{dx}\) \\
+Partial derivative &
+\texttt{\$\textbackslash{}frac\{\textbackslash{}partial\ f\}\{\textbackslash{}partial\ x\}\$}
+& \(\frac{\partial f}{\partial x}\) \\
+Second derivative &
+\texttt{\$\textbackslash{}frac\{d\^{}2f\}\{dx\^{}2\}\$} &
+\(\frac{d^2f}{dx^2}\) \\
+Mixed partial &
+\texttt{\$\textbackslash{}frac\{\textbackslash{}partial\^{}2\ f\}\{\textbackslash{}partial\ x\ \textbackslash{}partial\ y\}\$}
+& \(\frac{\partial^2 f}{\partial x \partial y}\) \\
+Gradient & \texttt{\$\textbackslash{}nabla\ f\$} & \(\nabla f\) \\
+Laplacian & \texttt{\$\textbackslash{}nabla\^{}2\ f\$} &
+\(\nabla^2 f\) \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{examples-3}{%
+\subsection{Examples}\label{examples-3}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialStringTok{$$}\SpecialCharTok{\textbackslash{}int}\SpecialStringTok{\_0\^{}\{}\SpecialCharTok{\textbackslash{}infty}\SpecialStringTok{\} e\^{}\{{-}x\^{}2\} }\SpecialCharTok{\textbackslash{},}\SpecialStringTok{ dx = }\SpecialCharTok{\textbackslash{}frac}\SpecialStringTok{\{}\SpecialCharTok{\textbackslash{}sqrt}\SpecialStringTok{\{}\SpecialCharTok{\textbackslash{}pi}\SpecialStringTok{\}\}\{2\}$$}
+\SpecialStringTok{$$}\SpecialCharTok{\textbackslash{}frac}\SpecialStringTok{\{d\}\{dx\}}\SpecialCharTok{\textbackslash{}left}\SpecialStringTok{[x\^{}n}\SpecialCharTok{\textbackslash{}right}\SpecialStringTok{] = nx\^{}\{n{-}1\}$$}
+\SpecialStringTok{$$}\SpecialCharTok{\textbackslash{}nabla}\SpecialStringTok{ }\SpecialCharTok{\textbackslash{}cdot}\SpecialStringTok{ }\SpecialCharTok{\textbackslash{}mathbf}\SpecialStringTok{\{F\} = }\SpecialCharTok{\textbackslash{}frac}\SpecialStringTok{\{}\SpecialCharTok{\textbackslash{}partial}\SpecialStringTok{ F\_x\}\{}\SpecialCharTok{\textbackslash{}partial}\SpecialStringTok{ x\} + }\SpecialCharTok{\textbackslash{}frac}\SpecialStringTok{\{}\SpecialCharTok{\textbackslash{}partial}\SpecialStringTok{ F\_y\}\{}\SpecialCharTok{\textbackslash{}partial}\SpecialStringTok{ y\} + }\SpecialCharTok{\textbackslash{}frac}\SpecialStringTok{\{}\SpecialCharTok{\textbackslash{}partial}\SpecialStringTok{ F\_z\}\{}\SpecialCharTok{\textbackslash{}partial}\SpecialStringTok{ z\}$$}
+\end{Highlighting}
+\end{Shaded}
+
+\[\int_0^{\infty} e^{-x^2} \, dx = \frac{\sqrt{\pi}}{2}\]
+\[\frac{d}{dx}\left[x^n\right] = nx^{n-1}\]
+\[\nabla \cdot \mathbf{F} = \frac{\partial F_x}{\partial x} + \frac{\partial F_y}{\partial y} + \frac{\partial F_z}{\partial z}\]
+
+\hypertarget{greek-letters}{%
+\section{Greek Letters}\label{greek-letters}}
+
+\hypertarget{lowercase}{%
+\subsection{Lowercase}\label{lowercase}}
+
+\begin{longtable}[]{@{}llllll@{}}
+\toprule()
+Letter & LaTeX & Rendered & Letter & LaTeX & Rendered \\
+\midrule()
+\endhead
+Alpha & \texttt{\$\textbackslash{}alpha\$} & \(\alpha\) & Nu &
+\texttt{\$\textbackslash{}nu\$} & \(\nu\) \\
+Beta & \texttt{\$\textbackslash{}beta\$} & \(\beta\) & Xi &
+\texttt{\$\textbackslash{}xi\$} & \(\xi\) \\
+Gamma & \texttt{\$\textbackslash{}gamma\$} & \(\gamma\) & Omicron &
+\texttt{\$o\$} & \(o\) \\
+Delta & \texttt{\$\textbackslash{}delta\$} & \(\delta\) & Pi &
+\texttt{\$\textbackslash{}pi\$} & \(\pi\) \\
+Epsilon & \texttt{\$\textbackslash{}epsilon\$} & \(\epsilon\) & Rho &
+\texttt{\$\textbackslash{}rho\$} & \(\rho\) \\
+Zeta & \texttt{\$\textbackslash{}zeta\$} & \(\zeta\) & Sigma &
+\texttt{\$\textbackslash{}sigma\$} & \(\sigma\) \\
+Eta & \texttt{\$\textbackslash{}eta\$} & \(\eta\) & Tau &
+\texttt{\$\textbackslash{}tau\$} & \(\tau\) \\
+Theta & \texttt{\$\textbackslash{}theta\$} & \(\theta\) & Upsilon &
+\texttt{\$\textbackslash{}upsilon\$} & \(\upsilon\) \\
+Iota & \texttt{\$\textbackslash{}iota\$} & \(\iota\) & Phi &
+\texttt{\$\textbackslash{}phi\$} & \(\phi\) \\
+Kappa & \texttt{\$\textbackslash{}kappa\$} & \(\kappa\) & Chi &
+\texttt{\$\textbackslash{}chi\$} & \(\chi\) \\
+Lambda & \texttt{\$\textbackslash{}lambda\$} & \(\lambda\) & Psi &
+\texttt{\$\textbackslash{}psi\$} & \(\psi\) \\
+Mu & \texttt{\$\textbackslash{}mu\$} & \(\mu\) & Omega &
+\texttt{\$\textbackslash{}omega\$} & \(\omega\) \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{uppercase}{%
+\subsection{Uppercase}\label{uppercase}}
+
+\begin{longtable}[]{@{}llllll@{}}
+\toprule()
+Letter & LaTeX & Rendered & Letter & LaTeX & Rendered \\
+\midrule()
+\endhead
+Alpha & \texttt{\$A\$} & \(A\) & Nu & \texttt{\$N\$} & \(N\) \\
+Beta & \texttt{\$B\$} & \(B\) & Xi & \texttt{\$\textbackslash{}Xi\$} &
+\(\Xi\) \\
+Gamma & \texttt{\$\textbackslash{}Gamma\$} & \(\Gamma\) & Omicron &
+\texttt{\$O\$} & \(O\) \\
+Delta & \texttt{\$\textbackslash{}Delta\$} & \(\Delta\) & Pi &
+\texttt{\$\textbackslash{}Pi\$} & \(\Pi\) \\
+Epsilon & \texttt{\$E\$} & \(E\) & Rho & \texttt{\$P\$} & \(P\) \\
+Zeta & \texttt{\$Z\$} & \(Z\) & Sigma &
+\texttt{\$\textbackslash{}Sigma\$} & \(\Sigma\) \\
+Eta & \texttt{\$H\$} & \(H\) & Tau & \texttt{\$T\$} & \(T\) \\
+Theta & \texttt{\$\textbackslash{}Theta\$} & \(\Theta\) & Upsilon &
+\texttt{\$\textbackslash{}Upsilon\$} & \(\Upsilon\) \\
+Iota & \texttt{\$I\$} & \(I\) & Phi & \texttt{\$\textbackslash{}Phi\$} &
+\(\Phi\) \\
+Kappa & \texttt{\$K\$} & \(K\) & Chi & \texttt{\$X\$} & \(X\) \\
+Lambda & \texttt{\$\textbackslash{}Lambda\$} & \(\Lambda\) & Psi &
+\texttt{\$\textbackslash{}Psi\$} & \(\Psi\) \\
+Mu & \texttt{\$M\$} & \(M\) & Omega & \texttt{\$\textbackslash{}Omega\$}
+& \(\Omega\) \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{variant-forms}{%
+\subsection{Variant Forms}\label{variant-forms}}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule()
+Letter & LaTeX & Rendered \\
+\midrule()
+\endhead
+Variant epsilon & \texttt{\$\textbackslash{}varepsilon\$} &
+\(\varepsilon\) \\
+Variant theta & \texttt{\$\textbackslash{}vartheta\$} & \(\vartheta\) \\
+Variant pi & \texttt{\$\textbackslash{}varpi\$} & \(\varpi\) \\
+Variant rho & \texttt{\$\textbackslash{}varrho\$} & \(\varrho\) \\
+Variant sigma & \texttt{\$\textbackslash{}varsigma\$} & \(\varsigma\) \\
+Variant phi & \texttt{\$\textbackslash{}varphi\$} & \(\varphi\) \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{special-characters-and-symbols}{%
+\section{Special Characters and
+Symbols}\label{special-characters-and-symbols}}
+
+\hypertarget{mathematical-symbols}{%
+\subsection{Mathematical Symbols}\label{mathematical-symbols}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1600}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1400}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1600}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1400}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Symbol
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+LaTeX
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Rendered
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Symbol
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+LaTeX
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Rendered
+\end{minipage} \\
+\midrule()
+\endhead
+Infinity & \texttt{\$\textbackslash{}infty\$} & \(\infty\) & Partial &
+\texttt{\$\textbackslash{}partial\$} & \(\partial\) \\
+Nabla & \texttt{\$\textbackslash{}nabla\$} & \(\nabla\) & Therefore &
+\texttt{\$\textbackslash{}therefore\$} & \(\therefore\) \\
+Because & \texttt{\$\textbackslash{}because\$} & \(\because\) & Forall &
+\texttt{\$\textbackslash{}forall\$} & \(\forall\) \\
+Exists & \texttt{\$\textbackslash{}exists\$} & \(\exists\) & Nexists &
+\texttt{\$\textbackslash{}nexists\$} & \(\nexists\) \\
+Empty set & \texttt{\$\textbackslash{}emptyset\$} & \(\emptyset\) & Real
+numbers & \texttt{\$\textbackslash{}mathbb\{R\}\$} & \(\mathbb{R}\) \\
+Natural numbers & \texttt{\$\textbackslash{}mathbb\{N\}\$} &
+\(\mathbb{N}\) & Integers & \texttt{\$\textbackslash{}mathbb\{Z\}\$} &
+\(\mathbb{Z}\) \\
+Rationals & \texttt{\$\textbackslash{}mathbb\{Q\}\$} & \(\mathbb{Q}\) &
+Complex & \texttt{\$\textbackslash{}mathbb\{C\}\$} & \(\mathbb{C}\) \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{set-theory}{%
+\subsection{Set Theory}\label{set-theory}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1600}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1400}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1600}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1400}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Symbol
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+LaTeX
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Rendered
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Symbol
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+LaTeX
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Rendered
+\end{minipage} \\
+\midrule()
+\endhead
+Union & \texttt{\$\textbackslash{}cup\$} & \(\cup\) & Intersection &
+\texttt{\$\textbackslash{}cap\$} & \(\cap\) \\
+Subset & \texttt{\$\textbackslash{}subset\$} & \(\subset\) & Superset &
+\texttt{\$\textbackslash{}supset\$} & \(\supset\) \\
+Subset equal & \texttt{\$\textbackslash{}subseteq\$} & \(\subseteq\) &
+Superset equal & \texttt{\$\textbackslash{}supseteq\$} &
+\(\supseteq\) \\
+Element of & \texttt{\$\textbackslash{}in\$} & \(\in\) & Not element of
+& \texttt{\$\textbackslash{}notin\$} & \(\notin\) \\
+Set minus & \texttt{\$\textbackslash{}setminus\$} & \(\setminus\) &
+Symmetric diff & \texttt{\$\textbackslash{}triangle\$} &
+\(\triangle\) \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{logic}{%
+\subsection{Logic}\label{logic}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1600}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1400}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1600}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1400}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Symbol
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+LaTeX
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Rendered
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Symbol
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+LaTeX
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Rendered
+\end{minipage} \\
+\midrule()
+\endhead
+And & \texttt{\$\textbackslash{}land\$} & \(\land\) & Or &
+\texttt{\$\textbackslash{}lor\$} & \(\lor\) \\
+Not & \texttt{\$\textbackslash{}lnot\$} & \(\lnot\) & Implies &
+\texttt{\$\textbackslash{}implies\$} & \(\implies\) \\
+If and only if & \texttt{\$\textbackslash{}iff\$} & \(\iff\) & Models &
+\texttt{\$\textbackslash{}models\$} & \(\models\) \\
+Proves & \texttt{\$\textbackslash{}vdash\$} & \(\vdash\) & Top &
+\texttt{\$\textbackslash{}top\$} & \(\top\) \\
+Bottom & \texttt{\$\textbackslash{}bot\$} & \(\bot\) & & & \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{arrows}{%
+\section{Arrows}\label{arrows}}
+
+\hypertarget{basic-arrows}{%
+\subsection{Basic Arrows}\label{basic-arrows}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1458}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1458}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2083}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1458}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1458}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2083}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Arrow
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+LaTeX
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Rendered
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Arrow
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+LaTeX
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Rendered
+\end{minipage} \\
+\midrule()
+\endhead
+Right & \texttt{\$\textbackslash{}rightarrow\$} & \(\rightarrow\) & Left
+& \texttt{\$\textbackslash{}leftarrow\$} & \(\leftarrow\) \\
+Up & \texttt{\$\textbackslash{}uparrow\$} & \(\uparrow\) & Down &
+\texttt{\$\textbackslash{}downarrow\$} & \(\downarrow\) \\
+Left-right & \texttt{\$\textbackslash{}leftrightarrow\$} &
+\(\leftrightarrow\) & Up-down & \texttt{\$\textbackslash{}updownarrow\$}
+& \(\updownarrow\) \\
+Long right & \texttt{\$\textbackslash{}longrightarrow\$} &
+\(\longrightarrow\) & Long left &
+\texttt{\$\textbackslash{}longleftarrow\$} & \(\longleftarrow\) \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{double-arrows}{%
+\subsection{Double Arrows}\label{double-arrows}}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule()
+Arrow & LaTeX & Rendered \\
+\midrule()
+\endhead
+Double right & \texttt{\$\textbackslash{}Rightarrow\$} &
+\(\Rightarrow\) \\
+Double left & \texttt{\$\textbackslash{}Leftarrow\$} & \(\Leftarrow\) \\
+Double left-right & \texttt{\$\textbackslash{}Leftrightarrow\$} &
+\(\Leftrightarrow\) \\
+Double up & \texttt{\$\textbackslash{}Uparrow\$} & \(\Uparrow\) \\
+Double down & \texttt{\$\textbackslash{}Downarrow\$} & \(\Downarrow\) \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{specialized-arrows}{%
+\subsection{Specialized Arrows}\label{specialized-arrows}}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule()
+Arrow & LaTeX & Rendered \\
+\midrule()
+\endhead
+Maps to & \texttt{\$\textbackslash{}mapsto\$} & \(\mapsto\) \\
+Hookleft & \texttt{\$\textbackslash{}hookleftarrow\$} &
+\(\hookleftarrow\) \\
+Hookright & \texttt{\$\textbackslash{}hookrightarrow\$} &
+\(\hookrightarrow\) \\
+Right harpoon up & \texttt{\$\textbackslash{}rightharpoonup\$} &
+\(\rightharpoonup\) \\
+Right harpoon down & \texttt{\$\textbackslash{}rightharpoondown\$} &
+\(\rightharpoondown\) \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{brackets-and-delimiters}{%
+\section{Brackets and Delimiters}\label{brackets-and-delimiters}}
+
+\hypertarget{basic-brackets}{%
+\subsection{Basic Brackets}\label{basic-brackets}}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule()
+Type & LaTeX & Rendered \\
+\midrule()
+\endhead
+Parentheses & \texttt{\$(a)\$} & \((a)\) \\
+Square brackets & \texttt{\${[}a{]}\$} & \([a]\) \\
+Curly braces & \texttt{\$\textbackslash{}\{a\textbackslash{}\}\$} &
+\(\{a\}\) \\
+Angle brackets &
+\texttt{\$\textbackslash{}langle\ a\ \textbackslash{}rangle\$} &
+\(\langle a \rangle\) \\
+Vertical bars & \texttt{\$\textbar{}a\textbar{}\$} & \(|a|\) \\
+Double vertical &
+\texttt{\$\textbackslash{}\textbar{}a\textbackslash{}\textbar{}\$} &
+\(\|a\|\) \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{scalable-delimiters}{%
+\subsection{Scalable Delimiters}\label{scalable-delimiters}}
+
+Use \texttt{\textbackslash{}left} and \texttt{\textbackslash{}right} for
+automatic sizing:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialStringTok{$$}\SpecialCharTok{\textbackslash{}left}\SpecialStringTok{( }\SpecialCharTok{\textbackslash{}frac}\SpecialStringTok{\{a\}\{b\} }\SpecialCharTok{\textbackslash{}right}\SpecialStringTok{)$$}
+\SpecialStringTok{$$}\SpecialCharTok{\textbackslash{}left}\SpecialStringTok{[ }\SpecialCharTok{\textbackslash{}sum}\SpecialStringTok{\_\{i=1\}\^{}\{n\} x\_i }\SpecialCharTok{\textbackslash{}right}\SpecialStringTok{]$$}
+\SpecialStringTok{$$}\SpecialCharTok{\textbackslash{}left\textbackslash{}\{}\SpecialStringTok{ x }\SpecialCharTok{\textbackslash{}in}\SpecialStringTok{ }\SpecialCharTok{\textbackslash{}mathbb}\SpecialStringTok{\{R\} : x\^{}2 \textless{} 1 }\SpecialCharTok{\textbackslash{}right\textbackslash{}\}}\SpecialStringTok{$$}
+\SpecialStringTok{$$}\SpecialCharTok{\textbackslash{}left\textbackslash{}langle}\SpecialStringTok{ }\SpecialCharTok{\textbackslash{}frac}\SpecialStringTok{\{a\}\{b\}, }\SpecialCharTok{\textbackslash{}frac}\SpecialStringTok{\{c\}\{d\} }\SpecialCharTok{\textbackslash{}right\textbackslash{}rangle}\SpecialStringTok{$$}
+\SpecialStringTok{$$}\SpecialCharTok{\textbackslash{}left}\SpecialStringTok{| }\SpecialCharTok{\textbackslash{}frac}\SpecialStringTok{\{a\}\{b\} }\SpecialCharTok{\textbackslash{}right}\SpecialStringTok{|$$}
+\SpecialStringTok{$$}\SpecialCharTok{\textbackslash{}left\textbackslash{}|}\SpecialStringTok{ }\SpecialCharTok{\textbackslash{}mathbf}\SpecialStringTok{\{v\} }\SpecialCharTok{\textbackslash{}right\textbackslash{}|}\SpecialStringTok{$$}
+\end{Highlighting}
+\end{Shaded}
+
+\[\left( \frac{a}{b} \right)\] \[\left[ \sum_{i=1}^{n} x_i \right]\]
+\[\left\{ x \in \mathbb{R} : x^2 < 1 \right\}\]
+\[\left\langle \frac{a}{b}, \frac{c}{d} \right\rangle\]
+\[\left| \frac{a}{b} \right|\] \[\left\| \mathbf{v} \right\|\]
+
+\hypertarget{manual-sizing}{%
+\subsection{Manual Sizing}\label{manual-sizing}}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule()
+Size & Command & Example \\
+\midrule()
+\endhead
+Big & \texttt{\textbackslash{}big} &
+\texttt{\$\textbackslash{}big(\ \textbackslash{}frac\{a\}\{b\}\ \textbackslash{}big)\$} \\
+Bigg & \texttt{\textbackslash{}bigg} &
+\texttt{\$\textbackslash{}bigg(\ \textbackslash{}frac\{a\}\{b\}\ \textbackslash{}bigg)\$} \\
+Big & \texttt{\textbackslash{}Big} &
+\texttt{\$\textbackslash{}Big{[}\ \textbackslash{}frac\{a\}\{b\}\ \textbackslash{}Big{]}\$} \\
+Bigg & \texttt{\textbackslash{}Bigg} &
+\texttt{\$\textbackslash{}Bigg{[}\ \textbackslash{}frac\{a\}\{b\}\ \textbackslash{}Bigg{]}\$} \\
+\bottomrule()
+\end{longtable}
+
+Examples: \(\big( \frac{a}{b} \big)\) vs \(\bigg( \frac{a}{b} \bigg)\)
+
+\hypertarget{matrices-and-arrays}{%
+\section{Matrices and Arrays}\label{matrices-and-arrays}}
+
+\hypertarget{basic-matrix}{%
+\subsection{Basic Matrix}\label{basic-matrix}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialStringTok{$$}\KeywordTok{\textbackslash{}begin}\NormalTok{\{}\ExtensionTok{matrix}\NormalTok{\}}
+\SpecialStringTok{a \& b }\SpecialCharTok{\textbackslash{}\textbackslash{}}
+\SpecialStringTok{c \& d}
+\KeywordTok{\textbackslash{}end}\NormalTok{\{}\ExtensionTok{matrix}\NormalTok{\}}\SpecialStringTok{$$}
+\end{Highlighting}
+\end{Shaded}
+
+\[\begin{matrix}
+a & b \\
+c & d
+\end{matrix}\]
+
+\hypertarget{matrix-with-parentheses}{%
+\subsection{Matrix with Parentheses}\label{matrix-with-parentheses}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialStringTok{$$}\KeywordTok{\textbackslash{}begin}\NormalTok{\{}\ExtensionTok{pmatrix}\NormalTok{\}}
+\SpecialStringTok{a \& b }\SpecialCharTok{\textbackslash{}\textbackslash{}}
+\SpecialStringTok{c \& d}
+\KeywordTok{\textbackslash{}end}\NormalTok{\{}\ExtensionTok{pmatrix}\NormalTok{\}}\SpecialStringTok{$$}
+\end{Highlighting}
+\end{Shaded}
+
+\[\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}\]
+
+\hypertarget{matrix-with-square-brackets}{%
+\subsection{Matrix with Square
+Brackets}\label{matrix-with-square-brackets}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialStringTok{$$}\KeywordTok{\textbackslash{}begin}\NormalTok{\{}\ExtensionTok{bmatrix}\NormalTok{\}}
+\SpecialStringTok{a \& b }\SpecialCharTok{\textbackslash{}\textbackslash{}}
+\SpecialStringTok{c \& d}
+\KeywordTok{\textbackslash{}end}\NormalTok{\{}\ExtensionTok{bmatrix}\NormalTok{\}}\SpecialStringTok{$$}
+\end{Highlighting}
+\end{Shaded}
+
+\[\begin{bmatrix}
+a & b \\
+c & d
+\end{bmatrix}\]
+
+\hypertarget{matrix-with-curly-braces}{%
+\subsection{Matrix with Curly Braces}\label{matrix-with-curly-braces}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialStringTok{$$}\KeywordTok{\textbackslash{}begin}\NormalTok{\{}\ExtensionTok{Bmatrix}\NormalTok{\}}
+\SpecialStringTok{a \& b }\SpecialCharTok{\textbackslash{}\textbackslash{}}
+\SpecialStringTok{c \& d}
+\KeywordTok{\textbackslash{}end}\NormalTok{\{}\ExtensionTok{Bmatrix}\NormalTok{\}}\SpecialStringTok{$$}
+\end{Highlighting}
+\end{Shaded}
+
+\[\begin{Bmatrix}
+a & b \\
+c & d
+\end{Bmatrix}\]
+
+\hypertarget{matrix-with-vertical-lines}{%
+\subsection{Matrix with Vertical
+Lines}\label{matrix-with-vertical-lines}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialStringTok{$$}\KeywordTok{\textbackslash{}begin}\NormalTok{\{}\ExtensionTok{vmatrix}\NormalTok{\}}
+\SpecialStringTok{a \& b }\SpecialCharTok{\textbackslash{}\textbackslash{}}
+\SpecialStringTok{c \& d}
+\KeywordTok{\textbackslash{}end}\NormalTok{\{}\ExtensionTok{vmatrix}\NormalTok{\}}\SpecialStringTok{$$}
+\end{Highlighting}
+\end{Shaded}
+
+\[\begin{vmatrix}
+a & b \\
+c & d
+\end{vmatrix}\]
+
+\hypertarget{matrix-with-double-vertical-lines}{%
+\subsection{Matrix with Double Vertical
+Lines}\label{matrix-with-double-vertical-lines}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialStringTok{$$}\KeywordTok{\textbackslash{}begin}\NormalTok{\{}\ExtensionTok{Vmatrix}\NormalTok{\}}
+\SpecialStringTok{a \& b }\SpecialCharTok{\textbackslash{}\textbackslash{}}
+\SpecialStringTok{c \& d}
+\KeywordTok{\textbackslash{}end}\NormalTok{\{}\ExtensionTok{Vmatrix}\NormalTok{\}}\SpecialStringTok{$$}
+\end{Highlighting}
+\end{Shaded}
+
+\[\begin{Vmatrix}
+a & b \\
+c & d
+\end{Vmatrix}\]
+
+\hypertarget{larger-matrices}{%
+\subsection{Larger Matrices}\label{larger-matrices}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialStringTok{$$}\KeywordTok{\textbackslash{}begin}\NormalTok{\{}\ExtensionTok{pmatrix}\NormalTok{\}}
+\SpecialStringTok{a\_\{11\} \& a\_\{12\} \& }\SpecialCharTok{\textbackslash{}cdots}\SpecialStringTok{ \& a\_\{1n\} }\SpecialCharTok{\textbackslash{}\textbackslash{}}
+\SpecialStringTok{a\_\{21\} \& a\_\{22\} \& }\SpecialCharTok{\textbackslash{}cdots}\SpecialStringTok{ \& a\_\{2n\} }\SpecialCharTok{\textbackslash{}\textbackslash{}}
+\SpecialCharTok{\textbackslash{}vdots}\SpecialStringTok{ \& }\SpecialCharTok{\textbackslash{}vdots}\SpecialStringTok{ \& }\SpecialCharTok{\textbackslash{}ddots}\SpecialStringTok{ \& }\SpecialCharTok{\textbackslash{}vdots}\SpecialStringTok{ }\SpecialCharTok{\textbackslash{}\textbackslash{}}
+\SpecialStringTok{a\_\{m1\} \& a\_\{m2\} \& }\SpecialCharTok{\textbackslash{}cdots}\SpecialStringTok{ \& a\_\{mn\}}
+\KeywordTok{\textbackslash{}end}\NormalTok{\{}\ExtensionTok{pmatrix}\NormalTok{\}}\SpecialStringTok{$$}
+\end{Highlighting}
+\end{Shaded}
+
+\[\begin{pmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{pmatrix}\]
+
+\hypertarget{equations-and-alignment}{%
+\section{Equations and Alignment}\label{equations-and-alignment}}
+
+\hypertarget{aligned-equations}{%
+\subsection{Aligned Equations}\label{aligned-equations}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialStringTok{$$}\KeywordTok{\textbackslash{}begin}\NormalTok{\{}\ExtensionTok{align}\NormalTok{\}}
+\SpecialStringTok{f(x) \&= ax\^{}2 + bx + c }\SpecialCharTok{\textbackslash{}\textbackslash{}}
+\SpecialStringTok{\&= a(x\^{}2 + }\SpecialCharTok{\textbackslash{}frac}\SpecialStringTok{\{b\}\{a\}x) + c }\SpecialCharTok{\textbackslash{}\textbackslash{}}
+\SpecialStringTok{\&= a(x + }\SpecialCharTok{\textbackslash{}frac}\SpecialStringTok{\{b\}\{2a\})\^{}2 {-} }\SpecialCharTok{\textbackslash{}frac}\SpecialStringTok{\{b\^{}2\}\{4a\} + c}
+\KeywordTok{\textbackslash{}end}\NormalTok{\{}\ExtensionTok{align}\NormalTok{\}}\SpecialStringTok{$$}
+\end{Highlighting}
+\end{Shaded}
+
+\[\begin{align}
+f(x) &= ax^2 + bx + c \\
+&= a(x^2 + \frac{b}{a}x) + c \\
+&= a(x + \frac{b}{2a})^2 - \frac{b^2}{4a} + c
+\end{align}\]
+
+\hypertarget{cases}{%
+\subsection{Cases}\label{cases}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialStringTok{$$f(x) = }\KeywordTok{\textbackslash{}begin}\NormalTok{\{}\ExtensionTok{cases}\NormalTok{\}}
+\SpecialStringTok{x\^{}2 \& }\SpecialCharTok{\textbackslash{}text}\NormalTok{\{if \}}\SpecialStringTok{ x }\SpecialCharTok{\textbackslash{}geq}\SpecialStringTok{ 0 }\SpecialCharTok{\textbackslash{}\textbackslash{}}
+\SpecialStringTok{{-}x\^{}2 \& }\SpecialCharTok{\textbackslash{}text}\NormalTok{\{if \}}\SpecialStringTok{ x \textless{} 0}
+\KeywordTok{\textbackslash{}end}\NormalTok{\{}\ExtensionTok{cases}\NormalTok{\}}\SpecialStringTok{$$}
+\end{Highlighting}
+\end{Shaded}
+
+\[f(x) = \begin{cases}
+x^2 & \text{if } x \geq 0 \\
+-x^2 & \text{if } x < 0
+\end{cases}\]
+
+\hypertarget{system-of-equations}{%
+\subsection{System of Equations}\label{system-of-equations}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialStringTok{$$}\KeywordTok{\textbackslash{}begin}\NormalTok{\{}\ExtensionTok{align}\NormalTok{\}}
+\SpecialStringTok{x + y + z \&= 6 }\SpecialCharTok{\textbackslash{}\textbackslash{}}
+\SpecialStringTok{2x {-} y + z \&= 2 }\SpecialCharTok{\textbackslash{}\textbackslash{}}
+\SpecialStringTok{x + 2y {-} z \&= 0}
+\KeywordTok{\textbackslash{}end}\NormalTok{\{}\ExtensionTok{align}\NormalTok{\}}\SpecialStringTok{$$}
+\end{Highlighting}
+\end{Shaded}
+
+\[\begin{align}
+x + y + z &= 6 \\
+2x - y + z &= 2 \\
+x + 2y - z &= 0
+\end{align}\]
+
+\hypertarget{functions-and-special-expressions}{%
+\section{Functions and Special
+Expressions}\label{functions-and-special-expressions}}
+
+\hypertarget{trigonometric-functions}{%
+\subsection{Trigonometric Functions}\label{trigonometric-functions}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1852}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1296}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1852}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1852}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1296}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1852}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Function
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+LaTeX
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Rendered
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Function
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+LaTeX
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Rendered
+\end{minipage} \\
+\midrule()
+\endhead
+Sine & \texttt{\$\textbackslash{}sin\ x\$} & \(\sin x\) & Cosine &
+\texttt{\$\textbackslash{}cos\ x\$} & \(\cos x\) \\
+Tangent & \texttt{\$\textbackslash{}tan\ x\$} & \(\tan x\) & Cotangent &
+\texttt{\$\textbackslash{}cot\ x\$} & \(\cot x\) \\
+Secant & \texttt{\$\textbackslash{}sec\ x\$} & \(\sec x\) & Cosecant &
+\texttt{\$\textbackslash{}csc\ x\$} & \(\csc x\) \\
+Arcsine & \texttt{\$\textbackslash{}arcsin\ x\$} & \(\arcsin x\) &
+Arccosine & \texttt{\$\textbackslash{}arccos\ x\$} & \(\arccos x\) \\
+Arctangent & \texttt{\$\textbackslash{}arctan\ x\$} & \(\arctan x\) & &
+& \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{hyperbolic-functions}{%
+\subsection{Hyperbolic Functions}\label{hyperbolic-functions}}
+
+\begin{longtable}[]{@{}llllll@{}}
+\toprule()
+Function & LaTeX & Rendered & Function & LaTeX & Rendered \\
+\midrule()
+\endhead
+Sinh & \texttt{\$\textbackslash{}sinh\ x\$} & \(\sinh x\) & Cosh &
+\texttt{\$\textbackslash{}cosh\ x\$} & \(\cosh x\) \\
+Tanh & \texttt{\$\textbackslash{}tanh\ x\$} & \(\tanh x\) & Coth &
+\texttt{\$\textbackslash{}coth\ x\$} & \(\coth x\) \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{logarithmic-functions}{%
+\subsection{Logarithmic Functions}\label{logarithmic-functions}}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule()
+Function & LaTeX & Rendered \\
+\midrule()
+\endhead
+Natural log & \texttt{\$\textbackslash{}ln\ x\$} & \(\ln x\) \\
+Common log & \texttt{\$\textbackslash{}log\ x\$} & \(\log x\) \\
+Log base a & \texttt{\$\textbackslash{}log\_a\ x\$} & \(\log_a x\) \\
+Exponential & \texttt{\$\textbackslash{}exp\ x\$} & \(\exp x\) \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{other-functions}{%
+\subsection{Other Functions}\label{other-functions}}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule()
+Function & LaTeX & Rendered \\
+\midrule()
+\endhead
+Maximum & \texttt{\$\textbackslash{}max(a,b)\$} & \(\max(a,b)\) \\
+Minimum & \texttt{\$\textbackslash{}min(a,b)\$} & \(\min(a,b)\) \\
+Greatest common divisor & \texttt{\$\textbackslash{}gcd(a,b)\$} &
+\(\gcd(a,b)\) \\
+Least common multiple & \texttt{\$\textbackslash{}text\{lcm\}(a,b)\$} &
+\(\text{lcm}(a,b)\) \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{accents-and-decorations}{%
+\section{Accents and Decorations}\label{accents-and-decorations}}
+
+\hypertarget{over-symbols}{%
+\subsection{Over Symbols}\label{over-symbols}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1600}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1400}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1600}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1400}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Accent
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+LaTeX
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Rendered
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Accent
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+LaTeX
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Rendered
+\end{minipage} \\
+\midrule()
+\endhead
+Hat & \texttt{\$\textbackslash{}hat\{x\}\$} & \(\hat{x}\) & Wide hat &
+\texttt{\$\textbackslash{}widehat\{xyz\}\$} & \(\widehat{xyz}\) \\
+Tilde & \texttt{\$\textbackslash{}tilde\{x\}\$} & \(\tilde{x}\) & Wide
+tilde & \texttt{\$\textbackslash{}widetilde\{xyz\}\$} &
+\(\widetilde{xyz}\) \\
+Bar & \texttt{\$\textbackslash{}bar\{x\}\$} & \(\bar{x}\) & Overline &
+\texttt{\$\textbackslash{}overline\{xyz\}\$} & \(\overline{xyz}\) \\
+Vec & \texttt{\$\textbackslash{}vec\{x\}\$} & \(\vec{x}\) &
+Overrightarrow & \texttt{\$\textbackslash{}overrightarrow\{AB\}\$} &
+\(\overrightarrow{AB}\) \\
+Dot & \texttt{\$\textbackslash{}dot\{x\}\$} & \(\dot{x}\) & Double dot &
+\texttt{\$\textbackslash{}ddot\{x\}\$} & \(\ddot{x}\) \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{under-symbols}{%
+\subsection{Under Symbols}\label{under-symbols}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3200}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2800}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Accent
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+LaTeX
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Rendered
+\end{minipage} \\
+\midrule()
+\endhead
+Underline & \texttt{\$\textbackslash{}underline\{x\}\$} &
+\(\underline{x}\) \\
+Underbrace &
+\texttt{\$\textbackslash{}underbrace\{x+y+z\}\_\{3\ \textbackslash{}text\{\ terms\}\}\$}
+& \(\underbrace{x+y+z}_{3 \text{ terms}}\) \\
+Overbrace &
+\texttt{\$\textbackslash{}overbrace\{x+y+z\}\^{}\{3\ \textbackslash{}text\{\ terms\}\}\$}
+& \(\overbrace{x+y+z}^{3 \text{ terms}}\) \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{spacing-and-alignment}{%
+\section{Spacing and Alignment}\label{spacing-and-alignment}}
+
+\hypertarget{horizontal-spacing}{%
+\subsection{Horizontal Spacing}\label{horizontal-spacing}}
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule()
+Space & LaTeX & Size & Example \\
+\midrule()
+\endhead
+Thin space & \texttt{\$a\textbackslash{},b\$} & 3/18 em & \(a\,b\) \\
+Medium space & \texttt{\$a\textbackslash{}:b\$} & 4/18 em & \(a\:b\) \\
+Thick space & \texttt{\$a\textbackslash{};b\$} & 5/18 em & \(a\;b\) \\
+Quad space & \texttt{\$a\textbackslash{}quad\ b\$} & 1 em &
+\(a\quad b\) \\
+Double quad & \texttt{\$a\textbackslash{}qquad\ b\$} & 2 em &
+\(a\qquad b\) \\
+Negative space & \texttt{\$a\textbackslash{}!b\$} & -3/18 em &
+\(a\!b\) \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{examples-4}{%
+\subsection{Examples}\label{examples-4}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialStringTok{$$}\SpecialCharTok{\textbackslash{}int}\SpecialStringTok{ f(x) }\SpecialCharTok{\textbackslash{},}\SpecialStringTok{ dx$$}
+\SpecialStringTok{$$}\SpecialCharTok{\textbackslash{}int}\SpecialStringTok{ f(x) }\SpecialCharTok{\textbackslash{}:}\SpecialStringTok{ dx$$}
+\SpecialStringTok{$$}\SpecialCharTok{\textbackslash{}int}\SpecialStringTok{ f(x) }\SpecialCharTok{\textbackslash{};}\SpecialStringTok{ dx$$}
+\SpecialStringTok{$$}\SpecialCharTok{\textbackslash{}int}\SpecialStringTok{ f(x) }\SpecialCharTok{\textbackslash{}quad}\SpecialStringTok{ dx$$}
+\end{Highlighting}
+\end{Shaded}
+
+\[\int f(x) \, dx\] \[\int f(x) \: dx\] \[\int f(x) \; dx\]
+\[\int f(x) \quad dx\]
+
+\hypertarget{colors}{%
+\section{Colors}\label{colors}}
+
+\hypertarget{basic-colors}{%
+\subsection{Basic Colors}\label{basic-colors}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialStringTok{$$}\SpecialCharTok{\textbackslash{}color}\SpecialStringTok{\{red\}\{x\^{}2\} + }\SpecialCharTok{\textbackslash{}color}\SpecialStringTok{\{blue\}\{y\^{}2\} = }\SpecialCharTok{\textbackslash{}color}\SpecialStringTok{\{green\}\{z\^{}2\}$$}
+\SpecialStringTok{$$}\SpecialCharTok{\textbackslash{}textcolor}\SpecialStringTok{\{purple\}\{f(x)\} = }\SpecialCharTok{\textbackslash{}textcolor}\SpecialStringTok{\{orange\}\{ax\^{}2\} + }\SpecialCharTok{\textbackslash{}textcolor}\SpecialStringTok{\{brown\}\{bx\} + }\SpecialCharTok{\textbackslash{}textcolor}\SpecialStringTok{\{pink\}\{c\}$$}
+\end{Highlighting}
+\end{Shaded}
+
+\[\color{red}{x^2} + \color{blue}{y^2} = \color{green}{z^2}\]
+\[\textcolor{purple}{f(x)} = \textcolor{orange}{ax^2} + \textcolor{brown}{bx} + \textcolor{pink}{c}\]
+
+\hypertarget{available-colors}{%
+\subsection{Available Colors}\label{available-colors}}
+
+\begin{itemize}
+\tightlist
+\item
+  red, blue, green, yellow, orange, purple, brown, pink
+\item
+  black, white, gray, darkgray, lightgray
+\item
+  cyan, magenta, lime, olive, navy, teal, aqua
+\end{itemize}
+
+\hypertarget{text-in-math-mode}{%
+\section{Text in Math Mode}\label{text-in-math-mode}}
+
+\hypertarget{text-commands}{%
+\subsection{Text Commands}\label{text-commands}}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule()
+Command & LaTeX & Rendered \\
+\midrule()
+\endhead
+Roman text & \texttt{\$\textbackslash{}text\{some\ text\}\$} &
+\(\text{some text}\) \\
+Math roman & \texttt{\$\textbackslash{}mathrm\{d\}x\$} &
+\(\mathrm{d}x\) \\
+Math italic & \texttt{\$\textbackslash{}mathit\{var\}\$} &
+\(\mathit{var}\) \\
+Math bold & \texttt{\$\textbackslash{}mathbf\{v\}\$} & \(\mathbf{v}\) \\
+Math sans serif & \texttt{\$\textbackslash{}mathsf\{text\}\$} &
+\(\mathsf{text}\) \\
+Math typewriter & \texttt{\$\textbackslash{}mathtt\{code\}\$} &
+\(\mathtt{code}\) \\
+Math calligraphy & \texttt{\$\textbackslash{}mathcal\{L\}\$} &
+\(\mathcal{L}\) \\
+Math blackboard & \texttt{\$\textbackslash{}mathbb\{R\}\$} &
+\(\mathbb{R}\) \\
+Math fraktur & \texttt{\$\textbackslash{}mathfrak\{g\}\$} &
+\(\mathfrak{g}\) \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{examples-5}{%
+\subsection{Examples}\label{examples-5}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialStringTok{$$}\SpecialCharTok{\textbackslash{}int}\SpecialStringTok{\_0\^{}1 f(x) }\SpecialCharTok{\textbackslash{},}\SpecialStringTok{ }\SpecialCharTok{\textbackslash{}mathrm}\SpecialStringTok{\{d\}x$$}
+\SpecialStringTok{$$}\SpecialCharTok{\textbackslash{}mathbf}\SpecialStringTok{\{F\} = m}\SpecialCharTok{\textbackslash{}mathbf}\SpecialStringTok{\{a\}$$}
+\SpecialStringTok{$$}\SpecialCharTok{\textbackslash{}mathcal}\SpecialStringTok{\{L\}}\SpecialCharTok{\textbackslash{}\{}\SpecialStringTok{f(t)}\SpecialCharTok{\textbackslash{}\}}\SpecialStringTok{ = F(s)$$}
+\SpecialStringTok{$$x }\SpecialCharTok{\textbackslash{}in}\SpecialStringTok{ }\SpecialCharTok{\textbackslash{}mathbb}\SpecialStringTok{\{R\}$$}
+\end{Highlighting}
+\end{Shaded}
+
+\[\int_0^1 f(x) \, \mathrm{d}x\] \[\mathbf{F} = m\mathbf{a}\]
+\[\mathcal{L}\{f(t)\} = F(s)\] \[x \in \mathbb{R}\]
+
+\hypertarget{complex-expressions}{%
+\section{Complex Expressions}\label{complex-expressions}}
+
+\hypertarget{continued-fractions}{%
+\subsection{Continued Fractions}\label{continued-fractions}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialStringTok{$$x = a\_0 + }\SpecialCharTok{\textbackslash{}cfrac}\SpecialStringTok{\{1\}\{a\_1 + }\SpecialCharTok{\textbackslash{}cfrac}\SpecialStringTok{\{1\}\{a\_2 + }\SpecialCharTok{\textbackslash{}cfrac}\SpecialStringTok{\{1\}\{a\_3 + }\SpecialCharTok{\textbackslash{}cfrac}\SpecialStringTok{\{1\}\{}\SpecialCharTok{\textbackslash{}ddots}\SpecialStringTok{\}\}\}\}$$}
+\end{Highlighting}
+\end{Shaded}
+
+\[x = a_0 + \cfrac{1}{a_1 + \cfrac{1}{a_2 + \cfrac{1}{a_3 + \cfrac{1}{\ddots}}}}\]
+
+\hypertarget{commutative-diagrams}{%
+\subsection{Commutative Diagrams}\label{commutative-diagrams}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialStringTok{$$}\KeywordTok{\textbackslash{}begin}\NormalTok{\{}\ExtensionTok{array}\NormalTok{\}}\SpecialStringTok{\{ccc\}}
+\SpecialStringTok{A \& }\SpecialCharTok{\textbackslash{}xrightarrow}\SpecialStringTok{\{f\} \& B }\SpecialCharTok{\textbackslash{}\textbackslash{}}
+\SpecialCharTok{\textbackslash{}downarrow}\SpecialStringTok{ \& \& }\SpecialCharTok{\textbackslash{}downarrow}\SpecialStringTok{ }\SpecialCharTok{\textbackslash{}\textbackslash{}}
+\SpecialStringTok{C \& }\SpecialCharTok{\textbackslash{}xrightarrow}\SpecialStringTok{\{g\} \& D}
+\KeywordTok{\textbackslash{}end}\NormalTok{\{}\ExtensionTok{array}\NormalTok{\}}\SpecialStringTok{$$}
+\end{Highlighting}
+\end{Shaded}
+
+\[\begin{array}{ccc}
+A & \xrightarrow{f} & B \\
+\downarrow & & \downarrow \\
+C & \xrightarrow{g} & D
+\end{array}\]
+
+\hypertarget{chemical-equations}{%
+\subsection{Chemical Equations}\label{chemical-equations}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialStringTok{$$}\SpecialCharTok{\textbackslash{}ce}\SpecialStringTok{\{2H2 + O2 {-}\textgreater{} 2H2O\}$$}
+\SpecialStringTok{$$}\SpecialCharTok{\textbackslash{}ce}\SpecialStringTok{\{CaCO3 + 2HCl {-}\textgreater{} CaCl2 + H2O + CO2 \^{}\}$$}
+\end{Highlighting}
+\end{Shaded}
+
+Note: Chemical equations require the \texttt{mhchem} extension which may
+not be available in all MathJax configurations.
+
+\hypertarget{common-mathematical-expressions}{%
+\section{Common Mathematical
+Expressions}\label{common-mathematical-expressions}}
+
+\hypertarget{quadratic-formula}{%
+\subsection{Quadratic Formula}\label{quadratic-formula}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialStringTok{$$x = }\SpecialCharTok{\textbackslash{}frac}\SpecialStringTok{\{{-}b }\SpecialCharTok{\textbackslash{}pm}\SpecialStringTok{ }\SpecialCharTok{\textbackslash{}sqrt}\SpecialStringTok{\{b\^{}2 {-} 4ac\}\}\{2a\}$$}
+\end{Highlighting}
+\end{Shaded}
+
+\[x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]
+
+\hypertarget{binomial-theorem}{%
+\subsection{Binomial Theorem}\label{binomial-theorem}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialStringTok{$$(x + y)\^{}n = }\SpecialCharTok{\textbackslash{}sum}\SpecialStringTok{\_\{k=0\}\^{}\{n\} }\SpecialCharTok{\textbackslash{}binom}\SpecialStringTok{\{n\}\{k\} x\^{}\{n{-}k\} y\^{}k$$}
+\end{Highlighting}
+\end{Shaded}
+
+\[(x + y)^n = \sum_{k=0}^{n} \binom{n}{k} x^{n-k} y^k\]
+
+\hypertarget{fourier-transform}{%
+\subsection{Fourier Transform}\label{fourier-transform}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialStringTok{$$}\SpecialCharTok{\textbackslash{}mathcal}\SpecialStringTok{\{F\}}\SpecialCharTok{\textbackslash{}\{}\SpecialStringTok{f(t)}\SpecialCharTok{\textbackslash{}\}}\SpecialStringTok{ = F(}\SpecialCharTok{\textbackslash{}omega}\SpecialStringTok{) = }\SpecialCharTok{\textbackslash{}int}\SpecialStringTok{\_\{{-}}\SpecialCharTok{\textbackslash{}infty}\SpecialStringTok{\}\^{}\{}\SpecialCharTok{\textbackslash{}infty}\SpecialStringTok{\} f(t) e\^{}\{{-}i}\SpecialCharTok{\textbackslash{}omega}\SpecialStringTok{ t\} }\SpecialCharTok{\textbackslash{},}\SpecialStringTok{ dt$$}
+\end{Highlighting}
+\end{Shaded}
+
+\[\mathcal{F}\{f(t)\} = F(\omega) = \int_{-\infty}^{\infty} f(t) e^{-i\omega t} \, dt\]
+
+\hypertarget{taylor-series}{%
+\subsection{Taylor Series}\label{taylor-series}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialStringTok{$$f(x) = }\SpecialCharTok{\textbackslash{}sum}\SpecialStringTok{\_\{n=0\}\^{}\{}\SpecialCharTok{\textbackslash{}infty}\SpecialStringTok{\} }\SpecialCharTok{\textbackslash{}frac}\SpecialStringTok{\{f\^{}\{(n)\}(a)\}\{n!\}(x{-}a)\^{}n$$}
+\end{Highlighting}
+\end{Shaded}
+
+\[f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^n\]
+
+\hypertarget{maxwells-equations}{%
+\subsection{Maxwell's Equations}\label{maxwells-equations}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialStringTok{$$}\KeywordTok{\textbackslash{}begin}\NormalTok{\{}\ExtensionTok{align}\NormalTok{\}}
+\SpecialCharTok{\textbackslash{}nabla}\SpecialStringTok{ }\SpecialCharTok{\textbackslash{}cdot}\SpecialStringTok{ }\SpecialCharTok{\textbackslash{}mathbf}\SpecialStringTok{\{E\} \&= }\SpecialCharTok{\textbackslash{}frac}\SpecialStringTok{\{}\SpecialCharTok{\textbackslash{}rho}\SpecialStringTok{\}\{}\SpecialCharTok{\textbackslash{}epsilon}\SpecialStringTok{\_0\} }\SpecialCharTok{\textbackslash{}\textbackslash{}}
+\SpecialCharTok{\textbackslash{}nabla}\SpecialStringTok{ }\SpecialCharTok{\textbackslash{}cdot}\SpecialStringTok{ }\SpecialCharTok{\textbackslash{}mathbf}\SpecialStringTok{\{B\} \&= 0 }\SpecialCharTok{\textbackslash{}\textbackslash{}}
+\SpecialCharTok{\textbackslash{}nabla}\SpecialStringTok{ }\SpecialCharTok{\textbackslash{}times}\SpecialStringTok{ }\SpecialCharTok{\textbackslash{}mathbf}\SpecialStringTok{\{E\} \&= {-}}\SpecialCharTok{\textbackslash{}frac}\SpecialStringTok{\{}\SpecialCharTok{\textbackslash{}partial}\SpecialStringTok{ }\SpecialCharTok{\textbackslash{}mathbf}\SpecialStringTok{\{B\}\}\{}\SpecialCharTok{\textbackslash{}partial}\SpecialStringTok{ t\} }\SpecialCharTok{\textbackslash{}\textbackslash{}}
+\SpecialCharTok{\textbackslash{}nabla}\SpecialStringTok{ }\SpecialCharTok{\textbackslash{}times}\SpecialStringTok{ }\SpecialCharTok{\textbackslash{}mathbf}\SpecialStringTok{\{B\} \&= }\SpecialCharTok{\textbackslash{}mu}\SpecialStringTok{\_0 }\SpecialCharTok{\textbackslash{}mathbf}\SpecialStringTok{\{J\} + }\SpecialCharTok{\textbackslash{}mu}\SpecialStringTok{\_0 }\SpecialCharTok{\textbackslash{}epsilon}\SpecialStringTok{\_0 }\SpecialCharTok{\textbackslash{}frac}\SpecialStringTok{\{}\SpecialCharTok{\textbackslash{}partial}\SpecialStringTok{ }\SpecialCharTok{\textbackslash{}mathbf}\SpecialStringTok{\{E\}\}\{}\SpecialCharTok{\textbackslash{}partial}\SpecialStringTok{ t\}}
+\KeywordTok{\textbackslash{}end}\NormalTok{\{}\ExtensionTok{align}\NormalTok{\}}\SpecialStringTok{$$}
+\end{Highlighting}
+\end{Shaded}
+
+\[\begin{align}
+\nabla \cdot \mathbf{E} &= \frac{\rho}{\epsilon_0} \\
+\nabla \cdot \mathbf{B} &= 0 \\
+\nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t} \\
+\nabla \times \mathbf{B} &= \mu_0 \mathbf{J} + \mu_0 \epsilon_0 \frac{\partial \mathbf{E}}{\partial t}
+\end{align}\]
+
+\hypertarget{tips-and-best-practices}{%
+\section{Tips and Best Practices}\label{tips-and-best-practices}}
+
+\hypertarget{performance-tips}{%
+\subsection{Performance Tips}\label{performance-tips}}
+
+\begin{itemize}
+\tightlist
+\item
+  Use \texttt{\$\$} for display math instead of
+  \texttt{\textbackslash{}{[}} and \texttt{\textbackslash{}{]}}
+\item
+  Avoid unnecessary \texttt{\textbackslash{}left} and
+  \texttt{\textbackslash{}right} when fixed-size delimiters work
+\item
+  Use \texttt{\textbackslash{}text\{\}} for text within math expressions
+\item
+  Break long expressions into multiple lines using \texttt{align}
+\end{itemize}
+
+\hypertarget{common-mistakes}{%
+\subsection{Common Mistakes}\label{common-mistakes}}
+
+\begin{itemize}
+\tightlist
+\item
+  Forgetting to escape special characters: \texttt{\textbackslash{}\{},
+  \texttt{\textbackslash{}\}}, \texttt{\textbackslash{}\&},
+  \texttt{\textbackslash{}\%}
+\item
+  Using \texttt{*} for multiplication instead of
+  \texttt{\textbackslash{}cdot} or \texttt{\textbackslash{}times}
+\item
+  Not using proper spacing in integrals:
+  \texttt{\textbackslash{}int\ f(x)\ \textbackslash{},\ dx}
+\item
+  Mixing text and math modes incorrectly
+\end{itemize}
+
+\hypertarget{accessibility}{%
+\subsection{Accessibility}\label{accessibility}}
+
+\begin{itemize}
+\tightlist
+\item
+  Use \texttt{\textbackslash{}text\{\}} for descriptive text
+\item
+  Provide alternative text descriptions for complex expressions
+\item
+  Use semantic markup when possible
+\item
+  Consider screen reader compatibility
+\end{itemize}
+
+This reference covers the most commonly used MathJax LaTeX commands in
+Quarto. For the most up-to-date information, consult the official
+MathJax documentation.
+
+
+
+\end{document}

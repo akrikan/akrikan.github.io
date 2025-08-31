@@ -326,7 +326,6 @@ $$S_t = S_0 \exp\left(\left(\mu - \frac{\sigma^2}{2}\right)t + \sigma W_t\right)
 
 Let $Y_t = \ln S_t$. By Itô's lemma with $f(x) = \ln x$:
 
-```{=tex}
 \begin{align}
 dY_t &= f'(S_t) dS_t + \frac{1}{2}f''(S_t)(dS_t)^2 \\
 &= \frac{1}{S_t} dS_t + \frac{1}{2}\left(-\frac{1}{S_t^2}\right)(dS_t)^2 \\
@@ -334,7 +333,7 @@ dY_t &= f'(S_t) dS_t + \frac{1}{2}f''(S_t)(dS_t)^2 \\
 &= \mu \, dt + \sigma \, dW_t - \frac{\sigma^2}{2} dt \\
 &= \left(\mu - \frac{\sigma^2}{2}\right) dt + \sigma \, dW_t
 \end{align}
-```
+
 Integrating from $0$ to $t$:
 $$Y_t = Y_0 + \left(\mu - \frac{\sigma^2}{2}\right)t + \sigma W_t$$
 
@@ -904,13 +903,12 @@ have: $V(t,S) = K e^{-r(T-t)} u(T-t, \ln(S/K))$
 
 Let $\tau = T-t$ and $x = \ln(S/K)$. Then:
 
-```{=tex}
 \begin{align}
 \frac{\partial V}{\partial t} &= K e^{-r\tau} \left[r u - \frac{\partial u}{\partial \tau}\right] \\
 \frac{\partial V}{\partial S} &= K e^{-r\tau} \frac{1}{S} \frac{\partial u}{\partial x} \\
 \frac{\partial^2 V}{\partial S^2} &= K e^{-r\tau} \frac{1}{S^2} \left[\frac{\partial^2 u}{\partial x^2} - \frac{\partial u}{\partial x}\right]
 \end{align}
-```
+
 Substituting into the Black-Scholes PDE and simplifying (after dividing
 by $K e^{-r\tau}$):
 $-\frac{\partial u}{\partial \tau} + \left(r - \frac{\sigma^2}{2}\right) \frac{\partial u}{\partial x} + \frac{1}{2}\sigma^2 \frac{\partial^2 u}{\partial x^2} = 0$
@@ -1186,12 +1184,11 @@ $Y_s = e^{-\int_t^s r(u,X_u) du} u(s,X_s)$ for $s \in [t,T]$.
 **Step 2: Apply Itô's lemma to** $Y_s$ We need to compute $dY_s$. Using
 the product rule and Itô's lemma:
 
-```{=tex}
 \begin{align}
 dY_s &= d\left(e^{-\int_t^s r(u,X_u) du}\right) u(s,X_s) + e^{-\int_t^s r(u,X_u) du} du(s,X_s) \\
 &\quad + d\left(e^{-\int_t^s r(u,X_u) du}\right) du(s,X_s)
 \end{align}
-```
+
 **Step 3: Compute each term**
 
 For the discount factor:

@@ -114,7 +114,8 @@
     "StochC.html": "0f282647"
   },
   "docu/SEA/DSA.qmd": {
-    "DSA.html": "a33c1274"
+    "DSA.html": "a33c1274",
+    "DSA.tex": "4415f627"
   },
   "docu/SEA/math.qmd": {
     "math.html": "337d7181"
@@ -148,5 +149,9 @@
   "docu/SEA/Mathematics/Galois_theory.qmd": {
     "Galois_theory.html": "812fd6b5",
     "Galois_theory.tex": "1fe143ce"
+  },
+  "docu/SEA/Computer_Science/MathJax.qmd": {
+    "MathJax.html": "fcedb8e5",
+    "MathJax.tex": "c907efa7"
   }
 }

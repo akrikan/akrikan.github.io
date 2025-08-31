@@ -27,7 +27,6 @@ $\dots$
 
 $F_{\ell} = \mathbb{P}\{X - {\ell} \leq{x} | X > {\ell} \} = \frac{F(x+ {\ell}) - F(\ell)}{1 - F_{X}\{\ell\}}$
 
-```{=tex}
 \begin{equation*}
 \begin{cases}
 \begin{split}
@@ -36,8 +35,6 @@ dY_{t} &= \left( \frac{\gamma \, X_{t}^2 \, Y_{t}}{\left( \kappa + X_{t}^2 \righ
 \end{split}
 \end{cases}
 \end{equation*}
-```
-```{=tex}
 \begin{equation}
 \begin{cases}
 \begin{split}
@@ -49,8 +46,6 @@ dY_{t} &= \left( \frac{\gamma \, X_{t}^2 \, Y_{t}}{\left( \kappa + X_{t}^2 \righ
 \end{split}
 \end{cases}
 \end{equation}
-```
-```{=tex}
 \begin{equation}
  \left.\begin{aligned}
         B'&=-\partial \times E,\\
@@ -59,15 +54,13 @@ dY_{t} &= \left( \frac{\gamma \, X_{t}^2 \, Y_{t}}{\left( \kappa + X_{t}^2 \righ
  \right\}
  \qquad \text{Maxwell's equations}
 \end{equation}
-```
-```{=tex}
 \numberwithin{equation}{subsection}
 \section{First Section}
 \subsection{A subsection}
 \begin{equation}
   L' = {L}{\sqrt{1-\frac{v^2}{c^2}}}
 \end{equation}
-```
+
 ```{python}
 import numpy as np 
 import matplotlib.pyplot as plt
